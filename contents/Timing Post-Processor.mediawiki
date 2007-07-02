@@ -1,4 +1,8 @@
-The timing postprocessor is a highly useful tool for automatically correcting timing in various ways. As shown in the screenshot, there are three functions:
+The timing postprocessor is a highly useful tool for automatically correcting timing in various ways.
+
+== Overview ==
+
+As shown in the screenshot, there are three functions:
 
 * Add lead-in and/or lead-out 
 * Make lines that start close to each other continous by extending their start and/or end times 
