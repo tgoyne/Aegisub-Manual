@@ -31,6 +31,8 @@ Toggles bold in the following text. Set to 0 to disable bold or to 1 to enable.
 TODO: Does VSFilter properly support "weight"? How does it work?
 :''I think it does support it but a lot of fonts only have one weight... or at least I recall DeathWolf saying something to that effect.'' --[[User:TheFluff|TheFluff]] 19:44, 2 July 2007 (EDT)
 
+:''Most fonts have either one or two weights: normal and bold. Those correspond to weight values 400 and 700, on Windows. Both Windows and Fontconfig handle multiple-weight fonts more than badly, so I would recommend avoiding anything other than \b0 and \b1. --[[User:Equinox|Equinox]] 19:54, 2 July 2007 (EDT)
+
 ===\u<0/1> - Underline===
 Toggles underline in the following text. See description for italics.
 
