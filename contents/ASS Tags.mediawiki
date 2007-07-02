@@ -136,7 +136,7 @@ e.g.:
 Aegisub now has a [[Color Picker]] that can help you generate these hexadecimal numbers
 
 ===\1c&H<bbggrr>& - Set primary color===
-Sets primary color. See [[#\c&H<bbggrr>& - Set primary color}|\c]] for full description.
+Sets primary color. See [[#\c&H<bbggrr>& - Set primary color|\c]] for full description.
 
 ===\2c&H<bbggrr>& - Set secondary color===
 Sets secondary color. This is the color that primary changes from during karaoke effects (i.e. karaoke starts at this color and then changes to primary). See \c for full description.
