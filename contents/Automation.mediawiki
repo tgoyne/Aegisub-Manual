@@ -1,0 +1,34 @@
+The name '''Automation''' covers the entire scripting functionality of Aegisub.
+
+== About Automation ==
+
+The single purpose of Automation is -- as the name implies -- to automate various aspects of subtitle creation and editing. To date this has mainly been for creating [[Glossary:Karaoke effect|karaoke effects]] but Aegisub 2 introduces [[History of Automation|Automation 4]] which also allows creating more general purpose [[Glossary:Macro|macros]] and also changing the style definitions and other metadata for the subtitles.
+
+Some of the goals of Automation:
+* Macros to automate complex subtitle editing tasks
+* Export filters to generate complex effects from simpler input
+** Karaoke effects
+** Translation note boxes
+* Probably several yet-undiscovered uses
+
+== Using Automation ==
+
+Aegisub comes with several Automation scripts already packaged and ready to use. This includes the advanced [[Karaoke Templater]] script (which covers everything ''simple-k-replacer'', ''line-per-syllable'' and ''multi-template'' did in Automation 3) and a [[Using the included macros|collection of macros]] to simplify some editing tasks.
+
+Aegisub almost always has several Automation scripts loaded at a time. You can see what scripts are loaded, and load/unload more from the [[Automation Manager]] window.
+
+All Automation scripts also present themselves in Aegisub in one way or another. Some appear as [[Running Automation macros|macros in the Automation menu]] and others appear as [[Exporting subtitles|filters in the Export dialog]]. Some scripts even appear in both places.
+
+== Automation for programmers ==
+
+Automation offers several scripting languages that can be used. The main "featured" language is [http://www.lua.org Lua 5.1] but also [http://www.ruby-lang.org/ Ruby] is available.
+
+Other languages have also been proposed but haven't been implemented yet: Perl, JavaScript, Python and perhaps support for native dynamic library code (DLL's, so's, dylib's.)
+
+There is several example scripts included with Aegisub to give you a head start on writing your own ones. A word of warning: Unless you are an experienced programmer the ''kara-templater.lua'' script is a very bad place to start!
+
+In addition, the Automation 3 scripting interface used in Aegisub 1.10 and earlier is also supported but using the Automation 4 Lua interface is recommended. The Automation 3 environment is reproduced as closely as possible, meaning Lua 5.0 is used instead of Lua 5.1 and all data structures are kept the same. There are however a few minor differences, see more at [[Moving from Automation 3]].
+
+=== Future goals ===
+
+Apart from the addition of more languages as mentioned above, one major future goal of Automation is to allow ''custom file format handlers'' enabling you to make Aegisub read and write almost every imaginable file format so they can be edited with Aegisub.
