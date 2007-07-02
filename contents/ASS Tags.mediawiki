@@ -2,7 +2,6 @@ The following is a list of every tag supported by the Advanced Substation Alpha 
 
 __NOTOC__
 <br style="clear:both"/>
-
 ==Special characters==
 The following tags are written in the middle of the text, and not inside override blocks (i.e. not between { and }).
 
@@ -68,7 +67,7 @@ e.g.:
 (uses size 10 for font)
 
 ===\fscx<percent> - Font scale in X axis===
-Sets the font scale for the X (horizontal) axis. Parameter should be in percent form. This is different from simply adjusting size using [[#\fs<size> - Font size|\fs]] because \fs will use font hinting to determine best looking adjustments, especially for small sizes. Also, \fs will only accept integer parameters. If you need to, for example, transform scale (with the [[ASS Tags#\t|\t]] tag), use this instead of \fs, as \fs will behave strangely and not smoothly.
+Sets the font scale for the X (horizontal) axis. Parameter should be in percent form. This is different from simply adjusting size using [[#\fs<size> - Font size|\fs]] because \fs will use font hinting to determine best looking adjustments, especially for small sizes. Also, \fs will only accept integer parameters. If you need to, for example, transform scale (with the [[#\t([<t1>,<t2>,][<accel>,]<style modifiers>) - Transform|\t]] tag), use this instead of \fs, as \fs will behave strangely and not smoothly.
 e.g.:
  \fscx150
 (makes the text 50% wider)
