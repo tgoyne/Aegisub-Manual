@@ -28,7 +28,7 @@ This is fairly obvious. The postprocessor will add the given time (in millisecon
 
 This function will check if any two lines' starts and ends are closer in time than the given threshold (in milliseconds). If they are, one or both will get their start and/or end time moved so that they are continous (i.e. one appears directly following the next, without any subtitle-less frames in between).
 
-The Bias slider determines how the lines are extended. Sliding it all the way to the right will extend the end time of the first line all the way to the start time of the second, without touching the second line at all. Sliding it all the way to the left will instead make the start time of the second line extend backwards to the end of the first line, without touching the first line at all. Putting it in the middle will extend the end time of the first line and the start time of the second equally, so that they meet in the middle. Anything in between will makes the lines "meet" where the slider is, so to speak. For example, if the threshold was 1000, and the slider was 3/4ths of the way to the right (roughly as shown in the screenshot), the end time of the first line would get extended by 750 ms, and the start time of the second extended backwards with 250 ms.
+The ''Bias'' slider determines how the lines are extended. Sliding it all the way to the right will extend the end time of the first line all the way to the start time of the second, without touching the second line at all. Sliding it all the way to the left will instead make the start time of the second line extend backwards to the end of the first line, without touching the first line at all. Putting it in the middle will extend the end time of the first line and the start time of the second equally, so that they meet in the middle. Anything in between will makes the lines "meet" where the slider is, so to speak. For example, if the threshold was 1000, and the slider was 3/4ths of the way to the right (roughly as shown in the screenshot), the end time of the first line would get extended by 750 ms, and the start time of the second extended backwards with 250 ms.
 
 == Keyframe snapping ==
 
@@ -36,16 +36,16 @@ The keyframe snapping function is a kind of automatic scenetimer. It is probably
 
 A brief, highly simplified explanation of what a keyframe is, for the people who missed Video 101:
 
-Modern video codecs compress video by storing as little information as possible. Instead of storing all frames in full (like a large amount of JPG pictures), they take occasionally take a keyframe, which is stored fully, and for each frame after that until the next keyframe, they only store what changed in the picture since the last frame. The only reason we need to know this is because keyframes usually appear at scenechanges. The first frame in a scene is almost invariably a keyframe, but beware - far from every keyframe is a scenechange! Most codecs insert a keyframe at least once every 250-300 frames, even if there hasn't been a scenechange.
+Modern video codecs compress video by storing as little information as possible. Instead of storing all frames in full (like a large amount of JPG pictures), they take occasionally take a ''keyframe'', which is stored fully, and for each frame after that until the next keyframe, they only store what changed in the picture since the last frame. The only reason we need to know this is because keyframes usually appear at scenechanges. The first frame in a scene is almost invariably a keyframe, but beware - far from every keyframe is a scenechange! Most codecs insert a keyframe at least once every 250-300 frames, even if there hasn't been a scenechange.
 
 Back to the timing postprocessor's use of this. The keyframe snapping function will look at how close the start and end of lines are to the nearest keyframe, and if they are closer than the given threshold, it will get extended or shortened to the keyframe.
 
 There are four thresholds to consider:
 
-* ''Starts before'' - if the line starts less than this many frames (inclusive) before a keyframe, its start time will get moved forward so that the line starts on the keyframe. 
-* ''Starts after'' - if the line starts less than this many frames (inclusive) after a keyframe, its start time will get moved backward so that the line starts on the keyframe. 
-* ''Ends before'' - if the line ends less than this many frames (inclusive) before a keyframe, its end time will get moved forward so that the line ends on the frame before the keyframe. 
-* ''Ends after'' - if the line ends less than this many frames (inclusive) after a keyframe, its end time will get moved backward so that the line ends on the frame before the keyframe. 
+* ''Starts before'' - if the line starts less than this many frames (inclusive) ''before'' a keyframe, its start time will get moved forward so that the line starts on the keyframe. 
+* ''Starts after'' - if the line starts less than this many frames (inclusive) ''after'' a keyframe, its start time will get moved backward so that the line starts on the keyframe. 
+* ''Ends before'' - if the line ends less than this many frames (inclusive) ''before'' a keyframe, its end time will get moved forward so that the line ends on the frame before the keyframe. 
+* ''Ends after'' - if the line ends less than this many frames (inclusive) ''after'' a keyframe, its end time will get moved backward so that the line ends on the frame before the keyframe. 
 
 When using this feature, remember your lead-in/out times, and the framerate of the video! At 23.976 frames per second, each frame lasts for about 42 ms. This means that if you have a lead-in of 120 ms, you can safely set the "starts before" threshold to at least 3 (3 * 42 = 126) without fear of lines starting showing up after someone has started speaking. Using the same reasoning, a lead-out of 250 ms allows you to safely have at least 6 as your "Ends after" threshold, without fear of lines ending before people stop talking. Figuring out good values for the other thresholds and/or framerates is left as an exercise for the reader.
 
