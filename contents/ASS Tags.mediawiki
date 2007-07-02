@@ -15,7 +15,6 @@ This is always replaced by a line break.
 ===\h - Hard space===
 This is useful when you need several spaces in a row.
 
-
 ==Override tags==
 These tags must be in an override block, that is, they must be between a { and a }, and will affect all text following the block, unless they get re-overridden.
 
