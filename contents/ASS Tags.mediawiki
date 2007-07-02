@@ -1,0 +1,367 @@
+The following is a list of every tag supported by the Advanced Substation Alpha format. This is basically a detailed version of ass-quickref.txt. See the [[Tutorial]] for an introduction to typesetting, using some basic tags.
+
+==Special characters==
+The following tags are written in the middle of the text, and not inside override blocks (i.e. not between { and }).
+
+===\n - Soft line break===
+Makes the line "break" (i.e. skip to the next line) using mode \q2 (see [[#\q<0-3> - Wrap style|\q<0-3>]]). Using any other mode, it's replaced by a space.
+
+===\N - Hard line break===
+This is always replaced by a line break.
+
+===\h - Hard space===
+This is useful when you need several spaces in a row.
+
+
+==Override tags==
+These tags must be in an override block, that is, they must be between a { and a }, and will affect all text following the block, unless they get re-overridden.
+
+===\i<0/1> - Italic===
+Toggles italics in following text. Set to 0 to disable italics or to 1 to enable them.
+e.g.:
+ \i1
+(enable italics)
+ \i0
+(disable italics)
+
+===\b<0/1/weight> - Bold===
+Toggles bold in the following text. Set to 0 to disable bold or to 1 to enable.
+
+TODO: Does VSFilter properly support "weight"? How does it work?
+:''I think it does support it but a lot of fonts only have one weight... or at least I recall DeathWolf saying something to that effect.'' --[[User:TheFluff|TheFluff]] 19:44, 2 July 2007 (EDT)
+
+===\u<0/1> - Underline===
+Toggles underline in the following text. See description for italics.
+
+===\s<0/1> - Strikeout===
+Toggles strikeout in the following text. See description for italics. Strikeout means that there will be a line crossing the text.
+
+===\bord<width> - Border===
+Sets the width of border around text. Value is given in pixels and can have decimal places.
+e.g.:
+ \bord1
+ \bord0.5
+ \bord2.3
+ \bord0
+(The last example will disable the border entirely.)
+
+===\shad<depth> - Shadow===
+Sets the offset that shadow is drawn from the main text. Think of the shadow as the text+outlines in a single color, drawn behind text, and offset by depth pixels to the right and bottom. This tag works similarly to [[#\bord<width> - Border|\bord]].
+
+===\be<0/1> - Blur edges===
+This tag enables or disables edge blurring. This is a subtle effect, and is not very visible for large text. See description of italics tag for usage.
+
+===\fn<name> - Font name===
+This sets the font face name for the following text. Note that there is no space between \fn and the parameter name.
+e.g.:
+ \fnArial
+(uses "Arial" font)
+ \fnTimes New Roman
+(uses "Times New Roman" font)
+
+===\fs<size> - Font size===
+Specifies the font size, in points. This is the same unit that most text processors use.
+e.g.:
+ \fs10
+(uses size 10 for font)
+
+===\fscx<percent> - Font scale in X axis===
+Sets the font scale for the X (horizontal) axis. Parameter should be in percent form. This is different from simply adjusting size using [[#\fs<size> - Font size|\fs]] because \fs will use font hinting to determine best looking adjustments, especially for small sizes. Also, \fs will only accept integer parameters. If you need to, for example, transform scale (with the [[ASS Tags#\t|\t]] tag), use this instead of \fs, as \fs will behave strangely and not smoothly.
+e.g.:
+ \fscx150
+(makes the text 50% wider)
+ \fscx33
+(makes the text have roughly a third of its original width)
+
+===\fscy<percent> - Font scale in Y axis===
+Same as [[#\fscx<percent> - Font scale in X axis|\fscx]], but for the vertical axis.
+
+===\fsp<pixels> - Font spacing===
+Sets the spacing between characters, in pixels. This allows you to make the text look something like "t h i s". Some fonts might look bad because the characters are too close to each other. This tag might help in such cases. Also, if used in moderation, it can give the illusion that the font is wider.
+
+===\fr[<x/y/z>]<degrees> - Font rotation===
+Rotates the text by the specified number of degrees, in the specified axis. If axis is omitted, then "z" is used as default. The axes are as follows:
+*'''x:''' this axis runs horizontally on the screen. Rotating on it (with positive values) causes an effect where the top of the text moves farther "into" the screen while the bottom moves "out" of the screen.
+*'''y:''' this axis runs vertically on the screen. Rotating on it (with positive values) causes the text to rotate so that the left moves "outside" the screen, when the right moves "into" the screen.
+*'''z:''' this axis runs perpendicular to the screen. Rotating on it (with positive values) causes the text to rotate in 2D, counterclockwise (as standard for degrees).
+
+In this system, 360 degrees is one full rotation. You can have negative or above 360 values, which get wrapped around. Decimal places are also acceptable.
+The "pivot" point of rotation is defaulted to its alignment. That means that a text with [[#\an<alignment> - Numpad Text Alignment|\an]]5 will have its pivot on the center, so rotation will be relative to it. A text with \an7, on the other hand, will rotate relative to its top-left corner, that is, the whole text will rotate around that point, while that stays still. This can be set with the [[#\org(<x>,<y>) - Origin|\org]] tag, see its description for more details.
+e.g.:
+ \frx45
+(rotates text on the X axis by 45 degrees)
+ \fry-45
+(rotates text on the Y axis by -45 degrees)
+ \frz180
+(rotates text on the Z axis by 180 degrees)
+ \fr90
+(same as \frz90, makes the text "vertical")
+ \frz-0.5
+(rotates text on Z axis by half a degree, negative)
+\t(\fry3600)
+(animates the text to do 10 full revolutions on Y axis. See [[#\t([<t1>,<t2>,][<accel>,]<style modifiers>) - Transform|\t]] for a detailed explanation)
+Here are three sample screenshots:
+[[Image:fr_sample01.jpg]]
+[[Image:fr_sample02.jpg]]
+[[Image:fr_sample03.jpg]]
+
+===\fe<charset> - Font encoding===
+For non-Unicode subtitles, this sets the character encoding to the specified page number. \fe128 may be required to get Japanese glyphs to display properly with some Japanese fonts that lack proper Unicode mappings.
+ \fe0
+(sets to ANSI extended, the standard for the USA)
+ \fe128
+(sets to SHIFT_JIS extended, the standard for Japan)
+
+===\c&H<bbggrr>& - Set primary color===
+Sets the primary color (i.e. the fill color) of the text. Color tags in ASS are in Visual Basic hexadecimal style, which is similar to HTML hexadecimal. It always starts with &H, and ends with &. Between those, are the color values in hexadecimal: two characters for blue, two for green and two for red, in that order (i.e. BBGGRR). Any zero color at the start may be ommited. Also note that saying just \c has the same result as saying \1c.
+e.g.:
+ \c&HFF0000&
+(Full intensity (FF = 255) blue and zero intensity green and red, making it blue)
+ \c&H00FF00&
+ \c&HFF00&
+(Full intensity green and zero intensity blue and red, making it green - note the omitted leading zeros in the second example)
+ \c&H0000FF&
+ \c&HFF&
+(Full intensity red and zero intensity blue and green, making it red - again, leading zeros can be omitted)
+ \c&HFFFFFF&
+(white)
+ \c&HFF00FF&
+(magenta)
+ \c&H2DD5F2&
+(gold)
+
+Aegisub now has a [[Color Picker]] that can help you generate these hexadecimal numbers
+
+===\1c&H<bbggrr>& - Set primary color===
+Sets primary color. See [[#\c&H<bbggrr>& - Set primary color}|\c]] for full description.
+
+===\2c&H<bbggrr>& - Set secondary color===
+Sets secondary color. This is the color that primary changes from during karaoke effects (i.e. karaoke starts at this color and then changes to primary). See \c for full description.
+
+===\3c&H<bbggrr>& - Set outline color===
+Sets outline (border) color. See \c for full description.
+
+===\4c&H<bbggrr>& - Set shadow color===
+Sets shadow color. You almost always want this to be black, but see \c for full description.
+
+===\alpha&H<aa>& - Set primary alpha===
+This sets the alpha value (i.e. the transparency) of the primary color. This value is a two-digit hexadecimal number, ranging from 00 (opaque) to FF (invisible).
+e.g.:
+ \alpha&H80&
+(makes primary 50% translucent)
+ \alpha&HEF&
+(makes primary almost invisible)
+This is the same as [[#\<1/2/3/4>a&H<aa>& - Set Primary/secondary/outline/shadow alpha|\1a]].
+
+===\<1/2/3/4>a&H<aa>& - Set Primary/secondary/outline/shadow alpha===
+Sets alpha value for the specified color. Works the same as the variations of \c. See [[#\alpha&H<aa>& - Set primary alpha|\alpha]] for a complete description.
+
+===\an<alignment> - Numpad Text Alignment===
+Sets text alignment relative to numpad layout. Note that this has the interesting property of changing the text "anchor point" as well; a line with \an5 and \pos(320,240) will have its exact center on the coordinate (320,240) while a line with \an7 will have its upper left corner on (320,240).
+e.g.:
+ \an7
+(aligns text on top-left. Note that the "7" key on numpad is at the top-left)
+ \an5
+(aligns text on center)
+ \an2
+(aligns text on bottom-center)
+
+===\a<alignment> - SSA Text Alignment===
+Sets text alignment based on the old SSA scheme. This is specified by a sum: 1 equals left, 2 equals middle, 3 equals right. Then add 4 to get top alignment, 8 to get vertical middle alignment, or leave as is for bottom alignment.
+e.g.:
+ \a5
+(aligns text on top-left, equivalent to \an7)
+ \a2
+(aligns text on bottom-middle, equivalent to \an2)
+ \a11
+(aligns text to middle-right, equivalent to \an6)
+You should normally use \an instead, as it is more intuitive.
+
+===\k<duration> - Karaoke effect===
+This makes the following text start at the secondary color immediately, and change to the primary color after the sum of duration (in centiseconds) of all previous karaoke effects has elapsed.
+e.g.:
+ {\k32}Ko{\k27}ko{\k27}ro
+(Shows "Ko" with the primary color immediately and other two syllables with the secondary, then "ko" changes to primary 32 centiseconds (320 milliseconds or 0.32 seconds) later, then "ro" changes to primary 27 centiseconds after)
+
+===\kf<duration> - Filled karaoke===
+Similar to [[#\k<duration> - Karaoke effect|\k]], but instead of immediately setting color from secondary to primary, it "fills" it from left to right.
+
+===\K<duration> - Filled karaoke===
+Same as \kf.
+
+===\ko<duration> - Filled outline karaoke===
+Similar to \kf, but the effect is only applied to the outline (border).
+
+===\q<0-3> - Wrap style===
+Sets the line wrapping style as follows:
+*'''0:''' Smart wrapping, top line is wider
+*'''1:''' End-of-line word wrapping, only \N breaks
+*'''2:''' No word wrapping, both \n and \N break
+*'''3:''' Smart wrapping, bottom line is wider
+e.g.:
+ \q1
+(Following text will only acknowledge \N as line breaks; \n will become a simple space)
+
+===\r[<name>] - Reset style===
+This resets the style to the specified one. If none is given, it resets to this line's original style.
+e.g.:
+ -Hey\N{\rAlternate}-Huh?\N{\r}-Who are you?
+(this has the middle line in the style "Alternate", while first and third are in the originally set style)
+
+===\pos(<x>,<y>) - Position===
+Positions the subtitle at the specified coordinates. Coordinates start at 0,0 for the top-left corner and go to ResX,ResY at the bottom-right corner, where ResX and ResY are defined in the script header (you can set this value in the properties window). Coordinates do not necessarily match video coordinates: if the script resolution is set to 640x480, then doing a \pos(320,240) on a center-aligned text will ''always'' put it on the center of video, even if it is, for example, 704x396.
+
+You may only have one \pos command in each line. If you have more, only the first one has any effect.
+
+Note that \pos is affected the pivot of subtitles. For example, if the current line has centered alignment (\an5), then the center of line will be placed at that position; if it's top-left (\an7), then the top-left corner of line will be placed at that position, etc.
+e.g.:
+ \pos(100,200)
+(Positions the line at video position x=100 and y=200)
+
+Here follow three examples of \pos(320,240) on a 640x480 resolution script. The only difference between them is the alignment, note how the pivot (represented by a green crosshair) is always at 320,240.
+[[Image:pos_sample01.jpg]]
+[[Image:pos_sample02.jpg]]
+[[Image:pos_sample03.jpg]]
+
+===\move(<x1>,<y1>,<x2>,<y2>[,<t1>,<t2>]) - Move===
+Moves the text from the original position, defined by x1,y1, to the destination, defined by x2,y2. This means that at the very start of animation, the subtitles will look the same as if you had done a [[#\pos(<x>,<y>) - Position|\pos]](x1,y1), and, at the very end, the same as \pos(x2,y2). If the parameters t1 and t2 are specified, then the subs will start at x1,y1, but won't start moving to x2,y2 until time reaches t1. At that point, they will start moving, and end at t2. t1 and t2 are specified in milliseconds, relative to the start time of current line. If t1 and t2 are omitted, animation is assumed to last for the whole length of line.
+
+You may only have one \move command in each line. If you have more, only the first one has any effect.
+e.g.:
+ \move(100,150,300,350)
+(Moves from 100,150 to 300,350, lasting whole line duration)
+ \move(100,150,300,350,500,1500)
+(Same as before, but it starts 500 ms (that is, half a second) after line appears, and ends one second later (that is, 1.5 seconds after subtitles started))
+
+===\org(<x>,<y>) - Origin===
+Sets the screen coordinates of the origin (or pivot point) for rotation and scaling tags. This can be useful for some relatively advanced effects. Suppose that you have a spinning roulette in the video, and you want some text to follow it. You can set the origin to the center position of roulette, and then animate a [[#\fr[<x/y/z>]<degrees> - Font rotation|\frz]] with \t, so the text spins around that position. Origin can also be set outside video, which means that you can set it very far away, and make minor adjustments to rotation to give text a "jumping" effect.
+
+You may only have one \org command in each line. If you have more, only the first one has any effect.
+e.g.:
+ \org(320,240)
+(Sets origin at 320,240)
+ \org(10000,0)
+(Sets origin at 10000,0, which might be useful for jumping effects)
+
+===\fade(<a1>,<a2>,<a3>,<t1>,<t2>,<t3>,<t4>) - Fade===
+Fades text. This is done in two steps. The text starts with alpha a1 (as if set by \alpha), and at time t1, it will start fading to a2. It ends fading to a2 at time t2. At time t3, it starts fading to value a3, and finally ends on time t4. Times are given in milliseconds relative to start of line, in the same way as \move. Note that the transparency values are given as decimal numbers (0-255), '''not''' hexadecimal (&00&-&FF&) as with \alpha! 0 is opaque, 255 is transparent. Note that this tag affects all four alphas.
+e.g.:
+ \fade(255,32,224,0,500,2000,2200)
+(Starts invisible, fades to almost totally opaque, then fades to almost totally invisible. First fade starts when the line starts and lasts 500 milliseconds. Second fade starts 1500 milliseconds later, and lasts 200 milliseconds)
+
+===\fad(<t1>,<t2>) - Fade (simplified)===
+A less powerful, but more practical version of [#\fade(<a1>,<a2>,<a3>,<t1>,<t2>,<t3>,<t4>) - Fade|\fade]. It makes line start invisible, then immediately start fading to full visibility for t1 milliseconds. It will start fading to invisible t2 milliseconds before the END of line, and become invisible just as the line vanishes. It's important to notice that this is the only ASS override tag that has a time reference relative to end of line. It is also equivalent to \fade(255,0,255,0,t1,LEN-t2,LEN), where LEN is the length of current line in milliseconds. 
+e.g.:
+ \fad(500,500)
+(Fades text in for 500 milliseconds, then fades out for 500 milliseconds at the end)
+ \fad(500,0)
+(Fades text in for 500 milliseconds [does not fade out])
+
+===\t([<t1>,<t2>,][<accel>,]<style modifiers>) - Transform===
+This is perhaps the most powerful override tag available. It does nothing by itself; instead, it animates (transforms) other tags. The animation will start at t1 milliseconds and end at t2 milliseconds, in much the same way as [[#\move(<x1>,<y1>,<x2>,<y2>[,<t1>,<t2>]) - Move|\move]]. If those parameters are omitted, then start and end of the line are assumed, as usual.
+
+The optional acceleration parameter allows the transformation to be nonlinear. Think of it as the exponent on a x^n. Acceleration = 1 is linear. Acceleration between 0 and 1 starts fast and ends slow. Acceleration larger than 1 starts slower and ends fast.
+
+The following tags are supported by \t:
+*\c
+*\1-4c
+*\alpha
+*\1-4a
+*\fs
+*\fr
+*\frx
+*\fry
+*\frz
+*\fscx
+*\fscy
+*\fsp
+*\bord
+*\shad
+*\clip (rectangle version only).
+e.g.:
+ {\c&H0000FF&\t(\c&HFF0000)}Hello!
+(Starts text at a red colour and fades it to blue)
+ {\an5\t(0,5000,\frz3600)}Woo!
+(Makes the text rotate 10 times, counterclockwise, lasting for 5 seconds)
+ {\an5\t(0,5000,0.5,\frz3600)}Woo!
+(Same as before, but it will start fast and slow down, still doing the 10 rotations in 5 seconds)
+
+===\clip(<x1>,<y1>,<x2>,<y2>) - Set clipping rectangle===
+This sets the clipping rectangle of the text, so that it will ''only'' be drawn ''inside'' this rectangle. For example, if you had a resolution of 640x480 and set \clip(0,0,320,240), then text would only be drawn on top-left quadrant - anything outside it would be "clipped" and would be invisible. This tag is useful for when some object moves in front of text: you can use [[#\t([<t1>,<t2>,][<accel>,]<style modifiers>) - Transform|\t]] to animate the "window" where the text is visible.
+e.g.:
+ \clip(0,0,320,240)
+(Areas of text will only be drawn if they are on top-left quadrant)
+ \clip(100,300,540,480)
+(Areas of text will only be drawn if they are on center-bottom)
+
+Sample screenshot (with \clip(0,0,704,245) on a 704x480 video):
+[[Image:clip_sample01.jpg]]
+
+===\clip([<scale>,]<drawings>) - Set clipping vector===
+Same as before, but it uses drawing vectors instead of a rectangle. See the drawing section below for more information. Note that, unlike the previous tag, this may ''not'' be animated with [[#\t([<t1>,<t2>,][<accel>,]<style modifiers>) - Transform|\t]]. The optional scale argument is equivalent to the value passed to [[#\p<0/1/..> - Toggle drawing mode|\p]] on the drawing tag. On an unrelated note, this tag makes me wonder if Gabest was actively trying to prevent other people from writing ASS parsers by creating an overloaded tag.
+e.g.:
+ \clip(1,m 50 0 b 100 0 100 100 50 100 b 0 100 0 0 50 0)
+(Limits clip to pseudo-circle defined)
+
+'''Note:''' VSFilter 2.37 is known to have issues with vector clipping. If you intend to use it, use 2.35 instead (2.36 has another bug, related to border drawing).
+
+
+==Drawing tags==
+Advanced Substation Alpha also supports some advanced drawing tags that allow you to draw with vectorial graphics. Certain familiarity with vectors and splines will make the understanding of this much simpler.
+
+===\p<0/1/..> - Toggle drawing mode===
+Setting this tag to 1 or above enables drawing mode. Text after this override block will then be interpreted as drawing instructions, and not as actually visible text. Setting this to zero disables drawing mode, restoring normal behavior. When turning on, the value might be any integer larger than zero, and will be interpreted as the scale, in 2^(value-1) mode. This is done to allow sub-pixel accuracy.
+e.g.:
+ \p1
+(Enables drawing with normal coordinates)
+ \p0
+(Disables drawing)
+ \p2
+(Enables drawing, and resolution is doubled. So drawing to 200,200 will actually draw to 100,100)
+ \p4
+(Enables drawing, and resolution is 8x larger (2^(4-1)). So drawing to 400,400 will actually draw to 50,50)
+
+===\pbo<y> - Baseline offset===
+Defines baseline offset for drawing. This is basically an Y offset to all coordinates.
+e.g.:
+ \pbo-50
+(Draws everything 50 pixels above specified)
+ \pbo100
+(Draws everything 100 pixels below specified)
+
+==Drawing commands==
+These commands should appear either in a \clip tag (vectorial overload) or between \p# and \p0, outside override blocks.
+For example (taken straight from the ASS specs):
+*Square:
+ {\p1}m 0 0 l 100 0 100 100 0 100{\p0}
+*Rounded square:
+ {\p1}m 0 0 s 100 0 100 100 0 100 c{\p0}
+:(c equals to "p 0 0 100 0 100 100" in this case)
+*Circle (almost):
+ {\p1}m 50 0 b 100 0 100 100 50 100 b 0 100 0 0 50 0{\p0}
+:(note that the 2nd 'b' is optional here)
+
+Drawing commands use the primary color for fill and outline color for borders. They also display shadow. The idea of drawing vectors is that there is an invisible "cursor" (think of it as the mouse pointer in a drawing program, or as a pen moving through the image) on the video frame, and you tell it to move to other positions. As it moves, it draws on the area behind it, and when you close the line formed, it fills it with the primary color.
+
+===m <x> <y> - Move===
+Moves the cursor to x,y. If you have an unclosed shape, it will automatically be closed, as the program assumes that you are now drawing a new, independent shape. All drawing routines must start with this command.
+
+===n <x> <y> - Move (no closing)===
+Moves the cursor to x,y, without closing the current shape.
+
+===l <x> <y> - Line===
+Draws a line from the current cursor position to x,y, and moves the cursor there afterwards.
+
+===b <x1> <y1> <x2> <y2> <x3> <y3> - Cubic Bézier curve===
+Draws a cubic (3rd degree) Bézier curve to point 3, using 1 and 2 as the control points. Check the article on Wikipedia for more information about Bézier curves. In this picture taken from that article, P0 is the cursor position, P1 is x1,y1, P2 is x2,y2 and P3 is x3,y3:
+[[Image:Bezier.png]]
+Note that the curve begins at P0, heads towards P1, then arrives at P3 coming from P2's direction.
+
+===s <x1> <y1> <x2> <y2> <x3> <y3> .. <xN> <yN> - Cubic b-spline===
+Draws a cubic (3rd degree) uniform b-spline to point N. This must contain at least 3 coordinates (and is, in that case, the same as b). This basically lets you chain several cubic Bézier curves together. Check this other article on Wikipedia for more information.
+
+===p <x> <y> - Extend b-spline===
+Extends the b-spline to x,y. This is essentially the same as adding another pair of coordinates at the end of s.
+
+===c - Close b-spline===
+Closes the b-spline.
