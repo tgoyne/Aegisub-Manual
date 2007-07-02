@@ -1,5 +1,8 @@
 The following is a list of every tag supported by the Advanced Substation Alpha format. This is basically a detailed version of ass-quickref.txt. See the [[Tutorial]] for an introduction to typesetting, using some basic tags.
 
+__TOC__
+<br style="clear:both"/>
+
 ==Special characters==
 The following tags are written in the middle of the text, and not inside override blocks (i.e. not between { and }).
 
