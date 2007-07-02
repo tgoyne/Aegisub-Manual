@@ -4,9 +4,16 @@ For the Aegisub wiki, please click [[aegi:Main_Page|here]].
 
 == Starting points ==
 
-* [[Overview|Quick overview of Aegisub]]
-* Common tasks:
-** [[Audio Timing Tutorial|Timing a translation script to audio]]
-** [[Typesetting Tutorial|Basic typesetting of on-screen signs]]
-** [[Translation Assistant|Translating a subtitle file from one language to another]]
-** [[Attaching Subtitles Tutorial|Putting your finished subtitles onto the video]] (for viewing or distribution)
+[[Overview|Quick overview of Aegisub]]
+
+'''Common tasks:'''
+
+* [[Audio Timing Tutorial|Timing a translation script to audio]]
+* [[Typesetting Tutorial|Basic typesetting of on-screen signs]]
+* [[Attaching Subtitles Tutorial|Putting your finished subtitles onto the video]] (for viewing or distribution)
+
+* [[Translation Assistant|Translating a subtitle file from one language to another]]
+* [[Fix Timing Tutorial|Correcting a subtitle that's not properly synchronised to the video]]
+
+* [[Karaoke Timing Tutorial|Timing karaoke to a song]]
+* [[Karaoke Templater|Creating fancy karaoke effects]]
