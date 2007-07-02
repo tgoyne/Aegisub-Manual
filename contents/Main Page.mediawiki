@@ -1,3 +1,12 @@
 Welcome to the Aegisub manual. See our [[About|about]] page for more information on the program, or browse the topics on the left bar.
 
 For the Aegisub wiki, please click [[aegi:Main_Page|here]].
+
+== Starting points ==
+
+* [[Overview|Quick overview of Aegisub]]
+* Common tasks:
+** [[Audio Timing Tutorial|Timing a translation script to audio]]
+** [[Typesetting Tutorial|Basic typesetting of on-screen signs]]
+** [[Translation Assistant|Translating a subtitle file from one language to another]]
+** [[Attaching Subtitles Tutorial|Putting your finished subtitles onto the video]] (for viewing or distribution)
