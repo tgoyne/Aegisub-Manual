@@ -42,10 +42,10 @@ Back to the timing postprocessor's use of this. The keyframe snapping function w
 
 There are four thresholds to consider:
 
-* Starts before - if the line starts less than this many frames (inclusive) before a keyframe, its start time will get moved forward so that the line starts on the keyframe. 
-* Starts after - if the line starts less than this many frames (inclusive) after a keyframe, its start time will get moved backward so that the line starts on the keyframe. 
-* Ends before - if the line ends less than this many frames (inclusive) before a keyframe, its end time will get moved forward so that the line ends on the frame before the keyframe. 
-* Ends after - if the line ends less than this many frames (inclusive) after a keyframe, its end time will get moved backward so that the line ends on the frame before the keyframe. 
+* ''Starts before'' - if the line starts less than this many frames (inclusive) before a keyframe, its start time will get moved forward so that the line starts on the keyframe. 
+* ''Starts after'' - if the line starts less than this many frames (inclusive) after a keyframe, its start time will get moved backward so that the line starts on the keyframe. 
+* ''Ends before'' - if the line ends less than this many frames (inclusive) before a keyframe, its end time will get moved forward so that the line ends on the frame before the keyframe. 
+* ''Ends after'' - if the line ends less than this many frames (inclusive) after a keyframe, its end time will get moved backward so that the line ends on the frame before the keyframe. 
 
 When using this feature, remember your lead-in/out times, and the framerate of the video! At 23.976 frames per second, each frame lasts for about 42 ms. This means that if you have a lead-in of 120 ms, you can safely set the "starts before" threshold to at least 3 (3 * 42 = 126) without fear of lines starting showing up after someone has started speaking. Using the same reasoning, a lead-out of 250 ms allows you to safely have at least 6 as your "Ends after" threshold, without fear of lines ending before people stop talking. Figuring out good values for the other thresholds and/or framerates is left as an exercise for the reader.
 
