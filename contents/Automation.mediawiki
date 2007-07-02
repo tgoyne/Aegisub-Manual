@@ -2,7 +2,7 @@ The name '''Automation''' covers the entire scripting functionality of Aegisub.
 
 == About Automation ==
 
-The single purpose of Automation is -- as the name implies -- to automate various aspects of subtitle creation and editing. To date this has mainly been for creating [[Glossary:Karaoke effect|karaoke effects]] but Aegisub 2 introduces [[History of Automation|Automation 4]] which also allows creating more general purpose [[Glossary:Macro|macros]] and also changing the style definitions and other metadata for the subtitles.
+The single purpose of Automation is -- as the name implies -- to automate various aspects of subtitle creation and editing. To date this has mainly been for creating [[Glossary:Karaoke effect|karaoke effects]] but Aegisub 2 introduces [[Sidebar:History of Automation|Automation 4]] which also allows creating more general purpose [[Glossary:Macro|macros]] and also changing the style definitions and other meta data for the subtitles.
 
 Some of the goals of Automation:
 * Macros to automate complex subtitle editing tasks
