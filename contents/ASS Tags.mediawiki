@@ -119,7 +119,7 @@ For non-Unicode subtitles, this sets the character encoding to the specified pag
 (sets to SHIFT_JIS extended, the standard for Japan)
 
 ===\c&H<bbggrr>& - Set primary color===
-Sets the primary color (i.e. the fill color) of the text. Color tags in ASS are in Visual Basic hexadecimal style, which is similar to HTML hexadecimal. It always starts with &H, and ends with &. Between those, are the color values in hexadecimal: two characters for blue, two for green and two for red, in that order (i.e. BBGGRR). Any zero color at the start may be ommited. Also note that saying just \c has the same result as saying \1c.
+Sets the primary color (i.e. the fill color) of the text. Color tags in ASS are in Visual Basic hexadecimal style, which is similar to HTML hexadecimal. It always starts with &H, and ends with &. Between those, are the color values in hexadecimal: two characters for blue, two for green and two for red, in that order (i.e. BBGGRR). Any zero color at the start may be ommited. Also note that saying just \c has the same result as saying [[#\1c&H<bbggrr>& - Set primary color|\1c]].
 e.g.:
  \c&HFF0000&
 (Full intensity (FF = 255) blue and zero intensity green and red, making it blue)
