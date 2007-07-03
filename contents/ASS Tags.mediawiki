@@ -1,5 +1,5 @@
 __NOTOC__
-The following is a list of every tag supported by the Advanced Substation Alpha format. This is basically a detailed version of ass-quickref.txt. See the [[Tutorial]] for an introduction to typesetting, using some basic tags.
+The following is a list of every tag supported by the Advanced Substation Alpha format. This is basically a detailed version of ass-quickref.txt. See the [[TYpesetting Tutorial|tutorial]] for an introduction to typesetting, using some basic tags.
 
 ==Special characters==
 The following tags are written in the middle of the text, and not inside override blocks (i.e. not between { and }).
