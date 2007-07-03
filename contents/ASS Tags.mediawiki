@@ -163,7 +163,7 @@ This is the same as [[#\<1/2/3/4>a&H<aa>& - Set Primary/secondary/outline/shadow
 Sets alpha value for the specified color. Works the same as the variations of \c. See [[#\alpha&H<aa>& - Set primary alpha|\alpha]] for a complete description.
 
 ===\an<alignment> - Numpad Text Alignment===
-Sets text alignment relative to numpad layout. Note that this has the interesting property of changing the text "anchor point" as well; a line with \an5 and \pos(320,240) will have its exact center on the coordinate (320,240) while a line with \an7 will have its upper left corner on (320,240).
+Sets text alignment relative to numpad layout. Note that this has the interesting property of changing the text "anchor point" as well; a line with \an5 and \pos(320,240) will have its exact center on the coordinate (320,240) while a line with \an7 will have its upper left corner on (320,240). See [[#\pos(<x>,<y>) - Position|\pos]] for a full explanation of this.
 e.g.:
  \an7
 (aligns text on top-left. Note that the "7" key on numpad is at the top-left)
