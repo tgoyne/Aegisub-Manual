@@ -1,4 +1,5 @@
-Integrate these files with nice wiki formatting:
+{{todo|Integrate these files with nice wiki formatting.
+
 *[https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/overview.txt Overview]
 *[https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/basic-function-interface.txt Basic function interface]
 *[https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/subtitle-data.txt Subtitle data access]
@@ -8,8 +9,11 @@ Integrate these files with nice wiki formatting:
 
 Should probably be left out for now, but depends on how subformat handlers will be done:
 *[https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/file-streams.txt Accessing files]
+}}
 
 ----
 
-Also:
-*[[Automation 4 karaskel]]
+See also:
+*[[Automation 4 utils.lua]]
+*[[Automation 4 karaskel.lua]]
+*[[Automation 4 unicode.lua]]
