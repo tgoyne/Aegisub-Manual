@@ -241,7 +241,7 @@ e.g.:
 (Same as before, but it starts 500 ms (that is, half a second) after line appears, and ends one second later (that is, 1.5 seconds after subtitles started))
 
 ===\org(<x>,<y>) - Origin===
-Sets the screen coordinates of the origin (or pivot point) for rotation and scaling tags. This can be useful for some relatively advanced effects. Suppose that you have a spinning roulette in the video, and you want some text to follow it. You can set the origin to the center position of roulette, and then animate a [[#\fr[<x/y/z>]<degrees> - Font rotation|\frz]] with \t, so the text spins around that position. Origin can also be set outside video, which means that you can set it very far away, and make minor adjustments to rotation to give text a "jumping" effect.
+Sets the screen coordinates of the origin (or pivot point) for rotation and scaling tags. This can be useful for some relatively advanced effects. Suppose that you have a spinning roulette in the video, and you want some text to follow it. You can set the origin to the center position of roulette, and then animate a [[#\fr%5b<x/y/z>%5d<degrees> - Font rotation|\frz]] with \t, so the text spins around that position. Origin can also be set outside video, which means that you can set it very far away, and make minor adjustments to rotation to give text a "jumping" effect.
 
 You may only have one \org command in each line. If you have more, only the first one has any effect.
 e.g.:
