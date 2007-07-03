@@ -294,7 +294,7 @@ e.g.:
 (Same as before, but it will start fast and slow down, still doing the 10 rotations in 5 seconds)
 
 ===\clip(<x1>,<y1>,<x2>,<y2>) - Set clipping rectangle===
-This sets the clipping rectangle of the text, so that it will ''only'' be drawn ''inside'' this rectangle. For example, if you had a resolution of 640x480 and set \clip(0,0,320,240), then text would only be drawn on top-left quadrant - anything outside it would be "clipped" and would be invisible. This tag is useful for when some object moves in front of text: you can use [[#\t([<t1>,<t2>,][<accel>,]<style modifiers>) - Transform|\t]] to animate the "window" where the text is visible.
+This sets the clipping rectangle of the text, so that it will ''only'' be drawn ''inside'' this rectangle. For example, if you had a resolution of 640x480 and set \clip(0,0,320,240), then text would only be drawn on top-left quadrant - anything outside it would be "clipped" and would be invisible. This tag is useful for when some object moves in front of text: you can use [[#\t(%5b<t1>,<t2>,%5d%5b<accel>,%5d<style modifiers>) - Transform|\t]] to animate the "window" where the text is visible.
 e.g.:
  \clip(0,0,320,240)
 (Areas of text will only be drawn if they are on top-left quadrant)
