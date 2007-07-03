@@ -196,7 +196,7 @@ Similar to [[#\k<duration> - Karaoke effect|\k]], but instead of immediately set
 Same as \kf.
 
 ===\ko<duration> - Filled outline karaoke===
-Similar to \kf, but the effect is only applied to the outline (border).
+Similar to [[#\kf<duration> - Filled karaoke|\kf]], but the effect is only applied to the outline (border).
 
 ===\q<0-3> - Wrap style===
 Sets the line wrapping style as follows:
