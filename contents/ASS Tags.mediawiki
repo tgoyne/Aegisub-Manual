@@ -265,7 +265,7 @@ e.g.:
 (Fades text in for 500 milliseconds [does not fade out])
 
 ===\t([<t1>,<t2>,][<accel>,]<style modifiers>) - Transform===
-This is perhaps the most powerful override tag available. It does nothing by itself; instead, it animates (transforms) other tags. The animation will start at t1 milliseconds and end at t2 milliseconds, in much the same way as [[#\move(<x1>,<y1>,<x2>,<y2>[,<t1>,<t2>]) - Move|\move]]. If those parameters are omitted, then start and end of the line are assumed, as usual.
+This is perhaps the most powerful override tag available. It does nothing by itself; instead, it animates (transforms) other tags. The animation will start at t1 milliseconds and end at t2 milliseconds, in much the same way as [[#\move(<x1>,<y1>,<x2>,<y2>%5b,<t1>,<t2>%5d) - Move|\move]]. If those parameters are omitted, then start and end of the line are assumed, as usual.
 
 The optional acceleration parameter allows the transformation to be nonlinear. Think of it as the exponent on a x^n. Acceleration = 1 is linear. Acceleration between 0 and 1 starts fast and ends slow. Acceleration larger than 1 starts slower and ends fast.
 
