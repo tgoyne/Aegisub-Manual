@@ -16,4 +16,4 @@ Aegisub also has [[aegi:Main_Page|another wiki]], used for keeping track of more
 * [[Fix Timing Tutorial|Correcting a subtitle that's not properly synchronised to the video]]
 
 * [[Karaoke Timing Tutorial|Timing karaoke to a song]]
-* [[Karaoke Templater|Creating fancy karaoke effects]]
+* [[Karaoke Templater/Tutorial 1|Creating fancy karaoke effects]]
