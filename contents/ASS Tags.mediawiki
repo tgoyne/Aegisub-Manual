@@ -222,8 +222,9 @@ e.g.:
 (Positions the line at video position x=100 and y=200)
 
 Here follow three examples of \pos(320,240) on a 640x480 resolution script. The only difference between them is the alignment, note how the pivot (represented by a green crosshair) is always at 320,240.
-[[Image:pos_sample01.jpg]]
-[[Image:pos_sample02.jpg]]
+
+[[Image:pos_sample01.jpg]]<br>
+[[Image:pos_sample02.jpg]]<br>
 [[Image:pos_sample03.jpg]]
 
 ===\move(<x1>,<y1>,<x2>,<y2>[,<t1>,<t2>]) - Move===
