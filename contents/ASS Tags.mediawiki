@@ -68,7 +68,7 @@ e.g.:
 (uses size 10 for font)
 
 ===\fscx<percent> - Font scale in X axis===
-Sets the font scale for the X (horizontal) axis. Parameter should be in percent form. This is different from simply adjusting size using [[#\fs<size> - Font size|\fs]] because \fs will use font hinting to determine best looking adjustments, especially for small sizes. Also, \fs will only accept integer parameters. If you need to, for example, transform scale (with the [[#\t(%5b%<t1>,<t2>,%5d%%5b%<accel>,%5d%<style modifiers>) - Transform|\t]] tag), use this instead of \fs, as \fs will behave strangely and not smoothly.
+Sets the font scale for the X (horizontal) axis. Parameter should be in percent form. This is different from simply adjusting size using [[#\fs<size> - Font size|\fs]] because \fs will use font hinting to determine best looking adjustments, especially for small sizes. Also, \fs will only accept integer parameters. If you need to, for example, transform scale (with the [[#\t(%5b<t1>,<t2>,%5d%5b<accel>,%5d<style modifiers>) - Transform|\t]] tag), use this instead of \fs, as \fs will behave strangely and not smoothly.
 e.g.:
  \fscx150
 (makes the text 50% wider)
@@ -101,7 +101,7 @@ e.g.:
  \frz-0.5
 (rotates text on Z axis by half a degree, negative)
 \t(\fry3600)
-(animates the text to do 10 full revolutions on Y axis. See [[#\t(%5b%<t1>,<t2>,%5d%%5b%<accel>,%5d%<style modifiers>) - Transform|\t]] for a detailed explanation)
+(animates the text to do 10 full revolutions on Y axis. See [[#\t(%5b<t1>,<t2>,%5d%5b<accel>,%5d<style modifiers>) - Transform|\t]] for a detailed explanation)
 Here are three sample screenshots:
 [[Image:fr_sample01.jpg]]
 [[Image:fr_sample02.jpg]]
