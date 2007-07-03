@@ -193,7 +193,7 @@ e.g.:
 Similar to [[#\k<duration> - Karaoke effect|\k]], but instead of immediately setting color from secondary to primary, it "fills" it from left to right.
 
 ===\K<duration> - Filled karaoke===
-Same as \kf.
+Same as [[#\kf<duration> - Filled karaoke|\kf]].
 
 ===\ko<duration> - Filled outline karaoke===
 Similar to [[#\kf<duration> - Filled karaoke|\kf]], but the effect is only applied to the outline (border).
