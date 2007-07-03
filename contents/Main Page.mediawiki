@@ -1,6 +1,6 @@
 Welcome to the Aegisub manual. See our [[About|about]] page for more information on the program, or browse the topics on the left bar.
 
-For the Aegisub wiki, please click [[aegi:Main_Page|here]].
+Aegisub also has [[aegi:Main_Page|another wiki]], used for keeping track of more development-related issues. It might eventually be merged into this one?
 
 == Starting points ==
 
