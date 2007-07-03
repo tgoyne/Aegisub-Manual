@@ -1,0 +1,15 @@
+Integrate these files with nice wiki formatting:
+*[https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/overview.txt Overview]
+*[https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/basic-function-interface.txt Basic function interface]
+*[https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/subtitle-data.txt Subtitle data access]
+*[https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/progress-reporting.txt Reporting back progress, status and debug messages]
+*[https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/configuration-dialogs.txt Producing dialog boxes]
+*[https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/misc.txt Text extents function]
+
+Should probably be left out for now, but depends on how subformat handlers will be done:
+*[https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/file-streams.txt Accessing files]
+
+----
+
+Also:
+*[[Automation 4 karaskel]]
