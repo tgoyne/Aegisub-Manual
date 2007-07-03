@@ -298,6 +298,7 @@ e.g.:
 (Areas of text will only be drawn if they are on center-bottom)
 
 Sample screenshot (with \clip(0,0,704,245) on a 704x480 video):
+
 [[Image:clip_sample01.jpg]]
 
 ===\clip([<scale>,]<drawings>) - Set clipping vector===
