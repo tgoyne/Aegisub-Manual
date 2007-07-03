@@ -100,7 +100,7 @@ e.g.:
 (same as \frz90, makes the text "vertical")
  \frz-0.5
 (rotates text on Z axis by half a degree, negative)
-\t(\fry3600)
+ \t(\fry3600)
 (animates the text to do 10 full revolutions on Y axis. See [[#\t(%5b<t1>,<t2>,%5d%5b<accel>,%5d<style modifiers>) - Transform|\t]] for a detailed explanation)
 Here are three sample screenshots:
 [[Image:fr_sample01.jpg]]
