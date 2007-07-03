@@ -3,9 +3,9 @@ Aegisub includes several macros. Here's a line-up of them.
 == Add edge-blur ==
 Adds the {\be1} tag to the start of all selected lines.
 
-Possibly more useful as a basic example of writing macros...
+{{Todo|Possibly more useful as a basic example of writing macros... maybe it shouldn't be listed here at all.}}
 
 == Make full-width ==
 Converts all ASCII characters to Japanese "full-width" variations of them.
 
-Todo: More about when this is useful...
+{{Todo|More about when this is useful.}}
