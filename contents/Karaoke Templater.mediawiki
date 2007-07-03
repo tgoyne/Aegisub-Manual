@@ -2,7 +2,8 @@
 
 == Tutorials: Introducing Karaoke Templater ==
 * [[Karaoke Templater/Tutorial 1|A very simple example]]
-* ''More to come''
+
+{{Todo|Plan more tutorials. Also actually write those above.}}
 
 == For users of ''multi-template'' ==
 If you have used the ''multi-template'' script from Aegisub 1.10 you should recognise several similar concepts in the karaoke templater, but there are also several pitfalls. Some of them are:
