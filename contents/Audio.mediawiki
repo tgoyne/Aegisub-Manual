@@ -1,0 +1,7 @@
+Aegisub has an advanced audio mode. Behold!
+
+[[Image:Audio-box-waveform.png]]
+
+[[Image:Audio-box-spectrum.png]]
+
+{{Todo|More than just pretty pictures.}}
