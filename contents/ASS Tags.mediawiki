@@ -257,7 +257,7 @@ e.g.:
 (Starts invisible, fades to almost totally opaque, then fades to almost totally invisible. First fade starts when the line starts and lasts 500 milliseconds. Second fade starts 1500 milliseconds later, and lasts 200 milliseconds)
 
 ===\fad(<t1>,<t2>) - Fade (simplified)===
-A less powerful, but more practical version of [#\fade(<a1>,<a2>,<a3>,<t1>,<t2>,<t3>,<t4>) - Fade|\fade]. It makes line start invisible, then immediately start fading to full visibility for t1 milliseconds. It will start fading to invisible t2 milliseconds before the END of line, and become invisible just as the line vanishes. It's important to notice that this is the only ASS override tag that has a time reference relative to end of line. It is also equivalent to \fade(255,0,255,0,t1,LEN-t2,LEN), where LEN is the length of current line in milliseconds. 
+A less powerful, but more practical version of [[#\fade(<a1>,<a2>,<a3>,<t1>,<t2>,<t3>,<t4>) - Fade|\fade]]. It makes line start invisible, then immediately start fading to full visibility for t1 milliseconds. It will start fading to invisible t2 milliseconds before the END of line, and become invisible just as the line vanishes. It's important to notice that this is the only ASS override tag that has a time reference relative to end of line. It is also equivalent to \fade(255,0,255,0,t1,LEN-t2,LEN), where LEN is the length of current line in milliseconds. 
 e.g.:
  \fad(500,500)
 (Fades text in for 500 milliseconds, then fades out for 500 milliseconds at the end)
