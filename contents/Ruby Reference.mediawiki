@@ -1,0 +1,1 @@
+No documentation has ever been written for Automation 4/Ruby... only a few sample scripts and then the sauce.
