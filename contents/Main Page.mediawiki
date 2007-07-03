@@ -8,7 +8,7 @@ For the Aegisub wiki, please click [[aegi:Main_Page|here]].
 
 '''Common tasks:'''
 
-* [[Audio Timing Tutorial|Timing a translation script to audio]]
+* [[Audio Timing Tutorial|Timing a translated script to audio]]
 * [[Typesetting Tutorial|Basic typesetting of on-screen signs]]
 * [[Attaching Subtitles Tutorial|Putting your finished subtitles onto the video]] (for viewing or distribution)
 
