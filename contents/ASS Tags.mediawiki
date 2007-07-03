@@ -306,13 +306,12 @@ Sample screenshot (with \clip(0,0,704,245) on a 704x480 video):
 [[Image:clip_sample01.jpg]]
 
 ===\clip([<scale>,]<drawings>) - Set clipping vector===
-Same as before, but it uses drawing vectors instead of a rectangle. See the drawing section below for more information. Note that, unlike the previous tag, this may ''not'' be animated with [[#\t([<t1>,<t2>,][<accel>,]<style modifiers>) - Transform|\t]]. The optional scale argument is equivalent to the value passed to [[#\p<0/1/..> - Toggle drawing mode|\p]] on the drawing tag. On an unrelated note, this tag makes me wonder if Gabest was actively trying to prevent other people from writing ASS parsers by creating an overloaded tag.
+Same as before, but it uses drawing vectors instead of a rectangle. See the drawing section below for more information. Note that, unlike the previous tag, this may ''not'' be animated with [[#\t(%5b<t1>,<t2>,%5d%5b<accel>,%5d<style modifiers>) - Transform|\t]]. The optional scale argument is equivalent to the value passed to [[#\p<0/1/..> - Toggle drawing mode|\p]] on the drawing tag. On an unrelated note, this tag makes me wonder if Gabest was actively trying to prevent other people from writing ASS parsers by creating an overloaded tag.
 e.g.:
  \clip(1,m 50 0 b 100 0 100 100 50 100 b 0 100 0 0 50 0)
 (Limits clip to pseudo-circle defined)
 
 '''Note:''' VSFilter 2.37 is known to have issues with vector clipping. If you intend to use it, use 2.35 instead (2.36 has another bug, related to border drawing).
-
 
 ==Drawing tags==
 Advanced Substation Alpha also supports some advanced drawing tags that allow you to draw with vectorial graphics. Certain familiarity with vectors and splines will make the understanding of this much simpler.
