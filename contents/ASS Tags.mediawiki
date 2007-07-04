@@ -156,9 +156,9 @@ This sets the alpha value (i.e. the transparency) of the line. This value is a t
 Note that this tag is '''not''' the same as [[#\<1/2/3/4>a&H<aa>& - Set Primary/secondary/outline/shadow alpha|\1a]] (like it would be logical to believe given the relation between \color and \1c) but rather close to \1a&H<aa>&\2a&H<aa>&\3a&H<aa>&\4a&H<aa>&.
 e.g.:
  \alpha&H80&
-(makes primary 50% translucent)
+(makes text 50% translucent)
  \alpha&HEF&
-(makes primary almost invisible)
+(makes text almost invisible)
 
 
 {|border="1px" cellpadding="3pt" cellspacing="0em" style="border:gray solid 1px; border-collapse:collapse;"
