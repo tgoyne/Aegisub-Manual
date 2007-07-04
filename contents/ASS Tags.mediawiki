@@ -153,7 +153,7 @@ Sets shadow color. You almost always want this to be black, but see \c for full 
 ===\alpha&H<aa>& - Set alpha===
 This sets the alpha value (i.e. the transparency) of the line. This value is a two-digit hexadecimal number, ranging from 00 (opaque) to FF (invisible).
 
-Note that this tag is '''not''' the same as [[#\<1/2/3/4>a&H<aa>& - Set Primary/secondary/outline/shadow alpha|\1a]] (like it would be logical to believe given the relation between \color and \1c) but rather close to \1a&H<aa>&\2a&H<aa>&\3a&H<aa>&\4a&H<aa>&.
+Note that this tag is '''not''' the same as [[#\<1/2/3/4>a&H<aa>& - Set Primary/secondary/outline/shadow alpha|\1a]] (like it would be logical to believe given the relation between \color and \1c), at least not in practice. It's ''supposed'' to be the same as \1a, but in VSFilter it's actually equivalent to \1a&H<aa>&\2a&H<aa>&\3a&H<aa>&\4a&H<aa>&.
 e.g.:
  \alpha&H80&
 (makes text 50% translucent)
