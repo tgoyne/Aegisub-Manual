@@ -152,12 +152,14 @@ Sets shadow color. You almost always want this to be black, but see \c for full 
 
 ===\alpha&H<aa>& - Set alpha===
 This sets the alpha value (i.e. the transparency) of the line. This value is a two-digit hexadecimal number, ranging from 00 (opaque) to FF (invisible).
+
+Note that this tag is '''not''' the same as [[#\<1/2/3/4>a&H<aa>& - Set Primary/secondary/outline/shadow alpha|\1a]] (like it would be logical to believe given the relation between \color and \1c) but rather close to \1a&H<aa>&\2a&H<aa>&\3a&H<aa>&\4a&H<aa>&.
 e.g.:
  \alpha&H80&
 (makes primary 50% translucent)
  \alpha&HEF&
 (makes primary almost invisible)
-This is '''not''' the same as [[#\<1/2/3/4>a&H<aa>& - Set Primary/secondary/outline/shadow alpha|\1a]] but rather close to \1a&H<aa>&\2a&H<aa>&\3a&H<aa>&\4a&H<aa>&.
+
 
 {|border="1px" cellpadding="3pt" cellspacing="0em" style="border:gray solid 1px; border-collapse:collapse;"
 |-
