@@ -1,0 +1,6 @@
+In [[Karaoke Templater/Tutorial 1|the previous tutorial]] we saw how to use the basic features of Karaoke Templater to make simple karaoke effects. We'll continue where we left off here, by expanding on the basics from last tutorial.
+
+== Preparations ==
+As before, you'll still need some timed karaoke and a video to preview the effects. I won't go into further details with that here.
+
+{{Todo|Figure out what goes next. At a second glance there's not really any more $variables that make sense to use here.}}
