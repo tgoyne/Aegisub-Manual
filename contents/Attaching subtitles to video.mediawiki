@@ -35,7 +35,6 @@ Without a huge impact on size, multiple languages can be supported in one video 
 
 If you find a subtitling mistake in a file, you can fix it without having to re-encode the video - saving a lot of time.
 
-
 ===Disadvantages of Softsubbing===
 Softsubs add processing complexity to the video. The playback device has to render and overlay the text before displaying the video, as a result, this means that low-powered devices will not be able to play the video.
 
