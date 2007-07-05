@@ -36,4 +36,4 @@ Aegisub supports:
 *Extensive manual with detailed instructions and tutorials for typesetting and program usage
 *Available in 8 different languages
 
-{todo|Update this}
+{{todo|Update this}}
