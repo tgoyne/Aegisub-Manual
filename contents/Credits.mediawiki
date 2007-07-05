@@ -24,40 +24,40 @@ Aegisub is the work of a cast of thousands... here's a list of some of them, in 
 *Jcubed
 
 ===Localization files===
-French: TechNiko & Crysral
-Portuguese: ArchMage ZeratuL
-Russian: thrash-sensei
-German: equinox
-Spanish: Nesukun
-Italian: EmBolo & Mazinga
-Korean: oblisk
+*French: TechNiko & Crysral
+*Portuguese: ArchMage ZeratuL
+*Russian: thrash-sensei
+*German: equinox
+*Spanish: Nesukun
+*Italian: EmBolo & Mazinga
+*Korean: oblisk
 
 ===Alpha testers===
-b0nk
-Bot1
-deathbygirl
-DoGfOoD
-grimlock
-Jagobah
-Jcubed
-Kintaro
-Kobi
-Kodachrome
-maxx-
-mASSIVe
-Maya
-Mentar
-movax
-msb
-neo2sonic
-nich
-nwa
-omgifos
-SOzuken
-TheFluff
-]thrash_sensei[
-Vincent
-zegnat
+*b0nk
+*Bot1
+*deathbygirl
+*DoGfOoD
+*grimlock
+*Jagobah
+*Jcubed
+*Kintaro
+*Kobi
+*kodachrome
+*maxx-
+*mASSIVe
+*Maya
+*Mentar
+*movax
+*msb
+*neo2sonic
+*nich
+*nwa
+*omgifos
+*SOzuken
+*TheFluff
+*]thrash_sensei[
+*Vincent
+*zegnat
 
 ===Additional thanks===
 *Mentar for hosting the SVN repository up to version 1.09
@@ -68,9 +68,9 @@ zegnat
 *Kayle for help with Win32 VfW interface
 
 ===Honorable mentions===
-kryptolus for developing Sabbu, the competing program :)
-Gabest for developing VSFilter
-The Avisynth developers: Ben Rudiak-Gould, Edwin van Eggelen, Klaus Post, Richard Berg and others
+*kryptolus for developing Sabbu, the competing program :)
+*Gabest for developing VSFilter
+*The Avisynth developers: Ben Rudiak-Gould, Edwin van Eggelen, Klaus Post, *Richard Berg and others
 
 ===About===
 Aegisub was developed using Microsoft Visual Studio 2003 and wxWidgets 2.6.0. The Automation module also uses the Lua Programming Language. The Regular Expressions code used in this program was written by Henry Spencer and included in wxWidgets. Aegisub also uses the PortAudio, libpng, zlib and ffmpeg libraries.
