@@ -1,7 +1,63 @@
-Aegisub has an advanced audio mode. Behold!
+Aegisub has a fairly advanced, customizable audio mode with both the traditional waveform display as well as an alternative spectrum display. Several different timing modes are available for both normal dialog timing and karaoke timing.
 
+==Opening audio==
+To load an audio file into Aegisub, just go to the ''Audio'' menu and press ''Open audio file''. If you have a video file (with an included audio track) already loaded, you can use ''Open audio from video'' instead, which obviously will load the audio track from the video file you currently have loaded. You can open any type of audio file that your [[Options#Audio provider|audio provider]] can decode, more on this below.
+
+====Supported formats: Windows====
+Under Microsoft Windows, your audio provider is ''Avisynth'' by default, which means that any audio format that your DirectShow environment knows how to decode is supported (at least in theory). For example, if you want to load an AC3 file, you will need an AC3 DirectShow decoder (e.g. AC3filter or ffdshow). ''Note:'' some formats seem pretty buggy at the moment. Ones more or less guaranteed to work are WAV, MP3 and Vorbis, so if your audio doesn't work, try transcoding to one of them, at least temporarily.
+
+'''Warning:''' If you have opened a video file with more than one audio track (most commonly an MKV or OGM file), and try to open audio from it, Aegisub is completely at the mercy of the splitter when it comes to what audio stream is delivered. Some splitters may deliver both audio streams at once (this will happen for dual audio AVI's, when using the default Windows splitter), and since Aegisub very much doesn't expect that, you will get weird results (and probably crashes). Just remux the file to single audio, or better yet, decompress the desired audio stream to WAV.
+
+====Supported formats: non-Windows====
+On all other operating systems (MacOS X, GNU/Linux, the BSD variants etc.) your audio provider is ''ffmpeg'', which means you can use any audio format that ffmpeg supports (and was compiled with).
+{{Todo|Find out exactly what this means with the default compile}}
+
+===Audio loading quirks===
+When loaded, the audio is downmixed to mono (see the [[Options#Audio downmixer|audio downmixer option]] if you want to grab one channel only), decompressed to PCM (a.k.a. WAV), and (by default) loaded into a RAM cache. This means that you will need a ''large amount'' of RAM to open a long audio file. If your computer doesn't have a lot of RAM, or if you're working with a full-length movie, refer to the [[Options#Audio cache|audio cache option]] for instructions on how to make Aegisub use its (slower) hard drive cache instead.
+
+The exact amount of memory used for any given audio file can be calculated with the following formula:
+ s = ( b * r * l ) / 8
+where ''s'' is the amount of memory (in bytes - divide by 1024 to get kB), ''b'' is the number of bits per sample (always 16 in the current implementation), ''r'' is the sample rate in Hz (usually 48000, or 44100 in some cases), and ''l'' is the length of the audio (in seconds).
+
+Loading and decompressing the audio into the cache takes a little while; Aegisub will display a progress indicator while loading the audio.
+
+==The main audio view==
+When your audio file has loaded, Aegisub will transform into something like the screenshot below:
 [[Image:Audio-box-waveform.png]]
+{{Todo|needs screenshot with numbered things}}
+
+You can click and drag just below the audio timeline to change the height of the audio waveform/spectrum display.
+
+Green and red buttons are toggle buttons. A green background indicates that the option is turned on, while a red background indicates that the option is turned off. The buttons and controls are as follows (many of these have [[Keyboard shortcuts|keyboard shortcuts]] associated with them by default):
+# Previous line (previous syllable when in [[Audio#Karaoke mode|karaoke mode]])
+# Next line (next syllable when in karaoke mode)
+# Play selected area of the audio waveform
+# Play currently selected line
+# Pause playback
+# Play 500ms before selection start
+# Play 500ms after selection end
+# Play first 500ms of selection
+# Play last 500ms of selection
+# Play from selection start to end of file (or until pause is pressed)
+# Add lead-in (how much is determined by the [[Options#Audio lead in|audio lead in setting]])
+# Add lead-out (exactly like the above, but the setting is called [[Options#Audio lead out|audio lead out]], logically enough)
+# Commit (save) changes
+# Scroll view to selection/go to selection
+# Toggle auto-commit (all timing changes will be committed immediately, without the user pressing commit, if this is enabled)
+# Toggle auto next line on commit (if this is enabled, Aegisub will automatically select the next line when the current line is committed; enabling both this and auto-commit at the same time is strongly discouraged)
+# Toggle auto-scrolling (will center waveform on the currently selected line automatically when enabled)
+# Toggle spectrum analyzer mode (see below)
+# Toggle Medusa timing mode (see below)
+# Audio display zoom (horizontal)
+# Audio display zoom (vertical)
+# Audio volume
+# Toggle linking of vertical audio zoom slider with volume slider
+# Toggle karaoke mode
+# Join selected syllables (karaoke mode only)
+# Split selected syllables (karaoke mode only)
+
+{{Todo|finish this}}
+
+
 
 [[Image:Audio-box-spectrum.png]]
-
-{{Todo|More than just pretty pictures.}}
