@@ -47,7 +47,7 @@ Green and red buttons are toggle buttons. A green background indicates that the 
 # Toggle auto next line on commit (if this is enabled, Aegisub will automatically select the next line when the current line is committed; enabling both this and auto-commit at the same time is strongly discouraged)
 # Toggle auto-scrolling (will center waveform on the currently selected line automatically when enabled)
 # Toggle spectrum analyzer mode (see below)
-# Toggle Medusa timing mode (see below)
+# Toggle Medusa timing shortcuts (see below)
 # Audio display zoom (horizontal)
 # Audio display zoom (vertical)
 # Audio volume
