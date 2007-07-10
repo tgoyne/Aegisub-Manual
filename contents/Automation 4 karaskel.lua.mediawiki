@@ -119,4 +119,42 @@ Signature of fx functions: <code>keep = fx_effect(subtitles, meta, styles, line,
 <code>fxdata</code> is the contents of the Effect field after the initial word defining the effect to be used. All output of an fx function should be appended to the subtitle file represented by <code>subtitles</code>.
 
 == Data structures ==
-{{todo|write this}}
+<code>karaskel.lua</code> defines and extends several data structures. Some of the changes are already listed above under the individual functions.
+
+=== Styles array ===
+The <code>styles</code> array is produced by the <code>karaskel.collect_head</code> function and should be passed to most other <code>karaskel.lua</code> functions. It contains a list of all styles in the subtitle file, and can be accessed in two ways.
+
+<code>styles.n</code> is a number telling the number of styles in the array. <code>styles[1]</code> is the first defined style and <code>styles[styles.n]</code> is the last defined style.
+
+The <code>styles</code> array can also be indexed by style names, such that <code>styles[style.name] == style</code>. The names are not mangled and the indexing is case sensitive.
+
+Be aware that modifying the <code>styles</code> will never update the subtitles file, and conversely updating the styles in the subtitle file will not automatically be reflected in <code>styles</code> either.
+
+=== Style table ===
+This is a slight extension of the basic <tt>style</tt> class subtitle line structure.
+
+One field is added:
+* <code>style.margin_v</code> is a convenience alias for <code>style.margin_t</code>.
+
+Full list of fields:
+* <code>style.class == "style"</code>
+* <code>style.raw</code> - The raw line text.
+* <code>style.section == "[V4+ Styles]"</code>
+* <code>style.name</code> - Name of the style.
+* <code>style.fontname</code> - Name of the font face used by the style.
+* <code>style.fontsize</code> - Font size for the style.</code>
+* <code>style.color1</code>, <code>style.color2</code>, <code>style.color3</code> and <code>style.color4</code> - The four colours used by the style, in regular order. Use <code>[[Automation 4 utils.lua#extract_color|extract_color]]</code> and family to manipulate these.
+* <code>style.bold</code> - <code>true</code>/<code>false</code> to specify bold/non-bold font face. Can also be a number to specify font weight, but this is not well supported and should be avoided.
+* <code>style.italic</code> - Boolean, whether an italic/oblique version of the font face is used or not.
+* <code>style.underline</code> and <code>style.strikeout</code> - Boolean, whether to apply these two decorations to the text.
+* <code>style.scale_x</code> and <code>style.scale_y</code> - Scaling in X and Y direction, 100 is neutral.</code>
+* <code>style.spacing</code> - Additional spacing in pixels between individual characters in text.</code>
+* <code>style.angle</code> - Z axis rotation for the text.
+* <code>style.borderstyle</code>  - 1 (one) for regular outlined text, 3 for opaque box behind subtitles.
+* <code>style.outline</code> - Width of the extended outline around the text.
+* <code>style.shadow</code> - Distance to the shadow behind the text.
+* <code>style.align</code> - Numpad-style alignment for the text on screen.
+* <code>style.margin_l</code>, <code>style.margin_r</code>, <code>style.margin_t</code> and <code>style.margin_b</code> - Margins for the style. <code>style.margin_v</code> is an alias for top margin.
+* <code>style.encoding</code> - Windows font encoding ID for the style.
+* <code>style.relative_to</code> - Currently unsupported.
+* <code>style.vertical</code> - Unsupported, tentative AS5 feature.
