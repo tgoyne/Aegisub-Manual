@@ -1,0 +1,122 @@
+The Automation 4 <tt>karaskel.lua</tt> include file contains several functions intended to help the development of karaoke effects with Automation 4 Lua. It also defines several new data structures, and extensions to those defined by Automation 4 Lua itself.
+
+<tt>karaskel.lua</tt> itself includes <tt>[[Automation 4 utils.lua|utils.lua]]</tt> and <tt>[[Automation 4 unicode.lua|unicode.lua]]</tt> so you do not need to include those yourself when using <tt>karaskel.lua</tt>.
+
+Using <tt>karaskel.lua</tt> is strongly recommended when creating karaoke effects, and it can also be useful for other tasks as it contains several text layouting functions.
+
+== Functions ==
+
+=== karaskel.collect_head ===
+Synopsis: <code>meta, styles = karaskel.collect_head(subtitles, generate_furigana)</code>
+
+Reads the subtitle file to collect all header information and style definitions, and optionally also generates new styles for furigana layouts.
+
+* <code>subtitles</code> is the Subtitle File object defined by Automation 4 Lua.
+* <code>generate_furigana</code> is a boolean, if it is true a style for furigana layout is generated for each style that does not have one already. Generation of furigana styles will never overwrite existing styles, create double style definitions or create meaningless furigana styles for other furigana styles.
+
+Calling <code>collect_head</code> is usually one of the first things you do in your processing function.
+
+The returned <code>meta</code> table contains a map of all <tt>Name: Value</tt> pairs in the <tt>[Script Info]</tt> section. It also always contains <code>meta.res_x</code> and <code>meta.res_y</code> calculated from the <tt>PlayResX</tt> and <tt>PlayResY</tt> fields, following VSFilter conventions.
+
+The returned <code>styles</code> table contains a map of all defined styles, it also include any generated furigana layout styles. The style structures stored in this table have one added field, <code>style.margin_v</code> which is an alias for <code>style.margin_t</code>, for convenience. <code>styles</code> can be indexed by style names (case sensitive, names not mangled) and by numbers. <code>styles.n</code> is the number of styles stored, and <code>styles[1]</code> is the first style defined.
+
+=== karaskel.preproc_line ===
+Synopsis: <code>karaskel.preproc_line(subtitles, meta, styles, line)</code>
+
+Calculate sizing, positioning and various other information for a single subtitle line. This function calls <code>karaskel.preproc_line_text</code>, <code>karaskel.preproc_line_size</code> and <code>karaskel.preproc_line_pos</code> in order.
+
+Note that the interface for the three functions used to do the work is not frozen, it might change, though it probably won't.
+
+The interface for this function is frozen and will not change. It is recommended to call this function to pre-process a line.
+
+This function does not return a value, but rather modifies the <code>line</code> table, see below for more information.
+
+=== karaskel.preproc_line_text ===
+Synopsis: <code>karaskel.preproc_line_text(meta, styles, line)</code>
+
+Preprocess the text of a single line. <code>meta</code> and <code>styles</code> are the tables returned by <code>[[#karaskel.collect_head|karaskel.collect_head]]</code>.
+
+This function does not return a value, but rather modifies the <code>line</code> table. The following fields are added:
+* <code>line.text_stripped</code> - Line text with all override tags and vector drawings removed.
+* <code>line.duration</code> - Duration of the line in milliseconds</code>
+* <code>line.kara</code> and <code>line.furi</code> - Extended karaoke and furigana tables, without sizing and position data.
+{{Todo|Link to definitions of extended kara/furi tables</code>
+
+This function does not calculate any text sizing or positioning information. (In fact it doesn't use the <code>meta</code> or <code>styles</code> arguments at all.)
+
+=== karaskel.preproc_line_size ===
+Synopsis: <code>karaskel.preproc_line_size(meta, styles, line)</code>
+
+Calculate sizing data for a line and all karaoke syllables and furigana parts. Also adds a reference to the line style.
+
+This function does not return a value, but rather modifies the <code>line</code> table. The following fields are added:
+* <code>line.styleref</code> - A reference to the Style table representing this line's selected style.
+* <code>line.furistyle</code> - A reference to the Style table representing this line's furigana layout style. If there is no style with the right name, this field is <code>false</code> instead.
+* <code>line.width</code>, <code>line.height</code>, <code>line.descent</code> and <code>line.extlead</code> - Sizing information for the stripped line text, as returned by <code>aegisub.text_extents</code>.
+{{Todo|Link to page doccing text_extents}}
+
+Also, this function modifies the <code>line.kara</code> and <code>line.furi</code> tables, adding sizing information.
+
+No position information is calculated here.
+
+If the <code>line</code> table does not seem to have been processed with <code>karaskel.preproc_line_text</code> yet, this will be done automatically.
+
+=== karaskel.preproc_line_pos ===
+Synopsis: <code>karaskel.preproc_line_pos(meta, styles, line)</code>
+
+Calculate line, karaoke and furigana position information.
+
+This function invokes <code>karaskel.do_basic_layout</code> when no furigana style is available, and <code>karaskel.do_furigana_layout</code> when a furigana style is defined for the line. The furigana layout algorithm might change the calculated width of the line.
+
+This function does not return a value, but rather modifies the <code>line</code> table. The following fields are added:
+* <code>line.margin_v</code> - A convenience alias for <code>line.margin_t</code>.
+* <code>line.eff_margin_l</code>, <code>line.eff_margin_r</code>, <code>line.eff_margin_t</code>, <code>line.eff_margin_b</code> and <code>line.eff_margin_v</code> - Effective margin values for the line. If the corresponding margin override for the line is non-zero, that value is used, otherwise the value defined in the style is used.
+* <code>line.halign</code> - One of <tt>"left"</tt>, <tt>"center"</tt> or <tt>"right"</tt>, the horizontal alignment of the line, derived from <code>line.styleref.align</code>.
+* <code>line.valign</code> - One of <tt>"top"</tt>, <tt>"middle"</tt> or <tt>"bottom"</tt>, the vertical alignment of the line, derived from <code>line.styleref.align</code>.
+* <code>line.left</code> - The left edge X coordinate for the line, assuming its given alignment, effective margins and no collision detection
+* <code>line.center</code> - The line centre X coordinate, assuming its given alignment, effective margins and no collision detection
+* <code>line.right</code> - The right edge X coordinate for the line, assuming its given alignment, effective margins and no collision detection
+* <code>line.top</code> - The top edge Y coordinate for the line, assuming its given alignment, effective margins and no collision detection
+* <code>line.middle</code> - The line vertical centre Y coordinate, assuming its given alignment, effective margins and no collision detection <code>line.vcenter</code> is an alias for this.
+* <code>line.bottom</code> - The bottom edge Y coordinate for the line, assuming its given alignment, effective margins and no collision detection.
+* <code>line.x</code> and <code>line.y</code> - X and Y coordinates for the line, suitable for using in a <code>\pos</code> override tag to get the line's original position.
+{{todo|make the above clearer}}
+
+Furthermore, the <code>line.kara</code> and <code>line.furi</code> tables are modified by the layout function called, adding positioning information. See below.
+
+If no line sizing information is found, <code>karaskel.preproc_line_size</code> will be invoked, which might in turn also invoke <code>karaskel.preproc_line_text</code>.
+
+=== karaskel.do_basic_layout ===
+This function is not intended to be called directly, but is rather called as a helper function for <code>karaskel.preproc_line_pos</code>.
+
+It runs a very simple layout algorithm for the <code>line.kara</code> table, which simply calculates the positions of the syllables when placed in one straight line with no additional spacing in between. Positioning information is added to each karaoke syllable.
+
+The <code>line.furi</code> table is not touched.
+
+=== karaskel.do_furigana_layout ===
+This function is not intended to be called directly, but is rather called as a helper function for <code>karaskel.preproc_line_pos</code>.
+
+It runs an advanced text layout algorithm to position karaoke syllables and furigana neatly, avoiding unwanted overlapping. People interested in the actual algorithm used should read the function source code, it should be well enough commented.
+
+This function adds positioning information to both the <code>line.kara</code> and <code>line.furi</code> tables. It might also change the <code>line.width</code> field as the line base text is expanded to make room for furigana.
+
+== Karaoke skeletons ==
+A karaoke skeleton is a framework for building karaoke effects in. It usually works by writing a couple of functions yourself for handling the actual effect work, and these are then called at various times. The actual details of what functions you need to write depends on the actual karaoke skeleton.
+
+=== Effect Library ===
+Main function: <code>karaskel.use_fx_library(add_macro)</code>
+
+Call the <code>karaskel.use_fx_library</code> function to install the Effect Library skeleton for this script file. The <code>script_name</code> and <code>script_description</code> globals are used to name the export filter produced. If <code>add_macro</code> is true, a macro is also produced.
+
+The basic premise of the Effect Library skeleton is that each timed karaoke line has a word in its Effect field that describes what effect to apply to that line. This makes Effect Library a good choice if you want to use several different effects in a single karaoke.
+
+When Effect Library is invoked, it calls a function named <tt>fx_</tt>''effect'' for each Dialogue line in the subtitle file.. For example, if the Effect field of a dialogue line is ''"jump"'', the function named <tt>fx_jump</tt> is called. For lines with empty Effect field, the function <tt>fx_none</tt> is called.
+
+If an fx function does not exist, the original line is left in the subtitle file. Otherwise, whether the original line is left depends on the return value of the fx function, a true return value means the original line is kept, a false value means it is made into a Comment line.
+
+Signature of fx functions: <code>keep = fx_effect(subtitles, meta, styles, line, fxdata)</code>
+
+<code>fxdata</code> is the contents of the Effect field after the initial word defining the effect to be used. All output of an fx function should be appended to the subtitle file represented by <code>subtitles</code>.
+
+== Data structures ==
+{{todo|write this}}
