@@ -158,3 +158,43 @@ Full list of fields:
 * <code>style.encoding</code> - Windows font encoding ID for the style.
 * <code>style.relative_to</code> - Currently unsupported.
 * <code>style.vertical</code> - Unsupported, tentative AS5 feature.
+
+=== Dialogue line style ===
+A large number of new fields have been added to the dialogue line class.
+
+Basic fields:
+* <code>line.class == "dialogue"</code>
+* <code>line.raw</code> - The raw line text.
+* <code>line.section</code> - Usually <tt>"[Events]"</tt>.
+* <code>line.comment</code> - Boolean, true if the line is a Comment line rather than Dialogue.
+* <code>line.layer</code> - Layer of the line.
+* <code>line.start_time</code>, <code>line.end_time</code> - Start and end times of the line in milliseconds.
+* <code>line.style</code> - Name of the style used for the line.
+* <code>line.actor</code> - Actor field for the line.
+* <code>line.margin_l</code>, <code>line.margin_r</code>, <code>line.margin_t</code> and <code>line.margin_b</code> - Margin overrides for the line, a zero value means use margin from style.
+* <code>line.effect</code> - Effect field of the line.
+* <code>line.userdata</code> - Unused, tentative AS5 field.
+* <code>line.text</code> - Dialogue text.
+
+Basic added fields, by <code>karaskel.preproc_line_text</code>:
+* <code>line.text_stripped</code> - Line text with all override tags and vector drawings removed.
+* <code>line.duration</code> - Duration of the line in milliseconds</code>
+* <code>line.kara</code> and <code>line.furi</code> - Extended karaoke and furigana tables, without sizing and position data.
+
+Added fields for sizing, by <code>karaskel.preproc_line_size</code>:
+* <code>line.styleref</code> - A reference to the Style table representing this line's selected style.
+* <code>line.furistyle</code> - A reference to the Style table representing this line's furigana layout style. If there is no style with the right name, this field is <code>false</code> instead.
+* <code>line.width</code>, <code>line.height</code>, <code>line.descent</code> and <code>line.extlead</code> - Sizing information for the stripped line text, as returned by <code>aegisub.text_extents</code>. <code>line.width</code> may also be modified by <code>karaskel.preproc_line>pos</code>.
+
+Added fields for positioning, by <code>karaskel.preproc_line_pos</code>:
+* <code>line.margin_v</code> - A convenience alias for <code>line.margin_t</code>.
+* <code>line.eff_margin_l</code>, <code>line.eff_margin_r</code>, <code>line.eff_margin_t</code>, <code>line.eff_margin_b</code> and <code>line.eff_margin_v</code> - Effective margin values for the line. If the corresponding margin override for the line is non-zero, that value is used, otherwise the value defined in the style is used.
+* <code>line.halign</code> - One of <tt>"left"</tt>, <tt>"center"</tt> or <tt>"right"</tt>, the horizontal alignment of the line, derived from <code>line.styleref.align</code>.
+* <code>line.valign</code> - One of <tt>"top"</tt>, <tt>"middle"</tt> or <tt>"bottom"</tt>, the vertical alignment of the line, derived from <code>line.styleref.align</code>.
+* <code>line.left</code> - The left edge X coordinate for the line, assuming its given alignment, effective margins and no collision detection
+* <code>line.center</code> - The line centre X coordinate, assuming its given alignment, effective margins and no collision detection
+* <code>line.right</code> - The right edge X coordinate for the line, assuming its given alignment, effective margins and no collision detection
+* <code>line.top</code> - The top edge Y coordinate for the line, assuming its given alignment, effective margins and no collision detection
+* <code>line.middle</code> - The line vertical centre Y coordinate, assuming its given alignment, effective margins and no collision detection <code>line.vcenter</code> is an alias for this.
+* <code>line.bottom</code> - The bottom edge Y coordinate for the line, assuming its given alignment, effective margins and no collision detection.
+* <code>line.x</code> and <code>line.y</code> - X and Y coordinates for the line, suitable for using in a <code>\pos</code> override tag to get the line's original position.
