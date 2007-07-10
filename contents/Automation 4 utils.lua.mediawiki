@@ -74,7 +74,7 @@ Transforms a colour given in Hue, Saturation, Value space into Red, Green, Blue 
 <code>h</code> is given in degrees, the nominal range is 0..359; values outside this range will be translated into it. Input range of <code>s</code> and <code>v</code> are 0..1, these are not range checked. Output range of <code>r</code>, <code>g</code> and <code>b</code> are 0..255.
 
 == String functions ==
-The Lua standard <code>string</code> library is sometimes not powerful enough. A few additional helper functions are provided.
+The Lua standard <code>string</code> library is sometimes not powerful enough. A few additional helper functions are provided. See also [[Automation 4 unicode.lua]].
 
 === string.trim ===
 Synopsis: <code>outstring = string.trim(instring)</code>
