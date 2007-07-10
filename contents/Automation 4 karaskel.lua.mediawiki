@@ -198,3 +198,6 @@ Added fields for positioning, by <code>karaskel.preproc_line_pos</code>:
 * <code>line.middle</code> - The line vertical centre Y coordinate, assuming its given alignment, effective margins and no collision detection <code>line.vcenter</code> is an alias for this.
 * <code>line.bottom</code> - The bottom edge Y coordinate for the line, assuming its given alignment, effective margins and no collision detection.
 * <code>line.x</code> and <code>line.y</code> - X and Y coordinates for the line, suitable for using in a <code>\pos</code> override tag to get the line's original position.
+
+=== Karaoke and furigana syllable tables ===
+{{Todo|write}}
