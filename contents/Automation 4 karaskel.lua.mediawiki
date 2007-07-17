@@ -181,7 +181,7 @@ Full list of fields:
 * <code>style.relative_to</code> - Currently unsupported.
 * <code>style.vertical</code> - Unsupported, tentative AS5 feature.
 
-=== Dialogue line style ===
+=== Dialogue line table ===
 A large number of new fields have been added to the dialogue line class.
 
 Basic fields:
@@ -220,6 +220,9 @@ Added fields for positioning, by <code>karaskel.preproc_line_pos</code>:
 * <code>line.middle</code> - The line vertical centre Y coordinate, assuming its given alignment, effective margins and no collision detection <code>line.vcenter</code> is an alias for this.
 * <code>line.bottom</code> - The bottom edge Y coordinate for the line, assuming its given alignment, effective margins and no collision detection.
 * <code>line.x</code> and <code>line.y</code> - X and Y coordinates for the line, suitable for using in a <code>\pos</code> override tag to get the line's original position.
+
+Added fields for linked list access, only available when using the Classic Advanced skeleton:
+* <code>line.prev</code>, <code>line.next</code> - Access the dialogue line before and after this one. These might be <tt>nil</tt> on the first/last dialogue lines. Blank lines, style lines, header lines etc. are ''not'' included in this linked list.
 
 === Karaoke and furigana syllable tables ===
 {{Todo|write}}
