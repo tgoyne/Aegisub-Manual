@@ -16,7 +16,7 @@ Reads the subtitle file to collect all header information and style definitions,
 
 Calling <code>collect_head</code> is usually one of the first things you do in your processing function.
 
-The returned <code>meta</code> table contains a map of all <tt>Name: Value</tt> pairs in the <tt>[Script Info]</tt> section. It also always contains <code>meta.res_x</code> and <code>meta.res_y</code> calculated from the <tt>PlayResX</tt> and <tt>PlayResY</tt> fields, following VSFilter conventions.
+The returned <code>meta</code> table contains a map of all <tt>Name: Value</tt> pairs in the <tt>[Script Info]</tt> section. It also always contains <code>meta.res_x</code> and <code>meta.res_y</code> calculated from the <tt>PlayResX</tt> and <tt>PlayResY</tt> fields, following VSFilter conventions for default values when one or both of the fields are missing.
 
 The returned <code>styles</code> table contains a map of all defined styles, it also include any generated furigana layout styles. The style structures stored in this table have one added field, <code>style.margin_v</code> which is an alias for <code>style.margin_t</code>, for convenience. <code>styles</code> can be indexed by style names (case sensitive, names not mangled) and by numbers. <code>styles.n</code> is the number of styles stored, and <code>styles[1]</code> is the first style defined.
 
