@@ -13,9 +13,9 @@ Some of the goals of Automation:
 
 == Using Automation ==
 
-Aegisub comes with several Automation scripts already packaged and ready to use. This includes the advanced [[Karaoke Templater]] script (which covers everything ''simple-k-replacer'', ''line-per-syllable'' and ''multi-template'' did in Automation 3) and a [[Using the included macros|collection of macros]] to simplify some editing tasks.
+Aegisub comes with several Automation scripts already packaged and ready to use. This includes the advanced '''[[Karaoke Templater]]''' script (which covers everything ''simple-k-replacer'', ''line-per-syllable'' and ''multi-template'' did in Automation 3) and a '''[[Using the included macros|collection of macros]]''' to simplify some editing tasks.
 
-Aegisub almost always has several Automation scripts loaded at a time. You can see what scripts are loaded, and load/unload more from the [[Automation Manager]] window.
+Aegisub almost always has several Automation scripts loaded at a time. You can see what scripts are loaded, and load/unload more from the '''[[Automation Manager]]''' window.
 
 All Automation scripts also present themselves in Aegisub in one way or another. Some appear as [[Running Automation macros|macros in the Automation menu]] and others appear as [[Exporting subtitles|filters in the Export dialog]]. Some scripts even appear in both places.
 
@@ -27,7 +27,7 @@ Other languages have also been proposed but haven't been implemented yet: Perl, 
 
 There is several example scripts included with Aegisub to give you a head start on writing your own ones. A word of warning: Unless you are an experienced programmer the ''kara-templater.lua'' script is a very bad place to start!
 
-In addition, the Automation 3 scripting interface used in Aegisub 1.10 and earlier is also supported but using the Automation 4 Lua interface is recommended. The Automation 3 environment is reproduced as closely as possible, meaning Lua 5.0 is used instead of Lua 5.1 and all data structures are kept the same. There are however a few minor differences, see more at [[Moving from Automation 3]].
+In addition, the Automation 3 scripting interface used in Aegisub 1.10 and earlier is also supported but using the Automation 4 Lua interface is recommended. The Automation 3 environment is reproduced as closely as possible, meaning Lua 5.0 is used instead of Lua 5.1 and all data structures are kept the same. There are however a few minor differences, see more at '''[[Moving from Automation 3]]'''.
 
 === Future goals ===
 
