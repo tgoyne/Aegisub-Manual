@@ -20,13 +20,11 @@ If you have used the ''multi-template'' script from Aegisub 1.10 you should reco
 * Lots of more fancy features. Check the tutorials or read the reference to learn about it all.
 
 == Reference ==
-:''Main page: [[Karaoke Templater/Reference]]''
-
-* [[Karaoke Templater/Reference/Declaring template and code lines|Declaring template and code lines]]
-* [[Karaoke Templater/Reference/Template execution rules and order|Rules for when and in what order templates are run]]
-* [[Karaoke Templater/Reference/Template modifiers|Template modifiers]]
-* [[Karaoke Templater/Reference/Inline variables|Inline variables (dollar-variables)]]
-* [[Karaoke Templater/Reference/Code lines and blocks|Rules for code blocks and code lines]]
-* [[Karaoke Templater/Reference/Code execution environment|Contents of the code block/line execution environment]]
+* [[Karaoke Templater Reference: Declaring template and code lines|Declaring template and code lines]]
+* [[Karaoke Templater Reference: Template execution rules and order|Rules for when and in what order templates are run]]
+* [[Karaoke Templater Reference: Template modifiers|Template modifiers]]
+* [[Karaoke Templater Reference: Inline variables|Inline variables (dollar-variables)]]
+* [[Karaoke Templater Reference: Code lines and blocks|Rules for code blocks and code lines]]
+* [[Karaoke Templater Reference: Code execution environment|Contents of the code block/line execution environment]]
 
 Also see the [[Automation 4 karaskel.lua]] section for more information on what's in the ''line'' and ''syl'' variables, and more.
