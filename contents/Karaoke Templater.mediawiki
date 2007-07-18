@@ -2,7 +2,7 @@
 
 == Tutorials: Introducing Karaoke Templater ==
 * [[Karaoke Templater/Tutorial 1|A simple example]]
-* [[Karaoke Templater/Tutorial 2|More variables, and math too]]
+* [[Karaoke Templater/Tutorial 2|Using math expressions]]
 * [[Karaoke Templater/Tutorial 3|Using multiple template lines]]
 * [[Karaoke Templater/Tutorial 4|More advanced effects with positioned syllables]]
 
