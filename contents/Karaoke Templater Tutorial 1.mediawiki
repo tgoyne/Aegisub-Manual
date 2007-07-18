@@ -85,4 +85,4 @@ To finish off this first part of the tutorial, here's what each part means. This
 
 With this knowledge, you should already be able to create lots of effects. You may also want to refer to the page on [[ASS Tags|ASS override tags]].
 
-You can also [[Karaoke Templater/Tutorial 2|continue to the next tutorial]], where we'll look at more variables, and how to do some basic math with them.
+You can also [[Karaoke Templater/Tutorial 2|continue to the next tutorial]], where we'll look at how to do math with variables to get more variation.
