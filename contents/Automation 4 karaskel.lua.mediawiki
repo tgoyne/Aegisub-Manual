@@ -201,12 +201,12 @@ Basic fields:
 Basic added fields, by <code>karaskel.preproc_line_text</code>:
 * <code>line.text_stripped</code> - Line text with all override tags and vector drawings removed.
 * <code>line.duration</code> - Duration of the line in milliseconds</code>
-* <code>line.kara</code> and <code>line.furi</code> - Extended karaoke and furigana tables, without sizing and position data.
+* <code>line.kara</code> and <code>line.furi</code> - Array tables of extended karaoke and furigana tables, respectively. They do not contain sizing and positioning data from the beginning.
 
 Added fields for sizing, by <code>karaskel.preproc_line_size</code>:
 * <code>line.styleref</code> - A reference to the Style table representing this line's selected style.
 * <code>line.furistyle</code> - A reference to the Style table representing this line's furigana layout style. If there is no style with the right name, this field is <code>false</code> instead.
-* <code>line.width</code>, <code>line.height</code>, <code>line.descent</code> and <code>line.extlead</code> - Sizing information for the stripped line text, as returned by <code>aegisub.text_extents</code>. <code>line.width</code> may also be modified by <code>karaskel.preproc_line>pos</code>.
+* <code>line.width</code>, <code>line.height</code>, <code>line.descent</code> and <code>line.extlead</code> - Sizing information for the stripped line text, as returned by <code>aegisub.text_extents</code>. <code>line.width</code> may also be modified by <code>karaskel.preproc_line_pos</code>.
 
 Added fields for positioning, by <code>karaskel.preproc_line_pos</code>:
 * <code>line.margin_v</code> - A convenience alias for <code>line.margin_t</code>.
@@ -225,4 +225,37 @@ Added fields for linked list access, only available when using the Classic Advan
 * <code>line.prev</code>, <code>line.next</code> - Access the dialogue line before and after this one. These might be <tt>nil</tt> on the first/last dialogue lines. Blank lines, style lines, header lines etc. are ''not'' included in this linked list.
 
 === Karaoke and furigana syllable tables ===
-{{Todo|write}}
+Tables for regular karaoke syllables and furigana parts are identical in (almost) every aspect, and can usually be processed by the same code without problems. There are a few points to take note of, they will be marked. Everywhere it says <code>syl</code> here, you can replace that with <code>furi</code> unless otherwise noted.
+
+Basic fields, defined by <code>aegisub.parse_karaoke_data</code>:
+* <code>syl.duration</code> - syllable duration in milliseconds (divide by 10 to get a number suitable for <tt>\k</tt> tags.)
+* <code>syl.start_time</code>, <code>syl.end_time</code> - Start and end time of the syllable in milliseconds, relative to the start time of the line.
+* <code>syl.tag</code> - The name of the tag defining this syllable, without backslash. It will usually be one of <tt>k</tt>, <tt>K</tt>, <tt>kf</tt> or <tt>ko</tt>. Note that <tt>kt</tt> is not handled. Furigana parts have the same tag as the original syllable defining them.
+* <code>syl.text</code> - Text including tags of the syllable. Same as stripped text for furigana.
+* <code>syl.text_stripped</code> - Text of the syllable with all tags removed. For main syllables, this also has furigana and multi-highlight parts removed. This is the text you will usually want to use.
+
+Additions by <code>karaskel.preproc_line_text</code>:
+* <code>syl.kdur</code> - Syllable duration in centiseconds, suitable for use in <tt>\k</tt> tags.
+* <code>syl.line</code> - Back reference to the line table containing this syllable.
+* <code>syl.inline_fx</code> - Name of the ''inline_fx'' for this syllable.
+{{todo|link to page about inline_fx?}}
+* <code>syl.i</code> - Index number of this syllable.
+* <code>syl.prespace</code>, <code>syl.postspace</code> - Space characaters at the start/end of the syllable. Always blank for furigana. These are spaces included in <code>syl.text_stripped</code>. You will usually never need this.
+* <code>syl.text_spacestripped</code> - Syllable text stripped for tags and trimmed of spaces at the start and end. This, <code>syl.prespace</code> and <code>syl.postspace</code> together can produce the same as <code>syl.text_stripped</code>. You will usually never need this.
+* <code>syl.isfuri</code> - <tt>true</tt> if the table is a furigana table, <tt>false</tt> if it is not. If you use a single function to process both regular and furigana syllables, you can use this to do differentiated processing still.
+* <code>syl.highlights</code> - Array table of multi-highlight data for the syllable. For furigana, there is always exactly one highlight defined. See below for format of highlight tables.
+
+Additions by <code>karaskel.preproc_line_size</code>:
+* <code>syl.style</code> - Reference to the style used to calculate sizing for this syllable. This will be the main line style for regular syllables and the furigana style for furigana. You should always set the style of the generated lines to this one.
+* <code>syl.width</code>, <code>syl.height</code> - Width and height of <code>syl.text_spacestripped</code>, as returned by <code>aegisub.text_extents</code>.
+* <code>syl.prespacewidth</code>, <code>syl.postspacewidth</code> - Width of <code>syl.prespace</code> and <code>syl.postspace</code> respectively. You will usually not need these. Always zero for furigana.
+
+Additions by <code>karaskel.preproc_line_pos</code>:
+* <code>syl.left</code>, <code>syl.center</code>, <code>syl.right</code> - Respectively left, center and right aligned positions of the syllable/furigana, for use with different alignments. These are not guaranteed to be continuous in any way from syllable to syllable.
+
+==== Highlight table ====
+A highlight table defines one highlight of a multi-highlight timed syllable.
+
+Highlight tables are entirely defined by <code>karaskel.preproc_line_text</code>, and contain the following fields:
+* <code>hl.start_time</code>, <code>hl.end_time</code> - Start and end time of the highlight, in milliseconds, relative to the start of the line.
+* <code>hl.duration</code> - Duration of the highlight in milliseconds.
