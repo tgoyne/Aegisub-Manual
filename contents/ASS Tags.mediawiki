@@ -20,7 +20,7 @@ This is useful when you need several spaces in a row.
 These tags must be in an override block, that is, they must be between a { and a }, and will affect all text following the block, unless they get re-overridden.
 
 ===\i<0/1> - Italic===
-Toggles italics in following text. Set to 0 to disable italics or to 1 to enable them.
+Toggles ''italics'' in following text. Set to 0 to disable italics or to 1 to enable them.
 e.g.:
  \i1
 (enable italics)
