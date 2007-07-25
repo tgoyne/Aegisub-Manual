@@ -36,7 +36,7 @@ TODO: Does VSFilter properly support "weight"? How does it work?
 :''Most fonts have either one or two weights: normal and bold. Those correspond to weight values 400 and 700, on Windows. Both Windows and Fontconfig handle multiple-weight fonts more than badly, so I would recommend avoiding anything other than \b0 and \b1. --[[User:Equinox|Equinox]] 19:54, 2 July 2007 (EDT)
 
 ===\u<0/1> - Underline===
-Toggles underline in the following text. See description for italics.
+Toggles underline in the following text, <u>like this</u>. See description for italics.
 
 ===\s<0/1> - Strikeout===
 Toggles strikeout in the following text. See description for italics. Strikeout means that there will be a line crossing the text, <strike>like this</strike>.
