@@ -28,7 +28,7 @@ e.g.:
 (disable italics)
 
 ===\b<0/1/weight> - Bold===
-Toggles bold in the following text. Set to 0 to disable bold or to 1 to enable.
+Toggles '''bold''' in the following text. Set to 0 to disable bold or to 1 to enable.
 
 TODO: Does VSFilter properly support "weight"? How does it work?
 :''I think it does support it but a lot of fonts only have one weight... or at least I recall DeathWolf saying something to that effect.'' --[[User:TheFluff|TheFluff]] 19:44, 2 July 2007 (EDT)
