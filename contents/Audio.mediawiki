@@ -85,6 +85,8 @@ When you press the spectrum analyzer button, the waveform does no longer show am
 
 Note that in spectrum analyzer mode, the "vertical zoom" slider is redefined to control color intensity instead, since the colors indicate signal strength.
 
+Because calculating the spectrum data is very CPU intensive, it in initially set to be in a medium quality. You can increase the quality of the spectrum in the [[Audio Options]].
+
 ==Karaoke timing==
 
 {{Todo|here be dragons}}
