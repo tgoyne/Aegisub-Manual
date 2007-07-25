@@ -39,7 +39,7 @@ TODO: Does VSFilter properly support "weight"? How does it work?
 Toggles underline in the following text. See description for italics.
 
 ===\s<0/1> - Strikeout===
-Toggles strikeout in the following text. See description for italics. Strikeout means that there will be a line crossing the text.
+Toggles strikeout in the following text. See description for italics. Strikeout means that there will be a line crossing the text, <strike>like this</strike>.
 
 ===\bord<width> - Border===
 Sets the width of border around text. Value is given in pixels and can have decimal places.
