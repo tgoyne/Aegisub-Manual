@@ -58,8 +58,34 @@ Green and red buttons are toggle buttons. A green background indicates that the 
 # Join selected syllables (karaoke mode only)
 # Split selected syllables (karaoke mode only)
 
-{{Todo|finish this}}
+{{Todo|detailed explanations go here}}
 
+==Basic audio timing==
+When you click on a line in the subtitles grid, Aegisub will highlight it in the audio display and, if you have auto-scrolling enabled, scroll the audio display so it's centered on the line (during normal timing, it's probably a good idea to disable auto-scrolling). You'll notice various vertical lines in the audio display; the dark blue ones indicate second boundaries, the pink ones indicate keyframes in the video if you have it loaded (see the [[Working with video]] section), the thick red and orange ones are the line start and end markers (respectively) for the current line. To (re-)define the start and end times of the line, you can either left-click to set the start time and right-click to set the end time, or just drag-and-drop the line boundaries. The selection background will turn red and display the word "Modified" in the top left corner of the audio display when you've changed the timing but haven't saved the changes yet. It will remain red until you either press the commit button (''enter'' or ''g'' by default) or go to another line (discards changes). If you have auto-commit on, the background will never turn red since all changes will be saved immediately. Press the ''play'' button (keyboard shortcut ''s'' by default) to listen to the selection, or the various other playing buttons to listen to parts of the selection or the audio surrounding it. When you are satisfied with the timing, press commit. Then repeat once for every line; it's as simple as that.
 
+===Timing protips===
+If you want to finish timing your movie or episode within any reasonable amount of time, there's some things you should note:
+* Use keyboard shortcuts! They speed up your work by several orders of magnitude.
+* You don't need to have video displayed while timing. Scene-timing, i.e. syncing line start/ends to scene changes, can be done later. Either manually, or with the [[timing postprocessor]].
+* Use "go to next line on commit".
+* Experiment with different timing styles when you're new and stick to one that suits you. Then practice. Lots.
+* Aegisub heavily relies on the concept of "focus", and doing things in a way that require you to switch back and forth between video/audio/subtitle edit box a lot will cost you a lot of time. Do it in several "passes" instead.
+* The spectrum analyzer mode can make it a lot easier to "see" where lines start and end.
+
+One common timing style (preferred by the author of this page) goes something like the following:
+Turn on "go to next line on commit" but disable auto-commiting, auto-scrolling and Medusa timing shortcuts. Keep the four main fingers of your left hand on s/d/f/g. You won't be using the thumb so do whatever you want with it. Keep your right hand on the mouse. Now select (by left- and right-clicking) an area in the waveform that seems likely to contain a line of speech matching the current subtitle line, and hit ''s'' to play it back. While it's playing, adjust the start time if necessary. When the playback marker has passed the end time mark, adjust the end time as well. If greater accuracy is needed, play the last 250ms of the selection by pressing ''d'', 250ms before the selection start by pressing ''q'', 250ms after the selection end by pressing ''w'', or the first 250ms of the selection by pressing ''e''. As you grow more experienced, you won't be using anything else than ''s'' very much, except maybe ''d'' and ''q'. When you're satisfied with the timing, hit ''g'' to commit changes and go on to the next line. Scroll the audio display forward by pressing ''f''. If you need to scroll it backwards, use ''a''. To go to next or previous line without committing changes, use ''z'' and ''x''.
+
+This style has the advantage that you never need to move your hands at all. With some training, it can also be very fast; audio timing 350-400 lines of dialog to a 25-minute episode can easily be done in less than 40 minutes.
+
+Of course, this style may not feel comfortable for all people; you should experiment with other timing styles before deciding which one is best for you.
+
+===The spectrum analyzer mode===
+When you press the button, the waveform does no longer show amplitude (signal strength) on the vertical axis - instead it shows frequency. The higher up, the higher the frequency. The colors instead indicate amplitude, with black/dark blue being silence and white being the strongest sound. This may seem confusing, but since the frequency window is set to fit human voices rather well, it can make it easy to tell where a line (or a word in karaoke mode) starts and ends when there's a lot of background noise (or music) that makes it hard to tell from the normal waveform. It can be especially useful when timing karaoke. Play around with it for a little while, and you'll understand how it works.
+
+Note that in spectrum analyzer mode, the "vertical zoom" slider is redefined to control color intensity instead, since the colors indicate signal strength.
+
+==Karaoke timing==
+
+{{Todo|here be dragons}}
 
 [[Image:Audio-box-spectrum.png]]
