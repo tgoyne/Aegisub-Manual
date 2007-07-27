@@ -66,7 +66,7 @@ When you click on a line in the subtitles grid, Aegisub will highlight it in the
 ===Timing protips===
 If you want to finish timing your movie or episode within any reasonable amount of time, there's some things you should note:
 * Use keyboard shortcuts! They speed up your work by several orders of magnitude.
-* You don't need to have video displayed while timing. Scene-timing, i.e. syncing line start/ends to scene changes, can be done later. Either manually, or with the [[timing postprocessor]].
+* You don't need to have video displayed while timing. Scene-timing, i.e. syncing line start/ends to scene changes, can be done later. Either manually, or with the [[Timing Post-Processor|timing postprocessor]].
 * Use "go to next line on commit".
 * Experiment with different timing styles when you're new and stick to one that suits you. Then practice. Lots.
 * Aegisub heavily relies on the concept of "focus", and doing things in a way that require you to switch back and forth between video/audio/subtitle edit box a lot will cost you a lot of time. Do it in several "passes" instead.
