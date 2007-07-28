@@ -29,6 +29,8 @@ There is several example scripts included with Aegisub to give you a head start 
 
 In addition, the Automation 3 scripting interface used in Aegisub 1.10 and earlier is also supported but using the Automation 4 Lua interface is recommended. The Automation 3 environment is reproduced as closely as possible, meaning Lua 5.0 is used instead of Lua 5.1 and all data structures are kept the same. There are however a few minor differences, see more at '''[[Moving from Automation 3]]'''.
 
+If you have previous experience with writing Automation 3 scripts, there is also an '''[[overview of changes from Automation 3]]'''.
+
 === Future goals ===
 
 Apart from the addition of more languages as mentioned above, one major future goal of Automation is to allow ''custom file format handlers'' enabling you to make Aegisub read and write almost every imaginable file format so they can be edited with Aegisub.
