@@ -1,19 +1,23 @@
-{{todo|Integrate these files with nice wiki formatting.
+The Automation 4 Lua scripting engine is based on the version 5.1 series of [http://www.lua.org the Lua scripting language].
 
-*[https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/overview.txt Overview]
-*[https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/basic-function-interface.txt Basic function interface]
-*[https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/subtitle-data.txt Subtitle data access]
-*[https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/progress-reporting.txt Reporting back progress, status and debug messages]
-*[https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/configuration-dialogs.txt Producing dialog boxes]
-*[https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/misc.txt Text extents function]
+This manual will not deal with the Lua language itself nor the standard libraries shipping with Lua, but only the additional functions and data structures provided by the Aegisub Automation 4 Lua interface. Please see [http://www.lua.org/manual/5.1/ the Lua 5.1 manual] for details on the language itself and its standard libraries.
 
-Should probably be left out for now, but depends on how subformat handlers will be done:
-*[https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/file-streams.txt Accessing files]
-}}
+== General overview of the organisation of Automation 4 Lua ==
+The general architecture of Automation 4 Lua is to be discussed here. See below for more information on the details of the parts.
+{{todo|write this}}
 
-----
+== Parts of the Automation 4 Lua API ==
+Automation 4 Lua provides various APIs that can be grouped in these general categories.
 
-See also:
-*[[Automation 4 utils.lua]]
-*[[Automation 4 karaskel.lua]]
-*[[Automation 4 unicode.lua]]
+* [[Automation 4 Lua Registration|Script and feature registration]] - deals with advertising what features a script provides and a few other script meta data.
+* [[Automation 4 Lua Subtitle file interface|Subtitle file interface]] - deals with use of the ''subtitles'' object, the principal way of accessing and modifying the subtitle data.
+* [[Automation 4 Lua Progress reporting|Progress reporting and debug output]] - providing feedback to the user while a script is running, outputting hints and warnings to the user and printing debug information.
+* [[Automation 4 Lua Configuration dialogues|Displaying dialogue boxes and getting user input]] - requesting user input during macro execution by dialogue boxes and providing a configuration interface for export filters.
+* [[Automation 4 Lua Miscellaneous APIs|Miscellaneous APIs]] - for eg. getting the rendered size of text and getting video frame rate information.
+
+== Standard include files ==
+A number of standard include files are provided. These aren't part of the core API, but should still be considered almost essential for writing scripts.
+
+* [[Automation 4 utils.lua|utils.lua]] - A large collection of various utility functions, especially for handling colours.
+* [[Automation 4 karaskel.lua|karaskel.lua]] - The karaoke skeleton is a collection of functions mainly intended to do text layout of timed karaoke for creating advanced karaoke effects, as well as a number of other helper functions.
+* [[Automation 4 unicode.lua|unicode.lua]] - All data passed in and out of Aegisub through the Automation 4 Lua interface are encoded in UTF-8, but Lua doesn't natively provide support for this. A number of helper functions are provided here.
