@@ -117,3 +117,6 @@ Interpolate between <code>color1</code> and <code>color2</code> with <code>t</co
 Synopsis: <code>outalpha = interpolate_color(t, alpha1, alpha2)</code>
 
 Similar to <code>interpolate_color</code>, but interpolates alpha values instead. Also works on colour strings, and will return an alpha override string.
+
+
+[[Category:Lua Reference]]
