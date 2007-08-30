@@ -23,3 +23,6 @@ Be aware that this function does not run in constant time, but in linear time (O
 Synopsis: <code>val = unicode.codepoint(instring)</code>
 
 Calculate the Unicode codepoint for the first character in <code>instring</code>.
+
+
+[[Category:Lua Reference]]
