@@ -1,0 +1,1 @@
+{{todo|Incorporate https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/basic-function-interface.txt here}}
