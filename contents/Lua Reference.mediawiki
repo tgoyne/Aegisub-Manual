@@ -6,7 +6,7 @@ This manual will not deal with the Lua language itself nor the standard librarie
 The general architecture of Automation 4 Lua is to be discussed here. See below for more information on the details of the parts.
 {{todo|write this}}
 
-== Parts of the Automation 4 Lua API ==
+== The Automation 4 Lua core API ==
 Automation 4 Lua provides various APIs that can be grouped in these general categories.
 
 * [[Automation 4 Lua Registration|Script and feature registration]] - deals with advertising what features a script provides and a few other script meta data.
