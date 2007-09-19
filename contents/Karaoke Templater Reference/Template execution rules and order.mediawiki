@@ -1,0 +1,148 @@
+Mid-level description of the kara-templater execution:
+
+<pre>Main kara-templater process:
+1. Collect header
+   1. Find all header information, primarily PlayResX and PlayResY
+   2. Find all styles
+   3. Generate furigana styles for styles missing them
+2. Collect templates
+3. Initialise tenv
+   1. Add "string", "math" and "_G" references
+   2. Add "tenv" self-reference
+   3. Add "retime" function
+   4. Add empty "fxgroup" table
+4. Run every "code once" template
+5. For every pre-existing dialogue line in subtitle file:
+   a. If Effect field is "fx":
+      1. Delete line
+      2. Line processing done
+   b. If Effect field start with "code" or "template":
+      1. Skip line
+   c. Else:
+      1. If Effect field is not empty and not "karaoke":
+         a. Skip line
+      2. If Effect field is empty and line is a Comment:
+         a. Skip line
+      3. Preprocess line with karaskel
+      4. Initialise varctx
+      5. Reset tenv
+         1. Set "orgline" to input line
+         2. Set "line", "syl" and "basesyl" to nil
+      6. For every "line" template:
+         If template matches line style or template is "all":
+         Repeat this "template.loops" number of times:
+         1. Set "tenv.j" to loop counter
+         2. a. If template is a code line:
+               1. Set "tenv.line" to input line
+               2. Run code
+            b. Else:
+               1. Produce output line as copy of input line
+               2. Set "tenv.line" to output line
+               3. Initialise output line Layer to template Layer
+               4. Initialise output line Text to empty
+               5. If template has pre-line:
+                  1. Run pre-line template
+                  2. Append result to output Text
+               6. a. If template has regular line:
+                     For every syllable in input line:
+                     1. Set "tenv.syl" to syllable
+                     2. Update varctx for syllable
+                     3. Run line template
+                     4. Append result to output Text
+                     5. If "notext" is not set:
+                        a. If "keeptags" is set:
+                           1. Append "syl.text" to output Text
+                        b. Else:
+                           1. Append "syl.text_stripped" to output Text
+                  b. Else:
+                     a. If "keeptags" is set:
+                        1. Append "syl.text" to output Text
+                     b. Else:
+                        1. Append "syl.text_stripped" to output Text
+               7. Set Effect field of output line to "fx"
+               8. Append output line to subtitle file
+      7. For every main syllable in line:
+         For every "syl" template:
+         If template matches line style or template is "all":
+         If template is not in a disabled fxgroup:
+         1. Set "tenv.syl" to syllable
+         2. Update varctx for syllable
+         3. If syllable inlinefx does not match template inlinefx:
+            1. Skip syllable
+         4. If template has "noblank" set and syllable is blank:
+            1. Skip syllable
+         5. If template is "char":
+            1. Create "charsyl" as copy of syllable
+            2. Set "tenv.basesyl" to current "tenv.syl"
+            3. Set "tenv.syl" to "charsyl"
+            4. For every Unicode character in syllable:
+               1. Calculate virtual syllable characteristics for "charsyl"
+               2. Update varctx for "charsyl"
+               3. Continue syllable processing for the virtual syllable (from 5.c.7.6.)
+         6. If template is "multi":
+            1. Create "hlsyl" as copy of syllable
+            2. Unless "tenv.basesyl" already exists, set it to "hlsyl"
+            3. Set "tenv.syl" to "hlsyl"
+            4. For every highlight on syllable:
+               1. Calculate virtual syllable characteristics for "hlsyl"
+               2. Update varctx for "hlsyl"
+               3. Continue syllable processing for the virtual syllable (from 5.c.7.7.)
+         7. a. If template is a code line:
+               1. Set "tenv.line" to input line
+               2. Run code
+            b. Else:
+               Repeat this "template.loops" number of times:
+               1. Set "tenv.j" to loop counter
+               2. Create output line
+               3. Set output line Style to virtual syllable style
+               4. Set output line Layer to template layer
+               5. Set "tenv.line" to output line
+               6. Run template
+               7. Set output line Text to result
+               8. a. If "keeptags" is set:
+                     1. Append "syl.text" to output line Text
+                  b. If "notext" is not set:
+                     1. Append "syl.text_stripped" to output line Text
+                  c. Otherwise nothing is appended
+               9. Set output line Effect to "fx"
+              10. Append output line to subtitle file
+      8. For every furigana part in line:
+         Same process as for main syllables (5.c.7.)
+      9. If any non-code templates were applied to the line:
+         1. Set input line to Comment
+         2. Set input line Effect field to "karaoke"
+         3. Store modified input line back to subtitle file
+
+Running a code line:
+1. Compile line text to a Lua function
+2. If compilation failed, report error
+3. Set compiled function's environment to tenv
+4. Repeat this "template.loops" number of times:
+   1. Set "tenv.j" to loop counter
+   2. Run compiled function
+   3. If an error occurred, report it
+
+Running a single template:
+1. Set result text to template
+2. If there is a varctx:
+   For every match of "$([a-zA-Z_]+)" in result text:
+   1. Lowercase the captured name
+   2. a. If the captured name is a field in varctx:
+         1. Replace match in result text with value from varctx
+      b. Else:
+         1. Report warning
+         2. Keep match as-is in result text
+3. For every match of "!(.-)!" in result text:
+   1. Append "result " to captured code
+   2. Compile captured code to a Lua function
+   3. If compilation failed, report error
+   4. Set compiled function's environment to tenv
+   5. Run compiled function
+      a. If compiled function produced an error:
+         1. Report error
+         2. Leave match in result text
+      b. Else:
+         1. Replace match with result of running the function</pre>
+
+
+{{todo|Turn this into something more reasonable?}}
