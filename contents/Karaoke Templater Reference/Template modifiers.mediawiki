@@ -167,6 +167,8 @@ Specify that the template will not be applied to syllables considered "blank". A
 
 Specify that the template will be applied the given number of times. Specifying the number of loops is required. The number of loops must be a constant integer number, it can not be a variable or otherwise calculated dynamically.
 
+<code>repeat</code> and <code>loop</code> are synonymous.
+
 Note that the execution order of looped line templates and looped syl/furi templates is different. See [[Karaoke Templater Reference: Template execution rules and order|Template execution and order]] for details.
 
 {{todo|example}}
