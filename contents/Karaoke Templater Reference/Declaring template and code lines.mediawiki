@@ -1,0 +1,17 @@
+This page describes how a template line or code line is declared.
+
+* Template lines and code lines are always marked Comment.
+
+* The first space-separated word in the Effect field determines whether a line is a template line, a code line, a timed karaoke line, a styled karaoke line or something otherwise undetermined.
+
+* If the first word in the Effect field is <code>template</code>, the line is a template line.
+
+* If the first word in the Effect field is <code>code</code>, the line is a code line.
+
+* If the Effect field is exactly equal to <code>fx</code>, the line is a styled karaoke line. Styled karaoke lines are deleted during execution of Karaoke Templater.
+
+* If the Effect field is <code>Karaoke</code>, <code>karaoke</code> or empty, the line is a timed karaoke line.
+
+* If the Effect field contains anything else, the line is an undetermined type and is not touched by Karaoke Templater.
+
+Template lines and code lines can have additional text after the <code>template</code> or <code>code</code> keywords. This text is parsed as a series of space-separated words and is called modifiers. See [[Karaoke Templater Reference: Template modifiers|Template modifiers]] for more information on this.
