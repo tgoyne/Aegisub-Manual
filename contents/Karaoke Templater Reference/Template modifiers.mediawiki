@@ -27,7 +27,7 @@ Code lines with the <code>once</code> modifier are run exactly once during Karao
 
 This example declares a new function that changes the Layer field in the output line.
 
-=== line ===
+=== line ''[name]'' ===
 
 This class modifier is valid for both code lines and template lines.
 
@@ -51,7 +51,7 @@ This template line declares an anonymous line template. The effect produced will
 
 This template line appends to a line template named "jumper"  or creates it if it doesn't exist. Together with the pre-line template example given below, this will produce a "jumping" effect for the syllables.
 
-=== pre-line ===
+=== pre-line ''[name]'' ===
 
 This class modifier is only valid for template lines.
 
@@ -100,3 +100,73 @@ This template line declares a furi template that simply positions the syllable t
 It's possible to combine the <code>syl</code> and <code>furi</code> class modifiers. This results in two identical templates being generated from the template line, one syl template and one furi template.
 
 This is the only possible combination of class modifiers, they are otherwise exclusive.
+
+== Other modifiers ==
+
+=== all ===
+
+Apply template to all styles, not just the one of the template line.
+
+Applicable for both code lines and templates, and for all classes.
+
+{{todo|example}}
+
+=== char ===
+
+Make the template work per-character instead of per-syllable. This changes application order semantics in a significant way, see [[Karaoke Templater Reference: Template execution rules and order|Template execution and order]] for details.
+
+While this will work on code lines, it is generally not useful, see the discussion on execution order.
+
+{{todo|example}}
+
+=== fx ''name'' ===
+
+Make template only apply to syllables that have the named [[inline-fx]]. Specifying an inline-fx name is required; the name may also overlap with template modifier names though this is not recommended.
+
+{{todo|example}}
+
+=== fxgroup ''name'' ===
+
+Declare template to be in the named effect group. Specifying an effect group name is required; the name may also overlap with template modifier names and Lua reserved words, though this is not recommended.
+
+{{todo|example}}
+
+=== keeptags ===
+
+Specify that the original tags must be kept in the syllable after application.
+
+This has no effect when combined with <code>char</code> or <code>multi</code>.
+
+{{todo|example}}
+
+=== multi ===
+
+Make the template apply per-highlight in [[Furigana karaoke|multi-highlight]] timed karaoke. This changes application order semantics in a significant way, see [[Karaoke Templater Reference: Template execution rules and order|Template execution and order]] for details.
+
+While this will work on code lines, it is generally not useful, see the discussion on execution order.
+
+{{todo|example}}
+
+=== notext ===
+
+Specify that the original text will not be appended to the output line.
+
+This is intended for use primarily with templates that output drawing tags and similar.
+
+Not applicable for code lines.
+
+{{todo|example}}
+
+=== noblank ===
+
+Specify that the template will not be applied to syllables considered "blank". A syllable is considered blank if its tag-stripped text consists only of a combination of ASCII whitespace characters and ideographic fullwidth space characters, or is completely empty. A syllable is also considered empty if its duration is zero.
+
+{{todo|example}}
+
+=== repeat ''n'', loop ''n'' ===
+
+Specify that the template will be applied the given number of times. Specifying the number of loops is required. The number of loops must be a constant integer number, it can not be a variable or otherwise calculated dynamically.
+
+Note that the execution order of looped line templates and looped syl/furi templates is different. See [[Karaoke Templater Reference: Template execution rules and order|Template execution and order]] for details.
+
+{{todo|example}}
