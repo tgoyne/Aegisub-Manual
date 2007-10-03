@@ -35,6 +35,8 @@ When used on template lines it takes an optional parameter naming the line templ
 
 Anonymous line templates (with no template name given) can not have pre-line template text.
 
+Code lines can not be named, they must be anonymous.
+
 Named line template lines append to the template text in the order they appear. The appending of template text happens at template parse time, not at execution time.
 
 ==== Examples ====
