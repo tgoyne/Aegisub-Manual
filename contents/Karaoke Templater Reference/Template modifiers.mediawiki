@@ -111,7 +111,11 @@ Apply template to all styles, not just the one of the template line.
 
 Applicable for both code lines and templates, and for all classes.
 
-{{todo|example}}
+==== Example ====
+
+ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,template syl all,{\pos($x,$y)}
+
+This template will be applied to every single syllable in the entire subtitle file, regardless of the style of the line they are on.
 
 === char ===
 
@@ -119,13 +123,35 @@ Make the template work per-character instead of per-syllable. This changes appli
 
 While this will work on code lines, it is generally not useful, see the discussion on execution order.
 
-{{todo|example}}
+==== Example ====
+
+ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,template syl char,{\pos($x,$y)}
+ Comment: 1,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,template syl char,{\pos($x,$y)\bord0}
+
+Every single character on the line will be positioned separately. For each syllable, each template will apply for all characters in one go, and not be applied interleaved.
+
+For example, if there are two syllables, "ab" and "cd", and the above two templates are applied to them, the result will be 8 lines with the following text, in this order:
+
+ {\pos($x,$y)}a
+ {\pos($x,$y)}b
+ {\pos($x,$y)\bord0}a
+ {\pos($x,$y)\bord0}b
+ {\pos($x,$y)}c
+ {\pos($x,$y)}d
+ {\pos($x,$y)\bord0}c
+ {\pos($x,$y)\bord0}d
 
 === fx ''name'' ===
 
 Make template only apply to syllables that have the named [[inline-fx]]. Specifying an inline-fx name is required; the name may also overlap with template modifier names though this is not recommended.
 
-{{todo|example}}
+==== Example ====
+
+ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,template syl fx drop,{\move($x,$y,$x,!$y+30!,$start,$end)}
+
+With this template, all syllables that have the inline-fx "drop" will get an additional line produced, where the syllables moves down 30 pixels during its duration.
+
+All other template lines that don't have ''fx'' specified will still be applied as usual to those syllables as well.
 
 === fxgroup ''name'' ===
 
