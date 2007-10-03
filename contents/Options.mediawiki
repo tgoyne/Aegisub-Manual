@@ -22,3 +22,8 @@ All configuration data is stored in a plain text file named ''config.dat'', whic
 * '''Auto-save every X seconds'''
 : Decides how often Aegisub should automatically save a copy of the script you are working on. Setting it to 0 disables autosaving. The automatically saved copy is stored in ''%APPDATA%/Aegisub/autosave/'' on Windows and ''$HOME/.aegisub/autosave'' on POSIX, but this can be changed (see below).
 * '''Auto-save path'''
+: Decides where to save autosaved copies of scripts you are working on. By default set to "autosave" in your Aegisub data directory (see above).
+* '''Auto-backup path'''
+: Decides where to save automatic backup copies of scripts. By default set to "autoback" in your Aegisub data directory (see above).
+* '''Crash recovery path'''
+: Decides where Aegisub should save scripts recovered from crashes. By default set to "recovered" in your Aegisub data directory (see above).
