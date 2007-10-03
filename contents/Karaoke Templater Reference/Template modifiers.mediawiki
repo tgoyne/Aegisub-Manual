@@ -81,7 +81,7 @@ Syl templates can not be named.
 
 ==== Example ====
 
- Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,template syl,{\pos($x,$y)}
+ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<b>template syl</b>,{\pos($x,$y)}
 
 This template line declares a syl template that simply positions the syllable text.
 
@@ -93,7 +93,7 @@ Furi templates can not be named.
 
 ==== Example ====
 
- Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,template syl,{\pos($x,$y)}
+ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<b>template furi</b>,{\pos($x,$y)}
 
 This template line declares a furi template that simply positions the syllable text. It's not needed to do anything further to get correct furigana formatting.
 
@@ -113,7 +113,7 @@ Applicable for both code lines and templates, and for all classes.
 
 ==== Example ====
 
- Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,template syl all,{\pos($x,$y)}
+ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<b>template syl all</b>,{\pos($x,$y)}
 
 This template will be applied to every single syllable in the entire subtitle file, regardless of the style of the line they are on.
 
@@ -125,8 +125,8 @@ While this will work on code lines, it is generally not useful, see the discussi
 
 ==== Example ====
 
- Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,template syl char,{\pos($x,$y)}
- Comment: 1,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,template syl char,{\pos($x,$y)\bord0}
+ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<b>template syl char</b>,{\pos($x,$y)}
+ Comment: 1,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<b>template syl char</b>,{\pos($x,$y)\bord0}
 
 Every single character on the line will be positioned separately. For each syllable, each template will apply for all characters in one go, and not be applied interleaved.
 
@@ -147,7 +147,7 @@ Make template only apply to syllables that have the named [[inline-fx]]. Specify
 
 ==== Example ====
 
- Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,template syl fx drop,{\move($x,$y,$x,!$y+30!,$start,$end)}
+ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<b>template syl fx drop</b>,{\move($x,$y,$x,!$y+30!,$start,$end)}
 
 With this template, all syllables that have the inline-fx "drop" will get an additional line produced, where the syllables moves down 30 pixels during its duration.
 
