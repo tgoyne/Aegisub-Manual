@@ -1,0 +1,24 @@
+Aegisub is highly customizable and hence has a large amount of user-changeable options. These are available in the options dialog box, found in the View menu. This page is a reference of all the available options.
+
+All configuration data is stored in a plain text file named ''config.dat'', which under Windows is placed in ''%APPDATA%/Aegisub/'', and under POSIX and POSIX-like systems in ''$HOME/.aegisub/'' (I think?). If you want to reset Aegisub to its default options without reinstalling the program, you can just delete config.dat and restart Aegisub.
+
+===General===
+{{Todo|screenshot}}
+* '''Show Splash Screen'''
+: If enabled, Aegisub will display its splash screen when starting up.
+* '''Show Tip of the Day'''
+: If enabled, Aegisub will display a (potentially) useful tip of the day after starting up.
+* '''Auto Check for Updates'''
+: If enabled, Aegisub will periodically check whether there is a newer version available, and alert you if there is. Requires a working connection to the internet.
+* '''Save config.dat locally'''
+: Normally, the configuration file (config.dat) is stored in your user directory as described above. However, in some circumstances it may be desirable to have the configuration be shared for all users of the computer. Ticking this box will accomplish this, by storing config.dat in the program directory (or in /etc on POSIX-like systems) instead of in your home directory. This has several caveats, however: on Windows Vista, it will cause problems because you normally do not have write permission to the program directory directly (unless you disable UAC). On POSIX systems, it may fail because unless you are superuser, you may probably not have write access to /etc. Hence, use this option with care.
+* '''Limits for levels and recent files'''
+: These boxes all control how many files Aegisub will save in the "recently opened" submenus, and also how many undo levels will be saved. Change to your preference, but beware: the more undo levels you use, the more RAM Aegisub will consume. This is particularly noticeable with large scripts. Having lots of recently opened files stored has no real drawback except making config.dat bigger and the submenus harder to navigate, though.
+
+====General -> File save/load====
+{{Todo|screenshot}}
+* '''Auto-backup'''
+: If enabled, Aegisub will save a backup copy of each script you open, immediately on opening it. By default, it is saved to ''%APPDATA%/Aegisub/autoback/'' on Windows and ''$HOME/.aegisub/autoback'' on POSIX, but this can be changed (see below).
+* '''Auto-save every X seconds'''
+: Decides how often Aegisub should automatically save a copy of the script you are working on. Setting it to 0 disables autosaving. The automatically saved copy is stored in ''%APPDATA%/Aegisub/autosave/'' on Windows and ''$HOME/.aegisub/autosave'' on POSIX, but this can be changed (see below).
+* '''Auto-save path'''
