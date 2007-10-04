@@ -27,3 +27,5 @@ All configuration data is stored in a plain text file named ''config.dat'', whic
 : Decides where to save automatic backup copies of scripts. By default set to "autoback" in your Aegisub data directory (see above).
 * '''Crash recovery path'''
 : Decides where Aegisub should save scripts recovered from crashes. By default set to "recovered" in your Aegisub data directory (see above).
+* '''Auto-load linked files'''
+: Whenever you save a script, Aegisub also stores some information about what video, audio and timecodes files you had open while working on it, inside the script itself. This option decides what Aegisub does with these files that are "linked" to the script when opening it. If set to "ask", Aegisub will ask you if you want to load linked files. If set to "never", Aegisub will never load linked files, and likewise if set to "always", Aegisub will always try to load linked files (and report an error if the file(s) were not found).
