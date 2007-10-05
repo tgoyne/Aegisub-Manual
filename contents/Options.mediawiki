@@ -91,7 +91,7 @@ Aegisub stores all its configuration in a plain text file called ''config.dat'' 
 
 ==Video==
 * '''Match video resolution on open'''
-: Controls what Aegisub will do about script resolution when you open a video. If set to "never", Aegisub will do nothing if the script resolution doesn't match the video resolution. If set to "ask", Aegisub will ask you if you want to change the script resolution to match the video resolution if they don't match. If set to "always", Aegisub will always change the script resolution to match the video resolution automatically.
+: Controls what Aegisub will do about script resolution when you open a video. If set to "never", Aegisub will do nothing if the script resolution doesn't match the video resolution. If set to "ask", Aegisub will ask you if you want to change the script resolution to match the video resolution if they don't match. If set to "always", Aegisub will always change the script resolution to match the video resolution automatically. "always" is not recommended since it just changes script resolution without resampling anything, so it will most likely break existing typesetting.
 * '''Default zoom'''
 : The default video zoom level. Useful if you have a very big or very small screen.
 * '''Fast jump step in frames'''
