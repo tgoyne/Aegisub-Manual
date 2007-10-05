@@ -1,6 +1,6 @@
 Aegisub is highly customizable and hence has a large amount of user-changeable options. These are available in the options dialog box, found in the View menu. This page is a reference of all the available options.
 
-All configuration data is stored in a plain text file named ''config.dat'', which is located in the [[Aegisub path specifiers|?user]] directory. If you want to reset Aegisub to its default options without reinstalling the program, you can just delete config.dat and restart Aegisub.
+Aegisub stores all its configuration in a plain text file called ''config.dat''  which by default is stored in the [[Aegisub path specifiers|?user]] directory. If you want to reset Aegisub to its default options without reinstalling the program, you can just delete config.dat and restart Aegisub.
 
 ==General==
 {{Todo|screenshot}}
