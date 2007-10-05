@@ -60,6 +60,7 @@ Aegisub stores all its configuration in a plain text file called ''config.dat'' 
 : Decides the font and fontsize used for the subtitle edit box and other edit boxes.
 
 ===General -> Subtitles grid===
+{{Todo|screenshot}}
 * '''Allow grid to take focus'''
 : When enabled, the subtitles grid acts as its own area of the program and it can have focus, just like the audio or the video can, and while it does you can use the arrow keys/mouse wheel to scroll around it etc. On the other hand, if you disable this option, the focus will stay where it was before whenever you click in the grid. This means you can't use keyboard shortcuts in the grid anymore, but on the other hand it means you can click in the grid to go to a line without losing the audio focus and so on. Use at your own discretion.
 * '''Highlight subtitles that are currently visible in the video'''
@@ -87,3 +88,23 @@ Aegisub stores all its configuration in a plain text file called ''config.dat'' 
 : Decides the font and font size of all text in the grid.
 * '''Replace override tags with:'''
 : The character that will be shown instead of override blocks if tag hiding is active.
+
+==Video==
+* '''Match video resolution on open'''
+: Controls what Aegisub will do about script resolution when you open a video. If set to "never", Aegisub will do nothing if the script resolution doesn't match the video resolution. If set to "ask", Aegisub will ask you if you want to change the script resolution to match the video resolution if they don't match. If set to "always", Aegisub will always change the script resolution to match the video resolution automatically.
+* '''Default zoom'''
+: The default video zoom level. Useful if you have a very big or very small screen.
+* '''Fast jump step in frames'''
+: Decides how big "jumps" Aegisub will make when you use the fast seek feature. Measured in frames.
+* '''Screenshot save path'''
+: Decides where Aegisub should save screenshots. The default is <tt>?video</tt>, which means they are saved to wherever the video is. The other two options are <tt>?script</tt>, which is wherever the script is, and <tt>.</tt>, which is the current directory.
+* '''Show keyframes in slider'''
+: When enabled, Aegisub will draw keyframe markers on the video seek slider. Note that this is not supported for all video formats and/or video providers.
+* '''Video provider'''
+: Decides what method Aegisub should use to load video and draw subtitles on it. What options you have available here depends on how your copy of Aegisub was compiled and what operating system you are running under. The following alternatives exist:
+: - ''avisynth'' (Windows only)
+:: Uses Avisynth to load video. Versatile, supports loading almost all common formats as well as .d2v files (indexed DVD VOB's) if the correct plugin is supplied. Note that Aegisub can install its own avisynth.dll instead of using your system installation if so desired. Requires Video for Windows decoders for AVI files for best performance. Uses ffmpegsource() to load anything that isn't AVI (and tries that too for AVI's if no suitable VfW decoder is found) and hence tends to litter your harddrive with .ffv0cache files. Default option on Windows.
+: - ''dshow'' (Windows only)
+:: Uses Microsoft's DirectShow framework to load video. Supports loading anything you can play in, say, Windows Media Player but is slower than Avisynth. May work with really odd formats that are not supported by ffmpegsource().
+: - ''ffmpeg''
+:: Uses ffmpeg directly to load video. Supports most common formats. Most Windows builds do not have this option compiled in at all.
