@@ -60,3 +60,30 @@ Aegisub stores all its configuration in a plain text file called ''config.dat'' 
 : Decides the font and fontsize used for the subtitle edit box and other edit boxes.
 
 ===General -> Subtitles grid===
+* '''Allow grid to take focus'''
+: When enabled, the subtitles grid acts as its own area of the program and it can have focus, just like the audio or the video can, and while it does you can use the arrow keys/mouse wheel to scroll around it etc. On the other hand, if you disable this option, the focus will stay where it was before whenever you click in the grid. This means you can't use keyboard shortcuts in the grid anymore, but on the other hand it means you can click in the grid to go to a line without losing the audio focus and so on. Use at your own discretion.
+* '''Highlight subtitles that are currently visible in the video'''
+: When enabled, all subtitle lines that are currently visible in the video frame (or at least ''should'' be visible; Aegisub does not account for alpha and such trickery in this case, it only cares about the timing of the line) will be highlighted in the grid with a special background color (see the "Line in frame background" option below).
+
+* '''Standard foreground'''
+* '''Standard background'''
+: The normal color of lines in the grid. "Foreground" is the text color, and "Background" is obviously the background color.
+* '''Selection foreground'''
+* '''Selection background'''
+: The color of selected lines in the grid.
+* '''Comment background'''
+* '''Selected comment background'''
+: The background color of commented-out lines and selected commented-out lines, respectively.
+* '''Collision foreground'''
+: The text color of lines whose timings overlap.
+* '''Line in frame background'''
+: The background color of lines currently visible in the video frame.
+* '''Header'''
+* '''Left column'''
+* '''Active line border'''
+* '''Lines'''
+: The color of the grid lines and fixed columns/headers.
+* '''Font'''
+: Decides the font and font size of all text in the grid.
+* '''Replace override tags with:'''
+: The character that will be shown instead of override blocks if tag hiding is active.
