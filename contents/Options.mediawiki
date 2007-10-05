@@ -11,21 +11,52 @@ Aegisub stores all its configuration in a plain text file called ''config.dat'' 
 * '''Auto Check for Updates'''
 : If enabled, Aegisub will periodically check whether there is a newer version available, and alert you if there is. Requires a working connection to the internet.
 * '''Save config.dat locally'''
-: Normally, all configuration information for Aegisub is stored in a per-user basis in each system user's home directory. On Windows, this is <tt>%APPDATA%\Aegisub\</tt>, on Mac OS X this is <tt>$HOME/Library/Application Support/Aegisub/</tt> and on other POSIX-like systems this is <tt>$HOME/.aegisub/</tt>. This is the default value of <tt>[[Aegisub path specifiers|?user]]</tt>. By enabling this option, <tt>?user</tt> will instead refer to the same directory as <tt>?data</tt>, effectively making all configuration global to the installation of Aegisub. This option can only be used safely when Aegisub is installed in a location you have regular write permissions for, usually somewhere inside your home directory.
+: Normally, all configuration information for Aegisub is stored in a per-user basis in each system user's home directory. On Windows, this is <tt>%APPDATA%\Aegisub\</tt>, on Mac OS X it means <tt>$HOME/Library/Application Support/Aegisub/</tt> and on other POSIX-like systems (GNU/Linux, *BSD etc.) it's <tt>$HOME/.aegisub/</tt>. This is the default value of <tt>[[Aegisub path specifiers|?user]]</tt>. However, by enabling this option, <tt>?user</tt> will instead refer to the same directory as <tt>[[Aegisub path specifiers|?data]]</tt> (which is ''not'' a user-specific location), effectively making all configuration global to the installation of Aegisub.
+
+:'''Note:''' This option cannot be safely used if Aegisub is installed in a "usual" program directory on some operating systems unless you are the superuser, because it requires write permission to that directory or a nearby one. For example, normal users won't have write permission to the Program Files directory on Windows Vista, and most Linux distributions have similar restrictions for /usr/share.
 * '''Limits for levels and recent files'''
 : These boxes all control how many files Aegisub will save in the "recently opened" submenus, and also how many undo levels will be saved. Change to your preference, but beware: the more undo levels you use, the more RAM Aegisub will consume. This is particularly noticeable with large scripts. Having lots of recently opened files stored has no real drawback except making config.dat bigger and the submenus harder to navigate, though.
 
 ===General -> File save/load===
 {{Todo|screenshot}}
 * '''Auto-backup'''
-: If enabled, Aegisub will save a backup copy of each script you open, immediately on opening it. By default, it is saved to ''%APPDATA%/Aegisub/autoback/'' on Windows and ''$HOME/.aegisub/autoback'' on POSIX, but this can be changed (see below).
+: If enabled, Aegisub will save a backup copy of each script you open, immediately on opening it. By default, it is saved to <tt>?user/autoback/</tt>, but this can be changed (see below).
 * '''Auto-save every X seconds'''
-: Decides how often Aegisub should automatically save a copy of the script you are working on. Setting it to 0 disables autosaving. The automatically saved copy is stored in ''%APPDATA%/Aegisub/autosave/'' on Windows and ''$HOME/.aegisub/autosave'' on POSIX, but this can be changed (see below).
+: Decides how often Aegisub should automatically save a copy of the script you are working on. Setting it to 0 disables autosaving. By default, the automatically saved copy is stored in <tt>?user/autosave/</tt> but this can be changed (see below).
 * '''Auto-save path'''
-: Decides where to save autosaved copies of scripts you are working on. By default set to "autosave" in your Aegisub data directory (see above).
+: Decides where to save autosaved copies of scripts you are working on. By default set to <tt>autosave</tt> in your Aegisub <tt>?user</tt> directory (see the [[Aegisub path specifiers]] page for details).
 * '''Auto-backup path'''
-: Decides where to save automatic backup copies of scripts. By default set to "autoback" in your Aegisub data directory (see above).
+: Decides where to save automatic backup copies of scripts. By default set to <tt>autoback</tt> in your Aegisub <tt>?user</tt> directory.
 * '''Crash recovery path'''
-: Decides where Aegisub should save scripts recovered from crashes. By default set to "recovered" in your Aegisub data directory (see above).
+: Decides where Aegisub should save scripts recovered from crashes. By default set to <tt>recovered</tt> in your Aegisub <tt>?user</tt> diectory.
 * '''Auto-load linked files'''
 : Whenever you save a script, Aegisub also stores some information about what video, audio and timecodes files you had open while working on it, inside the script itself. This option decides what Aegisub does with these files that are "linked" to the script when opening it. If set to "ask", Aegisub will ask you if you want to load linked files. If set to "never", Aegisub will never load linked files, and likewise if set to "always", Aegisub will always try to load linked files (and report an error if the file(s) were not found).
+
+===General -> Subtitles edit box===
+{{Todo|screenshot}}
+* '''Enable call tips'''
+: When enabled, Aegisub will detect when you are writing an [[ASS Tags|override tag]] and display a small box with a brief reference of the syntax of the tag in question until you close the tag. This is called a "call tip" and the feature may be familiar to users of various programming IDE's.
+* '''Link committing of times'''
+: When enabled, Aegisub will commit both start and end times when you hit Enter with the mouse cursor in either time edit box. If disabled, they will be committed separately instead.
+* '''Enable syntax highlighting'''
+: Enables or disables syntax highlighting of override tags.
+* '''Overwrite-Insertion in time boxes'''
+: Controls the behavior of all time edit boxes in the program. By default, all time edit boxes in Aegisub behave like as if you had pressed the Insert button, so every digit you type overwrites what is already there, and you cannot erase numbers that are already there, you have to overwrite them. Unticking this box disables this behavior and makes the time edit boxes behave just like normal text edit boxes (almost).
+* '''Path to dictionary files'''
+: Decides where Aegisub will look for dictionary files for its spellchecker and thesaurus. By default it looks in <tt>?data/dictionaries</tt>, but if you have your own dictionaries in the correct format somewhere else, feel free to point Aegisub there instead.
+* '''Syntax highlighter - Normal'''
+* '''Syntax highlighter - Brackets'''
+* '''Syntax highlighter - Slashes and parentheses'''
+* '''Syntax highlighter - Tags'''
+* '''Syntax highlighter - Parameters'''
+* '''Syntax highlighter - Error'''
+* '''Syntax highlighter - Error background'''
+* '''Syntax highlighter - Line break'''
+* '''Syntax highlighter - Karaoke templates'''
+: All of these decide what colors the syntax highlighter should use for various parts of the text in the subtitles edit box. "Normal" is plain normal text.
+* '''Modified background'''
+: Decides what background color a changed but not yet committed box should have. Does not apply to the main subtitles edit box itself.
+* '''Font'''
+: Decides the font and fontsize used for the subtitle edit box and other edit boxes.
+
+===General -> Subtitles grid===
