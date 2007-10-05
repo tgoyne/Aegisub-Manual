@@ -1,0 +1,7 @@
+Aegisub uses a simple system for denoting file locations. Most pathnames in Aegisub can be written starting with special variables, that each refer to specific locations.
+
+* '''?data''' - The location where application data are stored. On Windows this is the installation directory. On Mac OS X this is inside the application bundle. On other POSIX-like systems this is <tt>$prefix/share/aegisub/</tt>.
+* '''?user''' - The location for user data files, this is configuration files, automatic back-ups and some additional things. On Windows this <tt>%APPDATA%\Aegisub\</tt>, on Mac OS X this is <tt>$HOME/Library/Application Support/Aegisub/</tt> and on other POSIX-like systems this is <tt>$HOME/.aegisub/</tt>.
+* '''?temp''' - The system temp directory. Audio cache and any required temporary subtitle files are stored here.
+
+{{todo|There's a bunch more that get defined when subs, video and audio are open and have a specific path...}}
