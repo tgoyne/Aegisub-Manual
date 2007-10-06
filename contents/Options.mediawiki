@@ -90,6 +90,7 @@ Aegisub stores all its configuration in a plain text file called ''config.dat'' 
 : The character that will be shown instead of override blocks if tag hiding is active.
 
 ==Video==
+{{Todo|screenshot}}
 * '''Match video resolution on open'''
 : Controls what Aegisub will do about script resolution when you open a video. If set to "never", Aegisub will do nothing if the script resolution doesn't match the video resolution. If set to "ask", Aegisub will ask you if you want to change the script resolution to match the video resolution if they don't match. If set to "always", Aegisub will always change the script resolution to match the video resolution automatically. "always" is not recommended since it just changes script resolution without resampling anything, so it will most likely break existing typesetting.
 * '''Default zoom'''
@@ -108,3 +109,11 @@ Aegisub stores all its configuration in a plain text file called ''config.dat'' 
 :: Uses Microsoft's DirectShow framework to load video. Supports loading anything you can play in, say, Windows Media Player but is slower than Avisynth. May work with really odd formats that are not supported by ffmpegsource().
 : - ''ffmpeg''
 :: Uses ffmpeg directly to load video. Supports most common formats. Technically there's nothing that stops you from using this on Windows, but most Windows builds (including the official Aegisub release builds for Windows) don't have it compiled in at all.
+
+==Audio==
+* '''Grab times from line upon selection'''
+: buttes
+* '''Lock scroll on cursor'''
+: When enabled, the audio waveform view will automatically scroll to follow the playback cursor.
+* '''Snap to adjacent lines'''
+: aaaaaaa
