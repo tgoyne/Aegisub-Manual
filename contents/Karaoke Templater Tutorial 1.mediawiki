@@ -10,6 +10,8 @@ Look under the Automation menu in Aegisub.
 
 You should see the option called ''Apply karaoke template'', though it will be unavailable. This is what you'll select to use the "templates" we'll be writing throughout these tutorials. Right now it's unavailable because you haven't entered any templates. We'll get to that in a moment.
 
+If you don't have the ''Apply karaoke template'' option, your Aegisub installation is either incomplete or damaged. You need to repair your installation in that case, to be able to use Karaoke Templater.
+
 But there is something else to make sure of first.
 
 == Getting timed karaoke ==
