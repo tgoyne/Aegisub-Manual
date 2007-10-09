@@ -111,9 +111,10 @@ Aegisub stores all its configuration in a plain text file called ''config.dat'' 
 :: Uses ffmpeg directly to load video. Supports most common formats. Technically there's nothing that stops you from using this on Windows, but most Windows builds (including the official Aegisub release builds for Windows) don't have it compiled in at all.
 
 ==Audio==
+{{Todo|screenshot}}
 * '''Grab times from line upon selection'''
 : buttes
 * '''Lock scroll on cursor'''
 : When enabled, the audio waveform view will automatically scroll to follow the playback cursor.
 * '''Snap to adjacent lines'''
-: aaaaaaa
+: When enabled, Aegisub will snap the audio cursor to adjacent line start or end times if it is close enough.
