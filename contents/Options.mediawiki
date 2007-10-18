@@ -113,8 +113,21 @@ Aegisub stores all its configuration in a plain text file called ''config.dat'' 
 ==Audio==
 {{Todo|screenshot}}
 * '''Grab times from line upon selection'''
-: buttes
+: This option should really be named "Selecting lines changes audio selection", because that's what it does. When enabled, clicking a line in the grid or going to it using the next/previous line hotkeys will select the corresponding area in the audio waveform. When disabled, the selected area will always stay the same until you change it.
 * '''Lock scroll on cursor'''
-: When enabled, the audio waveform view will automatically scroll to follow the playback cursor.
+: When enabled, the audio waveform view will automatically scroll to follow the playback cursor if it gets too close to either of the edges.
 * '''Snap to adjacent lines'''
 : When enabled, Aegisub will snap the audio cursor to adjacent line start or end times if it is close enough.
+* '''Default mouse wheel to zoom'''
+: When enabled, the mouse wheel will zoom the audio display horizontally. If disabled, it will scroll the audio display instead.
+* '''Snap to keyframes'''
+: When enabled, the audio cursor will snap to keyframe lines (if you have any loaded, either from a video or from a keyframe file) if it is close enough.
+* '''Auto-focus on mouse over'''
+: If enabled, moving the mouse cursor over the audio waveform will automatically give it focus (as opposed to requiring a click).
+* '''Default timing length'''
+: The default length of a new untimed line, in milliseconds.
+* '''Default lead-in length'''
+* '''Default lead-out length'''
+: The duration added to the start of a line by the "add lead-in" and "add lead-out" functions. Also used in the [[Timing Post-Processor|timing postprocessor]].
+* '''Show inactive lines'''
+: Controls how lines surrounding the currently selected line are displayed in the audio waveform. "Don't show" will only display the current line, "Show previous" will show the previous line (in the grid, ''not'' chronologically) in gray in addition to the current line, and "Show all" will show all lines in gray in addition to the current line.
