@@ -67,10 +67,7 @@ Aegisub is the work of a cast of thousands... here's a list of some of them, in 
 *Firebird for some of the toolbar icons
 *Kayle for help with Win32 VfW interface
 
-===Honorable mentions===
-*kryptolus for developing Sabbu, the competing program :)
-*Gabest for developing VSFilter
-*The Avisynth developers: Ben Rudiak-Gould, Edwin van Eggelen, Klaus Post, *Richard Berg and others
+
 
 ===About===
 Aegisub 2.00 was developed using Microsoft Visual Studio 2005 and wxWidgets 2.8.6. The Automation module also uses the Lua Programming Language. The Regular Expressions code used in this program was written by Henry Spencer and included in wxWidgets. Aegisub also uses the PortAudio, libpng, zlib and ffmpeg libraries.
