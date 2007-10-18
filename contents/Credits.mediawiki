@@ -61,13 +61,12 @@ Aegisub is the work of a cast of thousands... here's a list of some of them, in 
 
 ===Additional thanks===
 *Mentar for hosting the SVN repository up to version 1.09
-*BerliOS for hosting the SVN repository for versions 1.10+
-*Bot1 for hosting the forums and Bug Tracker
-*Motoko-chan for compiling and hosting pre-release builds
+*BerliOS for hosting the SVN repository for version 1.10
+*equinox for hosting the SVN repository for version 2.00+
+*Bot1 for hosting the forums, Bug Tracker, and wiki
+*Marcello for hosting the documentation wiki
 *Firebird for some of the toolbar icons
 *Kayle for help with Win32 VfW interface
-
-
 
 ===About===
 Aegisub 2.00 was developed using Microsoft Visual Studio 2005 and wxWidgets 2.8.6. The Automation module also uses the Lua Programming Language. The Regular Expressions code used in this program was written by Henry Spencer and included in wxWidgets. Aegisub also uses the PortAudio, libpng, zlib and ffmpeg libraries.
