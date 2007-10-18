@@ -4,7 +4,7 @@ Aegisub is the work of a cast of thousands... here's a list of some of them, in 
 *Rodrigo Braz Monteiro (ArchMage ZeratuL) - Lead developer, all-around programming, PRS library programming
 *Niels Martin Hansen (jfs) - Automation programming, all-around programming
 *David Lamparter (equinox) - Unix port, FFMPEG-related programming, ASA developer
-*DanSolo - Miscellaneous tool programming
+*Dansolo - Miscellaneous tool programming
 *Fredrik Mellbin (Myrsloik) - Avisynth-related programming
 *demi_alucard - Miscellaneous patching
 *Pomyk - Miscellaneous patching
