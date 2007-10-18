@@ -17,7 +17,7 @@ The method of hardsubbing requires that the source video is re-encoded so the su
 
 Subtitles add a sharp contrast in a video image due to their nature. This will cause compression artifacts along the edges of the encoded subtitle, and blurring of the subtitle. This effect is especially evident at lower bitrates.
 
-In some circumstances, the inclusion of the subtitles will cause an increase in the bitrate needed for the video to keep the same quality. This, of course, means an increased filesize, or lower quality at the same size.
+Under typical circumstances, the inclusion of the subtitles will cause an increase in the bitrate needed for the video to keep the same quality. This, of course, means an increased filesize, or lower quality at the same size. The increase in bitrate necessary is typically around 3 to 10%.
 
 Changing the subtitles requires a re-encode of the video source, which can add a lot of time and extra work to the release process.
 
