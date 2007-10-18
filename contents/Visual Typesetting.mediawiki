@@ -35,7 +35,7 @@ If your line has an origin point specified, you will see a third anchor, represe
 
 On this mode, you will see a circle centered around the subtitle's pivot (either it's position, or the origin point, if defined). The circle is surrounded by 6 arcs that help mark and measure angles.
 
-{todo|Insert screenshot showing rotation}
+{{todo|Insert screenshot showing rotation}}
 
 There are two functionalities in this mode, you can either drag the origin point (the triangle at the center of the circle) to move it (and insert a \org tag, if none exists), or you can click and drag anywhere else to rotate the line.
 
@@ -43,7 +43,7 @@ You will notice that there is a line connecting the center of the circle to the 
 
 If the origin is far from the center, you will see a little helper line indicating where the center of the subtitles will be positioned as you rotate it.
 
-{todo|Insert screenshot showing the helper line}
+{{todo|Insert screenshot showing the helper line}}
 
 === Rotate on XY axes === 
 
