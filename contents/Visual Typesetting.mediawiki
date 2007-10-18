@@ -73,7 +73,7 @@ This is the simplest tool, and allows you to scale subtitles on the X and Y axes
 
 {{todo|screenshot}}
 
-To use this tool, simply hold down the mouse button and drag the mouse up and down (to scale on the Y axis) or left and right (to scale on the X axis).
+To use this tool, simply hold down the mouse button and drag the mouse up and down (to scale on the Y axis) or left and right (to scale on the X axis). You can hold down the ctrl key to limit scaling to the axis where the biggest change happened, and shift to limit it to increments of 25%.
 
 === Rectangular clip ===
 
