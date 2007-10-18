@@ -104,7 +104,7 @@ Aegisub stores all its configuration in a plain text file called ''config.dat'' 
 * '''Video provider'''
 : Decides what method Aegisub should use to load video. What options you have available here depends on how your copy of Aegisub was compiled and what operating system you are running under. The following alternatives exist:
 : - ''avisynth'' (Windows only)
-:: Uses [http://www.avisynth.org Avisynth] to load video. Versatile, supports loading almost all common formats as well as .d2v files (indexed DVD VOB's) if the correct plugin is supplied. Note that Aegisub can install its own avisynth.dll instead of using your system installation if so desired. Requires Video for Windows decoders for AVI files for best performance. Uses ffmpegsource() to load anything that isn't AVI (and tries that too for AVI's if no suitable VfW decoder is found) and hence tends to litter your harddrive with .ffv0cache files. Default option on Windows.
+:: Uses [http://www.avisynth.org Avisynth] to load video. Versatile, supports loading almost all common formats as well as .d2v files (indexed DVD VOB's) if the correct plugin is supplied. Note that Aegisub can install its own avisynth.dll instead of using your system installation if so desired. Requires Video for Windows decoders for AVI files for best performance. Uses ffmpegsource() to load anything that isn't AVI (and tries that too for AVI's if no suitable VfW decoder is found).
 : - ''dshow'' (Windows only)
 :: Uses Microsoft's DirectShow framework to load video. Supports loading anything you can play in, say, Windows Media Player but is slower than Avisynth. May work with really odd formats that are not supported by ffmpegsource().
 : - ''ffmpeg''
@@ -131,3 +131,39 @@ Aegisub stores all its configuration in a plain text file called ''config.dat'' 
 : The duration added to the start of a line by the "add lead-in" and "add lead-out" functions. Also used in the [[Timing Post-Processor|timing postprocessor]].
 * '''Show inactive lines'''
 : Controls how lines surrounding the currently selected line are displayed in the audio waveform. "Don't show" will only display the current line, "Show previous" will show the previous line (in the grid, ''not'' chronologically) in gray in addition to the current line, and "Show all" will show all lines in gray in addition to the current line.
+
+===Audio -> Display===
+{{Todo|screenshot}}
+* '''Draw secondary lines'''
+: If enabled, lines marking seconds will be drawn in the audio waveform.
+* '''Draw timeline'''
+: If enabled, a timeline "ruler" with markers for each quarter second will be displayed below the audio waveform.
+* '''Draw keyframes'''
+: If enabled, lines marking the positions of keyframes in the video will be drawn on the audio waveform.
+* '''Draw selection background'''
+: If enabled, the selection will be drawn in an alternate color; if disabled only the line start and end markers will show where the selection is.
+* '''Draw cursor time'''
+: If enabled, a timestamp showing the time since the start of the file will be drawn near the top of the audio waveform cursor.
+* '''Play cursor'''
+: The color of the playback cursor.
+* '''Background'''
+: The color of the audio waveform background.
+* '''Selection background'''
+: The color of the audio waveform background when it is covered by the selection.
+* '''Selection background - modified'''
+: The color of the audio waveform background when it is covered by the selection and the selection is detected as modified.
+* '''Seconds boundary'''
+: The color of the second marker lines.
+* '''Waveform'''
+* '''Waveform - selection'''
+* '''Waveform - modified'''
+* '''Waveform - inactive'''
+: The color of the waveform itself in various situations (selected, detected as modified, and covered by an inactive line selection respectively).
+* '''Boundary - start'''
+* '''Boundary - end'''
+* '''Boundary - inactive'''
+: The respective colors of the various line boundary markers.
+* '''Syllable text'''
+: The color of a syllable's text in karaoke mode.
+* '''Syllable boundary'''
+: The color of a syllable boundary line in karaoke mode.
