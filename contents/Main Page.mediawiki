@@ -10,7 +10,7 @@ Aegisub also has [[aegi:Main_Page|another wiki]], used for keeping track of more
 
 * [[Audio Timing Tutorial|Timing a translated script to audio]]
 * [[Typesetting Tutorial|Basic typesetting of on-screen signs]]
-* [[Attaching Subtitles Tutorial|Putting your finished subtitles onto the video]] (for viewing or distribution)
+* [[Attaching subtitles to video|Putting your finished subtitles onto the video]] (for viewing or distribution)
 
 * [[Translation Assistant|Translating a subtitle file from one language to another]]
 * [[Fix Timing Tutorial|Correcting a subtitle that's not properly synchronised to the video]]
