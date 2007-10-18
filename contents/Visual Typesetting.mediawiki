@@ -23,6 +23,14 @@ Also, while on this mode, you can right click to bring a context menu with other
 
 === Drag ===
 
+The drag tool has two modes. You can toggle between them by clicking the button on the auxiliary visual typesetting bar. This tool is special because, unlike every other, it can affect EVERY subtitle that is currently visible on the current frame, and not just the active one. This makes the positioning of signs composed of many lines easier.
+
+On the positioning mode, you can simply click-and-drag subtitles across the video surface by dragging their anchor (the square). They will be positioned where you release them with the \pos command.
+
+On the movement mode, there is another anchor, the end-of-movement anchor, which is represented by a circle. There will be an arrow pointing from the start-of-movement to the end-of-movement anchor. In order to set the times where the movement will start or end, move the corresponding anchor on the time where you want the subtitle to be at that anchor. For example, if you want movement to start at 5000 miliseconds after the start of the line, seek the video to 5000 miliseconds after the start of the line, and drag the start anchor there. The same goes for the end-of-movement anchor.
+
+If your line has an origin point specified, you will see a third anchor, represented by a triangle, connected to the square anchor by a dotted line. You can also drag this to affect the origin position. This same anchor will be visible in the two rotation tools.
+
 === Rotate on Z axis ===
 
 === Rotate on XY axes === 
