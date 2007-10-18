@@ -84,3 +84,20 @@ The rectangular clip tool allows you to clip the subtitles so that nothing OUTSI
 There are two ways to use this tool. You can either click and grab one of the four vertices of the rectangle, to resize an already-existing clip, or you can click-and-drag in empty space to create a new rectangle from scratch. The areas that will be invisible will be darkened.
 
 === Vectorial clip ===
+
+Similarly to the last tool, the vectorial clip tool allows you to draw an area, so that nothing outside it will be rendered. The difference, however, is that this area can have any arbitrary shape defined by a path of lines and bézier curves.
+
+{{todo|screenshot}}
+
+This mode has 8 sub-tools:
+
+{{todo|screenshot of auxiliary toolbar}}
+
+*Drag - Allows you to drag a control point
+*Insert line - Allows you to insert a straight line from the last point to the current mouse position by clicking the point.
+*Insert bézier bicubic curve - The same as above, but it instead inserts a bicubic curve. You can then use the two control points to adjust the shape of the curve.
+*Convert between line and curve - Click on a line segment or bicubic curve to convert it to the other type.
+*Split curve - Click on a line segment or bicubic curve to split it in two, at the marked point.
+*Remove point - Click on a point to delete it.
+*Freehand shape - Click and drag with the mouse over the video and move the mouse to draw a freehand shape composed of line segments. This shape will automatically be closed, with the last point connecting to the first.
+*Freehand smooth shape - Same as above, but the shape will be smoothed with bicubic curves.
