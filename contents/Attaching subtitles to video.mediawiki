@@ -64,13 +64,15 @@ If you are unfamiliar with Avisynth, it is recommended that you look into it, as
 
 To allow adding subtitles to the video stream, you need the VSFilter plugin (you may also use [http://asa.diac24.net/ Asa], but at the time of writing, it's not as complete as VSFilter is). You can find this at Gabest's [http://sourceforge.net/projects/guliverkli Sourceforge project page], or in your Aegisub directory (the file is called vsfilter.dll). Once you have gotten hold of vsfilter.dll, place it in your Avisynth plugins folder.
 
-To just add subtitles, you will want to make a simple AVS file containing the script lines you need. Here is an example:
+To just add subtitles, you will want to make a simple AVS file containing the script lines you need. Simply create a plain-text file in notepad (or your favourite text editor) and save it with the .avs extension (beware that Windows might be hiding your extension, and you might actually be making a .avs.txt file). Here is an example:
 
  AVISource("c:\projects\project1\video\mycoolvideo.avi")
  TextSub("c:\projects\project1\subs\mainsubtitles.ass")
  TextSub("c:\projects\project1\subs\endkaraoke.ass")
 
-The above script will take an AVI file (mycoolvideo.avi), and then draw the contents of two subtitle files on the video. You can then encode this video in any program that supports AVS, such as [http://www.virtualdub.org VirtualDub].
+The above script will take an AVI file (mycoolvideo.avi), and then draw the contents of two subtitle files on the video. You can then encode this video in any program that supports AVS, such as [http://www.virtualdub.org VirtualDub]. To do so, just open the .avs file in the program, and follow the normal encoding procedure for it.
+
+Keep in mind that, due to a bug in VSFilter, the path to the subtitle files MUST be absolute.
 
 ==Hardsubbing with VirtualDub==
 If you're already familiar with VirtualDub filters, and don't intend to do any other video processing, you should note that it's possible to use VSFilter as a VirtualDub filter as well. Just rename the .dll to .vdf and copy it to the VirtualDub plugins folder. The filter will then be available as "TextSub".
