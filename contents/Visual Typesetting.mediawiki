@@ -53,7 +53,19 @@ If the origin is far from the center, you will see a little helper line indicati
 
 {{todo|Insert screenshot showing the helper line}}
 
-=== Rotate on XY axes === 
+=== Rotate on XY axes ===
+
+This mode is somewhat similar to the previous mode, although there are a few important differences. Since this rotates on the two screen axes, the rotation is three-dimensional, and therefore harder to visualize.
+
+In order to make this easier, there is a grid representing the plane in which the subtitles lie, and you rotate that grid. There are also three arrows pointing from the center, indicating the direction and orientation of the three axes.
+
+{{todo|screenshot}}
+
+To use this tool, simply hold the mouse button anywhere on the screen and move it. As you move it left and right, it will rotate the line on the Y axis, and as you move it up and down, it will rotate the line on the X axis.
+
+If you hold down the ctrl key while rotating, the rotation will be limited to only one of the two axes - whichever has the greatest movement. If you hold down the shift key, rotation will happen in steps of 30 degrees.
+
+As with the Z rotation tool, you can also drag the origin anchor here.
 
 === Scale ===
 
