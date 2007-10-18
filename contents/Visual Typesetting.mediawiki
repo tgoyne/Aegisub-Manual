@@ -15,11 +15,11 @@ The preview of all tools can either be real-time or delayed. This behaviour can 
 === Crosshair === 
 This is the standard mode. Hovering the mouse over the video will show the script coordinates under the cursor, as well as a crosshair indicating the exact point that you are looking at. Double clicking a point will position the current line (using the \pos tag) on that position.
 
-{{todo||Screenshot}}
+{{todo|Screenshot}}
 
 Also, while on this mode, you can right click to bring a context menu with other options:
 
-{{todo||Screenshot of menu}}
+{{todo|Screenshot of menu}}
 
 * Save PNG snapshot: Saves a PNG snapshot of the current frame to the path specified in the [[options]]. This snapshot will be in the real video size, and WON'T be affected by zooming or aspect ratio overriding.
 * Copy image to clipboard: Same as above, but copies the frame to the clipboard, instead of saving as a PNG. You can then paste it in any image editing software.
