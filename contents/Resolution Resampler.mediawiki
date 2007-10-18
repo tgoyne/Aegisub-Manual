@@ -10,4 +10,9 @@ It's important to keep in mind that margin offset happens BEFORE the resolution 
 After the margins were offset, the resolution is then resampled to the final value provided. You can click the "From video" button to copy the actual video resolution to the two fields. The "Change aspect ratio" check box indicates whether the horizontal size of subtitles should be affected to conform to the aspect ratio change. This is useful when converting between anamorphic and 1:1 formats.
 
 == Examples ==
-For example, if you have subtitles typeset to a 640x480 video, and want to apply the same to a 1280x720 video (which is widescreen, therefore showing more video on the left and right margins), you would set margin left to 107 ((480*16/9 - 640)/2), while leaving top at 0 and "symmetrical" checked. Then you would set final resolution to 1280x720 (leave "Change aspect ratio" unchecked), and hit OK.
+For example, if you have subtitles typeset to a 640x480 video, and want to apply the same to a 1280x720 video (which is widescreen, therefore showing more video on the left and right margins), you would set margin left to 107, while leaving top at 0 and "symmetrical" checked. Then you would set final resolution to 1280x720 (leave "Change aspect ratio" unchecked), and hit OK.
+
+The above 107 value was obtained with the following formula:
+ (OrigH * FinalW/FinalH - OrigW)/2
+Which results in:
+ (480 * 1280/720 - 640)/2 = 107
