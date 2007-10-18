@@ -69,6 +69,12 @@ As with the Z rotation tool, you can also drag the origin anchor here.
 
 === Scale ===
 
+This is the simplest tool, and allows you to scale subtitles on the X and Y axes. It will show one bar for each axis, showing not only the 100% size, but also the current scale.
+
+{{todo|screenshot}}
+
+To use this tool, simply hold down the mouse button and drag the mouse up and down (to scale on the Y axis) or left and right (to scale on the X axis).
+
 === Rectangular clip ===
 
 === Vectorial clip ===
