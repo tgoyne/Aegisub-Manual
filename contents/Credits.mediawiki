@@ -1,16 +1,15 @@
 Aegisub is the work of a cast of thousands... here's a list of some of them, in no particular order.
 
 ===Programming===
-*Rodrigo Braz Monteiro (ArchMage ZeratuL) - Lead developer, all-around programming, PRS library programming
-*Niels Martin Hansen (jfs) - Automation programming, all-around programming
-*David Lamparter (equinox) - Unix port, FFMPEG-related programming, ASA developer
-*Dansolo - Miscellaneous tool programming
-*Fredrik Mellbin (Myrsloik) - Avisynth-related programming
+*Rodrigo Braz Monteiro (ArchMage ZeratuL) - Lead developer, general program, PRS library
+*Niels Martin Hansen (jfs) - Automation, installer, general program
+*David Lamparter (equinox) - Unix port, FFMPEG-related programming, asa
+*Dansolo - Miscellaneous tools
+*Fredrik Mellbin (Myrsloik) - Avisynth-related and ffmpegsource
 *demi_alucard - Miscellaneous patching
 *Pomyk - Miscellaneous patching
 *Yuvi - Some Mac-specific patches
-
-
+*Haali - Some DirectShow code
 
 ===Manual===
 *ArchMage ZeratuL
