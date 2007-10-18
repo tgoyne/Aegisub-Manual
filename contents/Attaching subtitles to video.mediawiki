@@ -73,7 +73,9 @@ To just add subtitles, you will want to make a simple AVS file containing the sc
 The above script will take an AVI file (mycoolvideo.avi), and then draw the contents of two subtitle files on the video. You can then encode this video in any program that supports AVS, such as [http://www.virtualdub.org VirtualDub].
 
 ==Hardsubbing with VirtualDub==
-If you're already familiar with VirtualDub filters, and don't intend to do any other video processing, you should note that it's possible to use VSFilter as a VirtualDub filter as well. Just rename the .dll to .vdf and copy it to the VirtualDub plugins folder.
+If you're already familiar with VirtualDub filters, and don't intend to do any other video processing, you should note that it's possible to use VSFilter as a VirtualDub filter as well. Just rename the .dll to .vdf and copy it to the VirtualDub plugins folder. The filter will then be available as "TextSub".
+
+'''Warning''': VirtualDub comes with a TextSub of its own, that is called "TextSub 2.23". This is a very old version that, amongst many other issues, cannot parse UTF-8 (the default Aegisub encoding) files properly. This will result in any non-ASCII characters being rendered as gibberish. NEVER USE THIS FILTER.
 
 ==Softsubbing==
 Softsubbing a video can be done in several ways. On Windows using a DirectShow player, such as Media Player Classic, ZoomPlayer or even Windows Media Player, you need VSFilter installed to view the subtitles. If you use MPlayer, you need libass and FontConfig compiled to correctly view all the formatting. Please note that VLC does currently not support softsubs very well; it is strongly recommended that you avoid it for viewing softsubbed files.
