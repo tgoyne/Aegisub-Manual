@@ -17,3 +17,5 @@ The above 107 value was obtained with the following formula:
  (OrigH * FinalW/FinalH - OrigW)/2
 Which results in:
  (480 * 1280/720 - 640)/2 = 107
+
+<center>[[Image:Resample diagram.png]]</center>
