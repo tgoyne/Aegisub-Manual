@@ -62,10 +62,11 @@ Many people use the Avisynth package to add filters to their video to clean up d
 
 If you are unfamiliar with Avisynth, it is recommended that you look into it, as it has lots of nice features and a large community contributing video filters, allowing easy video fixes for any source. This tutorial assumes you have some basic knowledge of Avisynth.
 
-To allow adding subtitles to the video stream, you need the VSFilter plugin (you may also use [http://asa.diac24.net/ Asa], but at the time of writing, it's not as complete as VSFilter is). You can find this at Gabest's [http://sourceforge.net/projects/guliverkli Sourceforge project page], or in your Aegisub directory (the file is called vsfilter.dll). Once you have gotten hold of vsfilter.dll, place it in your Avisynth plugins folder.
+To allow adding subtitles to the video stream, you need the VSFilter plugin (you may also use [http://asa.diac24.net/ Asa], but at the time of writing, it's not as complete as VSFilter is). You can find this on the "csri" folder in your Aegisub installation.
 
 To just add subtitles, you will want to make a simple AVS file containing the script lines you need. Simply create a plain-text file in notepad (or your favourite text editor) and save it with the .avs extension (beware that Windows might be hiding your extension, and you might actually be making a .avs.txt file). Here is an example:
 
+ LoadPlugin("c:\program files\aegisub\csri\vsfilter.dll")
  AVISource("c:\projects\project1\video\mycoolvideo.avi")
  TextSub("c:\projects\project1\subs\mainsubtitles.ass")
  TextSub("c:\projects\project1\subs\endkaraoke.ass")
