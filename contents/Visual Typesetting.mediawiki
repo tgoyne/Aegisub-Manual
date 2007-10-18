@@ -77,4 +77,10 @@ To use this tool, simply hold down the mouse button and drag the mouse up and do
 
 === Rectangular clip ===
 
+The rectangular clip tool allows you to clip the subtitles so that nothing OUTSIDE an axes-aligned rectangle can be displayed (in essence, the \clip(x1,y1,x2,y2) tag).
+
+{{todo|screenshot}}
+
+There are two ways to use this tool. You can either click and grab one of the four vertices of the rectangle, to resize an already-existing clip, or you can click-and-drag in empty space to create a new rectangle from scratch. The areas that will be invisible will be darkened.
+
 === Vectorial clip ===
