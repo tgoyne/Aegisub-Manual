@@ -10,9 +10,7 @@ Aegisub is the work of a cast of thousands... here's a list of some of them, in 
 *Pomyk - Miscellaneous patching
 *Yuvi - Some Mac-specific patches
 
-===Installer===
-*movax
-*Myrsloik
+
 
 ===Manual===
 *ArchMage ZeratuL
