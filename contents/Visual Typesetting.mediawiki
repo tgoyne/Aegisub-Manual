@@ -6,6 +6,8 @@ With the exception of the drag tool, every other tool affects only the active li
 
 There are currently seven different visual typesetting tools: crosshair, drag, rotate on z axis, rotate on xy axes, scale, rectangular clip and vectorial clip.
 
+{{todo|Show screenshot of all seven tools and the auxiliary bar}}
+
 The preview of all tools can either be real-time or delayed. This behaviour can be toggled by pressing the "Toggle Real-time" button at the end of visual typesetting toolbar. When in real-time, all changes you made are immediately visible on subtitles, at the cost of slower response. Otherwise, you will only see the subtitles themselves updating when you release the mouse. However, you will still see the visual positioning aids moving in real time.
 
 == Tool Descriptions ==
@@ -13,7 +15,11 @@ The preview of all tools can either be real-time or delayed. This behaviour can 
 === Crosshair === 
 This is the standard mode. Hovering the mouse over the video will show the script coordinates under the cursor, as well as a crosshair indicating the exact point that you are looking at. Double clicking a point will position the current line (using the \pos tag) on that position.
 
+{{todo||Screenshot}}
+
 Also, while on this mode, you can right click to bring a context menu with other options:
+
+{{todo||Screenshot of menu}}
 
 * Save PNG snapshot: Saves a PNG snapshot of the current frame to the path specified in the [[options]]. This snapshot will be in the real video size, and WON'T be affected by zooming or aspect ratio overriding.
 * Copy image to clipboard: Same as above, but copies the frame to the clipboard, instead of saving as a PNG. You can then paste it in any image editing software.
@@ -24,6 +30,8 @@ Also, while on this mode, you can right click to bring a context menu with other
 === Drag ===
 
 The drag tool has two modes. You can toggle between them by clicking the button on the auxiliary visual typesetting bar. This tool is special because, unlike every other, it can affect EVERY subtitle that is currently visible on the current frame, and not just the active one. This makes the positioning of signs composed of many lines easier.
+
+{{todo|screenshot showing more than one line, including one static, one with move, and one of them with \org}}
 
 On the positioning mode, you can simply click-and-drag subtitles across the video surface by dragging their anchor (the square). They will be positioned where you release them with the \pos command.
 
