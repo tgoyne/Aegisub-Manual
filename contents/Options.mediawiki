@@ -167,3 +167,43 @@ Aegisub stores all its configuration in a plain text file called ''config.dat'' 
 : The color of a syllable's text in karaoke mode.
 * '''Syllable boundary'''
 : The color of a syllable boundary line in karaoke mode.
+
+===Audio -> Advanced===
+{{Todo|screenshot}}
+* '''Audio provider'''
+: What method to use for loading video. Currently there are only two methods, which one is used depends on the platform.
+: - ''avisynth'' (Windows only)
+:: Uses [http://www.avisynth.org Avisynth] to load audio. All file types will be loaded with DirectShowSource(), except for AVS files which will be opened with Import().
+: - ''lavc''
+:: Uses ffmpeg directly to load audio. Supports most common formats. Technically there's nothing that stops you from using this on Windows, but most Windows builds (including the official Aegisub release builds for Windows) don't have it compiled in at all.
+: Regardless of this setting, the internal PCM WAV reader will always be tried first for WAV files.
+* '''Audio player'''
+: What method to use for playing back audio. The options depend on the platform.
+: - ''dsound'' (Windows only)
+:: Uses Microsoft DirectSound to play back audio. This is the best tested and most stable audio player.
+: - ''alsa'' (Linux only)
+:: Uses the [http://www.alsa-project.org/ Advanced Linux Sound Architecture] to play back audio. ALSA is the native sound architecture of Linux and is not available on any other systems. ''It is possible to select the output device to use, but this is not exposed in the Options dialogue yet.''
+: - ''pulse'' (Linux and other *NIX-like systems)
+:: Plays sound back through a [http://pulseaudio.org/ PulseAudio] sound server.
+: - ''portaudio''
+:: Use the [http://www.portaudio.com/ PortAudio] API to play back sound. PortAudio has different playback implementations on different platforms. On most Unices it uses Open Sound System (OSS) for output. PortAudio currently doesn't seem to work on Mac, and it is not included in Windows builds as the DirectSound player is more reliable.
+: - ''openal'' (Windows and Mac)
+:: Uses the [http://www.openal.com/ OpenAL] API to play back audio. It is the only working audio player on Mac. It is not included in Windows builds due to the extra dependency it creates, and DirectSound is more reliable.
+* '''CacheType'''
+: Use RAM unless you have very little of it, then use Hard Disk. The cache is not needed and not used when PCM WAV files are opened. If you disable caching, audio playback might become very unreliable.
+* '''Avisynth down-mixer''' (Windows only)
+: Aegisub can only use mono (single-channel) audio. This option determines which Avisynth function to use to convert audio to mono. This option is only available in the Windows version of Aegisub.
+* '''HD cache path'''
+* '''HD cache name'''
+: These options determine where the hard disk audio cache will be located. Only used if cache is set to hard disk. You shouldn't need to change this unless you're low on disk space.
+{{todo|document in more detail?}}
+* '''Spectrum cutoff'''
+: The index of the smallest frequency band the audio display will show in spectrum mode. There's usually no need to change this.
+* '''Spectrum quality'''
+: Determines the quality of the audio spectrum display. Higher quality settings result in larger CPU and RAM use. Each consecutive setting uses a bit more CPU than the previous, and double the amount of RAM. For 48 kHz samplerate audio, one minute of audio uses this much memory at the different settings:
+:* 0 "regular" - 11 MB
+:* 1 "better" - 22 MB
+:* 2 "high" - 44 MB
+:* 8 "insane" - 88 MB
+* '''Spectrum cache memory max'''
+: The maximum amount of memory to use for audio spectrum caching. The results of the calculations to display the audio spectrum are cached to make scrolling through the audio smoother. The amount of spectrum display that can be cached in an amount of memory depends on the quality setting above. The default cache size of 128 MB results a little less than 6 minutes of audio at 48 kHz in quality 1. If you set this smaller than 5 MB, the default of 128 MB will be used instead. You probably shouldn't set this to more than 1/4 of your amount of physical RAM installed.
