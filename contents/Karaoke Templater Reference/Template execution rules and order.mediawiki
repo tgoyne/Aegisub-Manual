@@ -5,7 +5,7 @@ Mid-level description of the kara-templater execution:
    1. Find all header information, primarily PlayResX and PlayResY
    2. Find all styles
    3. Generate furigana styles for styles missing them
-2. Collect templates
+2. Collect templates and delete existing "fx" lines
 3. Initialise tenv
    1. Add "string", "math" and "_G" references
    2. Add "tenv" self-reference
@@ -13,12 +13,9 @@ Mid-level description of the kara-templater execution:
    4. Add empty "fxgroup" table
 4. Run every "code once" template
 5. For every pre-existing dialogue line in subtitle file:
-   a. If Effect field is "fx":
-      1. Delete line
-      2. Line processing done
-   b. If Effect field start with "code" or "template":
+   a. If Effect field start with "code" or "template":
       1. Skip line
-   c. Else:
+   b. Else:
       1. If Effect field is not empty and not "karaoke":
          a. Skip line
       2. If Effect field is empty and line is a Comment:
@@ -78,7 +75,7 @@ Mid-level description of the kara-templater execution:
             4. For every Unicode character in syllable:
                1. Calculate virtual syllable characteristics for "charsyl"
                2. Update varctx for "charsyl"
-               3. Continue syllable processing for the virtual syllable (from 5.c.7.6.)
+               3. Continue syllable processing for the virtual syllable (from 5.b.7.6.)
          6. If template is "multi":
             1. Create "hlsyl" as copy of syllable
             2. Unless "tenv.basesyl" already exists, set it to "hlsyl"
@@ -86,7 +83,7 @@ Mid-level description of the kara-templater execution:
             4. For every highlight on syllable:
                1. Calculate virtual syllable characteristics for "hlsyl"
                2. Update varctx for "hlsyl"
-               3. Continue syllable processing for the virtual syllable (from 5.c.7.7.)
+               3. Continue syllable processing for the virtual syllable (from 5.b.7.7.)
          7. a. If template is a code line:
                1. Set "tenv.line" to input line
                2. Run code
@@ -107,7 +104,7 @@ Mid-level description of the kara-templater execution:
                9. Set output line Effect to "fx"
               10. Append output line to subtitle file
       8. For every furigana part in line:
-         Same process as for main syllables (5.c.7.)
+         Same process as for main syllables (5.b.7.)
       9. If any non-code templates were applied to the line:
          1. Set input line to Comment
          2. Set input line Effect field to "karaoke"
