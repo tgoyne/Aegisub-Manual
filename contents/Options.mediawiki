@@ -168,6 +168,8 @@ Aegisub stores all its configuration in a plain text file called ''config.dat'' 
 * '''Syllable boundary'''
 : The color of a syllable boundary line in karaoke mode.
 
+It is not possible to change the color scheme of the spectrum display mode.
+
 ===Audio -> Advanced===
 {{Todo|screenshot}}
 * '''Audio provider'''
