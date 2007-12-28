@@ -134,7 +134,7 @@ Classic Advanced uses a slightly different model than the usual Automation 4 Lua
 
 Signature of syllable function: <code>do_syllable(subs, meta, styles, lines, line, syl)</code>
 
-The syllable function ''must'' be named <code>do_syllable</code. If furigana processing is enabled, you can also define a function called <code>do_furigana</code>m with the same signature, to process furigana syllables. Furigana still follows the Automation 4 model here.
+The syllable function ''must'' be named <code>do_syllable</code>. If furigana processing is enabled, you can also define a function called <code>do_furigana</code> with the same signature, to process furigana syllables. Furigana still follows the Automation 4 model here.
 
 Signature of line function: <code>do_line(subs, meta, styles, lines, line, default_do_line)</code>
 
