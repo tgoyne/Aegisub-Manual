@@ -185,7 +185,7 @@ Full list of fields:
 A large number of new fields have been added to the dialogue line class.
 
 Basic fields:
-* <code>line.class == "dialogue"</code>
+* <code>line.class == "dialogue"</code>, also for comment lines
 * <code>line.raw</code> - The raw line text.
 * <code>line.section</code> - Usually <tt>"[Events]"</tt>.
 * <code>line.comment</code> - Boolean, true if the line is a Comment line rather than Dialogue.
