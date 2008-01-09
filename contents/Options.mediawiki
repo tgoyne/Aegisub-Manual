@@ -106,9 +106,9 @@ Aegisub stores all its configuration in a plain text file called ''config.dat'' 
 : - ''avisynth'' (Windows only)
 :: Uses [http://www.avisynth.org Avisynth] to load video. Versatile, supports loading almost all common formats as well as .d2v files (indexed DVD VOB's) if the correct plugin is supplied. Note that Aegisub can install its own avisynth.dll instead of using your system installation if so desired. Requires Video for Windows decoders for AVI files for best performance. Uses ffmpegsource() to load anything that isn't AVI (and tries that too for AVI's if no suitable VfW decoder is found).
 : - ''dshow'' (Windows only)
-:: Uses Microsoft's DirectShow framework to load video. Supports loading anything you can play in, say, Windows Media Player but is slower than Avisynth. May work with really odd formats that are not supported by ffmpegsource().
+:: Uses Microsoft's DirectShow framework to load video. Supports loading anything you can play in, say, Windows Media Player but is slower than Avisynth. May work with really odd formats that are not supported by ffmpegsource() but you do have a DirectShow decoder for.
 : - ''ffmpeg''
-:: Uses ffmpeg directly to load video. Supports most common formats. Technically there's nothing that stops you from using this on Windows, but most Windows builds (including the official Aegisub release builds for Windows) don't have it compiled in at all.
+:: Uses ffmpeg directly to load video. Supports most common formats. Technically there's nothing that stops you from using this on Windows, but most Windows builds (including the official Aegisub release builds for Windows) don't have it compiled in at all (since Avisynth uses ffmpegsource() anyway).
 
 ==Audio==
 {{Todo|screenshot}}
