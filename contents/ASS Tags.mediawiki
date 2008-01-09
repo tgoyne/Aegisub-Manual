@@ -334,7 +334,7 @@ e.g.:
  \clip(1,m 50 0 b 100 0 100 100 50 100 b 0 100 0 0 50 0)
 (Limits clip to pseudo-circle defined)
 
-'''Note:''' VSFilter 2.37 is known to have issues with vector clipping. If you intend to use it, use 2.35 instead (2.36 has another bug, related to border drawing).
+'''Note:''' VSFilter 2.37 is known to have issues with vector clipping. If you intend to use it, use 2.35 or a [http://malakith.net/aegisub/index.php?topic=651.0 patched version of 2.37] instead (2.36 has another bug, related to border drawing).
 
 ==Drawing tags==
 Advanced Substation Alpha also supports some advanced drawing tags that allow you to draw with vectorial graphics. Certain familiarity with vectors and splines will make the understanding of this much simpler.
