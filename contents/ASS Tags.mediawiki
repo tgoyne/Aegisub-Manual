@@ -252,7 +252,7 @@ Here follow three examples of \pos(320,240) on a 640x480 resolution script. The 
 [[Image:pos_sample03.jpg]]
 
 ===\move(<x1>,<y1>,<x2>,<y2>[,<t1>,<t2>]) - Move===
-Moves the text from the original position, defined by x1,y1, to the destination, defined by x2,y2. This means that at the very start of animation, the subtitles will look the same as if you had done a [[#\pos(<x>,<y>) - Position|\pos]](x1,y1), and, at the very end, the same as \pos(x2,y2). If the parameters t1 and t2 are specified, then the subs will start at x1,y1, but won't start moving to x2,y2 until time reaches t1. At that point, they will start moving, and end at t2. t1 and t2 are specified in milliseconds, relative to the start time of current line. If t1 and t2 are omitted, animation is assumed to last for the whole length of line.
+Moves the text from the original position, defined by x1,y1, to the destination, defined by x2,y2. This means that at the very start of animation, the subtitles will look the same as if you had done a [[#\pos(<x>,<y>) - Position|\pos]](x1,y1), and, at the very end, the same as \pos(x2,y2). If the parameters t1 and t2 are specified, then the subs will start at x1,y1, but won't start moving to x2,y2 until time reaches t1. At that point, they will start moving, and end at t2. t1 and t2 are specified in milliseconds, relative to the start time of current line. If t1 and t2 are omitted or zero, animation is assumed to last for the whole length of line.
 
 You may only have one \move command in each line. If you have more, only the first one has any effect.
 e.g.:
