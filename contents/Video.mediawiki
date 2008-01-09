@@ -12,8 +12,12 @@ On Windows, your video provider is ''Avisynth'' by default. What this actually m
 * '''DSS2()''' - Tries to find, load and use Haali's DirectShowSource2 plugin (comes with the [http://haali.cs.msu.ru/mkv/ Haali Media Splitter] package and with the [http://cccp-project.net CCCP]). That will in turn try to use your computer's DirectShow environment to open the file. Theoretically any file renderable by DirectShow should be supported, but since you are at the mercy of third-party splitters and decoders, your mileage may vary. As a rule of thumb, if it's playable in Windows Media Player, Aegisub should be able to load it. Do note that DSS2 converts variable framerate files to constant. Usually this is what you want and expect but if you're doing proper VFR subtitles, it isn't.
 * '''DirectShowSource()''' - Uses DirectShowSource() (which ships with Avisynth) to try to load the file. Basically the same as DSS2, with the exception that it doesn't convert VFR to CFR. '''Warning:''' DSS is known to have problems with frame-accurate seeking. Do not use it if you can avoid it.
 
-
 If you change the video provider to ''dshow'', Aegisub will try to interface directly with DirectShow to open the file. May help with some really oddball files, but is usually not recommended.
+
+Formats more or less guaranteed to work with the default install include but is not limited to:
+* XviD/DivX/other ASP codecs in AVI
+* Most stuff stored in Matroska (except maybe some really oddball V_MS/VFW/FOURCC streams)
+* Pretty much any standards-compliant MP4
 
 ===Supported formats: Unix===
 {{Todo|write this}}
