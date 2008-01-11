@@ -4,7 +4,7 @@ Aegisub isn't a video (or media) player, but it still supports loading and worki
 To load a video file, go to the ''Video'' menu and press ''Open video file''. What video files you can open depends on your [[Options#Video|video provider]]. To use a dummy (mockup, blank) video, press ''Use dummy video''.
 
 ===Supported formats: Windows===
-On Windows, your video provider is ''Avisynth'' by default. What this actually means for you as the user is somewhat complicated. Aegisub will try its best to load your video in the most reliable way possible. There are currently no less than six ways it will try:
+On Windows, your video provider is ''Avisynth'' by default, which in practice means Aegisub will try its best to load your video in the most reliable way possible. There are currently no less than six Avisynth functions it can try:
 * '''Import()''' - Avisynth builtin function. Used to load Avisynth scripts, never used for anything else.
 * '''AviSource()''' - Avisynth builtin function. Only works on AVI files, obviously. Requires a working Video for Windows (VfW) decoder to open the video. Tried first for .avi files, never for anything else. If it fails, Aegisub will try ffmpegSource() instead, if that fails try DSS2(), and if that too fails try DirectShowSource() (see below).
 * '''MPEG2Source()''' - Only used to load .d2v files (DVD2AVI project files; otherwise known as indexed .VOB's ripped from DVD's). Tries to use neuron2's [http://neuron2.net/dgmpgdec/dgmpgdec.html DGDecode] to open the file; if Aegisub can't find or load that it'll try the old mpeg2dec3.dll instead; if that too fails, returns an error. 
