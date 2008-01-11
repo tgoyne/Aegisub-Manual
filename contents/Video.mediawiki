@@ -16,10 +16,50 @@ Aegisub will look for Avisynth plugins in its [[Aegisub path specifiers#?data|?d
 
 Anyway, what does all this mean to you as the average user? It means Aegisub can in theory open ANY video format as long as you are capable of playing it in Windows Media Player (or render it in GraphEdit), plus some that aren't playable there (such as .d2v's). At least it'll try its best to load it. You may however run into trouble with some of the more unusual formats and just because you CAN load something it doesn't mean it's a good idea to use it. Formats more or less guaranteed to work in a stable fashion with the default install include but is not limited to:
 * XviD/DivX/other MPEG4 ASP codecs in AVI
-* Most stuff stored in Matroska (except maybe some really oddball V_MS/VFW/FOURCC streams)
+* Most stuff stored in Matroska (except maybe some really oddball ''V_MS/VFW/FOURCC'' streams)
 * Pretty much any standards-compliant MP4
 
 If you change the video provider to ''dshow'', Aegisub will try to interface directly with DirectShow to open the file. May help with some really oddball files, but is usually not recommended.
 
 ===Supported formats: Unix===
-{{Todo|write this}}
+Under Unix or Unix-like systems (including but not limited to *BSD, GNU/Linux, and MacOS X) your video provider is ''ffmpeg'', which means Aegisub will attempt to load the video using, well, ffmpeg, which should mean that anything supported by ffmpeg is supported; see its documentation for details. There are a few quirks however; for example libavformat is not used for Matroska (.mkv .mka .mks etc) files since its Matroska splitter has a lot of issues; instead Aegisub does its own parsing of such files (by using code borrowed from Haali's Matroska parser).
+
+At the time of writing the ffmpeg interface isn't 100% stable (much like Aegisub in its entirety isn't 100% stable under Unix yet) but at least most AVI's, MKV's and MP4's seem to work in a decently reliable fashion.
+
+===Dummy video===
+Aegisub also supports providing a bogus video surface for you to render subtitles on without having any actual video loaded. The dummy video dialog box looks like this:
+{{Todo|screenshot}}
+* '''Resolution'''
+: The resolution of the dummy video in pixels. There are a few pre-defined choices in the dropdown menu; you can also specify the size yourself. Note that since the dummy video is RGB there are no particular restrictions with regards to odd widths/heights.
+* '''Colour'''
+: The colour of the video surface. The color is solid by default; tick the box "checkerboard pattern" if you want some more variation.
+* '''Frame rate'''
+: Determines how long each frame is displayed by setting the number of frames per second (fps). Note that it is in fact possible to load VFR timecodes with dummy video.
+* '''Duration'''
+: The duration of the video in frames. Below this number is shown the resulting duration in hours/minutes/seconds.
+
+==Variable framerate video==
+Aegisub supports loading and working with variable framerate video. The how's and why's of VFR is far outside the scope of this manual (see for example [http://forums.animesuki.com/showthread.php?t=34738 the VFR thread on AnimeSuki] or the [http://avisynth.org/mediawiki/VFR Avisynth manual page] for more information about VFR), but we will cover what you need to know about how Aegisub handles it.
+
+===Timecodes===
+Loading of Matroska timecode files (v1 and v2) is supported and useful if you have a VFRaC (Variable FrameRate assumed Constant; for example the frames of an VFR MKV stored in an AVI at a constant FPS, see the VFR thread linked above for details) video file but want the subs to sync to it. If you load a Matroska file, Aegisub will automatically read the timecodes from it directly. Do however note that this is '''NOT''' supported for any other potentially VFR formats like MP4 or WMV; for those formats you '''MUST''' demux and load timecodes yourself or the audio/video/subtitle synchronization will be wrong. Be aware that WMV in particular is frequently VFR even if you do not expect it.
+
+===VFR and hardsubbing===
+As long as you're not encoding with GDSMux, the encoding environment your subtitling filter is working in (i.e. Avisynth, VirtualDub or mencoder) will assume that the world is CFR, and hence the input file is VFRaC. This is obviously a problem since it messes up subtitle synchronization. Aegisub provides a way around this through the Framerate Transformation export filter, which takes the framerate of the VFRaC input file and the timecodes, and then changes every time code and override tag in the script so it can be hardsubbed on the VFRaC video and still sync up perfectly after timecodes are applied.
+
+==The Video menu==
+The following options are available from the video menu:
+
+===Sourcefile-related===
+* '''Open video'''
+: Opens video. Note that if you try to open another video with video already loaded, the original video will be closed first.
+* '''Close video'''
+: Unloads the currently open video.
+* '''Recent'''
+: Shows list of recently opened videos.
+* '''Use dummy video'''
+: Opens a dummy video (see above).
+* '''Show video details'''
+: Shows some information about the currently open video. Details shown are filename, frames per second (for VFR files the average FPS is displayed), resolution and aspect ratio, length and decoder. Decoder being what filter/method Aegisub used to open the file.
+
+===Timecodes-related===
