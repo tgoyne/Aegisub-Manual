@@ -237,3 +237,5 @@ It is not possible to change the color scheme of the spectrum display mode.
 ==Hotkeys==
 {{todo|screenshot}}
 This page shows a list of all functions in Aegisub that can be bound to keyboard shortcuts, and what shortcut (if any) they are currently assigned to. Should be self explanatory.
+
+Double click on a hotkey in the list to change it.
