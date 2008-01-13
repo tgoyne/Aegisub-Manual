@@ -21,8 +21,7 @@ This field determines which styles will get processed - check all you want to pr
 Check "Affect Selection Only" to restrict the operation to the selected lines. If this is left unchecked, all lines in the file whose style match the selected ones will be affected.
 
 == Lead-in/Lead-out ==
-
-This is fairly obvious. The postprocessor will add the given time (in milliseconds) to each line start and end, respectively. You can add both lead-in and lead-out, only one, or none, by checking and unchecking the boxes as appropriate.
+This function extends the start/end times of the line, a procedure known as adding lead-in and lead-out. The postprocessor will add the given time (in milliseconds) to each line start and end, respectively. You can add both lead-in and lead-out, only one, or none, by checking and unchecking the boxes as appropriate.
 
 == Make adjascent subtitles continous ==
 
