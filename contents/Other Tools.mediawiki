@@ -1,2 +1,13 @@
+{{todo|Decide whether this should be split}}
+
 == Spell Checker ==
+{{todo|Write me}}
+
+== Properties ==
+{{todo|Write me}}
+
+== Paste over ==
+{{todo|Write me}}
+
+== Attachment List ==
 {{todo|Write me}}
