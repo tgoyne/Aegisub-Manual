@@ -1,3 +1,83 @@
-{{todo|Incorporate https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/basic-function-interface.txt here}}
+''Base: https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/basic-function-interface.txt ''
+
+'''Registration''' covers presenting your [[Lua Reference|Automation 4 Lua]] script to Aegisub, providing information about it and registering what ''features'' it provides.
+
+== Features explained ==
+
+One of the primary concepts in Automation 4 is the ''feature''. A feature is something a script makes available for Aegisub to call back in response to a user action.
+
+A feature is not a plain callback. Rather, it's usually a set of several callback functions as well as some information on how they should be presented to the user in the GUI.
+
+One feature is the '''macro'''. A macro is presented as an item in the Automation menu. A macro has a name (the title show in the menu), a description (the text shown on the status bar when hovering over the menu item), a processing function (the function called when the user selects the menu item) and an optional validation function (determines whether the macro can even do any work in the current state.)
+
+Another feature is the '''export filter'''. The export filter is presented in the [[Export]] dialogue and can be applied during an export operation. Export filters also have a name, description, processing function and then an optional configuration panel provider. The configuration panel provider is a function that returns a configuration dialogue definition structure which will be displayed in the Export dialogue when the export filter is enabled. The settings filled into the configuration panel are passed to the processing function when it is run.
+
+== Registration functions ==
+
+The registration functions are the functions provided by Automation 4 Lua you can call to make a feature available to Aegisub. You will usually call these in the top level, at the very bottom of your script.
+
+=== aegisub.register_macro ===
+
+Synopsis: <code>aegisub.register_macro(name, description, processing_function, validation_function)</code>
+
+Register a macro feature.
+
+* '''name''' (string) - The name displayed on the Automation menu. This should be very short, try three words or less, and should be in command tense.
+* '''description''' (string) - The description displayed on the status bar when the user hovers the mouse over the menu item. This should be a concise description of what the macro does. Try to keep it at most 60 characters.
+* '''processing_function''' (function) - The function that is called when the user selects the menu item. This must be a function with the [[#Macro processing function|macro processing function API]].
+* '''validation_function''' (function, optional) - This function is called to determine whether the menu item should be available to the user or not. (Grayed out or not.) If no validation function is provided the macro is always available. This function must follow the [[#Macro validation function|macro validation function API]].
+
+=== aegisub.register_filter ===
+
+Synopsis: <code>aegisub.register_filter(name, description, priority, processing_function, configuration_panel_provider)</code>
+
+Register an export filter feature.
+
+* '''name''' (string) - The name displayed in the export filters list. The name should be rather short.
+* '''description''' (string) - The description displayed in the description box when the user highlights the export filter in the Export dialogue.
+* '''priority''' (number) - Determines the initial ordering of export filter application. Filters with higher priority are applied earlier than filters with lower priority. The user can change the filter application order in the Export dialogue. Priorities of the Aegisub built in export filters:
+** Transform Framerate = 1000 (karaoke effects should have higher priority than this)
+** Clean Script Info = 0 (your script might depend on the information cleaned by this)
+** Fix Styles = -5000 (should almost always run last)
+* '''processing_function''' (function) - The function that is called when the user initiates the export operation. This must be a function with the [[#Export filter processing function|export filter processing function API]].
+* '''configuration_panel_provider''' (function, optional) - A function that provides a configuration panel for the export filter. If this function is not provided the export filter will not have a configuration panel. This function must follow the [[#Export filter configuration panel provider|export filter configuration panel provider API]].
+
+
+== Feature callback functions ==
+
+These are the callback functions you provide to the registration functions.
+
+=== Macro processing function ===
+
+Signature: <code>process_macro(subtitles, selected_lines, active_line)</code>
+
+Macro processing functions passed to <code>[[#aegisub.register_macro|aegisub.register_macro]]</code> must have this signature. The name <code>process_macro</code> is a placeholder for your own function name.
+
+'''Important, undo points:''' If you make any modifications to the subtitles data you must always set an undo point when finished, otherwise the undo system will become inconsistent and the user will find that the Undo function behaves wrong.
+
+* '''subtitles''' (user data) - The [[Automation 4 Lua Subtitle file interface|subtitles object]] you use to manipulate the subtitles with.
+* '''selected_lines''' (table) - An array with indexes of the selected lines. The values in this table are line indexes in the ''subtitles'' object at its initial state. Only <tt>dialogue</tt> class lines can ever be selected.
+* '''active_line''' (number) - The line that is currently available for editing in the subtitle editing area. This is an index into the ''subtitles'' object.
+
+'''Return value:''' The macro processing function can optionally return a new <code>selected_lines</code> table, containing indexes of the lines that must be selected after the macro has returned.
+
+=== Macro validation function ===
+
+Signature: <code>validate_macro(subtitles, selected_lines, active_line)</code>
+
+Macro validation functions passed to <code>[[#aegisub.register_macro|aegisub.register_macro]]</code> must have this signature. The name <code>validate_macro</code> is a placeholder for your own function name.
+
+'''Important, execution time:''' Validation functions should always run very fast. Do as little work as possible inside this function, because it is run every time the user pulls open the Automation menu, and every millisecond you spend in <code>validate_macro</code> is one millisecond delay in opening the menu. Don't block the UI.
+
+* '''subtitles''' (user data) - The [[Automation 4 Lua Subtitle file interface|subtitles object]] for the current subtitle file, this is '''read-only''', you cannot modify the subtitles in the validation function. Attempting to modify the subtitles will cause a run-time error.
+* '''selected_lines''' (table) - An array with indexes of the selected lines. The values in this table are line indexes in the ''subtitles'' object at its initial state. Only <tt>dialogue</tt> class lines can ever be selected.
+* '''active_line''' (number) - The line that is currently available for editing in the subtitle editing area. This is an index into the ''subtitles'' object.
+
+'''Return value:''' Boolean, <code>true</code> if the macro can run given the current state of ''subtitles'', ''selected_lines'' and ''active_line'', <code>false</code> if it can not.
+
+=== Export filter processing function ===
+
+=== Export filter configuration panel provider ===
+
 
 [[Category:Lua Reference]]
