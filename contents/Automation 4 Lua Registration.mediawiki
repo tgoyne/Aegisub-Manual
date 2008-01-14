@@ -1,4 +1,4 @@
-''Base: https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/basic-function-interface.txt ''
+''See also: https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/basic-function-interface.txt ''
 
 '''Registration''' covers presenting your [[Lua Reference|Automation 4 Lua]] script to Aegisub, providing information about it and registering what ''features'' it provides.
 
@@ -11,6 +11,17 @@ A feature is not a plain callback. Rather, it's usually a set of several callbac
 One feature is the '''macro'''. A macro is presented as an item in the Automation menu. A macro has a name (the title show in the menu), a description (the text shown on the status bar when hovering over the menu item), a processing function (the function called when the user selects the menu item) and an optional validation function (determines whether the macro can even do any work in the current state.)
 
 Another feature is the '''export filter'''. The export filter is presented in the [[Export]] dialogue and can be applied during an export operation. Export filters also have a name, description, processing function and then an optional configuration panel provider. The configuration panel provider is a function that returns a configuration dialogue definition structure which will be displayed in the Export dialogue when the export filter is enabled. The settings filled into the configuration panel are passed to the processing function when it is run.
+
+== Script information globals ==
+
+A script can set a few global variables to provide metadata about the script to Aegisub. The information given with these variables are displayed in the [[Automation Manager]] dialogue and the Script Info dialogue.
+
+* '''script_name''' (string) - Name of the script, this should be short.
+* '''script_description''' (string) - Description of the purpose of the script. Shouldn't be too long either.
+* '''script_version''' (string or number) - Version numer/name of the script. This is freeform, no specific meaning is assigned to this.
+* '''script_author''' (string) - Author credits for the script.
+
+All of these are optional, a script does not have to provide any of these. If no script name is given, the file name is used instead for display purposes.
 
 == Registration functions ==
 
@@ -42,7 +53,6 @@ Register an export filter feature.
 * '''processing_function''' (function) - The function that is called when the user initiates the export operation. This must be a function with the [[#Export filter processing function|export filter processing function API]].
 * '''configuration_panel_provider''' (function, optional) - A function that provides a configuration panel for the export filter. If this function is not provided the export filter will not have a configuration panel. This function must follow the [[#Export filter configuration panel provider|export filter configuration panel provider API]].
 
-
 == Feature callback functions ==
 
 These are the callback functions you provide to the registration functions.
@@ -67,7 +77,7 @@ Signature: <code>validate_macro(subtitles, selected_lines, active_line)</code>
 
 Macro validation functions passed to <code>[[#aegisub.register_macro|aegisub.register_macro]]</code> must have this signature. The name <code>validate_macro</code> is a placeholder for your own function name.
 
-'''Important, execution time:''' Validation functions should always run very fast. Do as little work as possible inside this function, because it is run every time the user pulls open the Automation menu, and every millisecond you spend in <code>validate_macro</code> is one millisecond delay in opening the menu. Don't block the UI.
+'''Important, execution time:''' Validation functions should always run very fast. Do as little work as possible inside this function, because it is run every time the user pulls open the Automation menu, and every millisecond you spend in <code>validate_macro</code> is one millisecond delay in opening the menu. Consider that the user might have very large files open. Don't block the UI.
 
 * '''subtitles''' (user data) - The [[Automation 4 Lua Subtitle file interface|subtitles object]] for the current subtitle file, this is '''read-only''', you cannot modify the subtitles in the validation function. Attempting to modify the subtitles will cause a run-time error.
 * '''selected_lines''' (table) - An array with indexes of the selected lines. The values in this table are line indexes in the ''subtitles'' object at its initial state. Only <tt>dialogue</tt> class lines can ever be selected.
@@ -77,7 +87,29 @@ Macro validation functions passed to <code>[[#aegisub.register_macro|aegisub.reg
 
 === Export filter processing function ===
 
+Signature: <code>process_filter(subtitles, settings)</code>
+
+Export filter processing functions passed to <code>[[#aegisub.register_filter|aegisub.register_filter]]</code> must have this signature. The name <code>process_filter</code> is a placeholder for your own function name.
+
+You do not have to worry about undo issues with export filters. You always work on a copy of the subtitle file.
+
+* '''subtitles''' (user data) - The [[Automation 4 Lua Subtitle file interface|subtitles object]] you use to manipulate the subtitles with. This is a copy of the open subtitles file, modifying this subtitles object does not modify the open file and will only affect the exported file.
+* '''settings''' (table) - Configuration settings entered into the configuration panel or an empty table if there is no configuration panel. See the page on [[Automation 4 Lua Configuration dialogues|configuration dialogues]] for more information on the format of this table.
+
+'''Return value:''' Nothing.
+
 === Export filter configuration panel provider ===
+
+Signature: <code>get_filter_configuration_panel(subtitles, old_settings)</code>
+
+Export filter configuration panel providers passed to <code>[[#aegisub.register_filter|aegisub.register_filter]]</code> must have this signature. The name <code>get_filter_configuration_panel</code> is a placeholder for your own function name.
+
+'''Important, execution time:''' This function is called automatically when the user opens the Export dialogue, and Aegisub blocks until it returns with a configuration panel. Consider that the user might have a very large file open, and that every millisecond spent creating your confituration dialogue is one more millisecond the user has to wait for the Export dialogue to open. Don't block the UI.
+
+* '''subtitles''' (user data) - The [[Automation 4 Lua Subtitle file interface|subtitles object]] for the current subtitle file, this is '''read-only''', you cannot modify the subtitles in the filter configuration provider. Attempting to modify the subtitles will cause a run-time error.
+* '''old_settings''' (table) - Previous configuration settings entered into the configuration panel, if any. When an Automation 4 export filter is run, any configuration settings are automatically stored to the original file. If any stored settings exist for this filter, they are passed as ''old_settings'' so you can use them as a base for filling in defaults.
+
+'''Return value:''' A configuaration dialogue table, see the page on [[Automation 4 Lua Configuration dialogues|configuration dialogues]] for more information on the format of this table.
 
 
 [[Category:Lua Reference]]
