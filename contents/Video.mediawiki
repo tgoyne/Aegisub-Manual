@@ -69,7 +69,7 @@ A keyframes file is a plain ASCII-encoded text file; both \n and \r\n is underst
  82
  130
  131
-The first line is the format specification; the string "# keyframe format v1". The next line consists of the lower-case string "fps " followed by the the FPS of the video file the keyframe data was generated from as a double-precision floating point number (".", 0x2E, full stop, is used as decimal separator regardless of system locale). Finally, after the fps line follows an arbitrary number of long integers (one per line), each representing the frame number of a keyframe. The frame numbers are zero-indexed; i.e. the first frame of the video is frame number 0.
+The first line is the format specification; the string "<tt># keyframe format v1</tt>". The next line consists of the lower-case string "<tt>fps </tt>" followed by the the FPS of the video file the keyframe data was generated from as a double-precision floating point number ("<tt>.</tt>", 0x2E, full stop, is used as decimal separator regardless of system locale). Finally, after the fps line follows an arbitrary number of long integers (one per line), each representing the frame number of a keyframe. The frame numbers are zero-indexed; i.e. the first frame of the video is frame number 0.
 
 ==Anamorphic video==
 '''OR: How to get your subtitles to not look stretched'''
