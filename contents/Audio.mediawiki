@@ -41,8 +41,8 @@ Green and red buttons are toggle buttons. A green background indicates that the 
 # Play first 500ms of selection
 # Play last 500ms of selection
 # Play from selection start to end of file (or until pause is pressed)
-# Add lead-in (how much is determined by the [[Options#Audio lead in|audio lead in setting]])
-# Add lead-out (exactly like the above, but the setting is called [[Options#Audio lead out|audio lead out]], logically enough)
+# Add lead-in (how much is determined by the [[Options#Audio|audio lead in setting]])
+# Add lead-out (exactly like the above, but the setting is called [[Options#Audio|audio lead out]], logically enough)
 # Commit (save) changes
 # Scroll view to selection/go to selection
 # Toggle auto-commit (all timing changes will be committed immediately, without the user pressing commit, if this is enabled)
