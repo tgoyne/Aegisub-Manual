@@ -47,7 +47,66 @@ Loading of Matroska timecode files (v1 and v2) is supported and useful if you ha
 ===VFR and hardsubbing===
 As long as you're not encoding with GDSMux, the encoding environment your subtitling filter is working in (i.e. Avisynth, VirtualDub or mencoder) will assume that the world is CFR, and hence the input file is VFRaC. This is obviously a problem since it messes up subtitle synchronization. Aegisub provides a way around this through the Framerate Transformation export filter, which takes the framerate of the VFRaC input file and the timecodes, and then changes every time code and override tag in the script so it can be hardsubbed on the VFRaC video and still sync up perfectly after timecodes are applied. To prepare a script for hardsubbing, make sure you have the timecodes loaded, then go to the ''File'' menu and press ''Export''. Untick everything except the ''Transform Framerate'' filter. Choose the ''Variable'' output mode. It needs to know the FPS of the video you're going to hardsub the subtitles on; if you have video loaded Aegisub will assume that's it and insert it in the box for you. '''Note:''' if you have a Matroska or other VFR file loaded, remember that the FPS value Aegisub reports might not be the same as the one of the video you are going to hardsub the subtitles on.
 
-==The Video menu==
+==Keyframes==
+A brief, highly simplified explanation of what a keyframe is, for the people who missed Video 101:
+
+Modern video codecs compress video by storing as little information as possible. Instead of storing all frames in full (like a large amount of JPG pictures), they take occasionally take a keyframe, which is stored fully, and for each frame after that until the next keyframe, they only store what changed in the picture since the last frame. Hence, to seek to a given frame the decoder needs to find the previous keyframe and decode all frames between that frame and the sought one, which means seeking to keyframes is faster than to other frames. Keyframes are interesting mostly for scene timing reasons, because they usually appear at scenechanges. The first frame in a scene is almost invariably a keyframe, but beware - far from every keyframe is a scenechange! Most encoders insert a keyframe at least once every 250-300 frames, even if there hasn't been a scenechange.
+
+Aegisub uses keyframe data at several places in the program. They are drawn as black lines on the video seek bar, and (by default) also displayed in the audio waveform/spectrum analyzer.
+
+===Loading and saving of keyframe data===
+Aegisub supports loading keyframe data directly from AVI and Matroska files, regardless of what video provider was used to open them. If you are using any video format other than AVI or MKV, you can still load keyframe data separately. Aegisub currently supports reading from two formats; its own keyframe file format (see specification below) and XviD first-pass .stat files. If you don't know what the latter is, ask your local encoding guru.
+
+Aegisub can also write the currently loaded keyframe data to a keyframes file, which can be useful to avoid passing video files around in certain situations (audio timing for example).
+
+===Keyframe file specification===
+A keyframes file is a plain ASCII-encoded text file; both \n and \r\n is understood to mean a linebreak. Syntax example:
+ # keyframe format v1
+ fps 23.976000
+ 0
+ 30
+ 70
+ 82
+ 130
+ 131
+The first line is the format specification; the string "# keyframe format v1". The next line consists of the lower-case string "fps " followed by the the FPS of the video file the keyframe data was generated from as a double-precision floating point number (".", 0x2E, full stop, is used as decimal separator regardless of system locale). Finally, after the fps line follows an arbitrary number of long integers (one per line), each representing the frame number of a keyframe.
+
+==Anamorphic video==
+'''OR: How to get your subtitles to not look stretched'''
+
+The following paragraphs assumes that you have a working knowledge of what anamorphic video is and how aspect ratios work. If you feel unsure, you may want to consult a [http://www.hometheaterhifi.com/volume_6_4/feature-article-enhanced-widescreen-november-99.html gentle but fairly complete introduction].
+
+===Image stretching and subtitle rendering===
+An anamorphic image needs to be stretched to the proper aspect ratio before it is presented to the viewer. On a computer, this is usually done by the video renderer, and thereby lies a problem. Most subtitle renderers (including VSFilter, the current "standard" renderer) do the subtitle drawing on the image before it is stretched, and since the renderer is not aware of any aspect ratio issues, the subtitles will be stretched along with the image when the video is displayed to the viewer, and therefore they will look stretched. Aegisub does its subtitle rendering this way as well (since that way it will be WYSIWYG with most players); you can test how it looks by using the "Override aspect ratio" in the video menu.
+
+===Compensating for the stretching===
+Fortunately it's easy to compensate for the stretching, since you know by how much the image will be stretched (since you know its original dimensions and the display aspect ratio). You just calculate how many percent the image will be stretched in either the X or the Y direction, and then set the ScaleX or ScaleY parameter in the [[Styles|style]] (or use the <tt>\fscx</tt> or <tt>\fscy</tt> [[ASS Tags|overrides]]) to the same amount but in the other direction.
+
+Example: we have a 704x480 image that we know will be displayed as 16:9 (or 1.7777...:1). If we assume that the player will stretch the width but leave the height untouched, this means that the new width will be:
+ (16 / 9) * 480 = 853.333...
+which in percent is:
+ 853.333... / 704 = 1.212121...
+i.e. 121%. Hence, to compensate for this horizontal (X-direction) stretch we set ScaleY in all our styles to 121% to stretch the subtitles by the same amount, and after rendering they now no longer look stretched.
+
+'''OR''' we can do the stretching in the other direction, assuming that the player changes the height of the image instead. Assuming the same image:
+ 704 / (16 / 9) = 396
+which corresponds to:
+ 396 / 480 = 0.825
+or 82.5%, which means we can compensate for the vertical (Y) compression by setting ScaleX to 82.5%.
+
+===Caveats===
+Both of the above methods give the subtitles the proper aspect ratio, but depending on how the player does the stretching, you may get subtle variations in subtitle size. Aegisub (and indeed most video players and renderers) always changes the image width and never the height, except if you pick the "custom" aspect ratio and specify a resolution. Note that if you use the Matroska container, you may specify the display resolution directly, but player support of this varies.
+
+Note that some odd subtitle renderers (most notably Media Player Classic's builtin renderer) are actually a part of the video renderer and will do the subtitle rendering ''after'' anamorphic stretching, resulting in stretched subtitles and much annoyance. With MPlayer's libass renderer, you can actually specify whether subtitles should be drawn before or after stretching by using the -vf parameter to move the subtitle filter in the filter chain.
+
+===Further reading===
+For more information about anamorphic video and aspect ratios in general (a deeply obfuscated topic that appears simple at a glance) the following links may be of interest:
+* [http://lipas.uwasa.fi/~f76998/video/conversion/ A Quick Guide to Digital Video Resolution and Aspect Ratio Conversions] - Absolutely essential reading for anyone who wants to really understand the topic, but unfortunately far more than everything most people ever wanted to know about it.
+* [http://www.widescreen.org/aspect_ratios.shtml Widescreen.org: Aspect Ratios] - the history and reasons for some common aspect ratios
+* [http://en.wikipedia.org/wiki/Aspect_ratio_(image) Wikipedia: Aspect Ratio (image)]
+* [http://en.wikipedia.org/wiki/Anamorphic_widescreen Wikipedia: Anamorphic Widescreen]
+
+==The video menu==
 The following options are available from the video menu:
 
 ===Sourcefile-related===
@@ -63,3 +122,27 @@ The following options are available from the video menu:
 : Shows some information about the currently open video. Details shown are filename, frames per second (for VFR files the average FPS is displayed), resolution and aspect ratio, length and decoder. Decoder being what filter/method Aegisub used to open the file.
 
 ===Timecodes-related===
+* '''Open timecodes file'''
+: Loads a timecodes file and applies it to the video, changing the video/subtitle synchronization.
+* '''Close timecodes file'''
+: Unloads the currently loaded timecodes.
+* '''Recent'''
+: Shows list of recently opened timecodes files.
+
+===Keyframes-related===
+* '''Open keyframes'''
+: Loads keyframe data from the given file. If you already have keyframe data loaded, it will be replaced by the one read from the file.
+* '''Save keyframes'''
+: Saves the currently loaded keyframes data to a keyframes file.
+* '''Close keyframes'''
+: Unloads the currently loaded keyframe data, if any. Note that it is not possible to unload keyframe data that was directly loaded from the video file; if you want to get rid of that for some reason, load a keyframes file with only frame 0 being marked as a keyframe.
+* '''Recent'''
+: Shows list of recently loaded keyframe files.
+
+===Display-related===
+* '''Detach video'''
+: Detaches the video display and related controls from the Aegisub main window and moves it into its own window. To reattach the video to the main window, close the detached window. This feature can be particularly useful on multi-monitor setups.
+* '''Set zoom'''
+: Sets the video zoom level.
+* '''Override aspect ratio'''
+: Stretches the video to the specified aspect ratio by modifying the video width. Useful for anamorphic video.
