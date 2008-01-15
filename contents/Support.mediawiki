@@ -1,7 +1,7 @@
 Do you want to support Aegisub? Well, it's easy! 
 
 ===Feedback===
-You can give us feedback - comments, critiques, suggestions, etc. Bug reports and feature requests are always welcome. Check out our [http://malakith.net/aegisub forums] and the [http://malakith.net/aegibug/ bug tracker], or stop by for a chat in the [irc://irc.rizon.net/aegisub IRC channel].
+You can give us feedback - comments, critiques, suggestions, etc. Bug reports and feature requests are always welcome. Check out our [http://malakith.net/aegisub forums] and the [http://aegibug.nyo.dk/ bug tracker], or stop by for a chat in the [irc://irc.rizon.net/aegisub IRC channel].
 
 ===Spreading the word===
 Like Aegisub? Tell your friends about it! Spreading the word is a good way of helping Aegisub to be the best subtitle editor around.
