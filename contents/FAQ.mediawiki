@@ -1,7 +1,7 @@
 A small collection of Frequently Asked Questions about Aegisub - mostly stuff that didn't fit anywhere else.
 
 ===Karaoke effects?===
-See the [[Karaoke Templater/Tutorial 1|Karaoke Templater tutorials]].
+See the [[Karaoke Templater Tutorial 1|Karaoke Templater tutorials]].
 
 ===Can I create DVD subtitles with Aegisub?===
 Not directly, but there's a nifty program called [http://sourceforge.net/projects/maestrosbt/ MaestroSBT] that can convert SSA to VOBSubs. It does have quite a bunch of restrictions on what tags and other things may be used, so reading its manual first is advised. Also note that it does not accept ASS - only SSA. You can use Aegisub's File -> Export... dialog to save real SSA files.
