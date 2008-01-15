@@ -160,7 +160,7 @@ The following options are available from the video menu:
 * '''Override aspect ratio'''
 : Stretches the video to the specified aspect ratio by modifying the video width. Useful for anamorphic video (see above).
 * '''Show overscan mask'''
-: Draws a blue "mask" over the image, indicating the edges of the action safe (dark blue) and title safe (light blue) areas. Useful if you plan on showing your subtitles on a TV without adjustable overscan correction. For more information, see the Wikipedia pages on [http://en.wikipedia.org/wiki/Overscan overscan], [http://en.wikipedia.org/wiki/Safe_area safe areas] and [http://en.wikipedia.org/wiki/Overscan_amounts overscan amounts].
+: Draws a blue "mask" over the image, indicating the edges of the action safe (dark blue) and title safe (light blue) areas. Useful if you plan on showing your subtitles on a TV without adjustable overscan correction. For more information, see the Wikipedia pages on [http://en.wikipedia.org/wiki/Overscan overscan], [http://en.wikipedia.org/wiki/Safe_area safe areas] and [http://en.wikipedia.org/wiki/Overscan_amounts overscan amounts]. Aegisub follows the [http://www.bbc.co.uk/guidelines/dq/pdf/tv/tv_standards_london.pdf BBC guidelines] on how big the safe areas should be.
 
 ===Seeking-related===
 * '''Jump to'''
