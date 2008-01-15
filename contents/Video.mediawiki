@@ -38,14 +38,18 @@ Aegisub also supports providing a bogus video surface for you to render subtitle
 * '''Duration'''
 : The duration of the video in frames. Below this number is shown the resulting duration in hours/minutes/seconds.
 
-==Variable framerate video==
-Aegisub supports loading and working with variable framerate video. The how's and why's of VFR is far outside the scope of this manual (see for example [http://forums.animesuki.com/showthread.php?t=34738 the VFR thread on AnimeSuki] or the [http://avisynth.org/mediawiki/VFR Avisynth manual page] for more information about VFR), but we will cover what you need to know about how Aegisub handles it.
+==Playing video==
+Aegisub does support playing back video, but it has been widely debated if it is a misfeature or not.
 
-===Timecodes===
-Loading of Matroska timecode files (v1 and v2) is supported and useful if you have a VFRaC (Variable FrameRate assumed Constant; for example the frames of an VFR MKV stored in an AVI at a constant FPS, see the VFR thread linked above for details) video file but want the subs to sync to it. If you load a Matroska file, Aegisub will automatically read the timecodes from it directly. Do however note that this is '''NOT''' supported for any other potentially VFR formats like MP4 or WMV; for those formats you '''MUST''' demux and load timecodes yourself or the audio/video/subtitle synchronization will be wrong. Be aware that WMV in particular is frequently VFR even if you do not expect it.
+===Before you press the "play" button===
+Think it through. Do you really '''want''' to play the video? (Hint: the answer is "no", you don't want to do that, at least not in Aegisub.) If you're trying to check if a subtitle matches up to something in the video, wouldn't it be easier to just step through the video frame-by-frame with the arrow keys? If you're proofwatching, wouldn't it be more convenient to do so in a real media player?
 
-===VFR and hardsubbing===
-As long as you're not encoding with GDSMux, the encoding environment your subtitling filter is working in (i.e. Avisynth, VirtualDub or mencoder) will assume that the world is CFR, and hence the input file is VFRaC. This is obviously a problem since it messes up subtitle synchronization. Aegisub provides a way around this through the Framerate Transformation export filter, which takes the framerate of the VFRaC input file and the timecodes, and then changes every time code and override tag in the script so it can be hardsubbed on the VFRaC video and still sync up perfectly after timecodes are applied. To prepare a script for hardsubbing, make sure you have the timecodes loaded, then go to the ''File'' menu and press ''Export''. Untick everything except the ''Transform Framerate'' filter. Choose the ''Variable'' output mode. It needs to know the FPS of the video you're going to hardsub the subtitles on; if you have video loaded Aegisub will assume that's it and insert it in the box for you. '''Note:''' if you have a Matroska or other VFR file loaded, remember that the FPS value Aegisub reports might not be the same as the one of the video you are going to hardsub the subtitles on.
+To conclude: in real world situations, you will never need to play the video from inside Aegisub. The mantra is: Aegisub isn't a media player; if you want a media player use a media player.
+
+===Video playing quirks===
+When you play video, Aegisub will try to play the audio along with the video, even if you haven't explicitly loaded it. This feature is currently somewhat unreliable, especially on non-Windows systems, so if you ''really'' want to play video and audio, pre-load the audio first (see [[Audio|working with audio]]).
+
+Note that Aegisub does '''NOT''' guarantee audio/video synchronization. It does attempt it, but since the video rendering plus subtitle drawing is slower than in a real media player your computer may not be fast enough to keep up. Even if it ''is'' fast enough, you will probably still not get perfect synch. If you want that, use a media player.
 
 ==Keyframes==
 A brief, highly simplified explanation of what a keyframe is, for the people who missed Video 101:
@@ -70,6 +74,15 @@ A keyframes file is a plain ASCII-encoded text file; both \n and \r\n is underst
  130
  131
 The first line is the format specification; the string "<tt># keyframe format v1</tt>". The next line consists of the lower-case string "<tt>fps </tt>" followed by the the FPS of the video file the keyframe data was generated from as a double-precision floating point number ("<tt>.</tt>", 0x2E, full stop, is used as decimal separator regardless of system locale). Finally, after the fps line follows an arbitrary number of long integers (one per line), each representing the frame number of a keyframe. The frame numbers are zero-indexed; i.e. the first frame of the video is frame number 0.
+
+==Variable framerate video==
+Aegisub supports loading and working with variable framerate video. The how's and why's of VFR is far outside the scope of this manual (see for example [http://forums.animesuki.com/showthread.php?t=34738 the VFR thread on AnimeSuki] or the [http://avisynth.org/mediawiki/VFR Avisynth manual page] for more information about VFR), but we will cover what you need to know about how Aegisub handles it.
+
+===Timecodes===
+Loading of Matroska timecode files (v1 and v2) is supported and useful if you have a VFRaC (Variable FrameRate assumed Constant; for example the frames of an VFR MKV stored in an AVI at a constant FPS, see the VFR thread linked above for details) video file but want the subs to sync to it. If you load a Matroska file, Aegisub will automatically read the timecodes from it directly. Do however note that this is '''NOT''' supported for any other potentially VFR formats like MP4 or WMV; for those formats you '''MUST''' demux and load timecodes yourself or the audio/video/subtitle synchronization will be wrong. Be aware that WMV in particular is frequently VFR even if you do not expect it.
+
+===VFR and hardsubbing===
+As long as you're not encoding with GDSMux, the encoding environment your subtitling filter is working in (i.e. Avisynth, VirtualDub or mencoder) will assume that the world is CFR, and hence the input file is VFRaC. This is obviously a problem since it messes up subtitle synchronization. Aegisub provides a way around this through the Framerate Transformation export filter, which takes the framerate of the VFRaC input file and the timecodes, and then changes every time code and override tag in the script so it can be hardsubbed on the VFRaC video and still sync up perfectly after timecodes are applied. To prepare a script for hardsubbing, make sure you have the timecodes loaded, then go to the ''File'' menu and press ''Export''. Untick everything except the ''Transform Framerate'' filter. Choose the ''Variable'' output mode. It needs to know the FPS of the video you're going to hardsub the subtitles on; if you have video loaded Aegisub will assume that's it and insert it in the box for you. '''Note:''' if you have a Matroska or other VFR file loaded, remember that the FPS value Aegisub reports might not be the same as the one of the video you are going to hardsub the subtitles on.
 
 ==Anamorphic video==
 '''OR: How to get your subtitles to not look stretched'''
