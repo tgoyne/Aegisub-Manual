@@ -1,4 +1,4 @@
-Aegisub isn't a video (or media) player, but it still supports loading and working with video in various ways.
+Aegisub isn't a video (or media) player, but it still supports loading and working with video in various ways. This page is a reference of how Aegisub's loading and handling of video works; for a gentler introduction on how to just getting things to display properly you may want to read the [[Typesetting Tutorial]] or [[Visual Typesetting]] pages.
 
 ==Opening video==
 To load a video file, go to the ''Video'' menu and press ''Open video file''. What video files you can open depends on your [[Options#Video|video provider]]. To use a dummy (mockup, blank) video, press ''Use dummy video''.
@@ -97,7 +97,7 @@ or 82.5%, which means we can compensate for the vertical (Y) compression by sett
 ===Caveats===
 Both of the above methods give the subtitles the proper aspect ratio, but depending on how the player does the stretching, you may get subtle variations in subtitle size. Aegisub (and indeed most video players and renderers) always changes the image width and never the height, except if you pick the "custom" aspect ratio and specify a resolution. Note that if you use the Matroska container, you may specify the display resolution directly, but player support of this varies.
 
-Note that some odd subtitle renderers (most notably Media Player Classic's builtin renderer) are actually a part of the video renderer and will do the subtitle rendering ''after'' anamorphic stretching, resulting in stretched subtitles and much annoyance. With MPlayer's libass renderer, you can actually specify whether subtitles should be drawn before or after stretching by using the -vf parameter to move the subtitle filter in the filter chain.
+Note that some odd subtitle renderers (most notably Media Player Classic's builtin renderer) are actually a part of the video renderer and will do the subtitle rendering ''after'' anamorphic stretching, resulting in stretched subtitles and much annoyance. With MPlayer's libass renderer, you can actually specify whether subtitles should be drawn before or after stretching by using the -vf parameter to move the subtitle renderer in the filter chain.
 
 ===Further reading===
 For more information about anamorphic video and aspect ratios in general (a deeply obfuscated topic that appears simple at a glance) the following links may be of interest:
@@ -145,4 +145,14 @@ The following options are available from the video menu:
 * '''Set zoom'''
 : Sets the video zoom level.
 * '''Override aspect ratio'''
-: Stretches the video to the specified aspect ratio by modifying the video width. Useful for anamorphic video.
+: Stretches the video to the specified aspect ratio by modifying the video width. Useful for anamorphic video (see above).
+* '''Show overscan mask'''
+: Draws a blue "mask" over the image, indicating the edges of the action safe (dark blue) and title safe (light blue) areas. Useful if you plan on showing your subtitles on a TV without adjustable overscan correction. For more information, see the Wikipedia pages on [http://en.wikipedia.org/wiki/Overscan overscan], [http://en.wikipedia.org/wiki/Safe_area safe areas] and [http://en.wikipedia.org/wiki/Overscan_amounts overscan amounts].
+
+===Seeking-related===
+* '''Jump to'''
+: Seeks the video to the given time or frame.
+* '''Jump video to start'''
+: Seeks the video to the start time of the currently active line.
+* '''Jump video to end'''
+: Seeks the video to the end time of the currently active line.
