@@ -1,0 +1,1 @@
+Editing subtitles in Aegisub is done in two areas: the subtitle edit box (where you type in or edit text) and the subtitles grid, where you do things to one or more lines at the same time.
