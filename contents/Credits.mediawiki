@@ -38,6 +38,7 @@ Aegisub is the work of a cast of thousands... here's a list of some of them, in 
 ===Hosting===
 *[[Image:Flag_of_Germany.gif|24px]] equinox: SVN repository for version 2.00+
 *[[Image:Flag_of_Denmark.gif|24px]] Bot1: Forums and Main Wiki
+*[[Image:Flag_of_Denmark.gif|24px]] jfs: Bug Tracker
 *[[Image:Flag_of_Germany.gif|24px]] Mentar: SVN repository up to version 1.09
 *[[Image:Flag_of_Germany.gif|24px]] BerliOS: SVN repository for version 1.10
 *[[Image:Flag_of_United-States.gif|24px]] Marcello Bastéa-Forte: Documentation Wiki
