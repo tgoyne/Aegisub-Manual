@@ -2,7 +2,7 @@
 
 ===Programming===
 *[[Image:Flag_of_Brazil.gif|24px]] '''Rodrigo Braz Monteiro''' (ArchMage ZeratuL) - Lead developer, general code, PRS library
-*[[Image:Flag_of_Denmark.gif|24px]] '''Niels Martin Hansen''' (jfs) - Automation, Lua automation, installer, general code
+*[[Image:Flag_of_Denmark.gif|24px]] '''Niels Martin Hansen''' (jfs) - Automation, Lua automation, general code
 *[[Image:Flag_of_Germany.gif|24px]] '''David Lamparter''' (equinox) - Unix port, FFMPEG-related programming, asa
 *[[Image:Flag_of_United-States.gif|24px]] '''Dan Donovan''' (Dansolo) - Miscellaneous tools
 *[[Image:Flag_of_Italy.gif|24px]] '''Simone Cociancich''' (shb) - Perl automation
@@ -15,6 +15,11 @@
 *'''2points''' - Some Linux patches
 *[[Image:Flag_of_United-States.gif|24px]] '''p-static''' - Some Linux patches
 *'''David Conrad''' (Yuvi) - Some Mac patches
+
+===Installer===
+*[[Image:Flag_of_Denmark.gif|24px]] jfs
+*[[Image:Flag_of_Sweden.gif|24px]] Myrsloik
+*[[Image:Flag_of_United-States.gif|24px]] movax
 
 ===Manual===
 *[[Image:Flag_of_Sweden.gif|24px]] TheFluff
