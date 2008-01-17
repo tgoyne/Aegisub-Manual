@@ -17,15 +17,16 @@ Aegisub is the work of a cast of thousands... here's a list of some of them, in 
 *'''David Conrad''' (Yuvi) - Some Mac patches
 
 ===Manual===
-*ArchMage ZeratuL
-*jfs
-*TheFluff
-*Motoko-chan
-*Kobi
-*movax
-*Jcubed
+*[[Image:Flag_of_Brazil.gif|24px]] ArchMage ZeratuL
+*[[Image:Flag_of_Denmark.gif|24px]] jfs
+*[[Image:Flag_of_Sweden.gif|24px]] TheFluff
+*[[Image:Flag_of_United-States.gif|24px]] Motoko-chan
+*[[Image:Flag_of_Slovenia.gif|24px]] Kobi
+*[[Image:Flag_of_United-States.gif|24px]] movax
+*[[Image:Flag_of_United-States.gif|24px]] Jcubed
 
 ===Localization files===
+{{todo|This is outdated}}
 *French: TechNiko & Crysral
 *Portuguese: ArchMage ZeratuL
 *Russian: thrash-sensei
@@ -34,14 +35,16 @@ Aegisub is the work of a cast of thousands... here's a list of some of them, in 
 *Italian: EmBolo & Mazinga
 *Korean: oblisk
 
+===Hosting===
+*[[Image:Flag_of_Germany.gif|24px]] equinox: SVN repository for version 2.00+
+*[[Image:Flag_of_Denmark.gif|24px]] Bot1: Forums and Main Wiki
+*[[Image:Flag_of_Germany.gif|24px]] Mentar: SVN repository up to version 1.09
+*[[Image:Flag_of_Germany.gif|24px]] BerliOS: SVN repository for version 1.10
+*[[Image:Flag_of_United-States.gif|24px]] Marcello Bastéa-Forte: Documentation Wiki
+
 ===Additional thanks===
-*Mentar for hosting the SVN repository up to version 1.09
-*BerliOS for hosting the SVN repository for version 1.10
-*equinox for hosting the SVN repository for version 2.00+
-*Bot1 for hosting the forums, Bug Tracker, and wiki
-*Marcello for hosting the documentation wiki
-*Firebird for some of the toolbar icons
-*Kayle for help with Win32 VfW interface
+*[[Image:Flag_of_United-States.gif|24px]] Firebird for some of the toolbar icons
+*[[Image:Flag_of_United-States.gif|24px]] Kayle for help with Win32 VfW interface
 *Alpha testers: b0nk, Bot1, deathbygirl, DoGfOoD, grimlock, Jagobah, Jcubed, Kintaro, Kobi, kodachrome, maxx-, mASSIVe, Maya, Mentar, movax, msb, neo2sonic, nich, nwa, omgifos, SOzuken, TheFluff, ]thrash_sensei[, Vincent, zegnat 
 
 ===About===
