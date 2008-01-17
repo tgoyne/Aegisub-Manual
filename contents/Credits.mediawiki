@@ -1,4 +1,4 @@
-Aegisub is the work of a cast of thousands... here's a list of some of them, in no particular order.
+{{todo|Make sure that nobody is missing from the list - if you are or can think of someone, please let us know.}}
 
 ===Programming===
 *[[Image:Flag_of_Brazil.gif|24px]] '''Rodrigo Braz Monteiro''' (ArchMage ZeratuL) - Lead developer, general code, PRS library
