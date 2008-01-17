@@ -7,13 +7,13 @@ Aegisub is the work of a cast of thousands... here's a list of some of them, in 
 *Dansolo - Miscellaneous tools
 *Simone Cociancich - Perl automation
 *Pomyk - Ruby automation, Miscellaneous patching
-*Fredrik Mellbin (Myrsloik) - Avisynth-related and ffmpegsource
+*[[Image:Flag_of_Sweden.gif|24px]] Fredrik Mellbin (Myrsloik) - Avisynth-related and ffmpegsource
 *[[Image:Flag_of_Brazil.gif|24px]] demi_alucard - General code
+*[[Image:Flag_of_Sweden.gif|24px]] Karl Blomster (TheFluff) - Some miscellaneous patches and Documentation Wiki dumping Perl script
 *Haali - Some DirectShow code
 *2points - Some Linux patches
 *Azzy - Some Linux patches
 *Yuvi - Some Mac-specific patches
-*[[Image:Flag_of_Sweden.gif|24px]] TheFluff - Some miscellaneous patches
 
 ===Manual===
 *ArchMage ZeratuL
