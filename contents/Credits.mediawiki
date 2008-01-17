@@ -36,15 +36,18 @@
 
 ===Localization files===
 {{todo|This is outdated}}
-*[[Image:Flag_of_Brazil.gif|24px]] ArchMage ZeratuL: Brazilian Portuguese
-*TechNiko: French
-*Crysral: French
-*[[Image:Flag_of_Russia.gif|24px]] thrash-sensei: Russian
-*[[Image:Flag_of_Germany.gif|24px]] equinox: German
-*Nesukun: Spanish
-*[[Image:Flag_of_Italy.gif|24px]] EmBolo: Italian
-*[[Image:Flag_of_Italy.gif|24px]] Mazinga: Italian
-*oblisk: Korean
+*2.00 translations:
+** None so far
+*1.10 translations:
+**[[Image:Flag_of_Brazil.gif|24px]] ArchMage ZeratuL: Brazilian Portuguese
+**[[Image:Flag_of_Canada.gif|24px]] TechNiko: French
+**[[Image:Flag_of_France.gif|24px]] Crysral: French
+**[[Image:Flag_of_Russia.gif|24px]] thrash-sensei: Russian
+**[[Image:Flag_of_Germany.gif|24px]] equinox: German
+**[[Image:Flag_of_Spain.gif|24px]] Nesukun: Spanish
+**[[Image:Flag_of_Italy.gif|24px]] EmBolo: Italian
+**[[Image:Flag_of_Italy.gif|24px]] Mazinga: Italian
+**[[Image:Flag_of_Korea.gif|24px]] oblisk: Korean
 
 ===Additional thanks===
 *[[Image:Flag_of_United-States.gif|24px]] Firebird for some of the toolbar icons
