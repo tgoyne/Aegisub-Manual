@@ -52,7 +52,8 @@
 ===Additional thanks===
 *[[Image:Flag_of_United-States.gif|24px]] Firebird for some of the toolbar icons
 *[[Image:Flag_of_United-States.gif|24px]] Kayle for help with Win32 VfW interface
-*Alpha testers: b0nk, Bot1, deathbygirl, DoGfOoD, grimlock, Jagobah, Jcubed, Kintaro, Kobi, kodachrome, maxx-, mASSIVe, Maya, Mentar, movax, msb, neo2sonic, nich, nwa, omgifos, SOzuken, TheFluff, ]thrash_sensei[, Vincent, zegnat 
+*[[Image:Flag_of_Slovenia.gif|24px]] ender for yawning a lot
+*Alpha testers: b0nk, Bot1, deathbygirl, DoGfOoD, grimlock, Jagobah, Jcubed, Kintaro, Kobi, kodachrome, maxx-, mASSIVe, Maya, Mentar, movax, msb, neo2sonic, nich, nwa, omgifos, SOzuken, TheFluff, ]thrash_sensei[, Vincent, zegnat
 
 ===About===
 Aegisub 2.00 was developed using Microsoft Visual Studio 2005 and wxWidgets 2.8.7. The Automation module also uses the Lua, Perl and Ruby programming languages. The Regular Expressions code used in this program was written by Henry Spencer and included in wxWidgets. Some builds of Aegisub also uses the PortAudio, OpenAL, PulseAudio, libpng, zlib, Hunspell, universalchardet, CSRI, asa, libass, Freetype 2 and ffmpeg libraries.
