@@ -42,6 +42,7 @@ Aegisub is the work of a cast of thousands... here's a list of some of them, in 
 *[[Image:Flag_of_Germany.gif|24px]] Mentar: SVN repository up to version 1.09
 *[[Image:Flag_of_Germany.gif|24px]] BerliOS: SVN repository for version 1.10
 *[[Image:Flag_of_United-States.gif|24px]] Marcello Bastéa-Forte: Documentation Wiki
+*[[Image:Flag_of_Brazil.gif|24px]] ArchMage ZeratuL: Domain administration
 
 ===Additional thanks===
 *[[Image:Flag_of_United-States.gif|24px]] Firebird for some of the toolbar icons
