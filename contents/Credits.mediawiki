@@ -11,7 +11,7 @@ Aegisub is the work of a cast of thousands... here's a list of some of them, in 
 *[[Image:Flag_of_Brazil.gif|24px]] '''Alysson Souza e Silva''' (demi_alucard) - General code
 *[[Image:Flag_of_Sweden.gif|24px]] '''Karl Blomster''' (TheFluff) - Some miscellaneous patches and Perl hacking
 *[[Image:Flag_of_Russia.gif|24px]] '''Evgeniy Stepanov''' (Azzy) - Some Linux patches, libass
-*[[Image:Flag_of_Russia.gif|24px]] '''Mike Matsnev''' (Haali) - Some DirectShow code
+*[[Image:Flag_of_Russia.gif|24px]] '''Mike Matsnev''' (Haali) - Some DirectShow code and Matroska Parser library
 *'''2points''' - Some Linux patches
 *[[Image:Flag_of_United-States.gif|24px]] '''p-static''' - Some Linux patches
 *'''David Conrad''' (Yuvi) - Some Mac patches
