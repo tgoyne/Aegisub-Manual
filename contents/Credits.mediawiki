@@ -13,7 +13,8 @@ Aegisub is the work of a cast of thousands... here's a list of some of them, in 
 *[[Image:Flag_of_Russia.gif|24px]] '''Mike Matsnev''' (Haali) - Some DirectShow code
 *'''2points''' - Some Linux patches
 *'''Azzy''' - Some Linux patches
-*'''Yuvi''' - Some Mac-specific patches
+*'''p-static''' - Some Linux patches
+*'''Yuvi''' - Some Mac patches
 
 ===Manual===
 *ArchMage ZeratuL
