@@ -15,7 +15,10 @@ The main goal of dialogue typesetting is '''legibility'''; everything else is ju
 {{Todo|examples}}
 
 =="Sign" typesetting==
-{{Todo|write this}}
+Sign typesetting (translating various background text) can usually be accomplished with ASS, but commercial programs like Adobe AfterEffects are becoming an increasingly popular alternative, since the holy grail of sign typesetting is to make the subtitle look like it's a part of the image that was always there. How to get there from here will not be discussed in detail on this page (see the [[Typesetting Tutorial|typesetting tutorial]]), but here are some pointers:
+* Is the sign important to the plot? You shouldn't try to go around translating every single sign there is, or you'll go insane (and the end result will probably be unreadable anyway).
+* Frequently, the text of a plot-important sign (such as a letter) is actually read out loud in the dialogue; if this is the case you should consider skipping the sign typeset because having both text and dialogue may overload the viewer with information.
+* Will you be able to make the translation easily legible? For example, if you have very little space available to squeeze it in on, consider putting a translation note as a normal "toptitle" instead.
 
 ==Further reading==
 The Wikipedia page on [http://en.wikipedia.org/wiki/Typography typography] has a lot of useful links and explanation of various typesetting-related terms.
