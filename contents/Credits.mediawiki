@@ -55,6 +55,7 @@
 **[[Image:Flag_of_Korea.gif|24px]] oblisk: Korean
 
 ===Additional thanks===
+*[[Image:Soviet_flag.gif|24px]] [http://www.cccp-project.net Combined Community Codec Pack] staff
 *[[Image:Flag_of_United-States.gif|24px]] Firebird for some of the toolbar icons
 *[[Image:Flag_of_United-States.gif|24px]] Kayle for help with Win32 VfW interface
 *[[Image:Flag_of_Slovenia.gif|24px]] ender for yawning a lot
