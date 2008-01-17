@@ -17,9 +17,9 @@ Aegisub is the work of a cast of thousands... here's a list of some of them, in 
 *'''David Conrad''' (Yuvi) - Some Mac patches
 
 ===Manual===
+*[[Image:Flag_of_Sweden.gif|24px]] TheFluff
 *[[Image:Flag_of_Brazil.gif|24px]] ArchMage ZeratuL
 *[[Image:Flag_of_Denmark.gif|24px]] jfs
-*[[Image:Flag_of_Sweden.gif|24px]] TheFluff
 *[[Image:Flag_of_United-States.gif|24px]] Motoko-chan
 *[[Image:Flag_of_Slovenia.gif|24px]] Kobi
 *[[Image:Flag_of_United-States.gif|24px]] movax
