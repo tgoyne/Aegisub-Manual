@@ -20,5 +20,7 @@ Sign typesetting (translating various background text) can usually be accomplish
 * Frequently, the text of a plot-important sign (such as a letter) is actually read out loud in the dialogue; if this is the case you should consider skipping the sign typeset because having both text and dialogue may overload the viewer with information.
 * Will you be able to make the translation easily legible? For example, if you have very little space available to squeeze it in on, consider putting a translation note as a normal "toptitle" instead.
 
+{{Todo|images}}
+
 ==Further reading==
 The Wikipedia page on [http://en.wikipedia.org/wiki/Typography typography] has a lot of useful links and explanation of various typesetting-related terms.
