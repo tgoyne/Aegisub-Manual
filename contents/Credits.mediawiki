@@ -4,13 +4,13 @@ Aegisub is the work of a cast of thousands... here's a list of some of them, in 
 *[[Image:Flag_of_Brazil.gif|24px]] Rodrigo Braz Monteiro (ArchMage ZeratuL) - Lead developer, general code, PRS library
 *[[Image:Flag_of_Denmark.gif|24px]] Niels Martin Hansen (jfs) - Automation, Lua automation, installer, general code
 *[[Image:Flag_of_Germany.gif|24px]] David Lamparter (equinox) - Unix port, FFMPEG-related programming, asa
-*Dansolo - Miscellaneous tools
-*Simone Cociancich - Perl automation
+*[[Image:Flag_of_United-States.gif|24px]] Dansolo - Miscellaneous tools
+*[[Image:Flag_of_Italy.gif|24px]] Simone Cociancich - Perl automation
 *Pomyk - Ruby automation, Miscellaneous patching
 *[[Image:Flag_of_Sweden.gif|24px]] Fredrik Mellbin (Myrsloik) - Avisynth-related and ffmpegsource
 *[[Image:Flag_of_Brazil.gif|24px]] demi_alucard - General code
 *[[Image:Flag_of_Sweden.gif|24px]] Karl Blomster (TheFluff) - Some miscellaneous patches and Documentation Wiki dumping Perl script
-*Haali - Some DirectShow code
+*[[Image:Flag_of_Russia.gif|24px]] Haali - Some DirectShow code
 *2points - Some Linux patches
 *Azzy - Some Linux patches
 *Yuvi - Some Mac-specific patches
