@@ -25,16 +25,6 @@
 *[[Image:Flag_of_United-States.gif|24px]] movax
 *[[Image:Flag_of_United-States.gif|24px]] Jcubed
 
-===Localization files===
-{{todo|This is outdated}}
-*French: TechNiko & Crysral
-*Portuguese: ArchMage ZeratuL
-*Russian: thrash-sensei
-*German: equinox
-*Spanish: Nesukun
-*Italian: EmBolo & Mazinga
-*Korean: oblisk
-
 ===Hosting===
 *[[Image:Flag_of_Germany.gif|24px]] equinox: SVN repository for version 2.00+
 *[[Image:Flag_of_Denmark.gif|24px]] Bot1: Forums and Main Wiki
@@ -43,6 +33,18 @@
 *[[Image:Flag_of_Germany.gif|24px]] BerliOS: SVN repository for version 1.10
 *[[Image:Flag_of_United-States.gif|24px]] Marcello Bastéa-Forte: Documentation Wiki
 *[[Image:Flag_of_Brazil.gif|24px]] ArchMage ZeratuL: Domain administration
+
+===Localization files===
+{{todo|This is outdated}}
+*[[Image:Flag_of_Brazil.gif|24px]] ArchMage ZeratuL: Brazilian Portuguese
+*TechNiko: French
+*Crysral: French
+*[[Image:Flag_of_Russia.gif|24px]] thrash-sensei: Russian
+*[[Image:Flag_of_Germany.gif|24px]] equinox: German
+*Nesukun: Spanish
+*[[Image:Flag_of_Italy.gif|24px]] EmBolo: Italian
+*[[Image:Flag_of_Italy.gif|24px]] Mazinga: Italian
+*oblisk: Korean
 
 ===Additional thanks===
 *[[Image:Flag_of_United-States.gif|24px]] Firebird for some of the toolbar icons
