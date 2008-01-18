@@ -44,6 +44,10 @@
 {{todo|This is outdated}}
 *2.00 translations:
 **[[Image:Flag_of_Brazil.gif|24px]] ArchMage ZeratuL: Brazilian Portuguese
+*1.11 translations:
+**Ereza: Catalan
+**Karasu: Traditional Chinese
+**Yuri: Hungarian
 *1.10 translations:
 **[[Image:Flag_of_Canada.gif|24px]] TechNiko: French
 **[[Image:Flag_of_France.gif|24px]] Crysral: French
