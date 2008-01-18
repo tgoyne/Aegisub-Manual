@@ -18,7 +18,7 @@ Aegisub supports reading the following subtitle formats:
 * Plain "dialog script" formatted text (see below)
 
 ===Importing subtitles from MKV===
-Loading subtitles directly from Matroska files is also supported. The following CodecID's are supported:
+Loading subtitles directly from Matroska files can also be done. The following CodecID's are supported:
 * S_TEXT/UTF8 (SRT)
 * S_TEXT/ASS (ASS/SSA v4+)
 * S_TEXT/SSA (SSA v4)
