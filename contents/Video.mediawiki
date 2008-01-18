@@ -1,4 +1,4 @@
-Aegisub isn't a video (or media) player, but it still supports loading and working with video in various ways. This page is a reference of how Aegisub's loading and handling of video works; for a gentler introduction on how to just getting things to display properly you may want to read the [[Typesetting Tutorial]] or [[Visual Typesetting]] pages.
+Aegisub isn't a video (or media) player, but it still supports loading and working with video in various ways. This page is a reference of how Aegisub's loading and handling of video works; for a gentler introduction on how to just get things to display properly you may want to read the [[Typesetting Tutorial]] or [[Visual Typesetting]] pages.
 
 ==Opening video==
 To load a video file, go to the ''Video'' menu and press ''Open video file''. What video files you can open depends on your [[Options#Video|video provider]]. To use a dummy (mockup, blank) video, press ''Use dummy video''.
