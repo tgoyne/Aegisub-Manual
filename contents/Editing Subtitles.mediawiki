@@ -71,4 +71,47 @@ Select all, undo, copy, cut and paste all do what you'd expect them to.
 * '''Split line:''' splits the line into two new lines at the cursor position. Preserve times keeps the old line's timing for both lines, estimate times tries to guess where the split is based on the length of the text on each side of the cursor.
 
 ===The subtitles grid===
-{{Todo|write this}}
+{{Todo|screenshot}}
+The subtitles grid shows all lines (comments and otherwise) in the entire file.
+Some common controls:
+* To move lines up or down in the grid, select them, hold down the Alt key and press the up- or down-arrow keys.
+* To select multiple lines, hold down either Ctrl or Shift and click. Ctrl-click selects one more line per click; Shift-click selects all the lines between the first clicked and the last clicked.
+* To change the way [[ASS Tags|override tags]] are displayed in the grid, click the "cycle through tag hiding modes" button on the toolbar.
+{{Todo|screenshot of said button}}
+* To sort all lines in the grid by their start time, open the ''Timing'' menu and click "Sort by time".
+
+By default, the following columns are visible:
+* '''#''' - The line number.
+* '''Start''' - The start time of the line.
+* '''End''' - The end time of the line.
+* '''Style''' - The style used for this line.
+* '''Text''' - The text of the line (this is what will be displayed on the video).
+The following columns will be displayed if any line in the script uses them:
+* '''L''' - The layer of the line (see above).
+* '''Actor''' - The actor speaking the line.
+* '''Effect''' - The effect for this line (not actually used for rendering).
+* '''Left''' - The left margin.
+* '''Right''' - The right margin.
+* '''Vert''' - The vertical margin.
+
+You can also right-click the top line of the grid (the one with the column names) to manually select which columns you want to be visible.
+
+Right-clicking any other line in the grid gives you the following menu (many of the options are also available in other menus):
+{{Todo|screenshot}}
+* '''Insert (before/after)''' - Inserts a new empty line before or after the selected line. The new line will be timed start at 0:00:00.00 and go to 0:00:05.00.
+* '''Insert at video time (before/after)''' - Same as the above, but the new line will be timed to start at the current video frame. Not enabled unless you have video loaded.
+* '''Duplicate''' - Duplicates the selected line(s).
+* '''Duplicate and shift by 1 frame''' - Duplicates the selected line(s) and shifts the start and end times one frame forward. Useful for frame-by-frame typesetting. Not enabled unless you have video loaded.
+* '''Split (by karaoke)''' - Splits the line into one new line per karaoke override tag (<tt>\k</tt> and its relatives), each new line containing the text between one \k tag and next. The timing of the new lines start from the start time of the original line, and the duration of each new line is taken from the \k tag on which it is based.
+* '''Swap''' - Swaps the places (in the grid) of two selected lines.
+* '''Join (keep first)''' - Joins two or more lines, discarding the text of all but the first. The new line will be timed to start at the first line's start time and end at the last line's end time. Only enabled if you have more than one line selected.
+* '''Join (concatenate)''' - Same as above, but concatenates the text of all selected lines instead. A newline override (<tt>\N</tt>) is inserted between the texts of each source line.
+* '''Join (as karaoke)''' - Does the inverse of ''Split (by karaoke)'', i.e. the same as ''Join (concatenate)'' but inserts <tt>\k</tt> tags with the timing of each source line in the joined line.
+* '''Make times continuous (change start/change end)''' - Modifies the timing of the selected lines so that the end time of each line is the same as the start time of the next line. Change start/change end determines whether the function changes the end time or the start time of each line. Not enabled unless you have more than one line selected.
+* '''Recombine lines''' - Given two or more lines with parts of the same text being partially present in all of them, creates one line per text fragment instead. This is mostly useful for correcting subs ripped from DVD's, which frequently look something like this:
+{{Todo|screenshot}}
+: After recombine lines, the result is:
+{{Todo|screenshot}}
+* '''Create audio clip''' - Saves a segment of the loaded audio corresponding to the timing of the selected lines (starting at the earliest start time and ending at the latest end time) as an uncompressed WAV file. Only enabled if you have audio loaded.
+* '''Cut/Copy/Paste''' - Cuts/copies/pastes entire lines. Note that the lines are copied as plain text and can be copied and pasted freely between text editors, chat programs, web browsers, other instances of Aegisub etc etc.
+* '''Delete''' - Deletes the selected lines.
