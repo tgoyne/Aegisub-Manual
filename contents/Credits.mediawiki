@@ -43,9 +43,8 @@
 ===Localization files===
 {{todo|This is outdated}}
 *2.00 translations:
-** None so far
-*1.10 translations:
 **[[Image:Flag_of_Brazil.gif|24px]] ArchMage ZeratuL: Brazilian Portuguese
+*1.10 translations:
 **[[Image:Flag_of_Canada.gif|24px]] TechNiko: French
 **[[Image:Flag_of_France.gif|24px]] Crysral: French
 **[[Image:Flag_of_Russia.gif|24px]] thrash-sensei: Russian
