@@ -108,7 +108,7 @@ Right-clicking any other line in the grid gives you the following menu (many of 
 * '''Join (concatenate)''' - Same as above, but concatenates the text of all selected lines instead. A newline override (<tt>\N</tt>) is inserted between the texts of each source line.
 * '''Join (as karaoke)''' - Does the inverse of ''Split (by karaoke)'', i.e. the same as ''Join (concatenate)'' but inserts <tt>\k</tt> tags with the timing of each source line in the joined line.
 * '''Make times continuous (change start/change end)''' - Modifies the timing of the selected lines so that the end time of each line is the same as the start time of the next line. Change start/change end determines whether the function changes the end time or the start time of each line. Not enabled unless you have more than one line selected.
-* '''Recombine lines''' - Given two or more lines with parts of the same text being partially present in all of them, creates one line per text fragment instead. This is mostly useful for correcting subs ripped from DVD's, which frequently look something like this:
+* '''Recombine lines''' - Given two or more lines with the same text being partially present in all of them, creates one line per text fragment instead. This is mostly useful for correcting subs ripped from DVD's, which frequently look something like this:
 {{Todo|screenshot}}
 : After recombine lines, the result is:
 {{Todo|screenshot}}
