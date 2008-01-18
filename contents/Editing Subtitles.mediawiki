@@ -13,7 +13,7 @@ Aegisub supports reading the following subtitle formats:
 * Advanced Substation Alpha v2, also known as SSA v4++ or ASS2
 * Substation Alpha v4 (.ssa)
 * [http://zuggy.wz.cz/ SubRip] Text (.srt)
-* MPEG4 Timed Text, also known as ISO/IEC 14496-17, MPEG-4 Part 17 or just TTXT (.ttxt)
+* MPEG4 Timed Text (limited support at best; broken at worst), also known as ISO/IEC 14496-17, MPEG-4 Part 17 or just TTXT (.ttxt)
 * MicroDVD (.sub)
 * Plain "dialog script" formatted text (see below)
 
