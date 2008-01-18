@@ -1,3 +1,74 @@
+Editing subtitles is what Aegisub is made for. This page will deal with basic text editing of subtitle lines; for more information on the typography of subtitles, see [[Typesetting|typesetting]]. For information on the timing of subtitle lines, see [[Audio|working with audio]].
+
+==Opening subtitles==
+In the ''File'' menu, there are three menu choices that relate to opening or creating subtitles:
+* '''New subtitles''' - Creates a new, blank script.
+* '''Open subtitles''' - Opens an existing subtitles file or imports subtitles from a [http://www.matroska.org Matroska container file].
+* '''Open subtitles with charset''' - Opens subtitles but lets you choose what character set Aegisub will use to interpret the file. Usually not needed anymore, see below.
+When you open a subtitles file that is not detected as Unicode, Aegisub will attempt to guess what character set it is encoded with. If it is unsure, it will ask you to choose from two or more likely alternatives. If the result looks garbled or otherwise incorrect, try reopening it with another character set.
+
+===Supported formats===
+Aegisub supports reading the following subtitle formats:
+* Advanced Substation Alpha, also known as SSA v4+ (.ass)
+* Advanced Substation Alpha v2, also known as SSA v4++ or ASS2
+* Substation Alpha v4 (.ssa)
+* [http://zuggy.wz.cz/ SubRip] Text (.srt)
+* MPEG4 Timed Text, also known as ISO/IEC 14496-17, MPEG-4 Part 17 or just TTXT (.ttxt)
+* MicroDVD (.sub)
+* Plain "dialog script" formatted text (see below)
+
+===Importing subtitles from MKV===
+Loading subtitles directly from Matroska files is also supported. The following CodecID's are supported:
+* S_TEXT/UTF8 (SRT)
+* S_TEXT/ASS (ASS/SSA v4+)
+* S_TEXT/SSA (SSA v4)
+
+===Importing plain text scripts===
+Aegisub also supports importing "dialogue-formatted" plain text scripts. For example:
+ Actor 1:	Well do I understand your speech, yet few strangers do so.
+		Why then do you not speak in the Common Tongue,
+		as is the custom in the West, if you wish to be answered?
+ # TL check: The above seems to be a quote from the lord of the rings, look it up later
+ Actor 2: 	What are you babbling about?
+This will result in five subtitle lines, one being commented out. The first three will have the actor field set to "Actor 1", and the fifth will have it set to "Actor 2" (the comment line's actor field will be blank).
+
+When you open a file with the extension .txt, Aegisub will ask you about what characters it should use as the actor separator and comment starter, respectively. In the example above, the actor separator is a colon ("<tt>:</tt>") and the comment starter is a hash ("<tt>#</tt>").
+
+==Editing subtitles==
 Editing subtitles in Aegisub is done in two areas: the subtitle edit box (where you type in or edit text) and the subtitles grid, where you do things to one or more lines at the same time.
 
+===The subtitles edit box===
+{{Todo|screenshot with numbers}}
+The edit box is just a plain editing area with a number of associated controls. They are:
+# Flags the line as a comment. Comment lines will not be displayed on the video.
+# The [[Styles|style]] used for this line.
+# The actor speaking this line. Has no actual effect on subtitle display but can be useful for editing purposes.
+# Effect for this line. Mostly for format historical reasons; it is not actually used for any rendering. Some utilities store various data in this field.
+# Layer for this line. If you override positioning with an [[ASS Tags|override tag]] so that two or more lines are displayed on top of each other, this field controls which one is drawn where; higher layer numbers are drawn on top of lower ones.
+# Start time for the line.
+# End time for the line.
+# Duration for the line. If you modify this field, the end time will be modified as a result.
+# Left margin for this line. 0 means use the margin specified in the style.
+# Right margin for this line. 0 means use the margin specified in the style.
+# Vertical margin for this line. 0 means use the margin specified in the style.
+# Inserts a bold override tag (<tt>\b1</tt>) at the cursor position. If the text is already bold, inserts a corresponding closing tag (<tt>\b0</tt>).
+# Inserts an italics override tag (<tt>\i1</tt>) at the cursor position. If the text is already italic, inserts a corresponding closing tag (<tt>\i0</tt>).
+# Inserts an underline override tag (<tt>\u1</tt>) at the cursor position. If the text is already italic, inserts a corresponding closing tag (<tt>\u0</tt>).
+# Inserts an strikeout override tag (<tt>\s1</tt>) at the cursor position. If the text is already italic, inserts a corresponding closing tag (<tt>\s0</tt>).
+# Brings up a font selection window and inserts a font face name tag (<tt>\fnFontName</tt>) with the given font name, as well as the chosen effect tags.
+# Brings up the [[Colour Picker|color picker]] and lets you choose a color; then inserts a primary color override tag (<tt>\c</tt>) with the chosen color at the cursor position.
+# Brings up the [[Colour Picker|color picker]] and lets you choose a color; then inserts a secondary color override tag (<tt>\2c</tt>) with the chosen color at the cursor position.
+# Brings up the [[Colour Picker|color picker]] and lets you choose a color; then inserts an outline color override tag (<tt>\3c</tt>) with the chosen color at the cursor position.
+# Brings up the [[Colour Picker|color picker]] and lets you choose a color; then inserts a shadow color override tag (<tt>\4c</tt>) with the chosen color at the cursor position.
+# Commits the current text in the edit box to the script. Any changes that have not been committed will be discarded when you go to another line.
+# Changes display between times and frames. Note that this does not change how times are actually stored in the script.
+
+If you right-click anywhere in the edit box, you get the following menu:
+{{Todo|screenshot}}
+Select all, undo, copy, cut and paste all do what you'd expect them to.
+* '''Spell checker:''' if you right-click on a word that has been detected as misspelled, the spell checker will suggest some likely alternative. You can also set which language it will use for checking from this menu, or add words that it doesn't recognize but you know to be correctly spelled to the dictionary.
+* '''Thesaurus:''' suggests alternative ways to write the highlighted word.
+* '''Split line:''' splits the line into two new lines at the cursor position. Preserve times keeps the old line's timing for both lines, estimate times tries to guess where the split is based on the length of the text on each side of the cursor.
+
+===The subtitles grid===
 {{Todo|write this}}
