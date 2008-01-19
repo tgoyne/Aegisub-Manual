@@ -20,8 +20,8 @@
 ===Installer===
 *2.00:
 **[[Image:Flag_of_Denmark.gif|24px]] '''Niels Martin Hansen''' (jfs)
-**[[Image:Flag_of_Brazil.gif|24px]] '''Rodrigo Braz Monteiro''' (ArchMage ZeratuL)
 **[[Image:Flag_of_Sweden.gif|24px]] '''Fredrik Mellbin''' (Myrsloik)
+**[[Image:Flag_of_Brazil.gif|24px]] '''Rodrigo Braz Monteiro''' (ArchMage ZeratuL)
 *Previous:
 **[[Image:Flag_of_Sweden.gif|24px]] Myrsloik
 **[[Image:Flag_of_United-States.gif|24px]] movax
