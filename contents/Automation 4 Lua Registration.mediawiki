@@ -10,7 +10,7 @@ A feature is not a plain callback. Rather, it's usually a set of several callbac
 
 One feature is the '''macro'''. A macro is presented as an item in the Automation menu. A macro has a name (the title show in the menu), a description (the text shown on the status bar when hovering over the menu item), a processing function (the function called when the user selects the menu item) and an optional validation function (determines whether the macro can even do any work in the current state.)
 
-Another feature is the '''export filter'''. The export filter is presented in the [[Export]] dialogue and can be applied during an export operation. Export filters also have a name, description, processing function and then an optional configuration panel provider. The configuration panel provider is a function that returns a configuration dialogue definition structure which will be displayed in the Export dialogue when the export filter is enabled. The settings filled into the configuration panel are passed to the processing function when it is run.
+Another feature is the '''export filter'''. The export filter is presented in the [[Exporting|Export]] dialogue and can be applied during an export operation. Export filters also have a name, description, processing function and then an optional configuration panel provider. The configuration panel provider is a function that returns a configuration dialogue definition structure which will be displayed in the Export dialogue when the export filter is enabled. The settings filled into the configuration panel are passed to the processing function when it is run.
 
 == Script information globals ==
 
