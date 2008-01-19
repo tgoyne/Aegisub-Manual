@@ -137,6 +137,8 @@ The following options are available from the video menu:
 ===Timecodes-related===
 * '''Open timecodes file'''
 : Loads a timecodes file and applies it to the video, changing the video/subtitle synchronization.
+* '''Save timecodes file'''
+: Saves the currently loaded timecodes as a new v2 timecodes file.
 * '''Close timecodes file'''
 : Unloads the currently loaded timecodes.
 * '''Recent'''
