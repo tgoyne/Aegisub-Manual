@@ -4,7 +4,7 @@ The '''select lines''' tool is useful for finding and selecting all lines in the
 
 ===Match===
 These controls what criteria will be used for selecting the lines.
-* '''Match''' or '''Doesn't match''' - Controls whether a "positive" or "negative" matching is done. If you use ''match'', all lines that does match the criteria will be selected. If you use ''doesn't match'', all lines that does ''not'' match the criteria will be selected.
+* '''Match''' or '''Doesn't match''' - Controls whether a "positive" or "negative" matching is done. If you use ''match'', all lines that does match the criteria will be considered matched. If you use ''doesn't match'', all lines that does ''not'' match the criteria will be considered matching.
 * '''Match case''' - Controls case sensitivity, i.e. if the tool should care about the difference between lower and upper case or not.
 * '''Exact match''' - Matches the lines that matches the given string ''exactly''.
 * '''Contains''' - Matches the lines that ''contains'' the given string.
