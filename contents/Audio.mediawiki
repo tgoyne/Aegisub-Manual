@@ -31,8 +31,8 @@ When your audio file has loaded, Aegisub will transform into something like the 
 You can click and drag just below the audio timeline to change the height of the audio waveform/spectrum display.
 
 Green and red buttons are toggle buttons. A green background indicates that the option is turned on, while a red background indicates that the option is turned off. The buttons and controls are as follows (many of these have [[Keyboard shortcuts|keyboard shortcuts]] associated with them by default):
-# Previous line (previous syllable when in [[Audio#Karaoke mode|karaoke mode]])
-# Next line (next syllable when in karaoke mode)
+# Go to previous line, discarding any unsaved changes (previous syllable when in [[Audio#Karaoke mode|karaoke mode]])
+# Go to next line, discarding any unsaved changes (next syllable when in karaoke mode)
 # Play selected area of the audio waveform
 # Play currently selected line
 # Pause playback
@@ -49,7 +49,7 @@ Green and red buttons are toggle buttons. A green background indicates that the 
 # Toggle auto next line on commit (if this is enabled, Aegisub will automatically select the next line when the current line is committed; enabling both this and auto-commit at the same time is strongly discouraged)
 # Toggle auto-scrolling (will center waveform on the currently selected line automatically when enabled)
 # Toggle spectrum analyzer mode (see below)
-# Toggle Medusa timing shortcuts (see below)
+# Toggle Medusa-style timing shortcuts
 # Audio display zoom (horizontal)
 # Audio display zoom (vertical)
 # Audio volume
@@ -57,8 +57,6 @@ Green and red buttons are toggle buttons. A green background indicates that the 
 # Toggle karaoke mode
 # Join selected syllables (karaoke mode only)
 # Split selected syllables (karaoke mode only)
-
-{{Todo|detailed explanations go here}}
 
 ==Basic audio timing==
 When you click on a line in the subtitles grid, Aegisub will highlight it in the audio display and, if you have auto-scrolling enabled, scroll the audio display so it's centered on the line (during normal timing, it's probably a good idea to disable auto-scrolling). You'll notice various vertical lines in the audio display; the dark blue ones indicate second boundaries, the pink ones indicate keyframes in the video if you have it loaded (see the [[Video|Working with video]] section), the white broken line indicates the currently visible video frame, and the thick red and orange ones are the line start and end markers (respectively) for the current line. To (re-)define the start and end times of the line, you can either left-click to set the start time and right-click to set the end time, or just drag-and-drop the line boundaries. The selection background will turn red and display the word "Modified" in the top left corner of the audio display when you've changed the timing but haven't saved the changes yet. It will remain red until you either press the commit button (''enter'' or ''g'' by default) or go to another line (discards changes). If you have auto-commit on, the background will never turn red since all changes will be saved immediately. Press the ''play'' button (keyboard shortcut ''s'' by default) to listen to the selection, or the various other playing buttons to listen to parts of the selection or the audio surrounding it. When you are satisfied with the timing, press commit. Then repeat once for every line; it's as simple as that.
