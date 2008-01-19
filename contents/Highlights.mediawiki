@@ -1,39 +1,19 @@
-Aegisub supports:
-
-*Unicode in UTF-7, UTF-8, UTF-16LE and UTF-16BE encodings
-*Importing non-Unicode subtitles from over 30 different character encodings, including Shift_JIS, which allows you to resume work on any subtitles, regardless of system locale settings
-*Loading of Advanced Substation Alpha (ASS), Substation Alpha (SSA), Subrip (SRT), MicroDVD, MPEG-4 Timed Text (TTXT) and Plain-Text (TXT) (with actor data) subtitle formats
-*Full tag conversion from SRT to ASS
-*Multiple Undo/Redo levels
-*Powerful Automation module using the Lua scripting language to create advanced karaoke effects (including per-syllable effects, similar to AssCalc in this regard) or any other kind of subtitle manipulation, as well as scripting the program itself by creating macros etc.
-*Syntax highlighting
-*Call tips for all ASS tags
-*Fonts collector to place all fonts used in a script into a folder
-*Opening of videos via Avisynth or ffmpeg for a true preview of subtitles using VSFilter, MPlayer's libass, or Asa in any format supported by DirectShow and/or ffmpeg
-*Aspect ratio overriding for anamorphic videos
-*Variable Frame Rate (VFR) videos via a Matroska timecodes file (v1 and v2), including exporting processed times for hardsubbing
-*Display of video coordinates under mouse and simple auto positioning support
-*"Visual typesetting" that allows you to drag, rotate and otherwise manipulate subtitles directly with your mouse, with realtime display of changes
-*Audio mode which allows you to open files in any format that your DirectShow or ffmpeg environment can decode, including Wave, MP3, Ogg Vorbis, AAC, AC3 and others
-*Powerful and highly customizable audio timing and playback mode, including full support for karaoke manipulation
-*Functions and hotkeys for easy synchronizing of audio/video and subtitles
-*Time shifting and manipulation by timestamps or frame numbers (once video or timecodes are loaded)
-*Timing postprocessor for automatic fixing of timing glitches
-*Advanced find and replace with support for Regular Expressions
-*Cut/Copy/Paste subtitles via plain-text format so they can be pasted in any plain-text editor
-*Translation assistant to easily translate subtitles to another language
-*Styling assistant to quickly pick styles for each line, with realtime display of changes
-*Styles manager that allows you to categorize subtitles styles to make working on several projects painless
-*Keyframe navigation for fast seeking to scene boundaries
-*Several subtitle manipulation macros, such as making timing continuous or recombining double lines after Optical Character Recognition (OCR)
-*Highlighting of subtitles that are visible in the current video frame and a button to select those
-*Preview subtitle changes immediately by pressing Ctrl+Enter
-*Shortcut buttons to set text as bold, italic, underline, strikeout, change font or any of the 4 colors
-*Easy color matching with built-in color picker
-*Full support for attaching fonts and pictures to the subtitle files (as per the SSA/ASS specifications)
-*Opening of subtitles directly from Matroska files
-*Easy to use, intuitive interface
-*Extensive manual with detailed instructions and tutorials for typesetting and program usage
-*Available in 8 different languages
-
-{{todo|Update this}}
+Some highlights of Aegisub:
+* '''Simple and intuitive yet powerful interface for editing subtitles'''
+** With help from such features as spell checking/thesaurus, a translation assistant, call tips for override tags, syntax highlighting and various macros translating, editing and quality assuring subtitles is now easier than ever.
+** Did a mistake? Had a system crash? Don't worry, Aegisub saves your .ass with features like multi-level undo/redo, auto saving, backups and emergency recovery saving in case of system or program crashes.
+* '''Support for many formats and character sets'''
+** Aegisub doesn't lock you into using any specific format; importing and exporting from several different formats (ranging from MPEG-4 Timed Text to MicroDVD) is supported.
+** Multiple language subtitles? Legacy programs without Unicode support? No problem, Aegisub has full support for both Unicode and most common legacy encodings; both reading and writing.
+* '''Powerful video mode'''
+** Most video common video formats are supported out of the box, but if that isn't enough, Aegisub can also use your system's DirectShow environment to open any format you can play in Windows Media Player.
+** Full support for variable framerate video and Matroska timecodes. Capable of reading timecodes directly from Matroska files for seamless VFR work.
+** Problems with anamorphic video? Overscan? Aegisub has the tools to handle it.
+* '''Visual typesetting tools'''
+** Typesetting on easy mode! No need to manually edit override tags; drag, rotate or clip the subtitles directly on the video frame using your mouse.
+* '''Intuitive and customizable audio timing mode'''
+** Time dialogue or karaoke in any way you want with the heavily customizable audio interface; less painful than ever! Use features such as the spectrum analyzer mode or the automatic timing post-processor for even more efficient timing.
+** Support for any audio format your DirectShow environment knows how to decode.
+* '''Fully scriptable through the Automation module'''
+** Is all the above not enough? Extend the program with your own macros or export filters using scripting in Lua or Perl.
+** Comes with several ready-made scripts for quick and easy generation of your very own karaoke effects.
