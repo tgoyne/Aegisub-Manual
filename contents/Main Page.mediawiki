@@ -9,11 +9,11 @@ Aegisub also has [[aegi:Main_Page|another wiki]], used for keeping track of more
 '''Common tasks:'''
 
 * [[Audio Timing Tutorial|Timing a translated script to audio]]
-* [[Typesetting Tutorial|Basic typesetting of on-screen signs]]
+* [[Typesetting Tutorial|Basic typesetting of on-screen signs]] (TODO, amz)
 * [[Attaching subtitles to video|Putting your finished subtitles onto the video]] (for viewing or distribution)
 
 * [[Translation Assistant|Translating a subtitle file from one language to another]]
 * [[Fix Timing Tutorial|Correcting a subtitle that's not properly synchronised to the video]]
 
-* [[Karaoke Timing Tutorial|Timing karaoke to a song]]
+* [[Karaoke Timing Tutorial|Timing karaoke to a song]] (TODO, jfs)
 * [[Karaoke Templater Tutorial 1|Creating fancy karaoke effects]]
