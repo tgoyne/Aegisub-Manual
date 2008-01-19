@@ -80,6 +80,8 @@ Some common controls:
 {{Todo|screenshot of said button}}
 * To sort all lines in the grid by their start time, open the ''Timing'' menu and click "Sort by time".
 
+The lines have different (configurable) colors representing different things; see the [[Options#General_-.3E_Subtitles_grid|subtitles grid section of the options page]] for details on what the colors mean.
+
 By default, the following columns are visible:
 * '''#''' - The line number.
 * '''Start''' - The start time of the line.
