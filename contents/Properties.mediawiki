@@ -1,5 +1,7 @@
 The '''script properties''' are some headers and other options that affect the entire script in various ways. They can be accessed from the ''File menu'' -> ''Properties''.
 
+{{Todo|screenshot}}
+
 The properties are:
 * '''Title'''
 * '''Original script'''
