@@ -3,15 +3,7 @@ The '''script properties''' are some headers and other options that affect the e
 {{Todo|screenshot}}
 
 The properties are:
-* '''Title'''
-* '''Original script'''
-* '''Translation'''
-* '''Editing'''
-* '''Timing'''
-* '''Synch point'''
-* '''Updated by'''
-* '''Update details'''
-The above headers are for informational purposes only and do not affect rendering in any way.
+* '''Title''', '''Original script''', '''Translation''', '''Editing''', '''Timing''', '''Synch point''', '''Updated by''' and '''Update details''' - These are for informational purposes only and do not affect rendering in any way.
 * '''Resolution''' - The virtual resolution of the script. Unlike the informational headers, this '''does''' effect rendering in several ways. It's recommended to set this to the same as the video resolution, or an even multiple thereof. It affects:
 ** All coordinates (for margins, <tt>\pos</tt>, <tt>\move</tt>, vector drawing etc) are given in script resolution pixels.
 ** All font sizes are scaled according to the script resolution.
