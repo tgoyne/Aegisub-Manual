@@ -16,7 +16,7 @@ Pre-Rendered Subtitles. Basically a way to "encode" ASS (text) subtitles into pi
 Report it on the [http://bugs.aegisub.net/ bug tracker]. Please include as many details as possible in your report! Remember that if a bug is not on the bug tracker, it ''does not exist'' as far as we are concerned.
 
 ===Why doesn't Aegisub have <feature X>? <Program Y> has it!===
-Quite possibly because we didn't know you wanted it. Request it on the [http://malakith.net/aegibug/main_page.php bug tracker] and see what happens.
+Quite possibly because we didn't know you wanted it. Request it on the [http://bugs.aegisub.net/ bug tracker] and see what happens.
 
 ===Where can I find more information and/or get help?===
 For Aegisub-related stuff, the [http://malakith.net/aegisub/ forums] and the [irc://irc.rizon.net/aegisub IRC channel] are good places to ask questions. The Aegisub [http://malakith.net/aegiwiki wiki] also contains some more obscure information not included in the manual for various reasons, and so does the forums.
