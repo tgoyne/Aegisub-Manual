@@ -1,6 +1,6 @@
 Some highlights of Aegisub:
 * '''Simple and intuitive yet powerful interface for editing subtitles'''
-** With help from such features as spell checking/thesaurus, a translation assistant, call tips for override tags, syntax highlighting and various macros translating, editing and quality assuring subtitles is now easier than ever.
+** With help from such features as spell checking/thesaurus, a translation assistant, call tips for override tags, syntax highlighting and various macros, translating, editing and quality assuring subtitles is now easier than ever.
 ** Did a mistake? Had a system crash? Don't worry, Aegisub saves your .ass with features like multi-level undo/redo, auto saving, backups and emergency recovery saving in case of system or program crashes.
 * '''Support for many formats and character sets'''
 ** Aegisub doesn't lock you into using any specific format; importing and exporting from and to several different formats (ranging from MPEG-4 Timed Text to MicroDVD) is supported.
