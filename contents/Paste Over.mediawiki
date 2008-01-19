@@ -1,0 +1,5 @@
+The '''paste over''' tool is a "smart" variant of the good old Ctrl-c Ctrl-v combo. It allows you to paste any given field(s) of one or more lines to the corresponding fields of other lines, without affecting the other fields. It can be found under the ''Edit'' menu -> ''Paste lines over''.
+
+To use it, first copy one or more lines with the familiar copy function (right-click -> copy, or Ctrl-c). Then select the line(s) you want to paste to, and click ''paste lines over'' (or press Ctrl-Shift-v). You will then get a dialog box that looks like this:
+{{Todo|screenshot}}
+Tick the fields you want to paste (the buttons below the checkboxes can be used to select all fields (in which case paste over is the same as the normal paste), no fields (in which case it does nothing), just the text field, or both time fields) and press OK. The fields you selected will then be pasted. It's as simple as that.
