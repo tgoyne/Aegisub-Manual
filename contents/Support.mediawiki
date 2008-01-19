@@ -13,12 +13,11 @@ Feeling generous? Consider giving us a donation! We do this in our spare time, y
 ''"Given enough eyes, all bugs are shallow."''
 :--Linus Torvalds
 Feel like really helping out, or do you just have some code you want to donate? Some advice from readme.txt in the source tree:
-
-First, some of the code is pretty readable, some is decent, and some is patched up crap. Good luck. ;)
+<blockquote>First, some of the code is pretty readable, some is decent, and some is patched up crap. Good luck. ;)
 
 Second, if you want to code anything for Aegisub, you will need to agree to these terms:
 # You will release the patch to the public domain or give its copyright to one of the developers. This is to stop a source file from being owned by too many people. (Exception: MAJOR changes might be accepted under BSD license under your name. Consult the developers)
 # Make SURE it compiles and works fine before submitting to developers.
 #Stick to the coding standards. That is, no GNU-style identing and crap.
 
-Third, this is all available under the BSD license. According to GNU itself, BSD is GPL-compatible, meaning that you can link GPL code to BSD code. Keep in mind, though, that if a source file has mixed BSD and GPL content, it becomes ruled by GPL.
+Third, this is all available under the BSD license. According to GNU itself, BSD is GPL-compatible, meaning that you can link GPL code to BSD code. Keep in mind, though, that if a source file has mixed BSD and GPL content, it becomes ruled by GPL.</blockquote>
