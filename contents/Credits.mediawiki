@@ -53,7 +53,7 @@
 ===Localization files===
 {{todo|This is outdated}}
 *2.00 translations:
-**[[Image:Flag_of_Brazil.gif|24px]] ArchMage ZeratuL: Brazilian Portuguese
+**[[Image:Flag_of_Brazil.png|24px]] ArchMage ZeratuL: Brazilian Portuguese
 *1.11 translations:
 **[[Image:Flag_of_Catalonia.gif|24px]] Ereza: Catalan
 **[[Image:Flag_of_Taiwan.gif|24px]] Karasu: Traditional Chinese
