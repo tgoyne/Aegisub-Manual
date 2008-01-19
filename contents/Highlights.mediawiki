@@ -11,6 +11,7 @@ Some highlights of Aegisub:
 ** Problems with anamorphic video? Overscan? Aegisub has the tools to handle it.
 * '''Visual typesetting tools'''
 ** Typesetting on easy mode! No need to manually edit override tags; drag, rotate or clip the subtitles directly on the video frame using your mouse.
+** Want to re-use typesetting on a video of different resolution or aspect ratio? Can't figure out what color that sign is using? Aegisub has the tools to help you deal with it.
 * '''Intuitive and customizable audio timing mode'''
 ** Time dialogue or karaoke in any way you want with the heavily customizable audio interface; less painful than ever! Use features such as the spectrum analyzer mode or the automatic timing post-processor for even more efficient timing.
 ** Support for any audio format your DirectShow environment knows how to decode.
