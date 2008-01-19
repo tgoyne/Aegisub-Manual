@@ -13,7 +13,7 @@ Yes, but only if it means that no information will be lost. In other words, if y
 Pre-Rendered Subtitles. Basically a way to "encode" ASS (text) subtitles into pictures, which can then be encoded into the video using an Avisynth filter. There's also a DirectShow renderer, but it's in early development and not ready for public use yet. PRS has a few advantages over ASS (and a few disadvantages too). One advantage is that it doesn't require much CPU power to render onto the video - all the effort is spent when "encoding" to PRS. Another is that the subtitles will look exactly as the one who rendered them intended, which is not guaranteed with ASS (not even when rendering with VSFilter, as it has had, and still has, quite a few rendering bugs). The main disadvantage is that PRS takes more space than ASS and other text-based subtitle formats do.
 
 ===I've found a bug!?===
-Report it on the [http://aegibug.nyo.dk/ bug tracker]. Please include as many details as possible in your report! Remember that if a bug is not on the bug tracker, it ''does not exist'' as far as we are concerned.
+Report it on the [http://bugs.aegisub.net/ bug tracker]. Please include as many details as possible in your report! Remember that if a bug is not on the bug tracker, it ''does not exist'' as far as we are concerned.
 
 ===Why doesn't Aegisub have <feature X>? <Program Y> has it!===
 Quite possibly because we didn't know you wanted it. Request it on the [http://malakith.net/aegibug/main_page.php bug tracker] and see what happens.
