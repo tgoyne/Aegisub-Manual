@@ -23,13 +23,15 @@
 *[[Image:Flag_of_United-States.gif|24px]] movax
 
 ===Manual===
-*[[Image:Flag_of_Sweden.gif|24px]] TheFluff
-*[[Image:Flag_of_Brazil.gif|24px]] ArchMage ZeratuL
-*[[Image:Flag_of_Denmark.gif|24px]] jfs
-*[[Image:Flag_of_United-States.gif|24px]] Motoko-chan
-*[[Image:Flag_of_Slovenia.gif|24px]] Kobi
-*[[Image:Flag_of_United-States.gif|24px]] movax
-*[[Image:Flag_of_United-States.gif|24px]] Jcubed
+*2.00:
+**[[Image:Flag_of_Sweden.gif|24px]] '''Karl Blomster''' (TheFluff)
+**[[Image:Flag_of_Denmark.gif|24px]] '''Niels Martin Hansen''' (jfs)
+**[[Image:Flag_of_Brazil.gif|24px]] '''Rodrigo Braz Monteiro''' (ArchMage ZeratuL)
+*Previous:
+**[[Image:Flag_of_United-States.gif|24px]] Motoko-chan
+**[[Image:Flag_of_Slovenia.gif|24px]] Kobi
+**[[Image:Flag_of_United-States.gif|24px]] movax
+**[[Image:Flag_of_United-States.gif|24px]] Jcubed
 
 ===Hosting===
 *[[Image:Flag_of_Germany.gif|24px]] equinox: SVN repository for version 2.00+
