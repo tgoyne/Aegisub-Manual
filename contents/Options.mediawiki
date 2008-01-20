@@ -213,8 +213,7 @@ It is not possible to change the color scheme of the spectrum display mode.
 : Aegisub can only use mono (single-channel) audio. This option determines which Avisynth function to use to convert audio to mono. This option is only available in the Windows version of Aegisub.
 * '''HD cache path'''
 * '''HD cache name'''
-: These options determine where the hard disk audio cache will be located. Only used if cache is set to hard disk. You shouldn't need to change this unless you're low on disk space.
-{{todo|document in more detail?}}
+: These options determine where the hard disk audio cache will be located. Only used if cache is set to hard disk. You shouldn't need to change this unless you're low on disk space. For the name, the string expects a printf-style "%i" parameter, that will be replaced with a number. "%02i" is used by default, don't change that unless you know what you are doing.
 * '''Spectrum cutoff'''
 : The index of the smallest frequency band the audio display will show in spectrum mode. There's usually no need to change this.
 * '''Spectrum quality'''
