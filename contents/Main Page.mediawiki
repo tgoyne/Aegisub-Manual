@@ -6,6 +6,8 @@ Aegisub also has [[aegi:Main_Page|another wiki]], used for keeping track of more
 
 [[Overview|Quick overview of Aegisub]]
 
+{{todo|finish this}}
+
 '''Common tasks:'''
 
 * [[Audio Timing Tutorial|Timing a translated script to audio]]
