@@ -111,7 +111,9 @@ Aegisub stores all its configuration in a plain text file called ''config.dat'' 
 :: Uses ffmpeg directly to load video. Supports most common formats. Technically there's nothing that stops you from using this on Windows, but most Windows builds (including the official Aegisub release builds for Windows) don't have it compiled in at all (since Avisynth uses ffmpegsource() anyway).
 
 ==Audio==
-{{Todo|screenshot}}
+
+<center>[[Image:Options audio.png]]</center>
+
 * '''Grab times from line upon selection'''
 : This option should really be named "Selecting lines changes audio selection", because that's what it does. When enabled, clicking a line in the grid or going to it using the next/previous line hotkeys will select the corresponding area in the audio waveform. When disabled, the selected area will always stay the same until you change it.
 * '''Lock scroll on cursor'''
