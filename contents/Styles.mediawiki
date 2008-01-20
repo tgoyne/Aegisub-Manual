@@ -21,7 +21,9 @@ Pressing Ctrl-C in the styles manager will copy the selected style(s) to the cli
 Pressing the "Edit" button or doubleclicking a style name will bring up the style editor, which lets you tweak all the parameters available. '''Note''': some parameters that are available as override tags (i.e. <tt>\be</tt>) are ''not'' available as style parameters; conversely, some parameters that are available in the styles editor (i.e. the "opaque box" outline option) are ''not'' available as a style override. This is an unfortunate and occasionally annoying format limitation.
 
 To return to the style editor:
-{{Todo|screenshot}}
+
+<center>[[Image:Style editor.png]]</center>
+
 * '''Style name''' - The name of the style. You can't have two styles with the same name in the same script.
 * '''Font''' - This section controls the font settings. The dropdown menu lets you choose the typeface (any font installed on your system will show up in this list) and the number to the right controls the size in points. The checkboxes below set the bold/italic/underline/strikeout parameters.
 * '''Colors''' - This controls the four text colors (primary, secondary, outline and shadow). The meaning of each of them is as follows:
