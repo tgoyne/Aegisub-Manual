@@ -1,6 +1,6 @@
 The '''script properties''' are some headers and other options that affect the entire script in various ways. They can be accessed from the ''File menu'' -> ''Properties''.
 
-{{Todo|screenshot}}
+<center>[[Image:Properties.png]]</center>
 
 The properties are:
 * '''Title''', '''Original script''', '''Translation''', '''Editing''', '''Timing''', '''Synch point''', '''Updated by''' and '''Update details''' - These are for informational purposes only and do not affect rendering in any way.
