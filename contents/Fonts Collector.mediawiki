@@ -1,6 +1,6 @@
 The fonts collector is an automated tool that finds all fonts used in the current script, scans your system's fonts folder(s) and copies all the relevant fonts to a destination of your choosing. The dialog box looks like so:
 
-{{Todo|screenshot}}
+<center>[[Image:Fonts collector.png]]</center>
 
 The collector can perform any of the following actions:
 * '''Check fonts for availability''' - Checks the fonts folder(s) to see if you have all the fonts used in the current script. Do note that for technical reasons, the collector can't detect or collect fonts that aren't actually installed (like for example fonts temporarily loaded by a Matroska splitter or a font viewing program).
