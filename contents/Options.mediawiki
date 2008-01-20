@@ -3,7 +3,9 @@ Aegisub is highly customizable and hence has a large amount of user-changeable o
 Aegisub stores all its configuration in a plain text file called ''config.dat''  which by default is stored in the [[Aegisub path specifiers|?user]] directory. If you want to reset Aegisub to its default options without reinstalling the program, you can just delete config.dat and restart Aegisub.
 
 ==General==
-{{Todo|screenshot}}
+
+<center>[[Image:Options general.png]]</center>
+
 * '''Show Splash Screen'''
 : If enabled, Aegisub will display its splash screen when starting up.
 * '''Show Tip of the Day'''
@@ -18,7 +20,9 @@ Aegisub stores all its configuration in a plain text file called ''config.dat'' 
 : These boxes all control how many files Aegisub will save in the "recently opened" submenus, and also how many undo levels will be saved. Change to your preference, but beware: the more undo levels you use, the more RAM Aegisub will consume. This is particularly noticeable with large scripts. Having lots of recently opened files stored has no real drawback except making config.dat bigger and the submenus harder to navigate, though.
 
 ===General -> File save/load===
-{{Todo|screenshot}}
+
+<center>[[Image:Options file.png]]</center>
+
 * '''Auto-backup'''
 : If enabled, Aegisub will save a backup copy of each script you open, immediately on opening it. By default, it is saved to <tt>?user/autoback/</tt>, but this can be changed (see below).
 * '''Auto-save every X seconds'''
@@ -33,7 +37,9 @@ Aegisub stores all its configuration in a plain text file called ''config.dat'' 
 : Whenever you save a script, Aegisub also stores some information about what video, audio and timecodes files you had open while working on it, inside the script itself. This option decides what Aegisub does with these files that are "linked" to the script when opening it. If set to "ask", Aegisub will ask you if you want to load linked files. If set to "never", Aegisub will never load linked files, and likewise if set to "always", Aegisub will always try to load linked files (and report an error if the file(s) were not found).
 
 ===General -> Subtitles edit box===
-{{Todo|screenshot}}
+
+<center>[[Image:Options editbox.png]]</center>
+
 * '''Enable call tips'''
 : When enabled, Aegisub will detect when you are writing an [[ASS Tags|override tag]] and display a small box with a brief reference of the syntax of the tag in question until you close the tag. This is called a "call tip" and the feature may be familiar to users of various programming IDE's.
 * '''Link committing of times'''
@@ -60,7 +66,9 @@ Aegisub stores all its configuration in a plain text file called ''config.dat'' 
 : Decides the font and fontsize used for the subtitle edit box and other edit boxes.
 
 ===General -> Subtitles grid===
-{{Todo|screenshot}}
+
+<center>[[Image:Options grid.png]]</center>
+
 * '''Allow grid to take focus'''
 : When enabled, the subtitles grid acts as its own area of the program and it can have focus, just like the audio or the video can, and while it does you can use the arrow keys/mouse wheel to scroll around it etc. On the other hand, if you disable this option, the focus will stay where it was before whenever you click in the grid. This means you can't use keyboard shortcuts in the grid anymore, but on the other hand it means you can click in the grid to go to a line without losing the audio focus and so on. Use at your own discretion.
 * '''Highlight subtitles that are currently visible in the video'''
@@ -90,7 +98,9 @@ Aegisub stores all its configuration in a plain text file called ''config.dat'' 
 : The character that will be shown instead of override blocks if tag hiding is active.
 
 ==Video==
-{{Todo|screenshot}}
+
+<center>[[Image:Options video.png]]</center>
+
 * '''Match video resolution on open'''
 : Controls what Aegisub will do about script resolution when you open a video. If set to "never", Aegisub will do nothing if the script resolution doesn't match the video resolution. If set to "ask", Aegisub will ask you if you want to change the script resolution to match the video resolution if they don't match. If set to "always", Aegisub will always change the script resolution to match the video resolution automatically. "always" is not recommended since it just changes script resolution without resampling anything, so it will most likely break existing typesetting.
 * '''Default zoom'''
@@ -173,7 +183,9 @@ Aegisub stores all its configuration in a plain text file called ''config.dat'' 
 It is not possible to change the color scheme of the spectrum display mode.
 
 ===Audio -> Advanced===
-{{Todo|screenshot}}
+
+<center>[[Image:Options audio advanced.png]]</center>
+
 * '''Audio provider'''
 : What method to use for loading video. Currently there are only two methods, which one is used depends on the platform.
 : - ''avisynth'' (Windows only)
@@ -214,7 +226,8 @@ It is not possible to change the color scheme of the spectrum display mode.
 : The maximum amount of memory to use for audio spectrum caching. The results of the calculations to display the audio spectrum are cached to make scrolling through the audio smoother. The amount of spectrum display that can be cached in an amount of memory depends on the quality setting above. The default cache size of 128 MB results a little less than 6 minutes of audio at 48 kHz in quality 1. If you set this smaller than 5 MB, the default of 128 MB will be used instead. You probably shouldn't set this to more than 1/4 of your amount of physical RAM installed.
 
 ==Automation==
-{{todo|screenshot}}
+
+<center>[[Image:Options automation.png]]</center>
 
 {{todo|jfs write this kthx}}
 
@@ -237,7 +250,9 @@ It is not possible to change the color scheme of the spectrum display mode.
 : Automatically reloads the specified sets of scripts when the [[Exporting]] dialogue is opened. Note that if a script fails to reload, no errors are displayed, it just won't show up in the Export window then. In that case you will have to enter the [[Automation Manager]] window and determine the cause of the error.
 
 ==Hotkeys==
-{{todo|screenshot}}
+
+<center>[[Image:Options hotkeys.png]]</center>
+
 This page shows a list of all functions in Aegisub that can be bound to keyboard shortcuts, and what shortcut (if any) they are currently assigned to. Should be self explanatory.
 
 Double click on a hotkey in the list to change it.
