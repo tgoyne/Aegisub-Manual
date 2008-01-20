@@ -4,6 +4,6 @@ To use it, first copy one or more lines with the familiar copy function (right-c
 
 <center>[[Image:Paste over.png]]</center>
 
-Tick the fields you want to paste (the buttons below the checkboxes can be used to select all fields (in which case paste over is the same as the normal paste), no fields (in which case it does nothing), just the text field, or both time fields) and press OK. The fields you selected will then be pasted. It's as simple as that.
+Tick the fields you want to paste (the buttons below the checkboxes can be used to select all fields (in which case paste over is almost the same as normal pasting except it replaces existing lines instead of inserting new ones), no fields (in which case it does nothing), just the text field, or both time fields) and press OK. The fields you selected will then be pasted. It's as simple as that.
 
 Do note that the paste over function isn't limited to using lines copied from Aegisub itself; you are free to copy correctly formatted lines from any text editor, chat program, web browser etc. etc.
