@@ -2,7 +2,9 @@ A '''style''' in the ASS format is a set of typographic formatting rules that is
 
 ==The styles manager==
 Aegisub's styles manager tool (accessed from the Subtitles menu) provides various means of organizing, saving and editing styles. It looks like this:
-{{Todo|screenshot}}
+
+<center>[[Image:Style manager.png]]</center>
+
 As you can see, the window is divided into two halves. The right half displays all styles that you currently have accessible in your currently loaded script; the left represents a style storage. Style storages are used by Aegisub to let you save styles and quickly import them into scripts. You can have as many storages as you want; some people prefer to keep all their styles in one storage, others sort their styles by font, by show or alphabetically. The dropdown menu at the top lets you choose what storage you want to view.
 
 In the bottom part of the window there's two almost identical sets of buttons; one set for the storage and one for the current script. They are:
