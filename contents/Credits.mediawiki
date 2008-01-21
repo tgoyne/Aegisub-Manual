@@ -11,6 +11,7 @@
 *Contributors:
 **[[Image:Flag_of_Italy.gif|24px]] '''Simone Cociancich''' (shb) - Perl automation
 **[[Image:Flag_of_Poland.gif|24px]] '''Patryk Pomykalski''' (Pomyk) - Ruby automation, Miscellaneous patching
+**[[Image:Flag_of_Malaysia.gif|24px]] '''ai-chan''' - ASSDraw
 **[[Image:Flag_of_Sweden.gif|24px]] '''Fredrik Mellbin''' (Myrsloik) - Avisynth-related and ffmpegsource
 **[[Image:Flag_of_Russia.gif|24px]] '''Evgeniy Stepanov''' (Azzy) - Some Linux patches, libass
 **[[Image:Flag_of_Russia.gif|24px]] '''Mike Matsnev''' (Haali) - Some DirectShow code and Matroska Parser library
