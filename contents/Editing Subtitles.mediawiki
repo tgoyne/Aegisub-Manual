@@ -104,7 +104,7 @@ Right-clicking any other line in the grid gives you the following menu (many of 
 * '''Insert at video time (before/after)''' - Same as the above, but the new line will be timed to start at the current video frame. Not enabled unless you have video loaded.
 * '''Duplicate''' - Duplicates the selected line(s).
 * '''Duplicate and shift by 1 frame''' - Duplicates the selected line(s) and shifts the start and end times one frame forward. Useful for frame-by-frame typesetting. Not enabled unless you have video loaded.
-* '''Split (by karaoke)''' - Splits the line into one new line per karaoke override tag (<tt>\k</tt> and its relatives), each new line containing the text between one \k tag and next. The timing of the new lines start from the start time of the original line, and the duration of each new line is taken from the \k tag on which it is based.
+* '''Split (by karaoke)''' - Splits the line into one new line per syllable, as delimited by karaoke override tags (<tt>\k</tt> and its relatives). The timing of the first line will start at the original line's start time and end at that time plus the length of the first syllable; the following lines will start at the end of the previous and last for the duration of the syllable.
 * '''Swap''' - Swaps the places (in the grid) of two selected lines.
 * '''Join (keep first)''' - Joins two or more lines, discarding the text of all but the first. The new line will be timed to start at the first line's start time and end at the last line's end time. Only enabled if you have more than one line selected.
 * '''Join (concatenate)''' - Same as above, but concatenates the text of all selected lines instead. A newline override (<tt>\N</tt>) is inserted between the texts of each source line.
