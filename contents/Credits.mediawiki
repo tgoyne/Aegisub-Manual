@@ -1,18 +1,19 @@
 {{todo|Make sure that nobody is missing from the list - if you are or can think of someone, please let us know.}}
 
 ===Programming===
-*Main Staff:
+*Main Programmers:
 **[[Image:Flag_of_Brazil.gif|24px]] '''Rodrigo Braz Monteiro''' (ArchMage ZeratuL) - Lead developer, general code, PRS library
 **[[Image:Flag_of_Denmark.gif|24px]] '''Niels Martin Hansen''' (jfs) - Automation, Lua automation, general code
+*Staff Contributors:
 **[[Image:Flag_of_Germany.gif|24px]] '''David Lamparter''' (equinox) - Unix port, FFMPEG-related programming, asa
 **[[Image:Flag_of_United-States.gif|24px]] '''Dan Donovan''' (Dansolo) - Miscellaneous tools
 **[[Image:Flag_of_Brazil.gif|24px]] '''Alysson Souza e Silva''' (demi_alucard) - General code
 **[[Image:Flag_of_Sweden.gif|24px]] '''Karl Blomster''' (TheFluff) - General patches and Perl hacking
-*Contributors:
 **[[Image:Flag_of_Italy.gif|24px]] '''Simone Cociancich''' (shb) - Perl automation
-**[[Image:Flag_of_Poland.gif|24px]] '''Patryk Pomykalski''' (Pomyk) - Ruby automation, Miscellaneous patching
-**[[Image:Flag_of_Malaysia.gif|24px]] '''ai-chan''' - ASSDraw
+*Other contributors:
 **[[Image:Flag_of_Sweden.gif|24px]] '''Fredrik Mellbin''' (Myrsloik) - Avisynth-related and ffmpegsource
+**[[Image:Flag_of_Poland.gif|24px]] '''Patryk Pomykalski''' (Pomyk) - Ruby automation, Miscellaneous patching
+**[[Image:Flag_of_Malaysia.gif|24px]] '''ai-chan''' - ASSDraw3
 **[[Image:Flag_of_Russia.gif|24px]] '''Evgeniy Stepanov''' (Azzy) - Some Linux patches, libass
 **[[Image:Flag_of_Russia.gif|24px]] '''Mike Matsnev''' (Haali) - Some DirectShow code and Matroska Parser library
 **'''2points''' - Linux patches
