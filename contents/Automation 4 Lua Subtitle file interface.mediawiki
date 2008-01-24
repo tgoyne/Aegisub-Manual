@@ -1,3 +1,139 @@
-{{todo|Incorporate https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/subtitle-data.txt here}}
+''See also: https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/subtitle-data.txt''
+
+{{todo|Finish this}}
+
+This page describes the '''subtitle file interface''' use in Automation 4 Lua scripts to manipulate subtitle files.
+
+There is one special object (the '''subtitles''' user data object) which has a number of functions, and a number of table formats defined.
+
+== The subtitles object ==
+
+Most (currently all) Automation 4 Lua feature functions are passed a '''subtitles object''' when called. This object is used to obtain data from and manipulate the subtitles the feature is being applied on.
+
+A subtitles object can have two special properties depending on the context it is created for:
+
+* '''Read-only''' - Some feature functions must not be allowed to modify the subtitle file at all. This includes for example [[Automation 4 Lua Registration#Macro validation function|macro validation functions]] and [[Automation 4 Lua Registration# Export filter configuration panel provider|export filter configuration panel providers]], because this would be outside user expectations.
+* '''Allow undo points''' - Only some feature functions allow undo points to be set. Currently this is only [[Automation 4 Lua Registration#Macro processing function|macro processing functions]]. Due to the current (2.00) implementation of the Undo system in Aegisub, attempting to set undo points in any other context can cause data corruption, and thus is disallowed.
+
+To allow the most flexibility, the subtitles object represents a complete ASS format file, line by line, including all meta-lines such as section headers, blank lines and semicolon comments.
+
+The subtitles object supports the following operations:
+* Retrieve number of lines
+* Read line
+* Append line (to end of file)
+* Insert line (at arbitrary position in file)
+* Replace line
+* Delete line
+* Create undo point
+
+These operations are described in detail below. In all operation synopses and examples, <code>subtitles</code> is used for name of the subtitles object being operated on.
+
+=== Retrieve number of lines ===
+
+Synopsis:
+* <code>num_lines = #subtitles</code>
+* <code>num_lines = subtitles.n</code>
+
+This operation retrieves the total number of lines in the subtitle file currently. This number only changes by using the other operations on the subtitle object, it cannot change spontaneously during the execution of a script.
+
+* '''num_lines''' (number) - Number of lines in subtitle file.
+
+The first syntax is the preferred one, per normal Lua 5.1 coding style.
+
+=== Read line ===
+
+Synopsis: <code>line = subtitles[i]</code>
+
+This retrieves the indexed line and creates a new table object with data about it.
+
+* '''line''' (table) - Table with data about the retrieved line. Will be '''nil''' if the line indexed is out of range.
+* '''i''' (number) - Index into the subtitles file of the line number to retrieve. This is one-based, the first line in the file has index 1.
+
+Aegisub internally stores the subtitle file as a linked list, which means that random access is slow, but sequential access is fast. While Automation 4 Lua presents the subtitles as if it was an array, it internally maintains a cursor used to optimise for sequential access. It is faster to access a line with an index close to the one you last accessed than to access one further away. It is always fast to access lines near the beginning or end of the file.
+
+=== Append line ===
+
+Synopsis:
+* <code>subtitles[0] = line</code>
+* <code>subtitles.append(line)</code>
+* <code>subtitles.append(line1, line2, ...)</code>
+
+Append one or more lines to the end of the subtitles file. In the first syntax, it is the number 0 (zero) used for index. (Setting index 0 causes an append operation.)
+
+The third syntax supports appending multiple lines with one single operation.
+
+* '''line''' (table) - The line object table to append to the subtitles file.
+
+The latter function-call syntax is preferred for readability. The table index setting syntax is slightly faster.
+
+Appending a line always runs in constant time, it does not move the cursor otherwise used to optimise sequential access.
+
+=== Insert line ===
+
+Synopsis:
+* <code>subtitles[-i] = line</code>
+* <code>subtitles.insert(i, line)</code>
+* <code>subtitles.insert(i, line1, line2, ...)</code>
+
+Inserts one or more lines into the subtitles file before the numbered line. In the first syntax, you supply a negative index, eg. to insert a line before line 5 you supply index -5 (negative 5.)
+
+Inserting lines will move lines after the inserted lines to move down in index, such that old indexes will no longer be valid.
+
+* '''i''' (number) - Index to insert before.
+* '''line''' (table) - The line object table to insert into the subtitles file.
+
+The latter function-call syntax is preferred for readability. The table index setting syntax is slightly faster.
+
+Inserting lines uses the list cursor and will move it.
+
+=== Replace line ===
+
+Synopsis: <code>subtitles[i] = line</code>
+
+Delete the indexed line and insert the given line in its stead.
+
+* '''i''' (number) - The line index to replace at.
+* '''line''' (table) - The line object table to replace with.
+
+Replacing lines uses the list cursor and will move it.
+
+=== Delete line ===
+
+Synopsis:
+* <code>subtitles[i] = nil</code>
+* <code>subtitles.delete(i)</code>
+* <code>subtitles.delete(i1, i2, ...)</code>
+* <code>subtitles.deleterange(first, last)</code>
+
+Remove one or more from the subtitles file. All lines after the deleted line(s) will move up to fill the deleted indexes, so old indexes will no longer be valid.
+
+The third syntax supports deleting multiple indexed lines in one call. The indexes given must all be correct for the subtitle file's state before any lines are deleted.
+
+The fourth syntax deletes a range of lines, both indexed lines inclusive.
+
+* '''i''' (number) - Index of the line to delete.
+* '''first''', '''last''' (numbers) - Indices of the first and last lines of the range to delete.
+
+Deleting lines uses the list cursor and will move it.
+
+=== Creating an undo point ===
+
+Synopsis: <code>aegisub.set_undo_point(description)</code>
+
+You must set an undo point to avoid breaking undo. (Try seeing what happens if you don't.)
+
+Only available in macro processing functions, and doesn't make sense anywhere else either.
+
+{{todo|Elaborate a bit more}}
+
+* '''description''' (string) - Text to appear in the Edit menu for the Undo and Redo items to describe the action that can be undone.
+
+The behaviour of the undo system will change in Aegisub 2.10, but that's far away. The exact way it will manifest in Automation 4 scripts can't be known yet.
+
+This is not really a function in the subtitles object, but it is still tied to it.
+
+== Line data tables ==
+
+{{todo|write something about the different classes of lines and their fields}}
 
 [[Category:Lua Reference]]
