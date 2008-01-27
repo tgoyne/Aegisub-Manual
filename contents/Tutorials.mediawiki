@@ -22,6 +22,6 @@ The following tutorials are available for Aegisub:
 
 == Text tutorials ==
 
-=== Karaoke Templater ==
+=== Karaoke Templater ===
 * By: Niels Martin Hansen
 * Link: [[Karaoke Templater]]
