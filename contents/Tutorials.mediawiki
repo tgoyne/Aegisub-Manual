@@ -1,16 +1,16 @@
 The following tutorials are available for Aegisub:
 
+== Dialogue Timing ==
+{{Todo|actually do this}}
+* Format: Video Tutorial (Screencast)
+* By: Karl Blomster
+
 == Kanji Timer ==
 * Description: A video tutorial demonstrating how the kanji timer can be used to synchronize kanji timing to roomaji timing.
 * Format: Video Tutorial (Screencast)
 * By: Niels Martin Hansen
 * Details: XviD MP3 AVI, 5 min 20 sec, 12 MB
 * Link: http://www.animereactor.dk/aegisub/demovids/kanji-timer.avi
-
-== Dialogue Timer ==
-{{Todo|actually do this}}
-* Format: Video Tutorial (Screencast)
-* By: Karl Blomster
 
 == Karaoke Timing ==
 {{todo|Actually do this}}
