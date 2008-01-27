@@ -230,10 +230,8 @@ It is not possible to change the color scheme of the spectrum display mode.
 
 <center>[[Image:Options automation.png]]</center>
 
-{{todo|jfs write this kthx}}
-
 * '''Base path'''
-: Not actually used. (I think...) At least the Lua engine doesn't use it, other engines might use it for something.
+: Not used by the Lua scripting engine. In the future this might be used by other scripting engines.
 
 * '''Include path'''
 : List of directories where include files are searched for. Directories are separated with a pipe character, <tt>|</tt>.
