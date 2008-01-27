@@ -75,7 +75,9 @@ Select all, undo, copy, cut and paste all do what you'd expect them to.
 * '''Split line:''' splits the line into two new lines at the cursor position. Preserve times keeps the old line's timing for both lines, estimate times tries to guess where the split is based on the length of the text on each side of the cursor.
 
 ===The subtitles grid===
-{{Todo|screenshot}}
+
+<center>[[Image:Subs grid.png]]</center>
+
 The subtitles grid shows all lines (comments and otherwise) in the entire file.
 Some common controls:
 * To move lines up or down in the grid, select them, hold down the Alt key and press the up- or down-arrow keys.
