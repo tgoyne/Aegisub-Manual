@@ -15,11 +15,11 @@ The preview of all tools can either be real-time or delayed. This behaviour can 
 === Crosshair === 
 This is the standard mode. Hovering the mouse over the video will show the script coordinates under the cursor, as well as a crosshair indicating the exact point that you are looking at. Double clicking a point will position the current line (using the \pos tag) on that position.
 
-{{todo|Screenshot}}
+<center>[[Image:Visual crosshair.png]]</center>
 
 Also, while on this mode, you can right click to bring a context menu with other options:
 
-{{todo|Screenshot of menu}}
+<center>[[Image:Visual menu.png]]</center>
 
 * Save PNG snapshot: Saves a PNG snapshot of the current frame to the path specified in the [[options]]. This snapshot will be in the real video size, and WON'T be affected by zooming or aspect ratio overriding.
 * Copy image to clipboard: Same as above, but copies the frame to the clipboard, instead of saving as a PNG. You can then paste it in any image editing software.
@@ -31,7 +31,7 @@ Also, while on this mode, you can right click to bring a context menu with other
 
 The drag tool has two modes. You can toggle between them by clicking the button on the auxiliary visual typesetting bar. This tool is special because, unlike every other, it can affect EVERY subtitle that is currently visible on the current frame, and not just the active one. This makes the positioning of signs composed of many lines easier.
 
-{{todo|screenshot showing more than one line, including one static, one with move, and one of them with \org}}
+<center>[[Image:Visual drag.png]]</center>
 
 On the positioning mode, you can simply click-and-drag subtitles across the video surface by dragging their anchor (the square). They will be positioned where you release them with the \pos command.
 
@@ -43,7 +43,7 @@ If your line has an origin point specified, you will see a third anchor, represe
 
 On this mode, you will see a circle centered around the subtitle's pivot (either it's position, or the origin point, if defined). The circle is surrounded by 6 arcs that help mark and measure angles.
 
-{{todo|Insert screenshot showing rotation}}
+<center>[[Image:Visual rotate 1.png]]</center>
 
 There are two functionalities in this mode, you can either drag the origin point (the triangle at the center of the circle) to move it (and insert a \org tag, if none exists), or you can click and drag anywhere else to rotate the line.
 
@@ -51,7 +51,7 @@ You will notice that there is a line connecting the center of the circle to the 
 
 If the origin is far from the center, you will see a little helper line indicating where the center of the subtitles will be positioned as you rotate it.
 
-{{todo|Insert screenshot showing the helper line}}
+<center>[[Image:Visual rotate 2.png]]</center>
 
 === Rotate on XY axes ===
 
@@ -59,7 +59,7 @@ This mode is somewhat similar to the previous mode, although there are a few imp
 
 In order to make this easier, there is a grid representing the plane in which the subtitles lie, and you rotate that grid. There are also three arrows pointing from the center, indicating the direction and orientation of the three axes.
 
-{{todo|screenshot}}
+<center>[[Image:Visual rotate xy.png]]</center>
 
 To use this tool, simply hold the mouse button anywhere on the screen and move it. As you move it left and right, it will rotate the line on the Y axis, and as you move it up and down, it will rotate the line on the X axis.
 
