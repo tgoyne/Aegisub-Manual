@@ -6,16 +6,14 @@ Aegisub also has [[aegi:Main_Page|another wiki]], used for keeping track of more
 
 [[Overview|Quick overview of Aegisub]]
 
-{{todo|finish this}}
-
 '''Common tasks:'''
 
 * [[Audio Timing Tutorial|Timing a translated script to audio]]
-* [[Typesetting Tutorial|Basic typesetting of on-screen signs]] (TODO, amz)
+* [[Tutorials#Visual Typesetting|Basic typesetting of on-screen signs]]
 * [[Attaching subtitles to video|Putting your finished subtitles onto the video]] (for viewing or distribution)
 
 * [[Translation Assistant|Translating a subtitle file from one language to another]]
 * [[Fix Timing Tutorial|Correcting a subtitle that's not properly synchronised to the video]]
 
-* [[Karaoke Timing Tutorial|Timing karaoke to a song]] (TODO, jfs)
+* [[Tutorials#Karaoke Timing|Timing karaoke to a song]]
 * [[Karaoke Templater Tutorial 1|Creating fancy karaoke effects]]
