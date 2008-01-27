@@ -6,7 +6,7 @@ With the exception of the drag tool, every other tool affects only the active li
 
 There are currently seven different visual typesetting tools: crosshair, drag, rotate on z axis, rotate on xy axes, scale, rectangular clip and vectorial clip.
 
-{{todo|Show screenshot of all seven tools and the auxiliary bar}}
+<center>[[Image:Visual overview.png]]</center>
 
 The preview of all tools can either be real-time or delayed. This behaviour can be toggled by pressing the "Toggle Real-time" button at the end of visual typesetting toolbar. When in real-time, all changes you made are immediately visible on subtitles, at the cost of slower response. Otherwise, you will only see the subtitles themselves updating when you release the mouse. However, you will still see the visual positioning aids moving in real time.
 
