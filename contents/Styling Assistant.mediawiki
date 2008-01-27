@@ -24,9 +24,7 @@ Enable preview checkbox is to enable a video preview for the subtitles. The vide
 
 Play audio button helps the typesetter to determine to which actor a line goes. It plays the audio of the line for which the style will be applied.
 
-{{todo|big screen}}
-
-As seen from this image the styling assistant displays the video for the line if the checkbox is selected. When the style for a line is set via the Styles available or with the Set style window the Styling Assistant moves to the next line as seen in the image.
+The styling assistant displays the video for the line if the checkbox is selected. When the style for a line is set via the Styles available or with the Set style window the Styling Assistant moves to the next line as seen in the image.
 
 == The autocomplete function ==
 
