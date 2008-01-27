@@ -82,9 +82,10 @@ The subtitles grid shows all lines (comments and otherwise) in the entire file.
 Some common controls:
 * To move lines up or down in the grid, select them, hold down the Alt key and press the up- or down-arrow keys.
 * To select multiple lines, hold down either Ctrl or Shift and click. Ctrl-click selects one more line per click; Shift-click selects all the lines between the first clicked and the last clicked.
+* To sort all lines in the grid by their start time, open the ''Timing'' menu and click "Sort by time".
 * To change the way [[ASS Tags|override tags]] are displayed in the grid, click the "cycle through tag hiding modes" button on the toolbar.
 <center>[[Image:Subs grid toggle.png]]</center>
-* To sort all lines in the grid by their start time, open the ''Timing'' menu and click "Sort by time".
+<center>[[Image:Subs grid tags.png]]</center>
 
 The lines have different (configurable) colors representing different things; see the [[Options#General_-.3E_Subtitles_grid|subtitles grid section of the options page]] for details on what the colors mean.
 
