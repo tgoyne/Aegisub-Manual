@@ -28,7 +28,9 @@ At the time of writing the ffmpeg interface isn't 100% stable (much like Aegisub
 
 ===Dummy video===
 Aegisub also supports providing a bogus video surface for you to render subtitles on without having any actual video loaded. The dummy video dialog box looks like this:
-{{Todo|screenshot}}
+
+<center>[[Image:Dummy video.png]]</center>
+
 * '''Resolution'''
 : The resolution of the dummy video in pixels. There are a few pre-defined choices in the dropdown menu; you can also specify the size yourself. Note that since the dummy video is RGB there are no particular restrictions with regards to odd widths/heights.
 * '''Colour'''
