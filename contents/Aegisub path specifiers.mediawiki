@@ -6,6 +6,3 @@ Aegisub uses a simple system for denoting file locations. Most pathnames in Aegi
 * '''?script''' - Only defined if a script file is open and saved somewhere, in which case it points to the location of the script.
 * '''?video''' - Only defined if a video file is loaded. Points at the location of the video file. Do note that this is not a good place to save things with dummy video loaded.
 * '''?audio''' - Only defined if an audio file is loaded. Points at the location of the audio file.
-
-{{todo|There's a bunch more that get defined when subs, video and audio are open and have a specific path...}}
-: ''I think that's all of them.'' --[[User:TheFluff|TheFluff]] 00:12, 12 January 2008 (EST)
