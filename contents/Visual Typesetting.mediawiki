@@ -71,7 +71,7 @@ As with the Z rotation tool, you can also drag the origin anchor here.
 
 This is the simplest tool, and allows you to scale subtitles on the X and Y axes. It will show one bar for each axis, showing not only the 100% size, but also the current scale.
 
-{{todo|screenshot}}
+<center>[[Image:Visual scale.png]]</center>
 
 To use this tool, simply hold down the mouse button and drag the mouse up and down (to scale on the Y axis) or left and right (to scale on the X axis). You can hold down the ctrl key to limit scaling to the axis where the biggest change happened, and shift to limit it to increments of 25%.
 
@@ -79,7 +79,7 @@ To use this tool, simply hold down the mouse button and drag the mouse up and do
 
 The rectangular clip tool allows you to clip the subtitles so that nothing OUTSIDE an axis-aligned rectangle can be displayed (in essence, the \clip(x1,y1,x2,y2) tag).
 
-{{todo|screenshot}}
+<center>[[Image:Visual clip.png]]</center>
 
 There are two ways to use this tool. You can either click and grab one of the four vertices of the rectangle, to resize an already-existing clip, or you can click-and-drag in empty space to create a new rectangle from scratch. The areas that will be invisible will be darkened.
 
@@ -87,17 +87,17 @@ There are two ways to use this tool. You can either click and grab one of the fo
 
 Similarly to the last tool, the vectorial clip tool allows you to draw an area, so that nothing outside it will be rendered. The difference, however, is that this area can have any arbitrary shape defined by a path of lines and bézier curves.
 
-{{todo|screenshot}}
+<center>[[Image:Visual vector clip.png]]</center>
 
 This mode has 8 sub-tools:
 
-{{todo|screenshot of auxiliary toolbar}}
+<center>[[Image:Visual vector tools.png]]</center>
 
-*Drag - Allows you to drag a control point
-*Insert line - Allows you to insert a straight line from the last point to the current mouse position by clicking the point.
-*Insert bézier bicubic curve - The same as above, but it instead inserts a bicubic curve. You can then use the two control points to adjust the shape of the curve.
-*Convert between line and curve - Click on a line segment or bicubic curve to convert it to the other type.
-*Split curve - Click on a line segment or bicubic curve to split it in two, at the marked point.
-*Remove point - Click on a point to delete it.
-*Freehand shape - Click and drag with the mouse over the video and move the mouse to draw a freehand shape composed of line segments. This shape will automatically be closed, with the last point connecting to the first.
-*Freehand smooth shape - Same as above, but the shape will be smoothed with bicubic curves.
+#Drag - Allows you to drag a control point
+#Insert line - Allows you to insert a straight line from the last point to the current mouse position by clicking the point.
+#Insert bézier bicubic curve - The same as above, but it instead inserts a bicubic curve. You can then use the two control points to adjust the shape of the curve.
+#Convert between line and curve - Click on a line segment or bicubic curve to convert it to the other type.
+#Split curve - Click on a line segment or bicubic curve to split it in two, at the marked point.
+#Remove point - Click on a point to delete it.
+#Freehand shape - Click and drag with the mouse over the video and move the mouse to draw a freehand shape composed of line segments. This shape will automatically be closed, with the last point connecting to the first.
+#Freehand smooth shape - Same as above, but the shape will be smoothed with bicubic curves.
