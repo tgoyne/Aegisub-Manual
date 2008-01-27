@@ -8,7 +8,7 @@ The following tutorials are available for Aegisub:
 
 == Dialogue Timer ==
 {{Todo|actually do this}}
-* Video Tutorial (Screencast)
+* Format: Video Tutorial (Screencast)
 * By: Karl Blomster
 
 == Karaoke Timing ==
