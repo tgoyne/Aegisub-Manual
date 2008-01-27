@@ -91,7 +91,7 @@ Similarly to the last tool, the vectorial clip tool allows you to draw an area, 
 
 This mode has 8 sub-tools:
 
-<center>[[Image:Visual vector tools.png]]</center>
+<center>[[Image:Visual vector toolbar.png]]</center>
 
 #Drag - Allows you to drag a control point
 #Insert line - Allows you to insert a straight line from the last point to the current mouse position by clicking the point.
