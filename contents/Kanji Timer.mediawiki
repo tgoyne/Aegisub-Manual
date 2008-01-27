@@ -21,7 +21,9 @@ But this does '''not''' (pairs lines wrong):
 
 ==Using the kanji timer==
 The kanji timer dialog looks like this:
-{{Todo|screenshot}}
+
+<center>[[Image:Kanji timer.png]]</center>
+
 The first thing you need to do is to select which styles are used for the timed input lines and the untimed output lines respectively. This is done in the upper right corner of the dialog; the top dropdown is the source style and the bottom one is the destination. When you've done this, click the start button.
 
 Now, you'll see the first syllable of the first source line highlighted in the source text field, and a suggestion for the destination syllable highlighted in the destination field. What you do now is "group" each source syllable with one or more kanji (or other syllables) in the destination. This is done using the following keyboard shortcuts:
