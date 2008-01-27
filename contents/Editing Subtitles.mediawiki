@@ -38,7 +38,9 @@ When you open a file with the extension .txt, Aegisub will ask you about what ch
 Editing subtitles in Aegisub is done in two areas: the subtitle edit box (where you type in or edit text) and the subtitles grid, where you do things to one or more lines at the same time.
 
 ===The subtitles edit box===
-{{Todo|screenshot with numbers}}
+
+<center>[[Image:Subs Edit Controls.png]]</center>
+
 The edit box is just a plain editing area with a number of associated controls. They are:
 # Flags the line as a comment. Comment lines will not be displayed on the video.
 # The [[Styles|style]] used for this line.
