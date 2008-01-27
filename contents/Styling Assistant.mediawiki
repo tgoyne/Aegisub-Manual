@@ -2,7 +2,7 @@ The Styling assistant is a powerful tool for subtitles that have multiple styles
 
 == Overview ==
 
-{{todo|screenshot}}
+<center>[[Image:Styling assistant.png]]</center>
 
 As seen from the image above, the assistant is composed of the following:
 * Current line field 
