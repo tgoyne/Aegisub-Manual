@@ -10,7 +10,6 @@ Under Microsoft Windows, your audio provider is ''Avisynth'' by default, which m
 
 ====Supported formats: non-Windows====
 On all other operating systems (MacOS X, GNU/Linux, the BSD variants etc.) your audio provider is ''ffmpeg'', which means you can use any audio format that ffmpeg supports (and was compiled with).
-{{Todo|Find out exactly what this means with the default compile}}
 
 ===Audio caching===
 If you're loading any audio format that isn't an uncompressed (PCM) Microsoft WAV file, Aegisub needs to decode and cache it first. When loaded, the audio is downmixed to mono (see the [[Options#Audio downmixer|audio downmixer option]] if you want to grab one channel only instead), decompressed to PCM (a.k.a. WAV), and (by default) loaded into a RAM cache. This means that you will need a ''large amount'' of RAM to open a long compressed audio file. If your computer doesn't have a lot of RAM, or if you're working with a full-length movie, refer to the [[Options#Audio cache|audio cache option]] for instructions on how to make Aegisub use its (slower) hard drive cache instead; or decompress the file to WAV first since Aegisub can read from WAV's directly without need for caching.
