@@ -36,7 +36,7 @@ This window displays how the autocomplete function works. The characters that we
 
 <center>[[Image:Styling invalid.png]]</center>
 
-This image shows the response to a name that doesn't exist. The background of the window is colored red to show that the style doesn't exist on the list of selected styles.
+This image shows the response to a name that doesn't exist. The background of the window is colored red to show that no style on the list of selected styles matches the entered text.
 
 == How to use ==
 
