@@ -7,11 +7,11 @@ The following tutorials are available for Aegisub:
 * Link: http://www.animereactor.dk/aegisub/demovids/kanji-timer.avi
 
 == Karaoke Timing ==
-{todo|Actually do this}
+{{todo|Actually do this}}
 * Format: Video Tutorial (Screencast)
 * By: Niels Martin Hansen
 
 == Visual Typesetting ==
-{todo|Actually do this}
+{{todo|Actually do this}}
 * Format: Video Tutorial (Screencast)
 * By: Rodrigo Braz Monteiro
