@@ -1,0 +1,17 @@
+The following tutorials are available for Aegisub:
+
+== Kanji Timer ==
+* Format: Video Tutorial (Screencast)
+* By: Niels Martin Hansen
+* Details: XviD MP3 AVI, 5 min 20 sec, 12 MB
+* Link: http://www.animereactor.dk/aegisub/demovids/kanji-timer.avi
+
+== Karaoke Timing ==
+{todo|Actually do this}
+* Format: Video Tutorial (Screencast)
+* By: Niels Martin Hansen
+
+== Visual Typesetting ==
+{todo|Actually do this}
+* Format: Video Tutorial (Screencast)
+* By: Rodrigo Braz Monteiro
