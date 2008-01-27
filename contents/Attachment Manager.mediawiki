@@ -2,7 +2,7 @@ The attachment manager allows you to attach fonts and/or pictures to your script
 
 == Overview ==
 
-{{todo|screenshot}}
+<center>[[Image:Attachment list.png]]</center>
 
 The entire dialogue is fairly self-explanatory. The two "Attach ..." buttons add attachments, "Extract" extracts existing attachments into separate files, and "Delete" deletes attachments from the subtitles file.
 
