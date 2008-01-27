@@ -32,7 +32,7 @@ There are also "automatic" variants of most of the variables, there are either t
 
 == The variables ==
 
-The line variables that also exist as automatic variants all start with a lowercase L ("ell") letter.
+The line variables that also exist as automatic variants all start with a lowercase L ("ell") letter, the syllable variants start with the letter S.
 
 {|border="1" cellpadding="3" cellspacing="0" style="border:gray solid 1px; border-collapse:collapse; text-align:left;vertical-align:top"
 |-
