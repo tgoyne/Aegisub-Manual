@@ -66,7 +66,9 @@ The edit box is just a plain editing area with a number of associated controls. 
 # Changes display between times and frames. Note that this does not change how times are actually stored in the script.
 
 If you right-click anywhere in the edit box, you get the following menu:
-{{Todo|screenshot}}
+
+<center>[[Image:Subs Edit Context.png]]</center>
+
 Select all, undo, copy, cut and paste all do what you'd expect them to.
 * '''Spell checker:''' if you right-click on a word that has been detected as misspelled, the spell checker will suggest some likely alternative. You can also set which language it will use for checking from this menu, or add words that it doesn't recognize but you know to be correctly spelled to the dictionary.
 * '''Thesaurus:''' suggests alternative ways to write the highlighted word.
