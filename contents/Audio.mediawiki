@@ -25,7 +25,6 @@ Loading and decompressing the audio into the cache will take a few seconds; Aegi
 ==The main audio view==
 When your audio file has loaded, Aegisub will transform into something like the screenshot below:
 [[Image:Audio-box-waveform.png]]
-{{Todo|needs screenshot with numbered things}}
 
 You can click and drag just below the audio timeline to change the height of the audio waveform/spectrum display.
 
