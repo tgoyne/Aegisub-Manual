@@ -30,11 +30,11 @@ As seen from this image the styling assistant displays the video for the line if
 
 == The autocomplete function ==
 
-{{todo|pic of autocomplete}}
+<center>[[Image:Styling autocomplete.png]]</center>
 
 This window displays how the autocomplete function works. The characters that were typed are on the white background and the rest of the name is displayed as being selected. The selected part is what autocomplete sets as the style that matches with the typed characters.
 
-{{todo|pic of invalid autocomplete}} 
+<center>[[Image:Styling invalid.png]]</center>
 
 This image shows the response to a name that doesn't exist. The background of the window is colored red to show that the style doesn't exist on the list of selected styles.
 
