@@ -14,6 +14,6 @@ The spell checker dialog will go through all misspelled words it can find in you
 At the bottom of the dialog box there is a dropdown box to choose the spell checker language.
 
 ===Dictionaries===
-Aegisub comes with a whole library of dictionaries, but don't lose hope if your language isn't included with the default installation.
+Aegisub comes with a whole library of dictionaries, but don't lose hope if your language isn't included with the default installation. You can download more dictionaries at:
 
-{{Todo|find link to more dictionaries}}
+http://wiki.mozilla.org/L10n:Dictionaries
