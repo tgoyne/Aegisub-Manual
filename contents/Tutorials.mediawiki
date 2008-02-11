@@ -20,7 +20,7 @@ The following tutorials are available for Aegisub:
 * Description: A video tutorial demonstrating how to use Aegisub 2's new Visual Typesetting features.
 * By: Rodrigo Braz Monteiro
 * Details: Matroska/XviD/Vorbis, 10 min 22 sec, 25 MB
-* Subtitles: English, Portuguese (Brazil), French, German
+* Subtitles: English, Portuguese (Brazil) (by amz), French (by shawurai), German (by Sqall)
 * Link: [http://www.malakith.net/amz/blah/screencast/%5bAegisub%5d_Visual_Typesetting_Tutorial_%5b8B24834E%5d.mkv malakith.net]
 
 == Text tutorials ==
