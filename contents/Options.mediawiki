@@ -189,7 +189,7 @@ It is not possible to change the color scheme of the spectrum display mode.
 <center>[[Image:Options audio advanced.png]]</center>
 
 * '''Audio provider'''
-: What method to use for loading video. Currently there are only two methods, which one is used depends on the platform.
+: What method to use for loading audio. Currently there are only two methods, which one is used depends on the platform.
 : - ''avisynth'' (Windows only)
 :: Uses [http://www.avisynth.org Avisynth] to load audio. All file types will be loaded with DirectShowSource(), except for AVS files which will be opened with Import().
 : - ''lavc''
