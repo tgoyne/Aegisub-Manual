@@ -40,7 +40,7 @@ This function does not return a value, but rather modifies the <code>line</code>
 * <code>line.text_stripped</code> - Line text with all override tags and vector drawings removed.
 * <code>line.duration</code> - Duration of the line in milliseconds</code>
 * <code>line.kara</code> and <code>line.furi</code> - Extended karaoke and furigana tables, without sizing and position data.
-{{Todo|Link to definitions of extended kara/furi tables</code>
+{{Todo|Link to definitions of extended kara/furi tables}}
 
 This function does not calculate any text sizing or positioning information. (In fact it doesn't use the <code>meta</code> or <code>styles</code> arguments at all.)
 
