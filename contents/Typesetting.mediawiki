@@ -1,8 +1,8 @@
 Wikipedia's definition of [http://en.wikipedia.org/wiki/Typesetting typesetting] : "'''Typesetting''' involves the presentation of textual material in graphic form on paper or some other medium." In a subtitling context, this means two things:
 * Presenting (a translation of) the spoking dialogue to the viewer in an easily readable and visually pleasing form.
 * Translating any foreign-language background texts (such as episode titles, scene information like time/place and other plot-important writings on things in the background) and presenting the translation to the viewer, preferably so that it appears that the translation was there all along (yet retaining readability).
-* Adding any other texts (logotypes, karaoke, etc. etc.) to the video.
-Particularly in the fansub community, the word "typesetting" usually refers to the latter of these two.
+* Designing other texts (logotypes, karaoke, etc. etc.) that should be displayed on the video.
+Particularly in the fansub community, the word "typesetting" usually refers to the second or third of these three.
 
 This page will attempt to give you an introduction to subtitle typesetting. Unfortunately good taste is hard to teach, but we will do our best.
 
