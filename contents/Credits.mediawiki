@@ -10,6 +10,7 @@
 **[[Image:Flag_of_Brazil.gif|24px]] '''Alysson Souza e Silva''' (demi_alucard) - General code
 **[[Image:Flag_of_Sweden.gif|24px]] '''Karl Blomster''' (TheFluff) - General patches and Perl hacking
 **[[Image:Flag_of_Italy.gif|24px]] '''Simone Cociancich''' (shb) - Perl automation
+**[[Image:Flag_of_Canada.gif|24px]] '''Amar Takhar''' (verm) - New unix build system
 *Other contributors:
 **[[Image:Flag_of_Sweden.gif|24px]] '''Fredrik Mellbin''' (Myrsloik) - Avisynth-related and ffmpegsource
 **[[Image:Flag_of_Poland.gif|24px]] '''Patryk Pomykalski''' (Pomyk) - Ruby automation, Miscellaneous patching
