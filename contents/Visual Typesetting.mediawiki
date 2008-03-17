@@ -1,5 +1,7 @@
 One of the most significant changes from Aegisub 1.10 to Aegisub 2 is the inclusion of Visual Typesetting tools, which allow you to visually drag, rotate and otherwise transform subtitles on the video screen, using your mouse.
 
+'''A tutorial for this feature is available at [[Tutorials|the tutorials section]].'''
+
 == Overview ==
 
 With the exception of the drag tool, every other tool affects only the active line (that is, the line whose text you see on the edit box). The line must be displayed on the current frame (that is, the current frame time must lie between the subtitle duration span) to be edited by any of the tools.
