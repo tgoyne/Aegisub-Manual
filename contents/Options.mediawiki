@@ -221,7 +221,7 @@ It is not possible to change the color scheme of the spectrum display mode.
 :* 0 "regular" - 11 MB
 :* 1 "better" - 22 MB
 :* 2 "high" - 44 MB
-:* 8 "insane" - 88 MB
+:* 3 "insane" - 88 MB
 : The amount of memory used does not depend on the number of channels (Aegisub always works in mono) or the bit-depth (the spectrum is always calculated in 32 bit floating point) of the audio.
 * '''Spectrum cache memory max'''
 : The maximum amount of memory to use for audio spectrum caching. The results of the calculations to display the audio spectrum are cached to make scrolling through the audio smoother. The amount of spectrum display that can be cached in an amount of memory depends on the quality setting above. The default cache size of 128 MB results a little less than 6 minutes of audio at 48 kHz in quality 1. If you set this smaller than 5 MB, the default of 128 MB will be used instead. You probably shouldn't set this to more than 1/4 of your amount of physical RAM installed.
