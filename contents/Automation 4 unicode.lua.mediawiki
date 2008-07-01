@@ -20,7 +20,7 @@ Determine the length of the given UTF-8 encoded string.
 Be aware that this function does not run in constant time, but in linear time (O(N)) proportional to the number of Unicode characters in <code>instring</code.
 
 == unicode.codepoint ==
-Synopsis: <code>val = unicode.codepoint(instring)</code>
+Synopsis: <code> val = unicode.codepoint(instring)</code>
 
 Calculate the Unicode codepoint for the first character in <code>instring</code>.
 
