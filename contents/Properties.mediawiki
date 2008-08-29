@@ -16,3 +16,5 @@ The properties are:
 ** 3 - Same as mode 0, but prefers the bottom line to be wider.
 * '''Collision''' - Determines how overlapping lines should be handled. In "normal" mode, the first line will stay where it is and the second one drawn above it. In "reverse" mode, the first line will be moved upwards and the second drawn under it.
 * '''Scale border and shadow''' - Controls how outline and shadow widths are drawn. If disabled, they are given in video resolution pixels (meaning that using the script with a higher resolution video will make all borders/shadows look thinner). If enabled, they are given in script resolution pixels instead (meaning that outlines and shadows will look the same no matter the resolution). The latter is usually what you want.
+
+test
