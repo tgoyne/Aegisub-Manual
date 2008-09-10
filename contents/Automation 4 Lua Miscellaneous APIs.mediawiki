@@ -17,7 +17,7 @@ Obtain system font metrics and determine the rendered size in pixels of the give
 
 You should only feed plain text strings without line breaks into this function, it cannot handle any kind of formatting codes or text layout. Rather, it is intended as a helper to create text layouts by determining rendered sizes of bits and pieces of a longer text, which can then be layouted by the script.
 
-== Working with frame-based timestamps and VFR ==
+== Getting information on the video ==
 
 Automation 4 Lua offers two functions designed to be able to work with frame-based timing without having to consider whether the video source is VFR or CFR.
 
@@ -46,5 +46,27 @@ Use loaded frame rate data to convert a '''frame''' number of the video into an 
 * '''frame''' (number) - Frame to obtain the beginning time of.
 
 Because beginning times of frames can have better precision than one millisecond this function rounds up and returns the first whole millisecond that is guaranteed to be within the frame.
+
+=== aegisub.video_size ===
+
+Synopsis: <code>xres, yres, ar, artype = aegisub.video_size()</code>
+
+Get information about the resolution and aspect-ratio of the loaded video, if any.
+
+Returns <code>nil</code> if there is no video loaded.
+
+* '''xres''' and '''yres''' (numbers) - Coded width and height of the video in pixels.
+* '''ar''' (number) - Custom display aspect ratio override.
+* '''artype''' (number) - See below.
+
+There are 5 values that ''artype'' can take:
+
+* If ''artype'' is 0, the video has square pixels, ie. PAR is 1.00 or DAR is ''xres''/''yres''.
+* If ''artype'' is 1, the video is 4:3, ie. DAR is 1.33.
+* If ''artype'' is 2, the video is 16:9, ie. DAR is 1.78
+* If ''artype'' is 3, the video is 2.35 format, ie. DAR is 2.35.
+* If ''artype'' is 4, the DAR is whatever the ''ar'' return value contains.
+
+You cannot count on ''ar'' always having the correct value when ''artype'' is different from 4.
 
 [[Category:Lua Reference]]
