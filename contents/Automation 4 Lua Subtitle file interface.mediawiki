@@ -188,4 +188,4 @@ This class defines a large number of additional fields. It's usually processed b
 
 No additional fields are defined by this class, due to its nature. This might be things like files embedded into the subtitles. You shouldn't try to work with these lines unless you really know what you're doing, deleting, modifying and inserting <tt>unknown</tt> lines has undefined consequences. (That means, even if it works today it might not work tomorrow or in the next version of Aegisub.)
 
-[[Category:Lua Reference]]
+[[Category:Lua Reference|Subtitle file interface]]
