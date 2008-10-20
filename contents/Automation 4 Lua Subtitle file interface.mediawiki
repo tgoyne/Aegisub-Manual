@@ -120,17 +120,15 @@ Deleting lines uses the list cursor and will move it.
 
 Synopsis: <code>aegisub.set_undo_point(description)</code>
 
-You must set an undo point to avoid breaking undo. (Try seeing what happens if you don't.)
+You must always set an undo point at the end of running a macro, otherwise the Undo and Redo functions stop working correctly. You can set multiple undo points while running a single macro, but be aware that it might confuse the user. (You can try to see what happens if you don't set an undo point after changing the subtitle file, just don't release scripts without this to the public!)
 
 Only available in macro processing functions, and doesn't make sense anywhere else either.
 
-{{todo|Elaborate a bit more}}
-
 * '''description''' (string) - Text to appear in the Edit menu for the Undo and Redo items to describe the action that can be undone.
 
-The behaviour of the undo system will change in Aegisub 2.10, but that's far away. The exact way it will manifest in Automation 4 scripts can't be known yet.
+The behaviour of the undo system will change in the next major release of Aegisub, but that's far away. The exact way it will manifest in Automation 4 scripts can't be known yet.
 
-This is not really a function in the subtitles object, but it is still tied to it.
+This is not really a function in the subtitles object, but it is still closely tied to it.
 
 == Line data tables ==
 
