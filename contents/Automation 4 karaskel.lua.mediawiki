@@ -39,8 +39,7 @@ Preprocess the text of a single line. <code>meta</code> and <code>styles</code> 
 This function does not return a value, but rather modifies the <code>line</code> table. The following fields are added:
 * <code>line.text_stripped</code> - Line text with all override tags and vector drawings removed.
 * <code>line.duration</code> - Duration of the line in milliseconds</code>
-* <code>line.kara</code> and <code>line.furi</code> - Extended karaoke and furigana tables, without sizing and position data.
-{{Todo|Link to definitions of extended kara/furi tables}}
+* <code>line.kara</code> and <code>line.furi</code> - Extended [[#Karaoke and furigana syllable tables|karaoke and furigana tables]], without sizing and position data.
 
 This function does not calculate any text sizing or positioning information. (In fact it doesn't use the <code>meta</code> or <code>styles</code> arguments at all.)
 
@@ -80,9 +79,10 @@ This function does not return a value, but rather modifies the <code>line</code>
 * <code>line.middle</code> - The line vertical centre Y coordinate, assuming its given alignment, effective margins and no collision detection <code>line.vcenter</code> is an alias for this.
 * <code>line.bottom</code> - The bottom edge Y coordinate for the line, assuming its given alignment, effective margins and no collision detection.
 * <code>line.x</code> and <code>line.y</code> - X and Y coordinates for the line, suitable for using in a <code>\pos</code> override tag to get the line's original position.
-{{todo|make the above clearer}}
 
-Furthermore, the <code>line.kara</code> and <code>line.furi</code> tables are modified by the layout function called, adding positioning information. See below.
+Furthermore, the <code>line.kara</code> and <code>line.furi</code> tables are modified by the layout function called, adding positioning information.
+
+See the part on [[#Data structures|data structures]] later on this page for more details on the various fields that are added.
 
 If no line sizing information is found, <code>karaskel.preproc_line_size</code> will be invoked, which might in turn also invoke <code>karaskel.preproc_line_text</code>.
 
