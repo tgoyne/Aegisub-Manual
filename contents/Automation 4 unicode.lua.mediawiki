@@ -25,4 +25,4 @@ Synopsis: <code>val = unicode.codepoint(instring)</code>
 Calculate the Unicode codepoint for the first character in <code>instring</code>.
 
 
-[[Category:Lua Reference]]
+[[Category:Lua Reference|unicode.lua]]
