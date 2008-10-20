@@ -103,4 +103,4 @@ aegisub.log is preferred since its name is shorter and more general.
 
 Returns: nothing.</pre>
 
-[[Category:Lua Reference]]
+[[Category:Lua Reference|Progress reporting]]
