@@ -112,4 +112,4 @@ Export filter configuration panel providers passed to <code>[[#aegisub.register_
 '''Return value:''' A configuaration dialogue table, see the page on [[Automation 4 Lua Configuration dialogues|configuration dialogues]] for more information on the format of this table.
 
 
-[[Category:Lua Reference]]
+[[Category:Lua Reference|Registration]]
