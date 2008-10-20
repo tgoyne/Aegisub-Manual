@@ -11,6 +11,8 @@ Converts all ASCII characters to Japanese "full-width" variations of them.
 
 This can be useful if you need to typeset a sign translation vertically, such that the letters are "stacked".
 
+This macro modifies all lines that are currently selected in the subtitles grid.
+
 === Example ===
 
 Here's a typeset sign:
