@@ -59,6 +59,40 @@ The macro also shows this message:
 This simply says that the smallest duration between two lines it found, was 290 milliseconds, or 0.29 seconds, so that's as much time you have to make fade-in, fade-out and other transition effects, if you want every syllable-highlight to be fully visible.
 
 == Clean tags ==
-Cleans up some tags in the file.
+This macro does various cleaning up on the override tags in all selected lines.
 
-{{Todo|Better description and why this is good.}}
+* Combines adjacent override blocks (i.e { ... }) except if both of the block contains \k tags each then they will be left as is
+* Push any \k tags in override blocks to the front (e.g. from {\frz90\k40} to {\k40\frz90}). Special care will be taken for multiple \k tags within one block to preserve the ordering
+* Move line-wide tags (i.e. tags whose effects affect the whole line -- \a \an \org \pos \move \fade \fad) to the beginning of the lines
+* Remove all but first line-wide tags of the same class (note: \pos and \move are from the same class -- only first of them works in a line, therefore the script will find the first \move or \pos and retain whic of the two comes first and remove others. The same are done for \fad and \fade)
+* Remove spaces in comma-separated parameters (e.g. \pos(200 , 200) becomes \pos(200,200))
+
+This macro is also available as an export filter.
+
+The main intended function of this macro is to make [[Automation 4 karaskel.lua|karaskel.lua]] split karaoke lines more sensibly into syllable structures, see the example.
+
+This macro modifies all selected lines in the grid, re-writing all tag blocks in them.
+
+=== Example ===
+
+Original line:
+
+ {\r\frz90\k80}Test {\r\fry180\k60}me
+
+Karaskel creates these syllable structures:
+
+* 0 = {\r\frz90}
+* 1 = Test {\r\fry180}
+* 2 = me
+
+After running ''Clean Tags'' on the line:
+
+ {\k80\r\frz90}Test {\k60\r\fry180}me
+
+Now karaskel creates these syllable structures:
+
+* 0 = 
+* 1 = {\r\frz90}Test
+* 2 = {\r\fry180}me
+
+The cleaned up version is generally what you'd want since it places the override tags inside the syllables they affect.
