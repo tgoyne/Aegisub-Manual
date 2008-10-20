@@ -34,4 +34,4 @@ A number of standard include files are provided. These aren't part of the core A
 * [[Automation 4 unicode.lua|unicode.lua]] - All data passed in and out of Aegisub through the Automation 4 Lua interface are encoded in UTF-8, but Lua doesn't natively provide support for this. A number of helper functions are provided here.
 * [[Automation 4 cleantags.lua|cleantags.lua]] - A function to clean up ASS tags in a line.
 
-[[Category:Lua Reference]]
+[[Category:Lua Reference|Reference]]
