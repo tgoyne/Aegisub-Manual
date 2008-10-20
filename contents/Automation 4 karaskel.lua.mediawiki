@@ -261,4 +261,4 @@ Highlight tables are entirely defined by <code>karaskel.preproc_line_text</code>
 * <code>hl.duration</code> - Duration of the highlight in milliseconds.
 
 
-[[Category:Lua Reference]]
+[[Category:Lua Reference|karaskel.lua]]
