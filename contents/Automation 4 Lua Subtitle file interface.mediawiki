@@ -1,7 +1,3 @@
-''See also: https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/subtitle-data.txt''
-
-{{todo|Finish this}}
-
 This page describes the '''subtitle file interface''' use in Automation 4 Lua scripts to manipulate subtitle files.
 
 There is one special object (the '''subtitles''' user data object) which has a number of functions, and a number of table formats defined.
@@ -132,6 +128,64 @@ This is not really a function in the subtitles object, but it is still closely t
 
 == Line data tables ==
 
-{{todo|write something about the different classes of lines and their fields}}
+When you read lines from the subtitle file object they will always be one of a few classes of lines, and when you write lines back to the subtitle file they must also follow the format of one of those classes.
+
+The line data objects are regular Lua tables with some specific fields defined.
+
+Here's a list of the different classes of lines:
+
+* '''clear''' - blank line, there's nothing (or only whitespace) on the line
+* '''comment''' - semicolon-comment, a line starting with a semicolon, usually ignored
+* '''head''' - a section heading in the file, such as <tt>[Script Info]</tt>
+* '''info''' - a key/value pair in the Script Info section of the file
+* '''format''' - a Format line in the file, usually ignored
+* '''style''' - a regular style definition line
+* '''dialogue''' - a dialogue line, which may be a comment or not; these are the lines you see in the grid in Aegisub
+* '''unknown''' - an unknown kind of line
+
+There's three fields that always exist in all line data tables:
+
+* '''class''' (string) - The name of the class of line this is, see the list above.
+* '''raw''' (string) - The raw text of the line, from first to last character on the physical line.
+* '''section''' (string) - Which section of the file the line belongs to. If the line is placed before the first section heading, this field is <code>nil</code>.
+
+=== <tt>clear</tt> class ===
+
+This class doesn't define any additional fields.
+
+=== <tt>comment</tt> class ===
+
+This class defines one additional field:
+
+* '''text''' (string) - The text that follows the semicolon. Basically the same as the <tt>raw</tt> field with the first character chopped off.
+
+=== <tt>head</tt> class ===
+
+The <tt>head</tt> class doesn't define any additional fields, but the <tt>section</tt> field contains the name of the new section started.
+
+=== <tt>info</tt> class ===
+
+This class defines two additional fields:
+
+* '''key''' (string) - The part of the line before the first colon, with leading and trailing spaces removed.
+* '''value''' (string) - Everything after the first colon on the line, also with leading and trailing spaces removed.
+
+=== <tt>format</tt> class ===
+
+This class defines one additional field:
+
+* '''fields''' (array table) - An array table of strings, the field names listed in the order they appear on the format line.
+
+=== <tt>style</tt> class ===
+
+This class defines a large number of additional fields. It's usually processed by the ''karaskel'' and modified a bit by that. See the ''karaskel.lua'' section on [[Automation 4 karaskel.lua#Style table|style tables]] for more information about this class.
+
+=== <tt>dialogue</tt> class ===
+
+This class defines a large number of additional fields. It's usually processed by the ''karaskel'' and has many calculated fields added by that. See the ''karaskel.lua'' section on [[Automation 4 karaskel.lua#Dialogue line table|dialogue line tables]] for more information on this class.
+
+=== <tt>unknown</tt> class ===
+
+No additional fields are defined by this class, due to its nature. This might be things like files embedded into the subtitles. You shouldn't try to work with these lines unless you really know what you're doing, deleting, modifying and inserting <tt>unknown</tt> lines has undefined consequences. (That means, even if it works today it might not work tomorrow or in the next version of Aegisub.)
 
 [[Category:Lua Reference]]
