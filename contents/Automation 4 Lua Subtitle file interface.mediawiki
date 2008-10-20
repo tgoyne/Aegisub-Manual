@@ -9,7 +9,7 @@ Most (currently all) Automation 4 Lua feature functions are passed a '''subtitle
 A subtitles object can have two special properties depending on the context it is created for:
 
 * '''Read-only''' - Some feature functions must not be allowed to modify the subtitle file at all. This includes for example [[Automation 4 Lua Registration#Macro validation function|macro validation functions]] and [[Automation 4 Lua Registration# Export filter configuration panel provider|export filter configuration panel providers]], because this would be outside user expectations.
-* '''Allow undo points''' - Only some feature functions allow undo points to be set. Currently this is only [[Automation 4 Lua Registration#Macro processing function|macro processing functions]]. Due to the current (2.00) implementation of the Undo system in Aegisub, attempting to set undo points in any other context can cause data corruption, and thus is disallowed.
+* '''Allow undo points''' - Only some feature functions allow undo points to be set. Currently this is only [[Automation 4 Lua Registration#Macro processing function|macro processing functions]]. Due to the current (2.1/2.2) implementation of the Undo system in Aegisub, attempting to set undo points in any other context can cause data corruption, and thus is disallowed.
 
 To allow the most flexibility, the subtitles object represents a complete ASS format file, line by line, including all meta-lines such as section headers, blank lines and semicolon comments.
 
