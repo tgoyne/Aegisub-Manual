@@ -30,9 +30,33 @@ This is what it looks before and after running the macro:
 [[Image:StackedSign1.png]] [[Image:StackedSign2.png]]
 
 == Automatic karaoke lead-in ==
-Automatically join several karaoke-timed lines up timing-wise and add appropriate \k tags in front of them.
+Automatically join several karaoke-timed lines up timing-wise and add appropriate <code>\k</code> tags in front of them.
 
-{{Todo|Details, explanation, and why this is good.}}
+This macro is designed to help creating karaoke effects, most importantly creating transitions and lead-ins for lines. It's well suited for using when the karaoke is timed but before applying effects, such as karaoke templates.
+
+This macro requires at least two lines to be selected and it only works sensibly if the start-time of each selected line is larger than the start-time of the selected line that comes before it. It changes the timing of the selected lines and adds <code>\k</code> tags at the start of them except the first.
+
+=== Example ===
+
+Here's two lines of "tightly" timed karaoke:
+
+ Dialogue: 0,0:00:44.46,0:00:46.28,Default,,0000,0000,0000,,{\k15}Ne{\k14}ver {\k14}gon{\k13}na {\k37}give {\k40}you {\k49}up
+ Dialogue: 0,0:00:46.57,0:00:48.56,Default,,0000,0000,0000,,{\k13}Ne{\k13}ver {\k13}gon{\k13}na {\k36}let {\k46}you {\k65}down
+
+Both lines start exactly when the first word starts being sung, and they end exactly when the last word ends.
+
+Now if the ''Automatic karaoke lead-in'' macro is run on these two lines, they are changed into this:
+
+ Dialogue: 0,0:00:44.46,<u>0:00:46.28</u>,Default,,0000,0000,0000,,{\k15}Ne{\k14}ver {\k14}gon{\k13}na {\k37}give {\k40}you {\k49}up
+ Dialogue: 0,<u>0:00:46.28</u>,0:00:48.56,Default,,0000,0000,0000,,<u>{\k29}</u>{\k13}Ne{\k13}ver {\k13}gon{\k13}na {\k36}let {\k46}you {\k65}down
+
+The start-time of the second line is changed so it matches the end-time of the first line, and a <code>\k</code> tag  is added to the start of the line, to make up for the shift otherwise created by this. This effectively creates an empty syllable that can be used as a "spacer" to create fade-in and fade-out effects.
+
+The macro also shows this message:
+
+ Smallest inter-line duration: 290 milliseconds
+
+This simply says that the smallest duration between two lines it found, was 290 milliseconds, or 0.29 seconds, so that's as much time you have to make fade-in, fade-out and other transition effects, if you want every syllable-highlight to be fully visible.
 
 == Clean tags ==
 Cleans up some tags in the file.
