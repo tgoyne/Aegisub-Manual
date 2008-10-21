@@ -1,5 +1,7 @@
 Editing subtitles is what Aegisub is made for. This page will deal with basic text editing of subtitle lines; for more information on the typography of subtitles, see [[Typesetting|typesetting]]. For information on the timing of subtitle lines, see [[Audio|working with audio]].
 
+{{Todo|This page should probably be split into several smaller ones to make it easier to digest, easier to link, less confusing and wall-of-text and to promote going more in depth with the separate topics.}}
+
 ==Opening subtitles==
 In the ''File'' menu, there are three menu choices that relate to opening or creating subtitles:
 * '''New subtitles''' - Creates a new, blank script.
