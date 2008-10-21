@@ -1,3 +1,84 @@
+The Lua code in code blocks and on code lines is run in a separate global environment such that it won't accidentally disturb the main script function.
+
+You can store your own data in this environment for use later, for example pre-compute some values on code-lines and later insert them using code blocks, but it also contains several pre-defined variables and functions designed to make it easier writing effect templates.
+
+It's important to understand that the contents of code execution environment and the [[Karaoke Templater Reference: Inline variables|inline-variables]] ($-variables) are not related. You cannot change an inline-variable by changing something in the code execution environment nor can you add new ones. However, you can create and re-define the contents of the code execution environment.
+
+== Line and syllable information ==
+
+The code execution environment contains a few variables pointing to the current line and syllable structure being processed, as well as some more supporting tables. These are just references to the structures produced by [[Automation 4 karaskel.lua#Data structures|karaskel]] and are not modified in any way.
+
+You should treat these as read-only, except <code>line</code>. If you change the other ones, the kara-templater script might start misbehaving.
+
+* '''line''' - The line currently being produced, changing this will affect the resulting line in the file. See the '''[[Automation 4 karaskel.lua#Dialogue line table|reference for dialogue line tables]]'''.
+* '''orgline''' - The original line, this is the source line the current syllable is located on.
+* '''syl''' - The current syllable structure. If the current template is a ''furi'' template, it's the current furigana syllable. If the current template has one or both of the ''char'' or ''multi'' modifiers, this is a pseudo-syllable structure, a copy of the original syllable structure with several values changed to look like the current part of the syllable being processed. Also see the '''[[Automation 4 karaskel.lua#Karaoke and furigana syllable tables|reference for syllable tables]]'''.
+* '''basesyl''' - Usually the same as <code>syl</code>, except when the template has the ''char'' or ''multi'' modifier, then this is the original syllable. (If <code>syl == basesyl</code> is true, then the current template is neither ''char'' nor ''multi''.)
+* '''meta''' - Contains various metadata about the script, namely the contents of the ''Script Info'' section. Most importantly, it has the <code>res_x</code> and <code>res_y</code> fields describing the script resolution.
+
+All of these variables are reset to <code>nil</code> whenever processing starts for a new line, except <code>meta</code>. They are then set to the relevant value whenever processing hits a new stage. This means that, for example ''pre-line'' templates only has <code>line</code> and <code>orgline</code> set and both <code>syl</code> and <code>basesyl</code> are <code>nil</code>. In ''code once'' templates, all of the variables except <code>meta</code> are <code>nil</code>.
+
+== Standard libraries and related things ==
+
+Both the [http://www.lua.org/manual/5.1/manual.html#5.4 '''string'''] and [http://www.lua.org/manual/5.1/manual.html#5.6 '''math'''] Lua standard libraries are imported into the execution environment, as they are generally useful.
+
+You can also access the main execution environment of the kara-templater script itself using the <code>'''_G'''</code> (underscore capital-G) variable and through that access the rest of the Lua standard library. For example, <code>_G.table.sort</code> refers to the regular <code>table.sort</code> function. See the [http://www.lua.org/manual/5.1/manual.html#5 Lua 5.1 manual] for details on the available libraries.
+
+You can also access the Automation 4 Lua standard libraries through the <code>_G</code> variable: [[Automation 4 karaskel.lua|karaskel.lua]], [[Automation 4 unicode.lua|unicode.lua]] and [[Automation 4 utils.lua|utils.lua]].
+
+There is also the self-reference <code>'''tenv'''</code> variable, this refers to the code execution environment itself. This means that <code>tenv.tenv == tenv</code> is true.
+
+== Utility functions ==
+
+These functions help do more complex modifications of the output line (the <code>line</code> variable) and are unavoidable when creating complex effects.
+
+Currently there is just one, but it is possible to define your own functions in code lines.
+
+=== retime ===
+
+Synopsis: <code>retime(mode, startadjust, endadjust)</code>
+
+This function is usually used once in a template in a code block by itself. It adjusts the start and end time of the output line in various ways.
+
+The ''mode'' parameter determines how the start and end times of the line are changed, it must be a string with one of the following values. Because it must be a string, the name of the mode must be enclosed in quotation marks!
+
+The ''startadjust'' and ''endadjust'' parameters slightly change meaning based on the mode, but generally is a number of milliseconds added to the "base" time controlled by the mode.
+
+Possible ''mode''s:
+
+* '''abs''' or '''set''' - Both ''startadjust'' and ''endadjust'' are used as absolute time values to set the start and end time of the line directly.
+* '''preline''' - Intended to make effects that happen before the actual line start. Both start and end time of the line are set to the start time of the line, then ''startadjust'' is added to the start time and ''endadjust'' added to the end time. Usually ''startadjust'' should be negative here and ''endadjust'' be zero.
+* '''line''' - Use the regular line timings and just add ''startadjust'' to the start time and ''endadjust'' to the end time.
+* '''start2syl''' - Intended to make the look of the syllable from the start of the line until it is highlighted. The start time of the line is kept and the end time is set to the start time of the syllable. Use ''startadjust'' and ''endadjust'' to offset the times.
+* '''presyl''' - Similar to ''preline'' but for the syllable timing instead.
+* '''syl''' - From start of syllable to end of syllable.
+* '''postsyl''' - Similar to ''presyl'' but the base timing is the syllable end time instead of start time. You will usually want to use a zero ''addstart'' and positive ''addend'' here.
+* '''syl2end''' - The time from the end of the syllable to the end of line, similar to ''start2syl''.
+* '''postline''' - Similar to ''postsyl'' but for the line timing instead.
+
+There is also a special ''mode'':
+
+* '''sylpct''' - Both of ''startadjust'' and ''endadjust'' are treated as percentage values from 0 to 100 and are used to set the line timing to cover that part of the syllable's time.
+
+Be careful with the <code>retime</code> function on ''line'' templates, if you use it directly on a ''line'' template it will probably not do what you want. You should only use it on ''pre-line'', ''syl'' and ''furi'' templates. You should also only use it once in each template.
+
+==== Examples ====
+
+ template syl: !retime("preline", -1000, 0)!{\pos($scenter,$smiddle)\an5\fscx0\fscy0\t(\fscx100\fscy100)}
+
+This creates a kind of "pop-in" effect for the syllables that lasts 1 second (1000 milliseconds) before the actual line timing. The two important things to code: Quotation marks around <code>"preline"</code> and that the start offset is negative, -1000, because the start time needs to be moved backwards.
+
+ template syl: !retime("syl", 0, 0)!{\pos($x,$y)\t(\fscx360)}
+
+Makes the syllable spin around itself during its highlight. Unless you also have ''syl'' templates retimed to <tt>start2syl</tt> and <tt>syl2end</tt> the syllable will only be visible during its highlight. Note how retiming a syllable line to just the syllable time makes it unneeded to put start and end times in the <code>\t</code> tag, they default to the duration of the entire line and here the duration of the line is the duration of the syllable.
+
+ template syl: !retime("sylpct", 0, 50)!{\move($x,$y,$x,!$y-10!)}
+ template syl: !retime("sylpct", 50, 100)!{\move($x,!$y-10!,$x,$y)}
+
+These two templates together makes the syllable move 10 pixels upwards during the first half of its highlight and back down during the last half. Using <code>retime</code> is an easy way to get multiple <code>\move</code> tags to affect the same syllable; there can only be one <code>\move</code> tag on one line, but if you split the line into many "chained" times you can create an effect of the same syllable moving in several directions.
+
+== Old pasta ==
+
 {{Todo|Make something better of this pasta from the dev wiki}}
 
 As noted above, template code is run with a different environment (global namespace) than the regular Lua global namespace. This is done to avoid polluting the global namespace of the kara-templater script itself with user variables and similar, and to avoid inadvertent modifications that could make kara-templater break.
@@ -6,52 +87,13 @@ The "mother namespace" kara-templater itself is running in is still available, t
 
 The following fields exist in the template execution environment (''tenv'') by default:
 
-* '''_G''' - Reference to the "mother environment" of kara-templater itself.
-* '''tenv''' - Self-reference to the ''tenv'', ie. ''tenv.tenv == tenv''.
-* '''math''' - The Lua math library.
-* '''string''' - The Lua string library.
-* '''meta''' - Subtitle file meta information (script resolution mainly)
-* '''orgline''' - Original line, the one templates are running for right now, it's a bad idea to modify this.
-* '''line''' - For templates, the new line being generated; this can freely be modified during templates. For code lines, this is the original line and should not be modified.
-* '''syl''' - The syllable templates are running for right now, this can be a pseudo-syllable if the ''multi'' or ''char'' modifiers are used.
-* '''basesyl''' - The base syllable templates are running for. This is always the actual syllable independent of ''multi'' and ''char'' modifiers being used, ie. for non-''multi'' non-''char'' templates, ''basesyl == syl''.
 * '''j''' - The loop counter for templates with the ''loop'' modifier, runs from 1 to ''numloops''.
 * '''maxj''' - The number of loops the current template is running, ie. the value ''j'' will have during the last iteration.
-* '''retime''' - The ''retime'' function, see below.
 * '''fxgroup''' - The ''fxgroup'' table used to enable/disable fxgroups from being used. See below.
 
 Not all of the variables are set at all times. ''line'', ''syl'' and ''basesyl'' are reset to ''nil'' each time processing starts for a new source line. Everything else is left alone after creation when the templates are first initialised.
 
 This means that you can freely create new variables and functions inside the ''tenv'' and expect them to stay there.
-
-==== The ''retime'' function ====
-[[Image:Auto4-kara-templater-retime-diagram.png|right]]
-
-Synopsis: '''retime(mode, addstart, addend)'''
-
-Changes the timing of the line being generated by the current template. ''mode'' specifies what the new line timing should be relative to. ''addstart'' and ''addend'' are used to adjust the starting and ending times of the new line further. If ''addstart'' and ''addend'' are left out, they default to zero.
-
-''mode'' is a string, it can take one of the following values:
-* '''abs''' or '''set''' - Use ''addstart'' and ''addend'' as absolute time values from the beginning of the time line, simply setting a new start and end time for the line.
-* '''preline''' - Intended to make effects that happen before the actual line start. The base start and end times are both set to the line start time and then adjusted by ''addstart'' and ''addend''. Usually you will want to use a negative ''addstart'' and a zero ''addend''.
-* '''line''' - The entire line, ie. this just adjusts the start and end time by the given amounts.
-* '''start2syl''' - The time from the start of line to the start of syllable.
-* '''presyl''' - Similar to ''preline'' but for the syllable timing instead.
-* '''syl''' - From start of syllable to end of syllable.
-* '''postsyl''' - Similar to ''presyl'' but the base timing is the syllable end time instead of start time. You will usually want to use a zero ''addstart'' and positive ''addend'' here.
-* '''syl2end''' - The time from the end of the syllable to the end of line.
-* '''postline''' - Similar to ''postsyl'' but for the line timing instead.
-
-There is also one special value for ''mode'':
-* '''sylpct''' - Use ''addstart'' and ''addend'' as percentage values of the syllable duration, and add those to the syllable start time to get the new line start and end time.
-
-See also [https://www.spaceboyz.net/svn/aegisub/trunk/automation/tests/kara-templater-retime.ass this test-file] for examples on how to use ''retime''.
-
-You should never use ''retime'' on ''line'' templates, but you can safely use it on ''pre-line'' templates. Also, using anything but ''set''/''abs'', ''preline'' and ''postline'' modes for ''pre-line'' templates will not work. Since a set of ''pre-line'' and ''line'' templates affect the same generated line it's only needed to change the timing once, and using ''retime'' on a ''line'' template will in fact result in the line timing being changed once for each syllable on the line.
-
-''retime'' changes the ''line.start_time'', ''line.end_time'' and ''line.duration'' fields. These changes are visible to code blocks appearing later in the same template, but never to dollar-variables in the same template.
-
-Using ''retime'' multiple times in one template has undefined behaviour. (So don't do that.)
 
 ==== The ''fxgroup'' table ====
 This table can be used to enable/disable the use of templates declared to be in specific fxgroups.
