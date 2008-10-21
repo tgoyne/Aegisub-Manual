@@ -1,0 +1,1 @@
+<div style="margin-left: 2em; margin-right: 2em; padding: 0.3em; background: #ddc; border: 1px solid black; border-left: 2px solid black;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">{{{1}}}</div></div>
