@@ -62,6 +62,8 @@ There is also a special ''mode'':
 
 Be careful with the <code>retime</code> function on ''line'' templates, if you use it directly on a ''line'' template it will probably not do what you want. You should only use it on ''pre-line'', ''syl'' and ''furi'' templates. You should also only use it once in each template.
 
+The <code>retime</code> function always returns the empty string (<code>""</code>) which will cause it to output nothing when used in code blocks, but still evaluate to true if used in boolean expressions.
+
 ==== Examples ====
 
  template syl: !retime("preline", -1000, 0)!{\pos($scenter,$smiddle)\an5\fscx0\fscy0\t(\fscx100\fscy100)}
