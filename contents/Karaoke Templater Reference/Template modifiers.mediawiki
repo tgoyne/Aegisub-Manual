@@ -22,11 +22,11 @@ Code lines with the <code>once</code> modifier are run exactly once during Karao
 
 "code once" lines are primarily intended to declare functions for use in templates.
 
-==== Example ====
- Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<b>code once</b>,function setlayer(newlayer) line.layer = newlayer; return ""; end
+{{Examplebox|
+ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>code once</u>,function setlayer(newlayer) line.layer &#x3D; newlayer; return ""; end
 
 This example declares a new function that changes the Layer field in the output line.
-
+}}
 === line ''[name]'' ===
 
 This class modifier is valid for both code lines and template lines.
@@ -39,20 +39,21 @@ Code lines can not be named, they must be anonymous.
 
 Named line template lines append to the template text in the order they appear. The appending of template text happens at template parse time, not at execution time.
 
-==== Examples ====
-
- Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<b>code line</b>,fxgroup.funky = line.actor == "funky"
+{{Examplebox|
+ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>code line</u>,fxgroup.funky &#x3D; line.actor &#x3D;&#x3D; "funky"
 
 This code line is run once per input line. It enables/disables an effect group named "funky" depending on the Actor field of the input line.
-
- Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<b>template line</b>,{\r\t($start,$end,\bord0)}
+}}
+{{Examplebox|
+ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template line</u>,{\r\t($start,$end,\bord0)}
 
 This template line declares an anonymous line template. The effect produced will transform the border of each syllable to zero during the syllable's duration.
-
- Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<b>template line jumper</b>,{\r\t($start,$mid,\frz-0.1)\t($mid,$end,\frz0}
+}}
+{{Examplebox|
+ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template line jumper</u>,{\r\t($start,$mid,\frz-0.1)\t($mid,$end,\frz0}
 
 This template line appends to a line template named "jumper"  or creates it if it doesn't exist. Together with the pre-line template example given below, this will produce a "jumping" effect for the syllables.
-
+}}
 === pre-line ''[name]'' ===
 
 This class modifier is only valid for template lines.
@@ -63,40 +64,38 @@ Anonymous line templates with only pre-line text leave the original input line t
 
 Named pre-line template lines append to the pre-line template text in the order they appear. The appending of template text happens at template parse time, not at execution time.
 
-==== Examples ====
-
- Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<b>template pre-line</b>,{\be1}
+{{Examplebox|
+ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template pre-line</u>,{\be1}
 
 This template line declares an anonymous line template, that will prepend <tt>{\be1}</tt> to all matching lines.
-
- Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<b>template pre-line jumper</b>,{\org(-10000,$y)}
+}}
+{{Examplebox|
+ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template pre-line jumper</u>,{\org(-10000,$y)}
 
 This template line appends to the pre-line template text of a line template named "jumper", or creates it if it doesn't exist. Together with the line template example given above, this will produce a "jumping" effect for the syllables.
-
+}}
 === syl ===
 
 This class modifier is valid for both code lines and template lines.
 
 Syl templates can not be named.
 
-==== Example ====
-
- Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<b>template syl</b>,{\pos($x,$y)}
+{{Examplebox|
+ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl</u>,{\pos($x,$y)}
 
 This template line declares a syl template that simply positions the syllable text.
-
+}}
 === furi ===
 
 This class modifier is valid for both code lines and template lines.
 
 Furi templates can not be named.
 
-==== Example ====
-
- Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<b>template furi</b>,{\pos($x,$y)}
+{{Examplebox|
+ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template furi</u>,{\pos($x,$y)}
 
 This template line declares a furi template that simply positions the syllable text. It's not needed to do anything further to get correct furigana formatting.
-
+}}
 === syl furi ===
 
 It's possible to combine the <code>syl</code> and <code>furi</code> class modifiers. This results in two identical templates being generated from the template line, one syl template and one furi template.
@@ -111,11 +110,11 @@ Apply template to all styles, not just the one of the template line.
 
 Applicable for both code lines and templates, and for all classes.
 
-==== Example ====
-
- Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<b>template syl all</b>,{\pos($x,$y)}
+{{Examplebox|
+ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl all</u>,{\pos($x,$y)}
 
 This template will be applied to every single syllable in the entire subtitle file, regardless of the style of the line they are on.
+}}
 
 === char ===
 
@@ -123,10 +122,9 @@ Make the template work per-character instead of per-syllable. This changes appli
 
 While this will work on code lines, it is generally not useful, see the discussion on execution order.
 
-==== Example ====
-
- Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<b>template syl char</b>,{\pos($x,$y)}
- Comment: 1,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<b>template syl char</b>,{\pos($x,$y)\bord0}
+{{Examplebox|
+ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl char</u>,{\pos($x,$y)}
+ Comment: 1,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl char</u>,{\pos($x,$y)\bord0}
 
 Every single character on the line will be positioned separately. For each syllable, each template will apply for all characters in one go, and not be applied interleaved.
 
@@ -140,19 +138,18 @@ For example, if there are two syllables, "ab" and "cd", and the above two templa
  {\pos($x,$y)}d
  {\pos($x,$y)\bord0}c
  {\pos($x,$y)\bord0}d
-
+}}
 === fx ''name'' ===
 
 Make template only apply to syllables that have the named [[inline-fx]]. Specifying an inline-fx name is required; the name may also overlap with template modifier names though this is not recommended.
 
-==== Example ====
-
- Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<b>template syl fx drop</b>,{\move($x,$y,$x,!$y+30!,$start,$end)}
+{{Examplebox|
+ Comment: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,<u>template syl fx drop</u>,{\move($x,$y,$x,!$y+30!,$start,$end)}
 
 With this template, all syllables that have the inline-fx "drop" will get an additional line produced, where the syllables moves down 30 pixels during its duration.
 
 All other template lines that don't have ''fx'' specified will still be applied as usual to those syllables as well.
-
+}}
 === fxgroup ''name'' ===
 
 Declare template to be in the named effect group. Specifying an effect group name is required; the name may also overlap with template modifier names and Lua reserved words, though this is not recommended.
