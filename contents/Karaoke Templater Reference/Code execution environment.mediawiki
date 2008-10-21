@@ -81,35 +81,36 @@ Makes the syllable spin around itself during its highlight. Unless you also have
 These two templates together makes the syllable move 10 pixels upwards during the first half of its highlight and back down during the last half. Using <code>retime</code> is an easy way to get multiple <code>\move</code> tags to affect the same syllable; there can only be one <code>\move</code> tag on one line, but if you split the line into many "chained" times you can create an effect of the same syllable moving in several directions.
 }}
 
-== Old pasta ==
+== Template execution data ==
 
-{{Todo|Make something better of this pasta from the dev wiki}}
+These variables either give some further information on the status of the executing template or modify the rules for template execution in some way. They generally work together with specific template modifiers.
 
-As noted above, template code is run with a different environment (global namespace) than the regular Lua global namespace. This is done to avoid polluting the global namespace of the kara-templater script itself with user variables and similar, and to avoid inadvertent modifications that could make kara-templater break.
+=== Looping templates ===
 
-The "mother namespace" kara-templater itself is running in is still available, though, so it can be accessed if needed.
+When a template with the ''loop'' or ''repeat'' modifier is running, two new variables are introduced in the code execution environment, <code>'''j'''</code> and <code>'''maxj'''</code>.
 
-The following fields exist in the template execution environment (''tenv'') by default:
+* '''maxj''' is the number of loops, ie. simply the parameter given to the ''loop'' modifier.
+* '''j''' is the loop iteration counter, it starts at 1 in the first iteration and ''maxj'' in the last.
 
-* '''j''' - The loop counter for templates with the ''loop'' modifier, runs from 1 to ''numloops''.
-* '''maxj''' - The number of loops the current template is running, ie. the value ''j'' will have during the last iteration.
-* '''fxgroup''' - The ''fxgroup'' table used to enable/disable fxgroups from being used. See below.
+{{Examplebox|
+ template syl loop 20: {\move($x,$y,!$x+15*math.cos(math.pi*2*<u>j</u>/<u>maxj</u>)!,!$y+15*math.sin(math.pi*2*<u>j</u>/<u>maxj</u>)!,$start,$end)\t($start,$end,\alpha&HFF&)}
 
-Not all of the variables are set at all times. ''line'', ''syl'' and ''basesyl'' are reset to ''nil'' each time processing starts for a new source line. Everything else is left alone after creation when the templates are first initialised.
+Here looping is used to [http://en.wikipedia.org/wiki/Unit_circle#Trigonometric_functions_on_the_unit_circle calculate several points on a circle] with radius 15 and make the syllables move out to those. Just by changing the number of loops in the Effect field you can make a more detailed circle because <code>j/maxj</code> is used to calculate how large a potion of the total number of loops have been completed.
+}}
+{{Todo|Maybe make this example shorter so it fits in width in smaller windows}}
+=== Conditional templates with fxgroup ===
 
-This means that you can freely create new variables and functions inside the ''tenv'' and expect them to stay there.
+The ''fxgroup'' modifier uses a special table <code>'''fxgroup'''</code> in the code execution environment to control whether a template will be executed or not.
 
-==== The ''fxgroup'' table ====
-This table can be used to enable/disable the use of templates declared to be in specific fxgroups.
+The parameter given to the ''fxgroup'' modifier names a key (always a string) in the <code>fxgroup</code> table in the execution environment, and when a template assigned to an fxgroup is about to be executed, the value for that key in the <code>fxgroup</code> table is looked up. If the value is true or the key doesn't exist, the template is executed, if it's false the template is skipped.
 
-The ''fxgroup'' table is indexed by the names of fxgroups defined. If no entry is defined for an fxgroup (or it's set to ''nil'') the fxgroup is considered enabled. An fxgroup is only considered disabled when ''fxgroup.groupname == false''.
+While you can technically use any text string for fxgroup names, because they're used in Lua code it's best to avoid ones that overlap with Lua reserved words such as <code>end</code>, <code>break</code>, <code>return</code> and several more.
 
-Example:
-
- Comment: 0,0:00:10.00,0:00:15.00,Default,,0000,0000,0000,code syl,fxgroup.long = syl.duration > 200
- Comment: 0,0:00:05.00,0:00:10.00,Default,,0000,0000,0000,template syl noblank,all here: 
- Comment: 0,0:00:15.00,0:00:20.00,Default,,0000,0000,0000,template syl fxgroup long,is long: 
- Dialogue: 0,0:00:00.00,0:00:05.00,Default,,0000,0000,0000,,{\k10}huh? {\k40}wee~~
+{{Examplebox|
+ code syl: <u>fxgroup.long &#x3D; (syl.duration > 200)</u>
+ template syl noblank: all here: 
+ template syl <u>fxgroup long</u>: is long: 
+ karaoke: {\k10}huh? {\k40}wee~~
 
 It's important to understand the template execution order to understand this example. For each input syllable (ie. "huh?" and "wee~~") all the templates and code lines are run in the order they appear.
 
@@ -118,3 +119,4 @@ This means that for "huh?", first the code line is run. It determines that the d
 For "wee~~", the code line determines that its duration is longer than 200 ms, so the "long" fxgroup is enabled. Then the first template outputs its line, "all here: wee~~", and when the second template is to run, its fxgroup is enabled now so it's also run, outputting "is long: wee~~".
 
 Neither of the two templates will output anything for the zero'th syllable. The first template, because it has the "noblank" modifier, and the second because the zero'th syllable's duration is too short for the fxgroup to be enabled.
+}}
