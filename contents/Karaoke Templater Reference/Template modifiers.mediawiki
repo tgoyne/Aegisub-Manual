@@ -154,16 +154,21 @@ All other template lines that don't have ''fx'' specified will still be applied 
 
 Declare template to be in the named effect group. Specifying an effect group name is required; the name may also overlap with template modifier names and Lua reserved words, though this is not recommended.
 
-{{todo|example}}
-
+{{Examplebox|There is an example of ''fxgroup'' on the [[Karaoke Templater Reference: Code execution environment#Conditional templates with fxgroup|Code execution environment]] page.}}
 === keeptags ===
 
 Specify that the original tags must be kept in the syllable after application.
 
 This has no effect when combined with <code>char</code> or <code>multi</code>.
 
-{{todo|example}}
+{{Examplebox|
+ template line <u>keeptags</u>: {\r\t($start,!$start+1!,\frx40)\t(!$start+1!,$end,\frx0)}
+ karaoke: {\k21}hi{\k10}gu{\k23}ra{\k22}shi {\k38}ga {\k37\1c&H0000FF&}na{\k37}ku
 
+The syllables "tip" back over a bit during highlight. One of them ("na") is coloured differently by putting an override tag in the timed karaoke line, but the following syllables don't get it because of the customary <code>\r</code> at the start of the template.
+
+The ''notags'' modifier ensures that the special colour of the special syllable gets carried over to the output.
+}}
 === multi ===
 
 Make the template apply per-highlight in [[Furigana karaoke|multi-highlight]] timed karaoke. This changes application order semantics in a significant way, see [[Karaoke Templater Reference: Template execution rules and order|Template execution and order]] for details.
