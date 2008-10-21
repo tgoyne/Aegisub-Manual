@@ -11,4 +11,5 @@ Remember to explain the example.
 The example goes here, using regular MediaWiki markup.
 Remember to explain the example.
 }}
+If you need to put equals signs in the example text, you must replace them with the HTML entity <code>&amp;#x3D;</code>, otherwise MediaWiki's parser misunderstands it and produces garbage.
 </noinclude>
