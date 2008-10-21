@@ -51,8 +51,7 @@ Calculate sizing data for a line and all karaoke syllables and furigana parts. A
 This function does not return a value, but rather modifies the <code>line</code> table. The following fields are added:
 * <code>line.styleref</code> - A reference to the Style table representing this line's selected style.
 * <code>line.furistyle</code> - A reference to the Style table representing this line's furigana layout style. If there is no style with the right name, this field is <code>false</code> instead.
-* <code>line.width</code>, <code>line.height</code>, <code>line.descent</code> and <code>line.extlead</code> - Sizing information for the stripped line text, as returned by <code>aegisub.text_extents</code>.
-{{Todo|Link to page doccing text_extents}}
+* <code>line.width</code>, <code>line.height</code>, <code>line.descent</code> and <code>line.extlead</code> - Sizing information for the stripped line text, as returned by [[Automation 4 Lua Miscellaneous APIs#aegisub.text_extents|<code>aegisub.text_extents</code>]].
 
 Also, this function modifies the <code>line.kara</code> and <code>line.furi</code> tables, adding sizing information.
 
