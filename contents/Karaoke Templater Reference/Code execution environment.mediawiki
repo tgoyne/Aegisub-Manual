@@ -64,20 +64,22 @@ Be careful with the <code>retime</code> function on ''line'' templates, if you u
 
 The <code>retime</code> function always returns the empty string (<code>""</code>) which will cause it to output nothing when used in code blocks, but still evaluate to true if used in boolean expressions.
 
-==== Examples ====
-
+{{Examplebox|
  template syl: !retime("preline", -1000, 0)!{\pos($scenter,$smiddle)\an5\fscx0\fscy0\t(\fscx100\fscy100)}
 
 This creates a kind of "pop-in" effect for the syllables that lasts 1 second (1000 milliseconds) before the actual line timing. The two important things to code: Quotation marks around <code>"preline"</code> and that the start offset is negative, -1000, because the start time needs to be moved backwards.
-
+}}
+{{Examplebox|
  template syl: !retime("syl", 0, 0)!{\pos($x,$y)\t(\fscx360)}
 
 Makes the syllable spin around itself during its highlight. Unless you also have ''syl'' templates retimed to <tt>start2syl</tt> and <tt>syl2end</tt> the syllable will only be visible during its highlight. Note how retiming a syllable line to just the syllable time makes it unneeded to put start and end times in the <code>\t</code> tag, they default to the duration of the entire line and here the duration of the line is the duration of the syllable.
-
+}}
+{{Examplebox|
  template syl: !retime("sylpct", 0, 50)!{\move($x,$y,$x,!$y-10!)}
  template syl: !retime("sylpct", 50, 100)!{\move($x,!$y-10!,$x,$y)}
 
 These two templates together makes the syllable move 10 pixels upwards during the first half of its highlight and back down during the last half. Using <code>retime</code> is an easy way to get multiple <code>\move</code> tags to affect the same syllable; there can only be one <code>\move</code> tag on one line, but if you split the line into many "chained" times you can create an effect of the same syllable moving in several directions.
+}}
 
 == Old pasta ==
 
