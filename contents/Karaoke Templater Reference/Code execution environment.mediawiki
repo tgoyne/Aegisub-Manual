@@ -93,9 +93,11 @@ When a template with the ''loop'' or ''repeat'' modifier is running, two new var
 * '''j''' is the loop iteration counter, it starts at 1 in the first iteration and ''maxj'' in the last.
 
 {{Examplebox|
- template syl loop 5: {\an5\pos($x,$y)\1a&HFF&\bord2\shad0\t($start,$end\fscx!100+<u>j</u>*3!\fscy!100+<u>j</u>*3!\3a&HFF&)}
+ template syl loop 5: {\an5\pos($scenter,$smiddle)\1a&HFF&\3a&Hcc&\t($start,$end,\fscx!100+<u>j</u>*10!\fscy!100+<u>j</u>*10!\3a&HFF&)}
 
-The syllable fill and shadow is hidden so only the border is visible, then several copies of the that border-only line is made through the loop, and made to "explode" to different, growing sizes using the <code>j</code> variable.
+The syllable fill is hidden so only the border is visible, then several copies of the that border-only line is made through the loop, and made to "explode" to different, growing sizes using the <code>j</code> variable.
+
+This example assumes that the style definition has shadow disabled but it does have a border.
 }}
 {{Examplebox|
  template syl loop 20: {\move($x,$y,!$x+15*math.cos(math.pi*2*<u>j</u>/<u>maxj</u>)!,!$y+15*math.sin(math.pi*2*<u>j</u>/<u>maxj</u>)!,$start,$end)\t($start,$end,\alpha&HFF&)}
