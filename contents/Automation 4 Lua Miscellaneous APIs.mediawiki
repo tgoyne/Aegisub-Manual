@@ -1,5 +1,3 @@
-''See also: https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/misc.txt''
-
 This page documents '''miscellaneous API's useful for working with subtitles''', these can't be clearly placed into any of the other main categories and there's too few of each kind to warrant a separate category.
 
 == aegisub.text_extents ==
