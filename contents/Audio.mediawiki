@@ -1,5 +1,7 @@
 Aegisub has a fairly advanced, customizable audio mode with both the traditional waveform display as well as an alternative spectrum display. Several different timing modes are available for both normal dialog timing and karaoke timing.
 
+{{Todo|This page should probably be split into several smaller ones to make it easier to digest, easier to link, less confusing and wall-of-text and to promote going more in depth with the separate topics.}}
+
 ==Opening audio==
 To load an audio file into Aegisub, just go to the ''Audio'' menu and press ''Open audio file''. If you have a video file (with an included audio track) already loaded, you can use ''Open audio from video'' instead, which obviously will load the audio track from the video file you currently have loaded. You can open any type of audio file that your [[Options#Audio provider|audio provider]] can decode, more on this below.
 
