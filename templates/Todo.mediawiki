@@ -1,8 +1,6 @@
-<div style="margin-left: 2em; margin-right: 3em; margin-top: 0.5em; margin-bottom: 0.5em; padding-left: 1em; padding-right: 4em; background-color: #FDFEE7; border: 1px solid #F9FD96;">'''Todo:''' {{{1}}}</div>
-<includeonly>
+<div style="margin-left: 2em; margin-right: 3em; margin-top: 0.5em; padding-left: 1em; padding-right: 4em; background-color: #FDFEE7; border: 1px solid #F9FD96;">'''Todo:''' {{{1}}}</div><includeonly>
 [[Category:Pages with Todo items]]
-</includeonly>
-<noinclude>
+</includeonly><noinclude>
 Pages with this template go into the ''Pages with Todo items'' category. Put this template on a page when you can't finish it right away and put a note about what more needs to be done.
 
 Remember to check the pages with todo items and fix any missing stuff :)
@@ -13,5 +11,5 @@ Remember to check the pages with todo items and fix any missing stuff :)
 
 Shows up as:
 
-<div style="margin-left: 2em; margin-right: 3em; margin-top: 0.5em; margin-bottom: 0.5em; padding-left: 1em; padding-right: 4em; background-color: #FDFEE7; border: 1px solid #F9FD96;">'''Todo:''' Text of todo-item</div>
+<div style="margin-left: 2em; margin-right: 3em; margin-top: 0.5em; padding-left: 1em; padding-right: 4em; background-color: #FDFEE7; border: 1px solid #F9FD96;">'''Todo:''' Text of todo-item</div>
 </noinclude>
