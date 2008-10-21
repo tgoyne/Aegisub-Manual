@@ -1,1 +1,12 @@
-<div style="margin-left: 2em; margin-right: 2em; padding: 0.3em; background: #ddc; border: 1px solid black; border-left: 2px solid black;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">{{{1}}}</div></div>
+<div style="margin: 0.3em 2em; padding: 0.3em; padding-left: 0.8em; background: #f0f0e9; border-left: 1px solid #aaa;"><p style="margin: 0; padding-bottom: 0.3em; font-size: 115%; font-weight: bold;">Example</p><div style="margin-left: 1em;">{{{1}}}</div></div>
+<noinclude>Use this to show examples of something.
+
+Usage:
+
+<pre>
+{{Examplebox|
+The example goes here, using regular MediaWiki markup.
+Remember to explain the example.
+}}
+</pre>
+</noinclude>
