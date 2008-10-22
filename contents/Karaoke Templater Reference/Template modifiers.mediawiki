@@ -201,4 +201,11 @@ Specify that the template will be applied the given number of times. Specifying 
 
 Note that the execution order of looped line templates and looped syl/furi templates is different. See [[Karaoke Templater Reference: Template execution rules and order|Template execution and order]] for details.
 
-{{todo|example}}
+{{Examplebox|
+ template syl <u>loop 4</u>: {\move($x,$y,!$x+math.random(-30,30)!,!$y+math.random(-30,30)!,$start,$end)\alpha&Hc0&\t($start,$end,\alpha&HFF&)}
+
+The ''loop'' modifier is used to created 4 copies of the syllable for each time this template is run. Each of those move in a random direction, up to 30 pixels away in X and Y direction. They also fade out.
+
+The starting alpha for each copy, <code>&Hc0</code> is chosen as 256 - (256 / 4), 4 being the number of loops made. This way, the opacity for each copy adds up to exactly 256. (Technically it should be 255, but that can't be achieved with an even number of loops.)
+}}
+:''Also see the examples on the [[Karaoke Templater Reference: Code execution environment#Looping templates|Code execution environment]] page for more advanced usage.''
