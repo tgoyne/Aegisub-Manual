@@ -1,4 +1,57 @@
-Mid-level description of the kara-templater execution:
+This page describes various technical details about how Karaoke Templater (''kara-templater'') works and will try to explain why various things work as they do and why some things can't and won't work.
+
+== Concepts ==
+
+These are some terms and concepts used throughout the description. The names are close to or the same as those used in the actual script.
+
+* '''tenv''' - The '''t'''emplate '''env'''ironment, or [[Karaoke Templater Reference: Code execution environment|code execution environment]].
+* '''varctx''' - The inline '''var'''iable '''c'''on'''t'''e'''x'''t, the storage for the actual values of the [[Karaoke Templater Reference: Inline variables|inline variables]].
+* '''template''' - The basic "execution unit" of kara-templater, a template is essentially a mini-program compiled and executed by kara-templater.
+* '''code template''' - A template that runs a chunk of Lua code but doesn't produce output. (Declared with the ''code'' keyword.)
+* '''output template''' - A template that produces output lines from some karaoke data input. (Declared with the ''template'' keyword.)
+* '''code line''' - A line in the subtitle that defines a code template.
+* '''template line''' - A line in the subtitle file that defines an output template, or part of one. (One ''line'' class output template can span multiple template lines.)
+* '''class''' - A class is a kind of template. There's four basic classes, ''once'', ''line'', ''syl'' and ''furi'', the first only available for code templates.
+* '''modifier''' - Modifiers affect how and when templates are executed.
+* '''template text''' or just '''text''' - The "text" part of a template, either the Lua code in a code template or the template code in output templates. ''line'' class output templates also have a ''pre-line text''.
+
+== Startup ==
+
+The first thing kara-templater does is simply use [[Automation 4 karaskel.lua|karaskel]] to collect some basic information on the subtitle file. It always passes <code>true</code> for ''generate_furigana'' in the <code>karaskel.collect_head</code> function, meaning that [[Furigana karaoke|furigana]] styles are always generated, unless they already exist.
+
+It then collects all template lines in the file.
+
+=== Collecting, parsing and compiling templates ===
+
+Every line in the file is visited and checked for being a template line, ie. be a comment and have the first word in the Effect field be ''code'' or ''template''.
+
+The details aren't important here, but every modifier name found in the Effect field either sets a flag in the template or a value corresponding to the parameter given to the modifier.
+
+When a named ''line'' class template lines is encountered, first it's checked if there is already a ''line'' class template with that name. If there isn't one, a new one is created with that name and initialised with the given modifiers. If there is already one with that name, ''the text of the template line is appended to the current text of the template'' and modifiers present in the new template line but not in the current template are added to the template. Modifiers cannot be removed from templates in this way or any other way. The text of ''pre-line'' template lines is added to the ''pre-line text'' of the template rather than the regular text.
+
+The templates of different classes are each put in their own "bucket", so for example ''line'' and ''syl'' templates are not kept together.
+
+=== Clean-up ===
+
+After all templates have been collected etc., all old and no longer needed lines are deleted from the subtitle file. This mainly includes lines with ''fx'' in the Effect field, as those are assumed to have been generated in a previous run of kara-templater, so they should be replaced in this new run.
+
+=== Initialising the ''tenv'' ===
+
+The last thing done before starting actually running the templates is initialising the runtime environment for the templates. Basically, as much as possible before any templates are run, is put into ''tenv''. See [[Karaoke Templater Reference: Code execution environment|Code execution environment]] for more details on what's in there. (Basically everything but <code>line</code>, <code>orgline</code>, <code>syl</code> and <code>basesyl</code>.)
+
+== Run ''once'' templates ==
+
+All templates in the ''once'' class are executed first. Nothing truly exciting happens here, the main thing that can happen is that some more things are added to ''tenv''.
+
+== Iterate through karaoke lines in file ==
+
+Every karaoke line is visited and processed by every non-''once'' template.
+
+: What is a ''karaoke line''?
+
+: When is a template executed?
+
+== Old mid-level description ==
 
 <pre>Main kara-templater process:
 1. Collect header
