@@ -21,7 +21,7 @@ All Automation scripts also present themselves in Aegisub in one way or another.
 
 == Automation for programmers ==
 
-Automation offers several scripting languages that can be used. The main "featured" language is [http://www.lua.org Lua 5.1] but also [http://www.ruby-lang.org/ Ruby] is available.
+Automation offers several scripting languages that can be used. The main "featured" language is [http://www.lua.org Lua 5.1] but [http://www.perl.org/ Perl] and [http://www.ruby-lang.org/ Ruby] engines are also available.
 
 Other languages have also been proposed but haven't been implemented yet: Perl, JavaScript, Python and perhaps support for native dynamic library code (DLL's, so's, dylib's.)
 
