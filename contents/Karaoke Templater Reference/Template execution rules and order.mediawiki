@@ -1,5 +1,7 @@
 This page describes various technical details about how Karaoke Templater (''kara-templater'') works and will try to explain why various things work as they do and why some things can't and won't work.
 
+Most of this is technical details you don't need to know to use kara-templater, but if you see some behaviour you don't understand this page might explain it.
+
 == Concepts ==
 
 These are some terms and concepts used throughout the description. The names are close to or the same as those used in the actual script.
