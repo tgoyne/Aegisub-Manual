@@ -1,106 +1,74 @@
-{{todo|Wikify this}}
+There functions are used to report various status and progress back to the GUI while a script is running.
 
-<pre>Automation 4 Progress Reporting and Debugging interface
+== Progress reporting ==
 
-This document describes the functions used for reporting progress and
-outputting debug information during the running of a script.
+A progress dialogue box is always shown when an Automation 4 Lua script is running. You can use these functions to control what is displayed in it.
 
----
+=== aegisub.progress.set ===
 
-Showing/hiding the progress dialog
+Synopsis: <code>aegisub.progress.set(percent)</code>
 
-This function has been removed. A progress dialog is always shown.
+Set the position of the percent-done bar in the progress window.
 
----
+* '''percent''' (number) - Number from 0 to 100.
 
-Setting the progress bar position
+=== aegisub.progress.task ===
 
-function aegisub.progress.set(precent)
+Synopsis: <code>aegisub.progress.task(msg, ...)</code>
 
-@percent (number)
-  The percentage completed.
+Set the "task" text in the progress window, this is the small text below the progress bar showing what the script is currently doing.
 
-Returns: nothing.
+* '''msg''' (string) - A format string specifying the message, see the Lua standard string library <code>string.format</code> function for details on format strings.
+* '''...''' - Parameters to the format string.
 
----
+=== aegisub.progress.title ===
 
-Showing the current task
+Synopsis: <code>aegisub.progress.title(title, ...)</code>
 
-Used to set a message describing the current task being done.
+Set the title of the progress window, this is the large text displayed above the progress bar. This text should usually not changing while the script is running. By default this is set to the name of the feature running, eg. the name of the macro (menu item text) if it's a macro.
 
-function aegisub.progress.task(msg, ...)
+* '''title''' (string) - A format string specifying the title, see the Lua standard string library <code>string.format</code> function for details on format strings.
+* '''...''' - Parameters to the format string.
 
-@msg (string)
-  A format string used for the message.
+=== aegisub.progress.is_cancelled ===
 
-@...
-  Parameters to the format string.
+Synopsis: <code>cancelled = aegisub.progress.is_cancelled()</code>
 
-Returns: nothing.
+Tells whether the user has clicked on the Cancel button.
 
----
+You should call this function regularly during long operations, and stop the execution of your script as quickly as possible. If you're a macro you should either roll back all changes you have made if possible, or [[Automation 4 Lua Subtitle file interface#Creating an undo point|set an undo point]] so the user can undo the changes made by the script.
 
-Setting the progress dialog title
+* '''cancelled''' (bool) - <code>false</code> if the user has not clicked the Cancel button, <code>true</code> if the user has clicked Cancel. If <code>is_cancelled</code> returns <code>true</code> all subsequent calls to it in the current execution will also return <code>true</code>.
 
-function aegisub.progress.title(title, ...)
+== Debug output ==
 
-The default title for the progress dialog is the name of the current Feature
-being executed.
+The primary support for script debugging in Automation 4 Lua is through sending debug messages to the message log integrated in the progress window.
 
-@title (string)
-  A format string used for the title.
+If a script shows a debug or other message, the progress window stays open after the script has finished running, until the user clicks the Close button. Please consider whether it's really that important that the user sees your messages, blocking other input to the program to display something that might be irrelevant to the user can create a bad experience.
 
-@...
-  Parameters to the format string.
+=== aegisub.debug.out ===
 
-Returns: nothing.
+Synopsis:
+* <code>aegisub.debug.out(msg, ...)</code>
+* <code>aegisub.debug.out(level, msg, ...)</code>
+* <code>aegisub.log(msg, ...)</code>
+* <code>aegisub.log(level, msg, ...)</code>
 
----
+The two names are synonymous, you can use either name depending on your preference.
 
-Getting the "cancelled" status
+Sends a message to the message log, optionally with a specific severity level. The user can control in Aegisub's options the highest level messages that will be shown.
 
-Call this function to determine whether the Cancel button in the progress
-dialog has been clicked.
+* '''level''' (number) - Severity level of the message. This parameter is optional, if you leave it out (by entirely skipping it) the message will always be shown.
+* '''msg'' (string) - A format string specifying the message, see the Lua standard string library <code>string.format</code> function for details on format strings.
+* '''...''' - Parameters to the format string.
 
-function aegisub.progress.is_cancelled()
+The following severity levels are suggested:
 
-Returns: Boolean. True is the user has clicked the Cancel button, false if it
-  has not been clicked.
-
----
-
-Outputting text to the debug log
-
-function aegisub.log([level,] msg, ...)
-function aegisub.debug.out([level,] msg, ...)
-
-These two functions are synonyms.
-aegisub.log is preferred since its name is shorter and more general.
-
-@level (number)
-  Integer describing the verbosity of this message. Here are some suggested
-  values you can use:
-    0: Fatal, this is really an error that can't be ignored. (Note that the
-       script execution is NOT automatically stopped because of this.)
-    1: Error, this kind of error can be recovered from, but might result in a
-       fatal error later on.
-    2: Warning, something might be going wrong.
-    3: Hint, something isn't entirely sane, but nothing wrong.
-    4: Debug, some additional data only needed for development.
-    5: Trace, extremely verbose data showing every tiny step during execution.
-  The level can be used to let the user limit how severe messages will be
-  shown, so you eg. can leave trace messages in, yet the casual user of the
-  script won't see them unless he explicitly enables it.
-  This argument is optional and can be left out, in which case the message
-  will always be displayed, regardless of the current trace level set in
-  Aegisub. You SHOULD however always include this argument.
-
-@msg (string)
-  A format string used for the message.
-
-@...
-  Parameters for the format string.
-
-Returns: nothing.</pre>
+* 0 "fatal" - Something really bad happened and the script can't continue. Level 0 messages are always shown. Note that Aegisub won't terminate your script because you display a level 0 message, you will still have to do that yourself.
+* 1 "error" - A real error occurred so the user should expect something to have gone wrong even though you tried to recover. A fatal error might happen later.
+* 2 "warning" - It looks like something is wrong and the user ought to know because it might mean something needs to be fixed.
+* 3 "hint" - A tip or otherwise on how the user can improve things, or hints that something might cause a warning or error later on.
+* 4 "debug" - Information meant to help fix errors in the script, such as dumps of variable contents.
+* 5 "trace" - Extremely verbose information about what the script is doing, literally a message for each single step done with lots of variable dumps.
 
 [[Category:Lua Reference|Progress reporting]]
