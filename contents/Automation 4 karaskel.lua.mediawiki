@@ -236,8 +236,7 @@ Basic fields, defined by <code>aegisub.parse_karaoke_data</code>:
 Additions by <code>karaskel.preproc_line_text</code>:
 * <code>syl.kdur</code> - Syllable duration in centiseconds, suitable for use in <tt>\k</tt> tags.
 * <code>syl.line</code> - Back reference to the line table containing this syllable.
-* <code>syl.inline_fx</code> - Name of the ''inline_fx'' for this syllable.
-{{todo|link to page about inline_fx?}}
+* <code>syl.inline_fx</code> - Name of the [[Karaoke inline-fx|''inline-fx'']] for this syllable.
 * <code>syl.i</code> - Index number of this syllable.
 * <code>syl.prespace</code>, <code>syl.postspace</code> - Space characaters at the start/end of the syllable. Always blank for furigana. These are spaces included in <code>syl.text_stripped</code>. You will usually never need this.
 * <code>syl.text_spacestripped</code> - Syllable text stripped for tags and trimmed of spaces at the start and end. This, <code>syl.prespace</code> and <code>syl.postspace</code> together can produce the same as <code>syl.text_stripped</code>. You will usually never need this.
