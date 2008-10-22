@@ -177,6 +177,12 @@ While this will work on code lines, it is generally not useful, see the discussi
 
 {{todo|example}}
 
+=== noblank ===
+
+Specify that the template will not be applied to syllables considered "blank". A syllable is considered blank if its tag-stripped text consists only of a combination of ASCII whitespace characters and ideographic fullwidth space characters, or is completely empty. A syllable is also considered empty if its duration is zero.
+
+:''See the ''notext'' modifier below for an example.''
+
 === notext ===
 
 Specify that the original text will not be appended to the output line.
@@ -185,14 +191,14 @@ This is intended for use primarily with templates that output drawing tags and s
 
 Not applicable for code lines.
 
-{{todo|example}}
+{{Examplebox|
+ code once: sword_shape &#x3D; "m 0 0 l 5 -5 l 5 -30 l 10 -30 l 10 -32 l 2 -32 l 2 -40 l -2 -40 l -2 -32 l -10 -32 l -10 -30 l -5 -30 l -5 -5 "
+ template syl notext noblank: {\an5\move($scenter,!$smiddle-30!,$scenter,$smiddle,!$start-20!,$start)\p2}!sword_shape!
 
-=== noblank ===
+The first code line defines a vector drawing shape for convenience, so it doesn't clutter up the actual template lines later on. The drawing is of a small simple sword pointing downwards. The effect itself is these small swords dropping down onto the syllables, by a move.
 
-Specify that the template will not be applied to syllables considered "blank". A syllable is considered blank if its tag-stripped text consists only of a combination of ASCII whitespace characters and ideographic fullwidth space characters, or is completely empty. A syllable is also considered empty if its duration is zero.
-
-{{todo|example}}
-
+The template uses the ''notext'' modifier to avoid getting the original syllable text shown, because it's being replaced with a vector drawing here. Also the ''noblank'' modifier is used to avoid producing anything for "invisible" syllables, eg. we don't want a sword dropping down on a lone timed space, that just looks dumb.
+}}
 === repeat ''n'', loop ''n'' ===
 
 Specify that the template will be applied the given number of times. Specifying the number of loops is required. The number of loops must be a constant integer number, it can not be a variable or otherwise calculated dynamically.
