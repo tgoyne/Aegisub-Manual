@@ -45,11 +45,66 @@ All templates in the ''once'' class are executed first. Nothing truly exciting h
 
 == Iterate through karaoke lines in file ==
 
-Every karaoke line is visited and processed by every non-''once'' template.
+Every non-template line in the file is now run through and has all templates attempted applied in order.
 
-: What is a ''karaoke line''?
+* If a line is a comment and its Effect field doesn't contain <tt>Karaoke</tt> it is skipped immediately.
+* If a line is not a comment and its Effect field contains anything else that <tt>Karaoke</tt> or nothing (is blank) it is skipped immediately.
+* Kara-templater attempts to match all templates against all other lines.
 
-: When is a template executed?
+Each line that hasn't been rejected by the above points is now run through all templates in three steps.
+
+First, all ''line'' class templates are attempted matched against the line and then run on the line. See below for a definition of when a template matches a line.
+
+Next, all syllables on the line are run through in order and for each, all ''syl'' class templates are attempted matched against the line and then run on the syllable.
+
+Finally, all furigana syllables on the line are run through in order, for each every ''furi'' class template is attempted matched against the line and then run on the furigana syllable.
+
+It is important to note that the syllables and furigana syllables looped through are the parsed-stored syllables, not multi-highlight virtual syllables, not per-character virtual syllables and not a combination.
+
+{{Examplebox|
+Assume there are three ''syl'' class templates: A, B and C.
+* A is a regular template with neither ''multi'' nor ''char'' modifier.
+* B has the ''multi'' modifier but not ''char''.
+* C has both the ''char'' and ''multi'' modifiers.
+
+Now these templates are applied against a line with 2 syllables. This happens in order:
+
+* Syllable 1 is picked.
+** Template A is matched against the line. It matches.
+*** Template A is applied on syllable 1.
+** Template B is matched against the line. It matches.
+*** Syllable 1 is split into multi-highlight pseudo-sylables 1.1 and 1.2
+*** Template B is applied on pseudo-syllable 1.1.
+*** Template B is applied on pseudo-syllable 1.2.
+** Template C is matched against the line. It matches.
+*** Syllable 1 is split into per-character pseudo-syllables 1.a and 1.b
+*** Syllable 1.a and 1.b are further split into per-character pseudo-sylables 1.a1, 1.a2, 1.b1 and 1.b2.
+*** Template C is applied on pseudo-syllable 1.a1.
+*** Template C is applied on pseudo-syllable 1.a2.
+*** Template C is applied on pseudo-syllable 1.b1.
+*** Template C is applied on pseudo-syllable 1.b2.
+* Syllable 2 is picked.
+** Processing proceeds similar to syllable 1.
+
+Also see later down for more details on multi-highlight and per-character pseudo-syllables.
+}}
+
+If any template matches at any time during the three steps above the (original) line is marked as "timed karaoke" and is then made into a comment with <tt>karaoke</tt> in the Effect field.
+
+=== Matching a template against a line ===
+
+Templates are always matched against a line, not against a syllable or otherwise.
+
+* If the template has the ''fxgroup'' modifier and the fxgroup named is disabled, the template never matches anything.
+* If the template has the ''all'' modifier it always matches any line.
+* If the template has the same Style as a line, it matches the line.
+* Otherwise the template does not match the line.
+
+== Applying ''line'' class templates ==
+{{Todo| write this}}
+
+== Applying ''syl'' and ''furi'' class templates ==
+{{Todo| write this}}
 
 == Old mid-level description ==
 
