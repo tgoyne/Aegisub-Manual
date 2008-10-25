@@ -1,5 +1,32 @@
 {{Todo|Put something interesting about this. There's already something on the dev wiki...}}
 
+''Furigana'' (in Aegisub often shortened to ''furi'') refers to little phonetic guide characters written along the main text in Japanese, specifically using the hiragana phonetic alphabet to describe how the ideographic kanji characters should be pronounced. Putting smaller text next to a main line of text is in general referred to as ''ruby text'', but since the implementation discussed here is designed specifically with Japanese furigana in mind, the ruby text is also referred to as furigana everywhere.
+
+None of the subtitle formats Aegisub supports, natively support ruby text or furigana, however the [[Automation 4 karaskel.lua]] standard include implements an algorithm that can create basic furigana layouts by calculating the position of every individual character.
+
+This page describes the syntax the Automation 4 karaskel.lua script understands for furigana text, and how to use the layout information it calculates to actually create positioned characters.
+
+[[Karaoke Templater]] also implements support for furigana using the karaskel.lua algorithm and syntax.
+
+It's important to note that the syntax is designed for karaoke, and revolves around [[Karaoke timing|karaoke timed]] text.
+
+== Multi-highlight syntax ==
+
+Along with the furigana syntax comes the ''multi-highlight'' syntax, which is a way to signal that a single piece of text covers multiple karaoke syllables but can't be broken further down. By using the multi-highlight syntax you can give the same piece of text multiple consecutive highlights.
+
+The most common use of this is kanji characters that cover multiple syllables, but you might also think of other, innovative uses.
+
+{{todo|do it}}
+
+== Basic furigana ==
+
+{{todo|you add furigana by putting a pipe and the furi at the end of a syllable}}
+
+== Controlling the layout ==
+
+{{todo|layout is usually automatic and takes some guesses, but when two separate furi'ed sequences touch, or when they just get too close, you might need to control the layout}}
+
+== Examples ==
 {{Examplebox|
 Here's a quick sample for kara-templater that does furigana.
 Try it out with Default being MS PGothic size 30.
