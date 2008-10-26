@@ -12,12 +12,32 @@ It's important to note that the syntax is designed for karaoke, and revolves aro
 
 == Multi-highlight syntax ==
 
-Along with the furigana syntax comes the ''multi-highlight'' syntax, which is a way to signal that a single piece of text covers multiple karaoke syllables but can't be broken further down. By using the multi-highlight syntax you can give the same piece of text multiple consecutive highlights.
+A prerequisite for an integral part of the furigana syntax is the multi-highlight syntax.
 
-The most common use of this is kanji characters that cover multiple syllables, but you might also think of other, innovative uses.
+If you make the text of a syllable a number sign (#, ASCII 35, Unicode U+0023) that syllable will "join" with the previous one: The number sign is removed and the timing of the two syllables are added together, producing just one syllable. You can have multiple number sign syllables in a row, adding up multiple timings in that way.
 
-{{todo|do it}}
+The timings of the individual number sign syllables are still stored in the [[Automation 4 karaskel.lua#Highlight table|highlight table]] of the generated syllable structure, but the main timing (<code>start_time</code> and <code>end_time</code>) of the syllable structure reflects only the added-together timings of the number sign syllables.
 
+{{Examplebox|1=
+This line shows how multi-highlight syntax is used to mark up kanji and groups of kanji that cover multiple syllables:
+
+ {\k5}明日{\k10}#{\k5}#{\k10}ま{\k7}だ{\k10}会{\k4}う{\k6}時{\k14}#
+
+It generates the following syllable structures:
+
+<table border="1" cellpadding="3" cellspacing="0" style="border:gray solid 1px; border-collapse:collapse; text-align:left;">
+<tr><th>Text</th><th>Syllable duration</th><th>Highlight durations</th></tr>
+<tr><td rowspan="3">明日</td><td rowspan="3">20</td><td>5</td></tr>
+<tr><td>10</td></tr>
+<tr><td>5</td></tr>
+<tr><td>ま</td><td>10</td><td>10</td></tr>
+<tr><td>だ</td><td>7</td><td>7</td></tr>
+<tr><td>会</td><td>10</td><td>10</td></tr>
+<tr><td>う</td><td>4</td><td>4</td></tr>
+<tr><td rowspan="2">時</td><td rowspan="2">20</td><td>6</td></tr>
+<tr><td>14</td></tr>
+</table>
+}}
 == Basic furigana ==
 
 {{todo|you add furigana by putting a pipe and the furi at the end of a syllable}}
