@@ -8,7 +8,7 @@ This page describes the syntax the Automation 4 karaskel.lua script understands 
 
 [[Karaoke Templater]] also implements support for furigana using the karaskel.lua algorithm and syntax.
 
-It's important to note that the syntax is designed for karaoke, and revolves around [[Karaoke timing|karaoke timed]] text.
+It's important to note that the syntax is designed for karaoke, and revolves around [[Karaoke timing|karaoke timed]] text. It isn't suited for typesetting regular text (eg. dialogue lines) with general purpose ruby text, a more elaborate syntax and more complex layout engine would be required for that.
 
 == Multi-highlight syntax ==
 
