@@ -21,7 +21,7 @@ The timings of the individual number sign syllables are still stored in the [[Au
 {{Examplebox|1=
 This line shows how multi-highlight syntax is used to mark up kanji and groups of kanji that cover multiple syllables:
 
- {\k5}明日<u>{\k10}#{\k5}#</u>{\k10}ま{\k7}だ{\k10}会{\k4}う{\k6}時<u>{\k14}#</u>
+ {\k5}明日<u>{\k10}#{\k5}#</u>{\k10}ま{\k7}た{\k10}会{\k4}う{\k6}時<u>{\k14}#</u>
 
 It generates the following syllable structures:
 
@@ -31,18 +31,39 @@ It generates the following syllable structures:
 <tr><td>10</td></tr>
 <tr><td>5</td></tr>
 <tr><td>ま</td><td>10</td><td>10</td></tr>
-<tr><td>だ</td><td>7</td><td>7</td></tr>
+<tr><td>た</td><td>7</td><td>7</td></tr>
 <tr><td>会</td><td>10</td><td>10</td></tr>
 <tr><td>う</td><td>4</td><td>4</td></tr>
 <tr><td rowspan="2">時</td><td rowspan="2">20</td><td>6</td></tr>
 <tr><td>14</td></tr>
 </table>
 }}
-
 == Basic furigana ==
 
-{{todo|you add furigana by putting a pipe and the furi at the end of a syllable}}
+To add furigana to a syllable, you add a pipe character (|, ASCII 124, Unicode U+007C) after the main syllable text, and then add the furigana text after the pipe. You can also add furigana to repeat-syllables (number sign syllables for multi-highlight) to have the furigana for a single main syllable span multiple furigana syllables.
 
+When multiple consecutive syllables all have furigana, the furigana for all of those syllables are collected together and centered above the string of main syllables they belong to. If the string of furigana is wider than the main text the furigana is left-aligned with the main text. You can control this behaviour with special control characters, see below.
+
+{{Examplebox|1=
+Adding furigana to the example above:
+
+ {\k5}明日&#124;あ{\k10}#&#124;し{\k5}#&#124;た{\k10}ま{\k7}た{\k10}会&#124;あ{\k4}う{\k6}時&#124;と{\k14}#&#124;き
+
+The following syllables, highlights and furigana are produced:
+
+<table border="1" cellpadding="3" cellspacing="0" style="border:gray solid 1px; border-collapse:collapse; text-align:left;">
+<tr><th>Text</th><th>Syllable duration</th><th>Highlight/furigana durations</th><th>Furigana</th></tr>
+<tr><td rowspan="3">明日</td><td rowspan="3">20</td><td>5</td><td>あ</td></tr>
+<tr><td>10</td><td>し</td></tr>
+<tr><td>5</td><td>た</td></tr>
+<tr><td>ま</td><td>10</td><td>10</td></tr>
+<tr><td>た</td><td>7</td><td>7</td></tr>
+<tr><td>会</td><td>10</td><td>10</td><td>あ</td></tr>
+<tr><td>う</td><td>4</td><td>4</td></tr>
+<tr><td rowspan="2">時</td><td rowspan="2">20</td><td>6</td><td>と</td></tr>
+<tr><td>14</td><td>き</td></tr>
+</table>
+}}
 == Controlling the layout ==
 
 {{todo|layout is usually automatic and takes some guesses, but when two separate furi'ed sequences touch, or when they just get too close, you might need to control the layout}}
