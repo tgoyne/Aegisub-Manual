@@ -21,7 +21,7 @@ The timings of the individual number sign syllables are still stored in the [[Au
 {{Examplebox|1=
 This line shows how multi-highlight syntax is used to mark up kanji and groups of kanji that cover multiple syllables:
 
- {\k5}明日{\k10}#{\k5}#{\k10}ま{\k7}だ{\k10}会{\k4}う{\k6}時{\k14}#
+ {\k5}明日<u>{\k10}#{\k5}#</u>{\k10}ま{\k7}だ{\k10}会{\k4}う{\k6}時<u>{\k14}#</u>
 
 It generates the following syllable structures:
 
@@ -38,6 +38,7 @@ It generates the following syllable structures:
 <tr><td>14</td></tr>
 </table>
 }}
+
 == Basic furigana ==
 
 {{todo|you add furigana by putting a pipe and the furi at the end of a syllable}}
