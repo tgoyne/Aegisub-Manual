@@ -47,7 +47,7 @@ When multiple consecutive syllables all have furigana, the furigana for all of t
 {{Examplebox|1=
 Adding furigana to the example above:
 
- {\k5}明日&#124;あ{\k10}#&#124;し{\k5}#&#124;た{\k10}ま{\k7}た{\k10}会&#124;あ{\k4}う{\k6}時&#124;と{\k14}#&#124;き
+ {\k5}明日<u>&#124;あ</u>{\k10}#<u>&#124;し</u>{\k5}#<u>&#124;た</u>{\k10}ま{\k7}た{\k10}会<u>&#124;あ</u>{\k4}う{\k6}時<u>&#124;と</u>{\k14}#<u>&#124;き</u>
 
 The following syllables, highlights and furigana are produced:
 
@@ -64,6 +64,7 @@ The following syllables, highlights and furigana are produced:
 <tr><td>14</td><td>き</td></tr>
 </table>
 }}
+
 == Controlling the layout ==
 
 {{todo|layout is usually automatic and takes some guesses, but when two separate furi'ed sequences touch, or when they just get too close, you might need to control the layout}}
