@@ -221,3 +221,5 @@ The ''loop'' modifier is used to created 4 copies of the syllable for each time 
 The starting alpha for each copy, <code>&Hc0</code> is chosen as 256 - (256 / 4), 4 being the number of loops made. This way, the opacity for each copy adds up to exactly 256. (Technically it should be 255, but that can't be achieved with an even number of loops.)
 }}
 :''Also see the examples on the [[Karaoke Templater Reference: Code execution environment#Looping templates|Code execution environment]] page for more advanced usage.''
+
+{{Automation navbox}}
