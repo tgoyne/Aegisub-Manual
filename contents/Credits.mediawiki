@@ -43,12 +43,13 @@
 
 ===Hosting===
 *Current:
-**[[Image:Flag_of_Germany.gif|24px]] '''David Lamparter''' (equinox): SVN repository for version 2.00+
+**'''DeathWolf''': SVN repository for versions 2.1.2+
 **[[Image:Flag_of_Denmark.gif|24px]] '''Sigurd Tao Lyngse''' (Bot1): Forums and Main Wiki
 **[[Image:Flag_of_Denmark.gif|24px]] '''Niels Martin Hansen''' (jfs): Bug Tracker
 **[[Image:Flag_of_United-States.gif|24px]] '''Marcello Bastéa-Forte''': Documentation Wiki
 **[[Image:Flag_of_Brazil.gif|24px]] '''Rodrigo Braz Monteiro''' (ArchMage ZeratuL): Domain administration
 *Previous:
+**[[Image:Flag_of_Germany.gif|24px]] '''David Lamparter''' (equinox): SVN repository for versions 2.00 - 2.1.2
 **[[Image:Flag_of_Germany.gif|24px]] BerliOS: SVN repository for version 1.10
 **[[Image:Flag_of_Germany.gif|24px]] Mentar: SVN repository up to version 1.09
 **[[Image:Flag_of_Denmark.gif|24px]] Bot1: Bug Tracker
