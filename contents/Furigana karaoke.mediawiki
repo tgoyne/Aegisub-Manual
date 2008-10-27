@@ -115,7 +115,7 @@ It ''is'' very hard to tell the difference between the two first and the differe
 <tr><td>&lt;</td><td>60</td><td>U+003C<br>U+FF1C</td><td>First character of furigana</td><td style="text-align:left;">Sequence break with float-left; prevent joining furigana for this syllable with furigana from previous syllable, but allow furigana to extend left of main text</td></tr>
 </table>
 
-Note that every special character can be represented by two different Unicode codepoints. The first is the regular character, corresponding to the ASCII character, while the second (high) codepoint is the ''full width'' version of the character. Often when using an IME (Input Method Editor) to edit Japanese text it is easier to input text in full width mode than switching the IME off to enter a single or two regular ASCII characters and switch it on again. Therefore both the half width (ASCII) and full width versions of the characters are accepted.
+Note that every special character can in fact be represented by two different Unicode codepoints. The first is the regular character, corresponding to the ASCII character, while the second (high) codepoint is the ''full width'' version of the character. Often when using an IME (Input Method Editor) to edit Japanese text it is easier to input text in full width mode than switching the IME off to enter a single or two regular ASCII characters and switch it on again. Therefore both the half width (ASCII) and full width versions of the characters are accepted.
 
 == Furigana and multi-highlight in Karaoke Templater ==
 
