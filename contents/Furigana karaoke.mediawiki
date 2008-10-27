@@ -64,27 +64,61 @@ The following syllables, highlights and furigana are produced:
 <tr><td>14</td><td>き</td></tr>
 </table>
 }}
-
 == Controlling the layout ==
 
-{{todo|layout is usually automatic and takes some guesses, but when two separate furi'ed sequences touch, or when they just get too close, you might need to control the layout}}
+Often the layout produced with the plain furigana syntax isn't exactly what you want, or maybe even plain misleading. Because of this, there's two special characters that can be used to control how the furigana are laid out.
 
-== Examples ==
-{{Examplebox|
-Here's a quick sample for kara-templater that does furigana.
-Try it out with Default being MS PGothic size 30.
+Both of these two special characters are placed before the first character of the furigana of a syllable, ie. right after the pipe character.
 
-<pre>Comment: 0,0:00:00.00,0:00:00.00,Default,,0000,0000,0000,template syl,{\pos(!line.left+syl.center!,!line.middle!)\an5\k!syl.start_time/10!\k$kdur}
-Comment: 0,0:00:00.00,0:00:00.00,Default,,0000,0000,0000,template furi,{\pos(!line.left+syl.center!,!line.middle-line.height!)\an5\k!syl.start_time/10!\k$kdur}
-Comment: 0,0:00:00.00,0:00:02.00,Default,,0000,0000,0000,karaoke,{\k15}二|ふ{\k15}#|た{\k10}人|り{\k15}だ{\k57}け{\k5}の{\k6}地|ほ{\k5}球|し{\k8}で
-Comment: 0,0:00:02.00,0:00:04.00,Default,,0000,0000,0000,karaoke,{\k10}中|ちゅ{\k10}#|う{\k10}国|ご{\k10}#|く{\k10}魂|<た{\k10}#|ま{\k10}#|し{\k10}#|い
-Comment: 0,0:00:04.00,0:00:06.00,Default,,0000,0000,0000,karaoke,{\k10}中|ちゅ{\k10}#|う{\k10}国|ご{\k10}#|く{\k10}魂|!た{\k10}#|ま{\k10}#|し{\k10}#|い</pre>
+First is the exclamation mark (!, ASCII 33, Unicode U+0021) which marks a "sequence break". This acts as a kind of invisible divider that prevents the furigana in this syllable to merge with that of the previous syllable. You will usually use this when you have two adjacent kanji words that both have furigana, but the furigana for them need to be separate. In that case, put the exclamation mark as the first character in the furigana for the first syllable of the second word.
 
-Using MS PGothic 30 pt, 15 pt for the furigana, the three lines render like this:
+The other special character is the less-than sign (&lt;, ASCII 60, Unicode U+003C) which marks a "sequence break with float-left". It has the same sequence break semantics as the exclamation mark, but also changes the overflow behaviour. When the furigana sequence starts with a less-than sign marked furigana syllable is wider than the main text it applies to, it will always center above the main text, even if it means it has to extend over the left edge of it.
 
-[[Image:Furigana-demo-1.png]]
+In all cases, if two furigana sequences extend beyound their main text such that they would overlap, the main text is moved such that the furigana won't overlap.
 
-[[Image:Furigana-demo-2.png]]
+{{Examplebox|1=
+Here is the same (rather contrived) sample text shown without layout control and with each of the two layout control characters:
 
+<table>
+<tr><td>
+[[Image:Furigana-demo-4.png]]
+</td><td>
+<tt>{\k10}中&#124;ちゅ{\k10}#&#124;う{\k10}国&#124;ご{\k10}#&#124;く<br>{\k10}<u>魂&#124;た</u>{\k10}#&#124;ま{\k10}#&#124;し{\k10}#&#124;い</tt>
+</td></tr>
+<tr><td>
 [[Image:Furigana-demo-3.png]]
+</td><td>
+<tt>{\k10}中&#124;ちゅ{\k10}#&#124;う{\k10}国&#124;ご{\k10}#&#124;く<br>{\k10}<u>魂&#124;!た</u>{\k10}#&#124;ま{\k10}#&#124;し{\k10}#&#124;い</tt>
+</td></tr>
+<tr><td>
+[[Image:Furigana-demo-2.png]]
+</td><td>
+<tt>{\k10}中&#124;ちゅ{\k10}#&#124;う{\k10}国&#124;ご{\k10}#&#124;く<br>{\k10}<u>魂&#124;&lt;た</u>{\k10}#&#124;ま{\k10}#&#124;し{\k10}#&#124;い</tt>
+</td></tr>
+</table>
+
+It ''is'' very hard to tell the difference between the two first and the difference is indeed only a few pixels, however it is there. In the first sample, the た extends a bit over the left edge of 魂 and above 国 while it exactly left-aligns with 魂 in the second. In the second, ちゅうごく is also centered above 中国 while it isn't in the first.
 }}
+== Summary ==
+
+<table border="1" cellpadding="3" cellspacing="0" style="border:gray solid 1px; border-collapse:collapse; text-align:center;">
+<tr>
+<th>Char</th>
+<th>ASCII</th>
+<th>Unicode</th>
+<th>Where</th>
+<th>Meaning</th>
+</tr>
+<tr><td>#</td><td>35</td><td>U+0023<br>U+FF03</td><td>Instead of main text</td><td style="text-align:left;">Extend previous syllable with another highlight</td></tr>
+<tr><td>&#124;</td><td>124</td><td>U+007C<br>U+FF5C</td><td>Between main text and furigana</td><td style="text-align:left;">Separate main text and furigana text of a syllable</td></tr>
+<tr><td>!</td><td>33</td><td>U+0021<br>U+FF01</td><td>First character of furigana</td><td style="text-align:left;">Sequence break; prevent joining furigana for this syllable with furigana from previous syllable</td></tr>
+<tr><td>&lt;</td><td>60</td><td>U+003C<br>U+FF1C</td><td>First character of furigana</td><td style="text-align:left;">Sequence break with float-left; prevent joining furigana for this syllable with furigana from previous syllable, but allow furigana to extend left of main text</td></tr>
+</table>
+
+Note that every special character can be represented by two different Unicode codepoints. The first is the regular character, corresponding to the ASCII character, while the second (high) codepoint is the ''full width'' version of the character. Often when using an IME (Input Method Editor) to edit Japanese text it is easier to input text in full width mode than switching the IME off to enter a single or two regular ASCII characters and switch it on again. Therefore both the half width (ASCII) and full width versions of the characters are accepted.
+
+== Furigana and multi-highlight in Karaoke Templater ==
+
+{{todo|write this}}
+== Usage in Automation 4 Lua ==
+{{Todo|write this too}}
