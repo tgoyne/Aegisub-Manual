@@ -67,4 +67,6 @@ There are 5 values that ''artype'' can take:
 
 You cannot count on ''ar'' always having the correct value when ''artype'' is different from 4.
 
+{{Automation navbox}}
+
 [[Category:Lua Reference|Miscellaneous APIs]]
