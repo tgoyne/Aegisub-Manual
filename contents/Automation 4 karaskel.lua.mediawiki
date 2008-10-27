@@ -12,7 +12,7 @@ Synopsis: <code>meta, styles = karaskel.collect_head(subtitles, generate_furigan
 Reads the subtitle file to collect all header information and style definitions, and optionally also generates new styles for furigana layouts.
 
 * <code>subtitles</code> is the Subtitle File object defined by Automation 4 Lua.
-* <code>generate_furigana</code> is a boolean, if it is true a style for furigana layout is generated for each style that does not have one already. Generation of furigana styles will never overwrite existing styles, create double style definitions or create meaningless furigana styles for other furigana styles.
+* <code>generate_furigana</code> is a boolean, if it is true a style for [[Furigana karaoke|furigana layout]] is generated for each style that does not have one already. Generation of furigana styles will never overwrite existing styles, create double style definitions or create meaningless furigana styles for other furigana styles.
 
 Calling <code>collect_head</code> is usually one of the first things you do in your processing function.
 
