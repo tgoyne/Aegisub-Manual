@@ -27,3 +27,5 @@ If you have used the ''multi-template'' script from Aegisub 1.10 you should reco
 * Instead of working with ''newline'' and ''line'' (for being-generated and original line) you now work with ''line'' and ''orgline'' for being-generated and original lines.
 * The ''retime'' function has been introduced to make it much easier to control the start and end times of your generated lines.
 * Lots of more fancy features. Check the tutorials or read the reference to learn about it all.
+
+{{Automation navbox}}
