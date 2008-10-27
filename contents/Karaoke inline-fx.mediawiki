@@ -90,3 +90,5 @@ Then later, in some per-syllable processing code:
 
 First, a table is created and filled with functions for applying the different effects. The keys used for the table are the names of the possible inline-fx. When the effect has to be applied, the right function is looked up in the effect table and then called.
 }}
+
+{{Automation navbox}}
