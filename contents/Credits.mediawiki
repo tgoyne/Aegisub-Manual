@@ -31,7 +31,7 @@
 **[[Image:Flag_of_United-States.gif|24px]] movax
 
 ===Manual===
-*2.00:
+*2.x:
 **[[Image:Flag_of_Sweden.gif|24px]] '''Karl Blomster''' (TheFluff)
 **[[Image:Flag_of_Denmark.gif|24px]] '''Niels Martin Hansen''' (jfs)
 **[[Image:Flag_of_Brazil.gif|24px]] '''Rodrigo Braz Monteiro''' (ArchMage ZeratuL)
