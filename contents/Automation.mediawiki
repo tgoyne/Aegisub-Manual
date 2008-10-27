@@ -23,7 +23,7 @@ All Automation scripts also present themselves in Aegisub in one way or another.
 
 Automation offers several scripting languages that can be used. The main "featured" language is [http://www.lua.org Lua 5.1] but [http://www.perl.org/ Perl] and [http://www.ruby-lang.org/ Ruby] engines are also available.
 
-Other languages have also been proposed but haven't been implemented yet: Perl, JavaScript, Python and perhaps support for native dynamic library code (DLL's, so's, dylib's.)
+Other languages have also been proposed but haven't been implemented yet: JavaScript, Python, Haskell and perhaps support for native dynamic library code (DLL's, so's, dylib's.)
 
 There is several example scripts included with Aegisub to give you a head start on writing your own ones. A word of warning: Unless you are an experienced programmer the ''kara-templater.lua'' script is a very bad place to start!
 
