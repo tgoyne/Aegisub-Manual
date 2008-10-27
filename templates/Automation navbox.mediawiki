@@ -1,0 +1,39 @@
+<div style="border-top: 2px solid #448; border-bottom: 1px solid #448; background: #f0f0ff; margin: 1em; padding: 0.5em;">
+<div style="text-align:center; font-weight:bold; background:#ddf;">[[Automation|Automation 4]]</div>
+<table style="width:100%; font-size: smaller;">
+<tr><th>Overview:</th><td style="text-align: center; background:#f8f8ff;">
+[[Automation Manager]]{{•}}
+[[Running Automation macros|Running macros]]{{•}}
+[[Exporting|Using export filters]]{{•}}
+[[Using the included macros|Standard macros]]{{•}}
+[[Overview of changes from Automation 3|Changes from Automation 3]]{{•}}
+[[Moving from Automation 3]]
+</td></tr>
+<tr><th>[[Karaoke Templater]] reference:</th><td style="text-align: center; background:#f8f8ff;">
+[[Karaoke Templater Reference: Declaring template and code lines|Declaring templates]]{{•}}
+[[Karaoke Templater Reference: Template execution rules and order|Execution order]]{{•}}
+[[Karaoke Templater Reference: Template modifiers|Modifiers]]{{•}}
+[[Karaoke Templater Reference: Inline variables|Inline-variables ($-variables)]]{{•}}
+[[Karaoke Templater Reference: Code lines and blocks|Code lines and blocks]]{{•}}
+[[Karaoke Templater Reference: Code execution environment|Execution envirionment]]
+</td></tr>
+<tr><th>[[Lua Reference|Lua]] reference:</th><td style="text-align: center; background:#f8f8ff;">
+[[Automation 4 Lua Registration|Registration]]{{•}}
+[[Automation 4 Lua Subtitle file interface|Subtitles object]]{{•}}
+[[Automation 4 Lua Progress reporting|Progress reporting]]{{•}}
+[[Automation 4 Lua Configuration dialogues|Config dialogues]]{{•}}
+[[Automation 4 Lua Miscellaneous APIs|Misc. APIs]]{{•}}
+[[Automation 4 karaskel.lua|karaskel.lua]]{{•}}
+[[Automation 4 utils.lua|utils.lua]]{{•}}
+[[Automation 4 unicode.lua|unicode.lua]]{{•}}
+[[Automation 4 cleantags.lua|cleantags.lua]]
+</td></tr>
+<tr><th>Karaskel concepts</th><td style="text-align: center; background:#f8f8ff;">
+[[Automation 4 karaskel.lua#Style table|Style tables]]{{•}}
+[[Automation 4 karaskel.lua#Dialogue line table|Dialogue line tables]]{{•}}
+[[Automation 4 karaskel.lua#Karaoke and furigana syllable tables|Syllable tables]]{{•}}
+[[Karaoke inline-fx|Inline effects]]{{•}}
+[[Furigana karaoke|Furigana]]
+</td></tr>
+</table>
+</div>
