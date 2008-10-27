@@ -28,7 +28,7 @@
 [[Automation 4 unicode.lua|unicode.lua]]{{•}}
 [[Automation 4 cleantags.lua|cleantags.lua]]
 </td></tr>
-<tr><th>Karaskel concepts</th><td style="text-align: center; background:#f8f8ff;">
+<tr><th>Karaskel concepts:</th><td style="text-align: center; background:#f8f8ff;">
 [[Automation 4 karaskel.lua#Style table|Style tables]]{{•}}
 [[Automation 4 karaskel.lua#Dialogue line table|Dialogue line tables]]{{•}}
 [[Automation 4 karaskel.lua#Karaoke and furigana syllable tables|Syllable tables]]{{•}}
