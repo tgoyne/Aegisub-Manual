@@ -253,3 +253,5 @@ Running a single template:
 
 
 {{todo|Turn this into something more reasonable?}}
+
+{{Automation navbox}}
