@@ -1,5 +1,3 @@
-''See also: https://spaceboyz.net/svn/aegisub/trunk/automation/v4-docs/basic-function-interface.txt ''
-
 '''Registration''' covers presenting your [[Lua Reference|Automation 4 Lua]] script to Aegisub, providing information about it and registering what ''features'' it provides.
 
 == Features explained ==
@@ -111,5 +109,6 @@ Export filter configuration panel providers passed to <code>[[#aegisub.register_
 
 '''Return value:''' A configuaration dialogue table, see the page on [[Automation 4 Lua Configuration dialogues|configuration dialogues]] for more information on the format of this table.
 
+{{Automation navbox}}
 
 [[Category:Lua Reference|Registration]]
