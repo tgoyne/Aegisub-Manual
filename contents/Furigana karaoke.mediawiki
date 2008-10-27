@@ -121,6 +121,11 @@ Note that every special character can in fact be represented by two different Un
 
 == Furigana and multi-highlight in Karaoke Templater ==
 
-{{todo|write this}}
+Furigana: [[Karaoke Templater Reference: Template modifiers#furi|The ''furi'' template class]]
+
+Multi-highlight:  [[Karaoke Templater Reference: Template modifiers#multi|The ''multi'' modifier]]
+
+{{todo|elaborate}}
+
 == Usage in Automation 4 Lua ==
 {{Todo|write this too}}
