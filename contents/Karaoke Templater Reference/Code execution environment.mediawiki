@@ -127,3 +127,5 @@ For "wee~~", the code line determines that its duration is longer than 200 ms, s
 
 Neither of the two templates will output anything for the zero'th syllable. The first template, because it has the "noblank" modifier, and the second because the zero'th syllable's duration is too short for the fxgroup to be enabled.
 }}
+
+{{Automation navbox}}
