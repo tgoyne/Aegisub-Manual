@@ -128,4 +128,15 @@ Multi-highlight:  [[Karaoke Templater Reference: Template modifiers#multi|The ''
 {{todo|elaborate}}
 
 == Usage in Automation 4 Lua ==
-{{Todo|write this too}}
+
+It's all in [[Automation 4 karaskel.lua|karaskel]].
+
+Furigana layout is automatically invoked by <code>karaskel.preproc_line_pos</code> if a furigana style exists for a line main style. The furigana style for a main style is a style with the same name, except <tt>-furigana</tt> appended to the name. Eg. the furigana style of <tt>Default</tt> is <tt>Default-furigana</tt>.
+
+Karaskel can generate automatic furigana styles if the <code>generate_furigana</code> argument (second) to the <code>karaskel.collect_head</code> function is <code>true</code>. Automatic furigana styles are identical to the main style they're based on, except the font size is halved.
+
+Furigana syllables are stored in <code>line.furi</code> and follows the same format as regular syllables. You have to remember setting the style of the lines you generate to the furigana style.
+
+Multi-highlights are always processed even when furigana layout isn't done. Multi-highlight data are stored in <code>syl.highlights</code>.
+
+{{Todo|more details}}
