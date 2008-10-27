@@ -23,7 +23,7 @@
 **[[Image:Flag_of_Netherlands.gif|24px]] '''Daniel Moscoviter''' (Mosc) - General patches
 
 ===Installer===
-*2.00:
+*2.x:
 **[[Image:Flag_of_Denmark.gif|24px]] '''Niels Martin Hansen''' (jfs)
 **[[Image:Flag_of_Sweden.gif|24px]] '''Fredrik Mellbin''' (Myrsloik)
 **[[Image:Flag_of_Brazil.gif|24px]] '''Rodrigo Braz Monteiro''' (ArchMage ZeratuL)
