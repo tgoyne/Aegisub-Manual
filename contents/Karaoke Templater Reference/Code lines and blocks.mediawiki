@@ -60,3 +60,5 @@ To create simple conditionals within code blocks you can use the <code>and</code
 If the syllable duration is longer than 100 ms the first sub-expression is true, and the code block returns <tt>"f"</tt>, otherwise the entire <code>and</code> expression is false, and the right-hand argument of the <code>or</code> expression is returned.
 
 In Lua, <code>and</code> binds stronger than <code>or</code> meaning that <code>and</code> expressions are evaluated first. In the above expression the effective grouping is like this: <code>((syl.duration > 100) and "f") or ""</code>
+
+{{Automation navbox}}
