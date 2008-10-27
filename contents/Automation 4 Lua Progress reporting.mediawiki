@@ -71,4 +71,6 @@ The following severity levels are suggested:
 * 4 "debug" - Information meant to help fix errors in the script, such as dumps of variable contents.
 * 5 "trace" - Extremely verbose information about what the script is doing, literally a message for each single step done with lots of variable dumps.
 
+{{Automation navbox}}
+
 [[Category:Lua Reference|Progress reporting]]
