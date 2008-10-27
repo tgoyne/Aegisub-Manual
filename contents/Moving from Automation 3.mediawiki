@@ -56,3 +56,5 @@ Since Automation 3 still works you might be tempted to continue using it. Here a
 But of course you shouldn't start rewriting all your existing scripts to Automation 4 unless you have a really good reason.
 
 If you decide to write scripts for Automation 4 Lua you can read the [[overview of changes from Automation 3]] page for a jumpstart.
+
+{{Automation navbox}}
