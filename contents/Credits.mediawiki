@@ -2,8 +2,8 @@
 
 ===Programming===
 *Main Programmers:
-**[[Image:Flag_of_Brazil.gif|24px]] '''Rodrigo Braz Monteiro''' (ArchMage ZeratuL) - Lead developer, general code, PRS library
-**[[Image:Flag_of_Denmark.gif|24px]] '''Niels Martin Hansen''' (jfs) - Automation, Lua automation, general code
+**[[Image:Flag_of_Brazil.gif|24px]] '''Rodrigo Braz Monteiro''' (ArchMage ZeratuL) - Lead developer, video system, audio system, subtitles I/O, tools, PRS library
+**[[Image:Flag_of_Denmark.gif|24px]] '''Niels Martin Hansen''' (jfs) - Automation, Lua automation, audio system, tools
 *Staff Contributors:
 **[[Image:Flag_of_Sweden.gif|24px]] '''Karl Blomster''' (TheFluff) - General code, FFmpegSource video provider, FFmpeg-related patches, Perl hacking
 **[[Image:Flag_of_Sweden.gif|24px]] '''Fredrik Mellbin''' (Myrsloik) - FFmpegSource and Avisynth-related code
