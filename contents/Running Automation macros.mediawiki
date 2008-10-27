@@ -7,3 +7,5 @@ The first option in the Automation menu, before the separator, always opens the 
 Below the separator is a list of all macros loaded. In the example above three macros are loaded. The first, [[Karaoke Templater]] is unavailable though, because the macro has determined it can't be run on the subtitles. In this case, because the subtitle file has no karaoke templates. Other macros might be unavailable for other reasons.
 
 To run a macro, just select it from the Automation menu. Some macros might ask you for more information, and some work only on the selected subtitle lines. Always remember to read the documentation that came with macros you downloaded from the Internet.
+
+{{Automation navbox}}
