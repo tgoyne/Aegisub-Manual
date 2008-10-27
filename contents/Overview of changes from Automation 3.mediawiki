@@ -37,3 +37,5 @@ The data structures used have also been changed to better support the more compl
 A new ''[[Automation 4 unicode.lua|unicode.lua]]'' include file has been introduced. This file provides a much more clean and usable interface for manipulating UTF-8 encoded text than the old <code>next_utf_char</code> and <code>utf_len</code> functions.
 
 Last but not least, the text layout algorithms used in karaskel have been improved a lot and now, among other things, support sub-pixel positioned text, proper handling of inter-syllable spaces and an advanced furigana layout algorithm. The furigana layout algorithm also produces data structures so similar to syllable structures you can in effect use exactly the same code to produce effects for both main syllables and furigana.
+
+{{Automation navbox}}
