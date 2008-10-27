@@ -186,4 +186,6 @@ Returns: Two values.
      The Dialog Result table corresponding to the values the user input in the
      dialog.</pre>
 
+{{Automation navbox}}
+
 [[Category:Lua Reference|Configuration dialogues]]
