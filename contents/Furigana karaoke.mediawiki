@@ -138,7 +138,7 @@ Comment: 0,0:00:06.00,0:00:08.00,Default,,0000,0000,0000,karaoke,{\k10}中|ち�
 The font used in MS PMincho 30 pt with the furigana being 15 pt.
 }}
 
-== Usage Lua scripts ==
+== Usage in Lua scripts ==
 
 It's all in [[Automation 4 karaskel.lua|karaskel]].
 
