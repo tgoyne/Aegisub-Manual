@@ -29,7 +29,7 @@ There are 6 buttons at the bottom of the Automation Manager window:
 
 If you're developing scripts you might find yourself returning to the Automation Manager often to reload your script. There are also faster ways to reload scripts though:
 
-* When the [[Exporting subtitles|Export]] dialog is opened all local scripts are reloaded. You can change this in the [[Automation options|Options]] dialog.
+* When the [[Exporting|Export]] dialog is opened all local scripts are reloaded. You can change this in the [[Automation options|Options]] dialog.
 * Hold the Ctrl key and click the Automation toolbar button to rescan the autoload folders.
 * Hold both the Ctrl and Shift keys and click the Automation toolbar button to reload all scripts, also rescanning the autoload folders.
 
