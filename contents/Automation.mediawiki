@@ -17,7 +17,7 @@ Aegisub comes with several Automation scripts already packaged and ready to use.
 
 Aegisub almost always has several Automation scripts loaded at a time. You can see what scripts are loaded, and load/unload more from the '''[[Automation Manager]]''' window.
 
-All Automation scripts also present themselves in Aegisub in one way or another. Some appear as [[Running Automation macros|macros in the Automation menu]] and others appear as [[Exporting subtitles|filters in the Export dialog]]. Some scripts even appear in both places.
+All Automation scripts also present themselves in Aegisub in one way or another. Some appear as [[Running Automation macros|macros in the Automation menu]] and others appear as [[Exporting|filters in the Export dialog]]. Some scripts even appear in both places.
 
 == Automation for programmers ==
 
