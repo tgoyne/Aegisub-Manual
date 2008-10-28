@@ -136,7 +136,7 @@ e.g.:
  \c&H2DD5F2&
 (gold)
 
-Aegisub has a [[Color Picker]] that can help you generate these hexadecimal numbers.
+Aegisub has a [[Colour Picker]] that can help you generate these hexadecimal numbers.
 
 ===\1c&H<bbggrr>& - Set primary color===
 Sets primary color. See [[#\c&H<bbggrr>& - Set primary color|\c]] for full description.
