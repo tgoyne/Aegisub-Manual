@@ -41,7 +41,7 @@ The <code>text_extents</code> function now uses the Automation 4 version of the 
 
 With the Apply button gone from the [[Automation Manager]] you might be wondering how to run Automation 3 scripts.
 
-You use them from the [[Exporting subtitles|Export dialog]]. (Automation 3 scripts have always first and foremost been export filters.) You do ''not'' have to go to the Automation Manager window every time to reload a script, nor do you have to use the old "self-include-reload" trick. All local Automation scripts are automatically reloaded whenever you open the Export dialog.
+You use them from the [[Exporting|Export dialog]]. (Automation 3 scripts have always first and foremost been export filters.) You do ''not'' have to go to the Automation Manager window every time to reload a script, nor do you have to use the old "self-include-reload" trick. All local Automation scripts are automatically reloaded whenever you open the Export dialog.
 
 == Why use Automation 4 instead? ==
 
