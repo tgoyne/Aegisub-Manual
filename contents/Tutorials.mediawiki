@@ -25,6 +25,6 @@ The following tutorials are available for Aegisub:
 
 == Text tutorials ==
 
-* [[Karaoke Timing Tutorial|Karaoke timing]] &mdash; Enter the words for a song and add time-codes to the words
+* [[Karaoke Timing Tutorial|Karaoke timing]] (work in progress) &mdash; Enter the words for a song and add time-codes to the words
 
-* [[Karaoke Templater]] &mdash; Easy way to add special effects to karaoke, ranging from the most basic effects to very advanced ones.
+* [[Karaoke Templater]] (incomplete) &mdash; Easy way to add special effects to karaoke, ranging from the most basic effects to very advanced ones.
