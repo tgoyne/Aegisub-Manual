@@ -1,0 +1,37 @@
+This tutorial will teach you how to load a song into Aegisub, how to enter the words for the song and how to add time-codes to the words to synchronise them with the song.
+
+You don't need to have used Aegisub before to follow this tutorial.
+
+== Before we begin ==
+
+There's a few things you need to have ready before starting:
+
+* The song itself. This can for example be as an MP3 file or inside a video. Aegisub can read the sound from video files, you don't need to create a separate sound file if the song is on a video.
+
+* The words for the song. It's easiest if you have them in a plain text file (.txt file) broken into verses and stanzas already.
+
+I am using an English song for demonstration here, but many of the more advanced functions in Aegisub are designed for use with songs in Japanese and other languages that often need transcription or transliteration into Latin script. I will show how to use those in a video tutorial.
+
+== Loading the song ==
+
+{{todo|here goes opening audio}}
+
+== Entering the words ==
+
+{{todo|here goes pasta}}
+
+== Rough timing, the lines first ==
+
+{{todo|here goes line timing}}
+
+== Fine timing, words and then syllables ==
+
+{{todo|k-timing here}}
+
+== Styling ==
+
+{{todo|a bit about styles, how basic karaoke looks, and the \kf and \ko effects}}
+
+== Wrapping up ==
+
+{{todo|mention the video tutorial again and point to other relevant topics}}
