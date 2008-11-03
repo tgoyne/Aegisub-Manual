@@ -14,7 +14,27 @@ I am using an English song for demonstration here, but many of the more advanced
 
 == Loading the song ==
 
-{{todo|here goes opening audio}}
+We'll start by creating a new file. You already have that if you have just started Aegisub.
+
+[[Image:Karatiming-1.png]]
+
+Now open your song. Select '''Open Audio''' from the '''Audio''' menu...
+
+[[Image:Karatiming-2.png]]
+
+...then select your song file.
+
+[[Image:Karatiming-3.png]]
+
+Aegisub will now spend a short while reading the audio file.
+
+[[Image:Karatiming-4.png]]
+
+When it's done, you should have a waveform display (the audio display) at the top of the Aegisub window. If you've used Aegisub before things might look a little different, it might be easier to follow the rest of this tutorial if you set things to look like on this picture.
+
+[[Image:Karatiming-5.png]]
+
+We'll look at how to use the audio display for timing in a moment, but first let's get the lyrics for the song loaded.
 
 == Entering the words ==
 
