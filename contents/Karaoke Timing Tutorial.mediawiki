@@ -42,7 +42,7 @@ Now, to get the text in, we could just start typing it in...
 
 [[Image:Karatiming-6.png]]
 
-'''But don't do that!''' You'll get much greater success if you have it all in a text file, copy it from there and paste it into Aegisub. (You can often also just copy-paste directly from your favourite lyrics website.)
+'''But don't do that!''' You'll get much bigger success if you have it all in a text file, copy it from there and paste it into Aegisub. (You can often also just copy-paste directly from your favourite lyrics website.)
 
 I have the lyrics in a text file, so I open that, select the text and copy it to the clipboard.
 
