@@ -38,7 +38,39 @@ We'll look at how to use the audio display for timing in a moment, but first let
 
 == Entering the words ==
 
-{{todo|here goes pasta}}
+Now, to get the text in, we could just start typing it in...
+
+[[Image:Karatiming-6.png]]
+
+'''But don't do that!''' It's much easier having it all in a text file, copying it and then pasting it into Aegisub. (You can often also just copy-paste directly from your favourite lyrics website.)
+
+I have the lyrics in a text file, so I open that, select the text and copy it to the clipboard.
+
+[[Image:Karatiming-7.png]]
+
+Now things get a little complicated, but don't worry, it really isn't hard :-)
+
+There are two different places you can paste into Aegisub: The subtitles grid and the subtitles edit box. When you paste into the subtitles grid, you create new lines in the subtitle file. When you paste into the subtitles edit box you change the currently selected subtitle line.
+
+We want to make sure we paste into the subtitles grid, so click once inside the grid area (at the bottom of the window) to set the input focus to that.
+
+[[Image:Karatiming-8.png]]
+
+And now we can paste in the lyrics.
+
+[[Image:Karatiming-9.png]]
+
+They should appear immediately as lines in the grid. Notice that they all have start and end times set to zero. This makes it easier when we're going to time each line of the lyrics to the song.
+
+[[Image:Karatiming-10.png]]
+
+It might be a good idea to save your file now, just so you can easily save it later on without having to give it a name.
+
+Remember that Aegisub automatically saves a copy of your file every 5 minutes, even if you haven't given it a name yet, so you rarely lose much work if something goes wrong.
+
+[[Image:Karatiming-11.png]]
+
+Now we're ready to time the individual lines in the lyrics.
 
 == Rough timing, the lines first ==
 
