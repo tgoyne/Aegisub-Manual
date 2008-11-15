@@ -131,7 +131,18 @@ The spectrum mode takes more CPU and RAM than waveform mode, but it gives a bett
 
 == Fine timing, words and then syllables ==
 
-{{todo|k-timing here}}
+{{todo|
+Click Karaoke button.
+
+Time words.
+
+Click Split button. Place split markers. Click Accept Split button.
+
+Time syllables.
+
+Commit.
+
+Repeat.}}
 
 == Styling ==
 
