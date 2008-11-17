@@ -43,7 +43,7 @@
 
 ===Hosting===
 *Current:
-**[[Image:Flags_of_Japan.gif|24px]]'''DeathWolf''': SVN repository for versions 2.1.2+
+**[[Image:Flags_of_Japan.gif|24px]][[Image:Flag_of_France.gif|24px]] '''DeathWolf''': SVN repository for versions 2.1.2+
 **[[Image:Flag_of_Denmark.gif|24px]] '''Sigurd Tao Lyngse''' (Bot1): Forums and Main Wiki
 **[[Image:Flag_of_Denmark.gif|24px]] '''Niels Martin Hansen''' (jfs): Bug Tracker
 **[[Image:Flag_of_United-States.gif|24px]] '''Marcello Bastéa-Forte''': Documentation Wiki
