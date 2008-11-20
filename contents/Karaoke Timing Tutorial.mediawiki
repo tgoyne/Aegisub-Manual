@@ -36,6 +36,12 @@ When it's done, you should have a waveform display (the audio display) at the to
 
 We'll look at how to use the audio display for timing in a moment, but first let's get the lyrics for the song loaded.
 
+=== Tips ===
+
+'''Loading audio directly from video files:''' You can select to choose from video files in the Open Audio file selector. This won't actually open the video in the file, it will just read the audio from the video file, the same as if it was just the audio in a separate file.
+
+'''Instant loading of WAV files:''' If you have an uncompressed PCM WAV file, Aegisub can open it instantly without first loading it entirely into memory. This can be a great time-saver, but of course it requires a bit of extra disk space and probably also a bit of work beforehand to even create the WAV file. (Remember that this only works with ''uncompressed PCM'' files, things like ADPCM or MP3 in WAV files won't work and will still trigger the pre-loading.)
+
 == Entering the words ==
 
 Now, to get the text in, we could just start typing it in...
