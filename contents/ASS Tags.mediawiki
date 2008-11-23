@@ -365,7 +365,11 @@ e.g.:
  \clip(1,m 50 0 b 100 0 100 100 50 100 b 0 100 0 0 50 0)
 (Limits clip to pseudo-circle defined)
 
-'''Note:''' VSFilter 2.37 is known to have issues with vector clipping. If you intend to use it, use 2.35 or a [http://malakith.net/aegisub/index.php?topic=651.0 patched version of 2.37] instead (2.36 has another bug, related to border drawing).
+In VSFilter '''2.39 or later''' the variation \iclip is also available. It works the same way as the regular \clip() tag, except that the region you specify is hidden and everything else is shown; it's the opposite effect of \clip().
+
+'''Note:''' If you use \iclip() anywhere in a line, all \clip tags in that line will also be treated as \iclip() tags, even if a \clip() tag comes before the first iclip() tag.
+
+'''Note:''' VSFilter 2.37 has known bugs with vector clipping. It is suggested you upgrade to 2.39 or later.
 
 ==Drawing tags==
 Advanced Substation Alpha also supports some advanced drawing tags that allow you to draw with vectorial graphics. Certain familiarity with vectors and splines will make the understanding of this much simpler.
