@@ -41,7 +41,7 @@ Toggles underline in the following text, <u>like this</u>. See description for i
 ===\s<0/1> - Strikeout===
 Toggles strikeout in the following text. See description for italics. Strikeout means that there will be a line crossing the text, <strike>like this</strike>.
 
-===\bord<width> - Border===
+===\[<x/y>]bord<width> - Border===
 Sets the width of border around text. If "scale border and shadow" (see [[Properties|script properties]]) is enabled, the value is given in script resolution pixels, otherwise it is given in video resolution pixels (which means the border thickness will vary depending on the resolution of the video on which the subtitles are rendered). The value is not limited to whole integer pixels, it can have decimal places.
 e.g.:
  \bord1
@@ -49,6 +49,13 @@ e.g.:
  \bord2.3
  \bord0
 (The last example will disable the border entirely.)
+
+In VSFilter '''2.39 or later''' the variations \xbord and \ybord are also available. They are almost the same as \bord but only set the border in one direction (vertical or horizontal).
+e.g.:
+ \xbord1\ybord1
+Same as \bord1.
+ \xbord2\ybord0
+Text now only has border in the vertical direction.
 
 ===\shad<depth> - Shadow===
 Sets the offset that shadow is drawn from the main text. Think of the shadow as the text+outlines in a single color, drawn behind text, and offset by depth pixels to the right and bottom. This tag works similarly to [[#\bord<width> - Border|\bord]], and is affected by "scale border and shadow" just like \bord is.
