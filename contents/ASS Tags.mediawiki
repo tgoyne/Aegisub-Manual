@@ -57,8 +57,10 @@ Same as \bord1.
  \xbord2\ybord0
 Text now only has border in the vertical direction.
 
-===\shad<depth> - Shadow===
+===\[<x/y>]shad<depth> - Shadow===
 Sets the offset that shadow is drawn from the main text. Think of the shadow as the text+outlines in a single color, drawn behind text, and offset by depth pixels to the right and bottom. This tag works similarly to [[#\bord<width> - Border|\bord]], and is affected by "scale border and shadow" just like \bord is.
+
+\xshad and \yshad are available in VSFilter '''2.39 or later'''. Do note that \xshad and \yshad can be negative.
 
 ===\be<0/1> - Blur edges===
 This tag enables or disables edge blurring. This is a subtle effect, and is not very visible for large text. See description of italics tag for usage.
