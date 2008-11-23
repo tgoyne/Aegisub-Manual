@@ -343,7 +343,7 @@ e.g.:
  {\an5\fscx0\fscy0\t(0,500,\fscx100\fscy100)}
 (Text starts at zero size, ie. invisible, then grows to 100% size in both X and Y direction.)
 
-===\clip(<x1>,<y1>,<x2>,<y2>) - Set clipping rectangle===
+===\[i]clip(<x1>,<y1>,<x2>,<y2>) - Set clipping rectangle===
 This sets the clipping rectangle of the text, so that it will ''only'' be drawn ''inside'' this rectangle. For example, if you had a resolution of 640x480 and set \clip(0,0,320,240), then text would only be drawn on top-left quadrant - anything outside it would be "clipped" and would be invisible. This tag is useful for when some object moves in front of text: you can use [[#\t(%5b<t1>,<t2>,%5d%5b<accel>,%5d<style modifiers>) - Transform|\t]] to animate the "window" where the text is visible.
 e.g.:
  \clip(0,0,320,240)
@@ -354,6 +354,10 @@ e.g.:
 Sample screenshot (with \clip(0,0,704,245) on a 704x480 video):
 
 [[Image:clip_sample01.jpg]]
+
+In VSFilter '''2.39 or later''' the variation \iclip is also available. It works the same way as the regular \clip() tag, except that the region you specify is hidden and everything else is shown; it's the opposite effect of \clip().
+
+'''Note:''' If you use \iclip() anywhere in a line, all \clip tags in that line will also be treated as \iclip() tags, even if a \clip() tag comes before the first iclip() tag.
 
 ===\clip([<scale>,]<drawings>) - Set clipping vector===
 Same as before, but it uses drawing vectors instead of a rectangle. See the drawing section below for more information. Note that, unlike the previous tag, this may ''not'' be animated with [[#\t(%5b<t1>,<t2>,%5d%5b<accel>,%5d<style modifiers>) - Transform|\t]]. The optional scale argument is equivalent to the value passed to [[#\p<0/1/..> - Toggle drawing mode|\p]] on the drawing tag. On an unrelated note, this tag makes me wonder if Gabest was actively trying to prevent other people from writing ASS parsers by creating an overloaded tag.
