@@ -265,6 +265,8 @@ e.g.:
 ===\pos(<x>,<y>) - Position===
 Positions the subtitle at the specified coordinates. Coordinates start at 0,0 for the top-left corner and go to ResX,ResY at the bottom-right corner, where ResX and ResY are defined in the script header (you can set this value in the properties window). Coordinates do not necessarily match video coordinates: if the script resolution is set to 640x480, then doing a \pos(320,240) on a center-aligned text will ''always'' put it on the center of video, even if it is, for example, 704x396.
 
+In VSFilter '''2.39 or later''' \pos allows floating point coordinates for positioning with subpixel precision.
+
 You may only have one \pos command in each line. If you have more, only the first one has any effect.
 
 Note that \pos is affected the pivot of subtitles. For example, if the current line has centered alignment (\an5), then the center of line will be placed at that position; if it's top-left (\an7), then the top-left corner of line will be placed at that position, etc.
