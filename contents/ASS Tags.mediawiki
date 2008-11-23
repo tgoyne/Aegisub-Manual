@@ -56,7 +56,12 @@ Sets the offset that shadow is drawn from the main text. Think of the shadow as 
 ===\be<0/1> - Blur edges===
 This tag enables or disables edge blurring. This is a subtle effect, and is not very visible for large text. See description of italics tag for usage.
 
-In VSFilter version 2.39 or later, the parameter can be more than 1, and specifies how many times the blur should be repeated. Higher numbers means more blurring.
+In VSFilter version '''2.39 or later''', the parameter can be more than 1, and specifies how many times the blur should be repeated. Higher numbers means more blurring, but the blur usually disappears into nothingness at high numbers (around 100).
+
+===\blur<strength>===
+'''This tag is only available with VSFilter 2.39 or later.'''
+
+Enables or disables real gaussian blurring of the text edges. Gives a stronger blur than \be but the effects aren't entirely comparable. The parameter controls the blur strength and is the sigma of the gaussian distribution kernel. 0 disables blurring, higher values means stronger blur. Note that the parameter is a floating point number so decimal places are allowed.
 
 ===\fn<name> - Font name===
 This sets the font face name for the following text. Note that there is no space between \fn and the parameter name.
