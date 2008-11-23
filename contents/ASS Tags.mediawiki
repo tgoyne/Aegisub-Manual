@@ -359,7 +359,7 @@ In VSFilter '''2.39 or later''' the variation \iclip is also available. It works
 
 '''Note:''' If you use \iclip() anywhere in a line, all \clip tags in that line will also be treated as \iclip() tags, even if a \clip() tag comes before the first iclip() tag.
 
-===\clip([<scale>,]<drawings>) - Set clipping vector===
+===\[i]clip([<scale>,]<drawings>) - Set clipping vector===
 Same as before, but it uses drawing vectors instead of a rectangle. See the drawing section below for more information. Note that, unlike the previous tag, this may ''not'' be animated with [[#\t(%5b<t1>,<t2>,%5d%5b<accel>,%5d<style modifiers>) - Transform|\t]]. The optional scale argument is equivalent to the value passed to [[#\p<0/1/..> - Toggle drawing mode|\p]] on the drawing tag. On an unrelated note, this tag makes me wonder if Gabest was actively trying to prevent other people from writing ASS parsers by creating an overloaded tag.
 e.g.:
  \clip(1,m 50 0 b 100 0 100 100 50 100 b 0 100 0 0 50 0)
