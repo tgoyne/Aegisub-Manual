@@ -50,7 +50,7 @@ e.g.:
  \bord0
 (The last example will disable the border entirely.)
 
-In VSFilter '''2.39 or later''' the variations \xbord and \ybord are also available. They are almost the same as \bord but only set the border in one direction (vertical or horizontal).
+In VSFilter '''2.39 or later''' the variations \xbord and \ybord are also available. They are almost the same as \bord but only set the border in one direction (vertical or horizontal), whereas \bord sets both to the same value.
 e.g.:
  \xbord1\ybord1
 Same as \bord1.
