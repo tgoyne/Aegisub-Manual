@@ -125,7 +125,7 @@ Shears the text in either the vertical (Y) or the horizontal (X) direction by ap
  X = X + Y * P
 and for \fay
  Y = Y + X * P
-where X and Y are coordinates on the X and Y axis respectively and P is the parameter. As you can see, 0 means disabling shearing.
+where X and Y are coordinates on the X and Y axis respectively and P is the parameter to the tag. As you can see, 0 means disabling shearing.
 
 ''insert screenshots here''
 
