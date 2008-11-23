@@ -58,7 +58,7 @@ This tag enables or disables edge blurring. This is a subtle effect, and is not 
 
 In VSFilter version '''2.39 or later''', the parameter can be more than 1, and specifies how many times the blur should be repeated. Higher numbers means more blurring, but the blur usually disappears into nothingness at high numbers (around 100).
 
-===\blur<strength>===
+===\blur<strength> - gaussian blurring of edges===
 '''This tag is only available with VSFilter 2.39 or later.'''
 
 Enables or disables real gaussian blurring of the text edges. Gives a stronger blur than \be but the effects aren't entirely comparable. The parameter controls the blur strength and is the sigma of the gaussian distribution kernel. 0 disables blurring, higher values means stronger blur. Note that the parameter is a floating point number so decimal places are allowed.
