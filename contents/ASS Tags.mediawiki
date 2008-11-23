@@ -42,7 +42,7 @@ Toggles underline in the following text, <u>like this</u>. See description for i
 Toggles strikeout in the following text. See description for italics. Strikeout means that there will be a line crossing the text, <strike>like this</strike>.
 
 ===\bord<width> - Border===
-Sets the width of border around text. If "scale border and shadow" (see [[Properties|script properties]]) is in effect, the value is given in script resolution pixels, otherwise it is given in video resolution pixels (which means the border thickness will vary depending on the resolution of the video on which the subtitles are rendered). The value is not limited to whole integer pixels, it can have decimal places.
+Sets the width of border around text. If "scale border and shadow" (see [[Properties|script properties]]) is enabled, the value is given in script resolution pixels, otherwise it is given in video resolution pixels (which means the border thickness will vary depending on the resolution of the video on which the subtitles are rendered). The value is not limited to whole integer pixels, it can have decimal places.
 e.g.:
  \bord1
  \bord0.5
