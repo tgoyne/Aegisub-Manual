@@ -333,6 +333,17 @@ The following tags are supported by \t:
 *\bord
 *\shad
 *\clip (rectangle version only).
+In VSFilter '''2.39 or later''' the following tags are also supported by \t, in addition to the ones listed above:
+*\be
+*\blur
+*\fax
+*\fay
+*\xbord
+*\ybord
+*\xshad
+*\yshad
+*\iclip (rectangle version only)
+
 e.g.:
  {\c&H0000FF&\t(\c&HFF0000)}Hello!
 (Starts text at a red colour and fades it to blue)
