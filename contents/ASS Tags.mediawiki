@@ -121,7 +121,7 @@ Here are three sample screenshots:<br>
 ===\fa[x/y]<shearing> - Text shearing===
 '''This tag is only available with VSFilter 2.39 or later.'''
 
-Shears the text in either the X or the Y direction by applying a transformation matrix to it so that for \fax
+Shears the text in either the vertical (Y) or the horizontal (X) direction by applying a transformation matrix to it so that for \fax
  X = X + Y * P
 and for \fay
  Y = Y + X * P
