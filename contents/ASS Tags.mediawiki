@@ -91,7 +91,7 @@ Same as [[#\fscx<percent> - Font scale in X axis|\fscx]], but for the vertical a
 ===\fsp<pixels> - Font spacing===
 Sets the spacing between characters, in pixels. This allows you to make the text look something like "t h i s". Some fonts might look bad because the characters are too close to each other. This tag might help in such cases. Also, if used in moderation, it can give the illusion that the font is wider.
 
-===\fr[<x/y/z>]<degrees> - Font rotation===
+===\fr[<x/y/z>]<degrees> - Text rotation===
 Rotates the text by the specified number of degrees, in the specified axis. If axis is omitted, then "z" is used as default. The axes are as follows:
 *'''x:''' this axis runs horizontally on the screen. Rotating on it (with positive values) causes an effect where the top of the text moves farther "into" the screen while the bottom moves "out" of the screen.
 *'''y:''' this axis runs vertically on the screen. Rotating on it (with positive values) causes the text to rotate so that the left moves "outside" the screen, when the right moves "into" the screen.
@@ -117,6 +117,9 @@ Here are three sample screenshots:<br>
 [[Image:fr_sample01.jpg]]
 [[Image:fr_sample02.jpg]]
 [[Image:fr_sample03.jpg]]
+
+===\fa[x/y]<shearing> - Text shearing===
+placeholder
 
 ===\fe<charset> - Font encoding===
 For non-Unicode subtitles, this sets the character encoding to the specified page number. \fe128 may be required to get Japanese glyphs to display properly with some Japanese fonts that lack proper Unicode mappings.
