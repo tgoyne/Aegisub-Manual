@@ -38,6 +38,8 @@ Currently there is just one, but it is possible to define your own functions in 
 
 Synopsis: <code>retime(mode, startadjust, endadjust)</code>
 
+[[Image:Auto4-kara-templater-retime-explanation.png|right|thumb|654px|A graphical explanation of the different modes of the <code>retime</code>function.]]
+
 This function is usually used once in a template in a code block by itself. It adjusts the start and end time of the output line in various ways.
 
 The ''mode'' parameter determines how the start and end times of the line are changed, it must be a string with one of the following values. Because it must be a string, the name of the mode must be enclosed in quotation marks!
