@@ -5,15 +5,12 @@ The following is a list of every tag supported by the Advanced Substation Alpha 
 The following tags are written in the middle of the text, and not inside override blocks (i.e. not between { and }).
 
 ===\n - Soft line break===
-{{SuppByVSFilter|text=}}{{SuppByASA|text=}}{{SuppByLibASS|text=}}
 Makes the line "break" (i.e. skip to the next line) using mode \q2 (see [[#\q<0-3> - Wrap style|\q<0-3>]]). Using any other mode, it's replaced by a space.
 
 ===\N - Hard line break===
-{{SuppByVSFilter|text=}}{{SuppByASA|text=}}{{SuppByLibASS|text=}}
 This is always replaced by a line break.
 
 ===\h - Hard space===
-{{SuppByVSFilter|text=}}
 This is useful when you need several spaces in a row.
 
 ==Override tags==
