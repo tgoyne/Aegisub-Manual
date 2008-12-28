@@ -4,14 +4,19 @@ The following is a list of every tag supported by the Advanced Substation Alpha 
 ==Special characters==
 The following tags are written in the middle of the text, and not inside override blocks (i.e. not between { and }).
 
-===\n - Soft line break===
-Makes the line "break" (i.e. skip to the next line) using mode \q2 (see [[#\q<0-3> - Wrap style|\q<0-3>]]). Using any other mode, it's replaced by a space.
+{{TagDefBox|name=Soft line break
+|usage=\n|desc=
+Insert a forced line break, but only when in wrapping mode 2. (See [[#Wrap style|the \q tag]].) Note that this is a lowercase n.
 
-===\N - Hard line break===
-This is always replaced by a line break.
+In all other wrapping modes, this is replaced by a regular space.}}
 
-===\h - Hard space===
-This is useful when you need several spaces in a row.
+{{TagDefBox|name=Hard line break
+|usage=\N|desc=
+Insert a forced line break, regardless of wrapping mode. Note that this is an uppercase N.}}
+
+{{TagDefBox|name=Hard space
+|usage=\h|desc=
+Insert a non-breaking "hard" space. The line will never break automatically right before or after a hard space, and hard spaces are not folded when they appear at the start or end of a displayed line.}}
 
 ==Override tags==
 These tags must be in an override block, that is, they must be between a { and a }, and will affect all text following the block, unless they get re-overridden.
