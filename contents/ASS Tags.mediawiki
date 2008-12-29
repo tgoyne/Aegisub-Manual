@@ -26,8 +26,10 @@ These tags must be in an override block, that is, they must be between a { and a
 Switch ''italics'' text on or off. Use <code>\i1</code> to enable italics for the following text and <code>\i0</code> to disable italics again.}}
 
 {{TagDefBox|name=Bold
-|usage=\b1<br>\b0|desc=
-Switch '''boldface''' text on or off. Use <code>\b1</code> to enable boldface for the following text and <code>\b0</code> to disable boldface again.}}
+|usage=\b1<br>\b0<br>\b<i><weight></i>|desc=
+Switch '''boldface''' text on or off. Use <code>\b1</code> to enable boldface for the following text and <code>\b0</code> to disable boldface again.
+
+The <code>\b<i><weight></i></code> form allows you to specify an explicit weight to use. Note that most fonts only support one or two weights so you rarely need to use this. Font weights are multiples of 100, such that 100 is the lowest, 400 is "normal", 700 is "bold" and 900 is the heaviest.}}
 
 {{TagDefBox|name=Underline
 |usage=\u1<br>\u0|desc=
