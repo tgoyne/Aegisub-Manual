@@ -135,115 +135,103 @@ Make the text double size.}}
 |usage=\fsp<i><spacing></i>|desc=
 Changes the spacing between the individual letters in the text. You can use this to spread the text more out visually. The ''spacing'' is given in script resolution pixels.}}
 
-===\fr[<x/y/z>]<degrees> - Text rotation===
-Rotates the text by the specified number of degrees, in the specified axis. If axis is omitted, then "z" is used as default. The axes are as follows:
-*'''x:''' this axis runs horizontally on the screen. Rotating on it (with positive values) causes an effect where the top of the text moves farther "into" the screen while the bottom moves "out" of the screen.
-*'''y:''' this axis runs vertically on the screen. Rotating on it (with positive values) causes the text to rotate so that the left moves "outside" the screen, when the right moves "into" the screen.
-*'''z:''' this axis runs perpendicular to the screen. Rotating on it (with positive values) causes the text to rotate in 2D, counterclockwise (as standard for degrees).
+{{TagDefBox|name=Text rotation
+|usage=\frx<i><amount></i><br>\fry<i><amount></i><br>\frz<i><amount></i><br>\fr<i><amount></i>|desc=
+Rotates the text along the X, Y or Z axis. The <code>\fr</code> tag is a shortcut for <code>\frz</code>.
 
-In this system, 360 degrees is one full rotation. You can have negative or above 360 values, which get wrapped around. Decimal places are also acceptable.
-The "pivot" point of rotation is defaulted to its alignment. That means that a text with [[#\an<alignment> - Numpad Text Alignment|\an]]5 will have its pivot on the center, so rotation will be relative to it. A text with \an7, on the other hand, will rotate relative to its top-left corner, that is, the whole text will rotate around that point, while that stays still. This can be set with the [[#\org(<x>,<y>) - Origin|\org]] tag, see its description for more details.
-e.g.:
- \frx45
-(rotates text on the X axis by 45 degrees)
- \fry-45
-(rotates text on the Y axis by -45 degrees)
- \frz180
-(rotates text on the Z axis by 180 degrees)
- \fr90
-(same as \frz90, makes the text "vertical")
- \frz-0.5
-(rotates text on Z axis by half a degree, negative)
- \t(\fry3600)
-(animates the text to do 10 full revolutions on Y axis. See [[#\t(%5b<t1>,<t2>,%5d%5b<accel>,%5d<style modifiers>) - Transform|\t]] for a detailed explanation)
+* The '''X axis''' runs horizontally on the screen. Rotating on it (with positive values) causes an effect where the top of the text moves farther "into" the screen while the bottom moves "out" of the screen.
+* The '''Y axis''' runs vertically on the screen. Rotating on it (with positive values) causes the text to rotate so that the left moves "outside" the screen, when the right moves "into" the screen.
+* The '''Z'''axis runs perpendicular to the screen. Rotating on it (with positive values) causes the text to rotate in 2D, counterclockwise (as standard for degrees).
 
-Here are three sample screenshots:<br>
-[[Image:fr_sample01.jpg]]
-[[Image:fr_sample02.jpg]]
-[[Image:fr_sample03.jpg]]
+The rotation ''amount'' is given in mathematical degrees, such that 360 degrees is a full rotation, and rotating any multiple of 360 is the same as not rotating. It is legal to specify negative rotation amounts, as well as amounts larger than 360 degrees.
 
-===\fa<x/y><shearing> - Text shearing===
-'''This tag is only available with VSFilter 2.39 or later.'''
+The rotation is performed around the subtitle line origin point, this is described with the [[#Rotation origin|\org]] tag.
 
-Shears the text in either the vertical (Y) or the horizontal (X) direction by applying a transformation matrix to it so that for \fax
- X = X + Y * P
-and for \fay
- Y = Y + X * P
-where X and Y are coordinates on the X and Y axis respectively and P is the parameter to the tag. As you can see, 0 means disabling shearing.
+These tags also affect [[#Vector drawings|vector drawings]].
 
-''insert screenshots here''
+{{Examplebox|<pre>\frx45</pre>
+Rotate the text 45 degrees on the X axis.}}
+{{Examplebox|<pre>\fry-45</pre>
+Rotate the text 45 degrees in opposite direction on the Y axis.}}
+{{Examplebox|<pre>\frz180</pre>
+Rotate the text 180 degrees on the Z axis, making it upside-down.}}
+{{Examplebox|The following two rotations produce the same result:
+<pre>\frz-30
+\frz330</pre>
+This is because 330 degrees is 30 degrees less than a full rotation of 360 degrees.}}
+{{Examplebox|<pre>\t(\frz3600)</pre>
+Perform an animation where the text performs 10 full revolutions on the Z axis. Also see the [[#Animated transform|\t]] tag.}}
+{{Examplebox|The following screenshots illustrate the effect of rotating on the different axes:<br>
+[[Image:fr_sample01.jpg]]<br>[[Image:fr_sample02.jpg]]<br>[[Image:fr_sample03.jpg]]}}
+}}
 
-===\fe<charset> - Font encoding===
-For non-Unicode subtitles, this sets the character encoding to the specified page number. \fe128 may be required to get Japanese glyphs to display properly with some Japanese fonts that lack proper Unicode mappings.
- \fe0
-(sets to ANSI extended, the standard for the USA)
- \fe128
-(sets to SHIFT_JIS extended, the standard for Japan)
+{{TagDefBox|name=Text shearing
+|usage=\fax<i><factor></i><br>\fay<i><factor></i>|desc=
+:''These tags are only available in VSFilter 2.39 and later, and might not be safe for softsubbing.''
 
-===\c&H<bbggrr>& - Set primary color===
-Sets the primary color (i.e. the fill color) of the text. Color tags in ASS are in Visual Basic hexadecimal style, which is similar to HTML hexadecimal. It always starts with &H, and ends with &. Between those, are the color values in hexadecimal: two characters for blue, two for green and two for red, in that order (i.e. BBGGRR). Any zero color at the start may be ommited. Also note that saying just \c has the same result as saying [[#\1c&H<bbggrr>& - Set primary color|\1c]].
-e.g.:
- \c&HFF0000&
-(Full intensity (FF = 255) blue and zero intensity green and red, making it blue)
- \c&H00FF00&
- \c&HFF00&
-(Full intensity green and zero intensity blue and red, making it green - note the omitted leading zeros in the second example)
- \c&H0000FF&
- \c&HFF&
-(Full intensity red and zero intensity blue and green, making it red - again, leading zeros can be omitted)
- \c&HFFFFFF&
-(white)
- \c&HFF00FF&
-(magenta)
- \c&H2DD5F2&
-(gold)
+Perform a shearing (perspective distortion) transformation of the text. A ''factor'' of 0 (zero) means no distortion.
 
-Aegisub has a [[Colour Picker]] that can help you generate these hexadecimal numbers.
+Usually ''factor'' will be a small number, not larger than 2 as that creates a very strong distortion.
 
-===\1c&H<bbggrr>& - Set primary color===
-Sets primary color. See [[#\c&H<bbggrr>& - Set primary color|\c]] for full description.
+Shearing is performed after rotation, on the rotated coordinates. The coordinate system used for shearing is not affected by the [[#Rotation origin|rotation origin]].
 
-===\2c&H<bbggrr>& - Set secondary color===
-Sets secondary color. This is the color that primary changes from during karaoke effects (i.e. karaoke starts at this color and then changes to primary). See \c for full description.
+{{todo|We need a screenshot illustrating the effect.}}
+}}
 
-===\3c&H<bbggrr>& - Set outline color===
-Sets outline (border) color. See \c for full description.
+{{TagDefBox|name=Font encoding
+|usage=\fe<i><id></i>|desc=
+Set the Windows font encoding used to select the font mapping table used to translate Unicode codepoints to glyph indices in the font. For some fonts without a Unicode mapping table this might be required to get text in certain languages to work. For fonts that do have a Unicode mapping table, it might be used to pick regional variations, such as picking the correct glyph for a Han ideogram that is different in Simplified Chinese, Traditional Chinese, Japanese and Korean.
 
-===\4c&H<bbggrr>& - Set shadow color===
-Sets shadow color. You almost always want this to be black, but see \c for full description.
+Some common font encoding ID's are:
 
-===\alpha&H<aa>& - Set alpha===
-This sets the alpha value (i.e. the transparency) of the line. This value is a two-digit hexadecimal number, ranging from 00 (opaque) to FF (invisible).
+* 0 - ANSI, Windows CP-1252 for Western-European languages.
+* 1 - Default, depends on the configuration of the user's system, but also allows the font sub-system to dynamically pick a different mapping table in some circumstances.
+{{todo|Is that really correct?}}
+* 2 - Symbol, codepoints in the 0-255 range are translated to per-font defined symbol glyphs, this is used for fonts such as Wingdings.
+* 128 - Shift-JIS, used for Japanese.
+* 129 and 130, respectively Hangeul and Johab, two encoding schemes for Korean.
+* 134 - GB2312, used for Simplified Chinese.
+* 136 - BIG5, used for Traditional Chinese.
+* 162 - Turkish.
+* 163 - Vietnamese.
+* 177 - Hebrew.
+* 178 - Arabic.
 
-Note that this tag is '''not''' the same as [[#\<1/2/3/4>a&H<aa>& - Set Primary/secondary/outline/shadow alpha|\1a]] (like it would be logical to believe given the relation between \color and \1c), at least not in practice. It's ''supposed'' to be the same as \1a, but in VSFilter it's actually equivalent to \1a&H<aa>&\2a&H<aa>&\3a&H<aa>&\4a&H<aa>&.
-e.g.:
- \alpha&H80&
-(makes text 50% translucent)
- \alpha&HEF&
-(makes text almost invisible)
+A more complete list can be seen the [[Styles#The style editor|style editor]] dialog box.
 
+In ASS files stored in non-Unicode encodings, this tag also affects what codepage the text following it should be interpreted in. Aegisub doesn't support this use and some renderers might not support it either, it is recommended you do not rely on this and instead always store your files in a Unicode encoding. (Aegisub stores files in Unicode UTF-8 by default.}}
 
-{|border="1px" cellpadding="3pt" cellspacing="0em" style="border:gray solid 1px; border-collapse:collapse;"
-|-
-! Tag
-! affects (ASS)
-! affects (SSA)
-|-
-| \alpha
-|colspan="2"| the line in its entirety
-|-
-| \1a
-|colspan="2"| the text
-|-
-| \2a || karaoke || secondary
-|-
-| \3a || border || tertiary
-|-
-| \4a || shadow || border and shadow
-|}
+{{TagDefBox|name=Set color
+|usage=\c&H<i><bb><gg><rr></i>&<br>\1c&H<i><bb><gg><rr></i>&<br>\2c&H<i><bb><gg><rr></i>&<br>\3c&H<i><bb><gg><rr></i>&<br>\4c&H<i><bb><gg><rr></i>&|desc=
+Set the color of the following text. The <code>\c</code> tag is an abbreviation of <code>\1c</code>.
 
-===\<1/2/3/4>a&H<aa>& - Set Primary/secondary/outline/shadow alpha===
-Sets alpha value for the specified color. Works the same as the variations of \c. See [[#\alpha&H<aa>& - Set primary alpha|\alpha]] for a complete description.
+* <code>\1c</code> sets the primary fill color.
+* <code>\2c</code> sets the secondary fill color, this is only used for pre-highlight in standard karaoke.
+* <code>\3c</code> sets the border color.
+* <code>\4c</code> sets the shadow color.
+
+The color codes are given in [http://en.wikipedia.org/wiki/Hexadecimal hexadecimal] in Blue Green Red order. Note that this is the opposite order of eg. HTML color codes. Color codes must always start with <code>&H</code> and end with <code>&</code>.
+
+The Pick Color toolbar buttons [[Image:pick-color-toolbar-buttons.png]] can assist in picking colors and entering the color codes.
+}}
+
+{{TagDefBox|name=Set alpha
+|usage=\alpha&H<i><aa></i><br>\1a&H<i><aa></i><br>\2a&H<i><aa></i><br>\3a&H<i><aa></i><br>\4a&H<i><aa></i>|desc=
+Set the alpha (transparency) of the text.
+
+* <code>\alpha</code> sets the alpha of all components at once.
+* <code>\1a</code> sets the primary fill alpha.
+* <code>\2a</code> sets the secondary fill alpha, this is only used for pre-highlight in standard karaoke.
+* <code>\3a</code> sets the border alpha.
+* <code>\4a</code> sets the shadow alpha.
+
+An alpha of 00 (zero) means opaque/fully visible, and an alpha of FF (ie. 255 in decimal) is fully transparent/invisible.
+
+{{Examplebox|<pre>\alpha&H80&</pre>
+Set the alpha of all components to hexadecimal 80, decimal 128, making the text 50% transparent in general.}}
+{{Examplebox|<pre>\1a&HFF&</pre>
+Set the primary fill alpha to hexadecimal FF, decimal 255, making it invisible and effectively leaving only the border and shadow.}}
+}}
 
 ===\an<alignment> - Numpad Text Alignment===
 Sets text alignment relative to numpad layout. Note that this has the interesting property of changing the text "anchor point" as well; a line with \an5 and \pos(320,240) will have its exact center on the coordinate (320,240) while a line with \an7 will have its upper left corner on (320,240). See [[#\pos(<x>,<y>) - Position|\pos]] for a full explanation of this.
