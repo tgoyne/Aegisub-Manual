@@ -235,41 +235,56 @@ Set the alpha of all components to hexadecimal 80, decimal 128, making the text 
 Set the primary fill alpha to hexadecimal FF, decimal 255, making it invisible and effectively leaving only the border and shadow.}}
 }}
 
-===\an<alignment> - Numpad Text Alignment===
-Sets text alignment relative to numpad layout. Note that this has the interesting property of changing the text "anchor point" as well; a line with \an5 and \pos(320,240) will have its exact center on the coordinate (320,240) while a line with \an7 will have its upper left corner on (320,240). See [[#\pos(<x>,<y>) - Position|\pos]] for a full explanation of this.
-e.g.:
- \an7
-(aligns text on top-left. Note that the "7" key on numpad is at the top-left)
- \an5
-(aligns text on center)
- \an2
-(aligns text on bottom-center)
+{{TagDefBox|name=Line alignment
+|usage=\an<i><pos></i>|desc=
+Specify the alignment of the line. The alignment specifies the position of the line when no [[#Set position|position override]] or [[#Movement|movement]] is in effect, and otherwise specifies the anchor point of positioning.
 
-===\a<alignment> - SSA Text Alignment===
-Sets text alignment based on the old SSA scheme. This is specified by a sum: 1 equals left, 2 equals middle, 3 equals right. Then add 4 to get top alignment, 8 to get vertical middle alignment, or leave as is for bottom alignment.
-e.g.:
- \a5
-(aligns text on top-left, equivalent to \an7)
- \a2
-(aligns text on bottom-middle, equivalent to \an2)
- \a11
-(aligns text to middle-right, equivalent to \an6)
-You should normally use \an instead, as it is more intuitive.
+The <code>\an</code> tag uses "numpad" values for the ''pos'', ie. the alignment values correspond to the positions of the digits on the numeric keypad on a regular keyboard:
 
-===\k<duration> - Karaoke effect===
-This makes the following text start at the secondary color immediately, and change to the primary color after the sum of duration (in centiseconds) of all previous karaoke effects has elapsed.
-e.g.:
- {\k32}Ko{\k27}ko{\k27}ro
-(Shows "Ko" with the primary color immediately and other two syllables with the secondary, then "ko" changes to primary 32 centiseconds (320 milliseconds or 0.32 seconds) later, then "ro" changes to primary 27 centiseconds after)
+* 1: Bottom left
+* 2: Bottom center
+* 3: Bottom right
+* 4: Middle left
+* 5: Middle center
+* 6: Middle right
+* 7: Top left
+* 8: Top center
+* 9: Top right
+}}
 
-===\kf<duration> - Filled karaoke===
-Similar to [[#\k<duration> - Karaoke effect|\k]], but instead of immediately setting color from secondary to primary, it "fills" it from left to right.
+{{TagDefBox|name=Line alignment (legacy)
+|usage=\a<i><pos></i>|desc=
+Specify the alignment of the line using legacy alignment codes from SubStation Alpha.
 
-===\K<duration> - Filled karaoke===
-Same as [[#\kf<duration> - Filled karaoke|\kf]].
+Calculate ''pos'' as follows: Use 1 for left-alignment, 2 for center alignment and 3 for right-alignment. If you want sub-titles you're done. To get top-titles, add 4 to the number, to get mid-titles add 8 to the number:
 
-===\ko<duration> - Filled outline karaoke===
-Similar to [[#\kf<duration> - Filled karaoke|\kf]], but the effect is only applied to the outline (border).
+* 1: Bottom left
+* 2: Bottom center
+* 3: Bottom right
+* 5: Top left
+* 6: Top center
+* 7: Top right
+* 9: Middle left
+* 10: Middle center
+* 11: Middle right
+}}
+
+{{TagDefBox|name=Karaoke effect
+|usage=\k<i><duration></i><br>\K<i><duration></i><br>\kf<i><duration></i><br>\ko<i><duration></i>|desc=
+:''Please note that these tags alone only create some very specific effects and all other effects are created with a combination of multiple different tags.''
+
+The <code>\k</code> family of tags mark up subtitles for karaoke effects by specifying the duration of each syllable. You place a <code>\k</code> tag before each syllable in the line.
+
+The ''duration'' is given in centiseconds, ie. a ''duration'' of 100 is equivalent to 1 second. You generally don't enter <code>\k</code> tags manually but rather use karaoke timing tools such as [[Tutorials#Karaoke Timing|Aegisub's karaoke mode]].
+
+The different <code>\k</code> tags create various effects:
+
+* <code>\k</code>: Before highlight, the syllable is filled with the secondary color and alpha. When the syllable starts, the fill is instantly changed to use primary color and alpha.
+* <code>\K</code> and <code>\kf</code>: These two are identical. Note that <code>\K</code> is an uppercase K and is different from lowercase <code>\k</code>. The syllable fill starts out secondary color, when the syllable starts, the fill changes from secondary to primary with a sweep from left to right, so the sweep ends when the syllable time is over.
+* <code>\ko</code>: Similar to <code>\k</code>, except that before highlight, the border/outline of the syllable is removed, and appears instantly when the syllable starts.
+
+''Note: There is an additional karaoke tag, <code>\kt</code>, which is very different from the other ones. Aegisub does not support that tag and so it is not documented.''
+}}
 
 ===\q<0-3> - Wrap style===
 Sets the line wrapping style as follows:
