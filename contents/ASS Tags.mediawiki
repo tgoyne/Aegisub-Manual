@@ -286,39 +286,37 @@ The different <code>\k</code> tags create various effects:
 ''Note: There is an additional karaoke tag, <code>\kt</code>, which is very different from the other ones. Aegisub does not support that tag and so it is not documented.''
 }}
 
-===\q<0-3> - Wrap style===
-Sets the line wrapping style as follows:
-*'''0:''' Smart wrapping, top line is wider
-*'''1:''' End-of-line word wrapping, only \N breaks
-*'''2:''' No word wrapping, both \n and \N break
-*'''3:''' Smart wrapping, bottom line is wider
-e.g.:
- \q1
-(Following text will only acknowledge \N as line breaks; \n will become a simple space)
+{{TagDefBox|name=Wrap style
+|usage=\q<i><style></i>|desc=
+Determine how line breaking is applied to the subtitle line. The following ''style''s are available:
 
-===\r[<name>] - Reset style===
-This resets the style to the specified one. If none is given, it resets to this line's original style.
-e.g.:
- -Hey\N{\rAlternate}-Huh?\N{\r}-Who are you?
-(this has the middle line in the style "Alternate", while first and third are in the originally set style)
+* 0: Smart wrapping, make each line approximately equally long, but top line wider when equal width is impossible. Only <code>\N</code> forces line breaks.
+* 1: End-of-line wrapping, fill as much text in a line as possible, then break to next line. Only <code>\N</code> forces line breaks.
+* 2: No word wrapping, wide lines will extend beyound the edges of the screen. Both <code>\n</code> and <code>\N</code> force line breaks.
+* 3: Smart wrapping, similar to style 0, but bottom lines are made wider.
+}}
 
-===\pos(<x>,<y>) - Position===
-Positions the subtitle at the specified coordinates. Coordinates start at 0,0 for the top-left corner and go to ResX,ResY at the bottom-right corner, where ResX and ResY are defined in the script header (you can set this value in the properties window). Coordinates do not necessarily match video coordinates: if the script resolution is set to 640x480, then doing a \pos(320,240) on a center-aligned text will ''always'' put it on the center of video, even if it is, for example, 704x396.
+{{TagDefBox|name=Reset style
+|usage=\r<br>\r<i><style></i>|desc=
+Reset the style. This cancels all style overrides in effect, including [[#Animated transform|animations]], for all following text.
 
-In VSFilter '''2.39 or later''' \pos allows floating point coordinates for positioning with subpixel precision.
+The first form that does not specify a ''style'' will reset to the style defined for the entire line, while the second form, that specifies the name of a ''style'', will reset the style to that specific style.
 
-You may only have one \pos command in each line. If you have more, only the first one has any effect.
+{{Examplebox|<pre>-Hey\N{\rAlternate}-Huh?\N{\r}-Who are you?</pre>
+Assuming the current line style is "Default", this has first "Hey" in the Default style, then follows on next line "Huh?" in the style "Alternate", and on the third line the style is reset to "Default" for the "Who are you?" text.}}
+}}
 
-Note that \pos is affected the pivot of subtitles. For example, if the current line has centered alignment (\an5), then the center of line will be placed at that position; if it's top-left (\an7), then the top-left corner of line will be placed at that position, etc.
-e.g.:
- \pos(100,200)
-(Positions the line at video position x=100 and y=200)
+{{TagDefBox|name=Set position
+|usage=\pos(<i><X></i>,<i><Y></i>)|desc=
+Set the position of the line. The ''X'' and ''Y'' coordinates must be integers and are given in the script resolution coordinate system. The meaning of ''X'' and ''Y'' changes slightly depending on [[#Line alignment|alignment]].
 
-Here follow three examples of \pos(320,240) on a 640x480 resolution script. The only difference between them is the alignment, note how the pivot (represented by a green crosshair) is always at 320,240.
+:''In VSFilter 2.39 and later, you can use non-integer numbers for coordinates. Note that this might not be safe for softsubbing.''
 
-[[Image:pos_sample01.jpg]]<br>
-[[Image:pos_sample02.jpg]]<br>
-[[Image:pos_sample03.jpg]]
+The alignment of the subtitle line is used as anchor point for the position, eg. when you have a line with alignment top-left, the top-left corner of the subtitle is placed at the coordinates given to <code>\pos</code>, and for bottom-center alignment, the bottom center of the subtitle is placed at the coordinates given.
+
+{{Examplebox|The following screenshots illustrate the way alignment affects positioning. The green cross marks the point (320,240) on the video.<br>
+[[Image:pos_sample01.jpg]]<br>[[Image:pos_sample02.jpg]]<br>[[Image:pos_sample03.jpg]]}}
+}}
 
 ===\move(<x1>,<y1>,<x2>,<y2>[,<t1>,<t2>]) - Move===
 Moves the text from the original position, defined by x1,y1, to the destination, defined by x2,y2. This means that at the very start of animation, the subtitles will look the same as if you had done a [[#\pos(<x>,<y>) - Position|\pos]](x1,y1), and, at the very end, the same as \pos(x2,y2). If the parameters t1 and t2 are specified, then the subs will start at x1,y1, but won't start moving to x2,y2 until time reaches t1. At that point, they will start moving, and end at t2. t1 and t2 are specified in milliseconds, relative to the start time of current line. If t1 and t2 are omitted or zero, animation is assumed to last for the whole length of line.
