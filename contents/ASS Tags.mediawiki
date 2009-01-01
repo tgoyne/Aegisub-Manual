@@ -318,15 +318,29 @@ The alignment of the subtitle line is used as anchor point for the position, eg.
 [[Image:pos_sample01.jpg]]<br>[[Image:pos_sample02.jpg]]<br>[[Image:pos_sample03.jpg]]}}
 }}
 
-===\move(<x1>,<y1>,<x2>,<y2>[,<t1>,<t2>]) - Move===
-Moves the text from the original position, defined by x1,y1, to the destination, defined by x2,y2. This means that at the very start of animation, the subtitles will look the same as if you had done a [[#\pos(<x>,<y>) - Position|\pos]](x1,y1), and, at the very end, the same as \pos(x2,y2). If the parameters t1 and t2 are specified, then the subs will start at x1,y1, but won't start moving to x2,y2 until time reaches t1. At that point, they will start moving, and end at t2. t1 and t2 are specified in milliseconds, relative to the start time of current line. If t1 and t2 are omitted or zero, animation is assumed to last for the whole length of line.
+{{TagDefBox|name=Movement
+|usage=\move(<i><x1></i>,<i><y1></i>,<i><x2></i>,<i><y2></i>)<br>\move(<i><x1></i>,<i><y1></i>,<i><x2></i>,<i><y2></i>,<i><t1></i>,<i><t2></i>)|desc=
+The <code>\move</code> tag works similar to [[#Set position|<code>\pos</code>]] in that it positions the subtitle line, the difference is that <code>\move</code> makes the subtitle move.
 
-You may only have one \move command in each line. If you have more, only the first one has any effect.
-e.g.:
- \move(100,150,300,350)
-(Moves from 100,150 to 300,350, lasting whole line duration)
- \move(100,150,300,350,500,1500)
-(Same as before, but it starts 500 ms (that is, half a second) after line appears, and ends one second later (that is, 1.5 seconds after subtitles started))
+The two versions of <code>\move</code> differ in that one makes the movement occur over the entire duration of the subtitle, while on the other you specify the time over which the movement occurs.
+
+The coordinates ''x1'', ''y1'', ''x2'' and ''y2'' are given in the script resolution coordinate system, like <code>\pos</code>. The subtitle starts out at point (''x1'',''y1'') and moves with constant speed so it ends up at (''x2'',''y2''). [[#Line alignment|Alignment]] influences movement coordinates the same way as it influences <code>\pos</code> coordinates.
+
+:''In VSFilter 2.39 and later, you can use non-integer numbers for the X and Y coordinates. Note that this might not be safe for softsubbing.''
+
+In the second version, the times ''t1'' and ''t2'' are given in milliseconds, ie. one thousandth of a second, and are relative to the start time of the subtitle. For example, a ''t1'' value of 1500 means that the movement begins 1.5 seconds (one and a half second) after the line has appeared on screen. When you specify times for the movement, the position of the subtitle is as follows:
+
+# Before ''t1'', the subtitle is stationary at point (''x1'',''y1'').
+# Between ''t1'' and ''t2'', the subtitle moves with constant speed from (''x1'',''y1'') to (''x2'',''y2'').
+# After ''t2'' the subtitle is stationary at point (''x2'',''y2'').
+
+Note that it is legal to have ''t1'' and ''t2'' specify times greater than the duration of the line, but it might not be very useful to do so. Specifying both ''t1'' and ''t2'' as 0 (zero) is the same as using the first version of <code>\move</code>, ie. the movement will occur from the start time of the line to the end time of the line.
+
+{{Examplebox|<pre>\move(100,150,300,350)</pre>
+When the line appears on screen, the subtitle is at (100,150). While the subtitle is displayed, it moves at constant speed such that it will arrive at point (300,350) at the same time it disappears.}}
+{{Examplebox|<pre>\move(100,150,300,350,500,1500)</pre>
+The line appears at (100,150). After the line has been displayed for half a second (500 milliseconds) it begins moving towards (300,350) such that it will arrive at the point a second and a half (1500 milliseconds) after the line first appeared on screen.}}
+}}
 
 ===\org(<x>,<y>) - Origin===
 Sets the screen coordinates of the origin (or pivot point) for rotation and scaling tags. This can be useful for some relatively advanced effects. Suppose that you have a spinning roulette in the video, and you want some text to follow it. You can set the origin to the center position of roulette, and then animate a [[#\fr%5b<x/y/z>%5d<degrees> - Font rotation|\frz]] with \t, so the text spins around that position. Origin can also be set outside video, which means that you can set it very far away, and make minor adjustments to rotation to give text a "jumping" effect.
