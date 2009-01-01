@@ -336,6 +336,11 @@ In the second version, the times ''t1'' and ''t2'' are given in milliseconds, ie
 
 Note that it is legal to have ''t1'' and ''t2'' specify times greater than the duration of the line, but it might not be very useful to do so. Specifying both ''t1'' and ''t2'' as 0 (zero) is the same as using the first version of <code>\move</code>, ie. the movement will occur from the start time of the line to the end time of the line.
 
+There are some things '''<code>\move</code> can not do''':
+* Non-constant-speed movement is not possible. The movement can not, for example, start out slow and end fast.
+* There can only be one positioning or movement tag in a line. Putting both a <code>\pos</code> and a <code>\move</code> tag in a line will not work. It will also not work to put two or more <code>\move</code> tags in a single line.
+If you need to do do any of those two you will need to split the movement into segments that are done on separate subtitle lines. (How to do this is outside the scope of this page.)
+
 {{Examplebox|<pre>\move(100,150,300,350)</pre>
 When the line appears on screen, the subtitle is at (100,150). While the subtitle is displayed, it moves at constant speed such that it will arrive at point (300,350) at the same time it disappears.}}
 {{Examplebox|<pre>\move(100,150,300,350,500,1500)</pre>
