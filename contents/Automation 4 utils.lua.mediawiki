@@ -106,7 +106,7 @@ Clamps <code>inval</code> to be in range <code>min</code..<code>max</code>.
 === interpolate ===
 Synopsis: <code>outval = interpolate(t, a, b)</code>
 
-Interpolates between <code>a</code> and <code>b</code>. <code>t</code> is the time variable in range 0..1, values outside this range are clapmed.
+Interpolates between <code>a</code> and <code>b</code>. <code>t</code> is the time variable in range 0..1, values outside this range are clamped.
 
 === interpolate_color ===
 Synopsis: <code>outcolor = interpolate_color(t, color1, color2)</code>
