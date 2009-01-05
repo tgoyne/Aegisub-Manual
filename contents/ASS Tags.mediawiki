@@ -143,7 +143,7 @@ Rotates the text along the X, Y or Z axis. The <code>\fr</code> tag is a shortcu
 
 * The '''X axis''' runs horizontally on the screen. Rotating on it (with positive values) causes an effect where the top of the text moves farther "into" the screen while the bottom moves "out" of the screen.
 * The '''Y axis''' runs vertically on the screen. Rotating on it (with positive values) causes the text to rotate so that the left moves "outside" the screen, when the right moves "into" the screen.
-* The '''Z'''axis runs perpendicular to the screen. Rotating on it (with positive values) causes the text to rotate in 2D, counterclockwise (as standard for degrees).
+* The '''Z axis''' runs perpendicular to the screen. Rotating on it (with positive values) causes the text to rotate in 2D, counterclockwise (as standard for degrees).
 
 The rotation ''amount'' is given in mathematical degrees, such that 360 degrees is a full rotation, and rotating any multiple of 360 is the same as not rotating. It is legal to specify negative rotation amounts, as well as amounts larger than 360 degrees.
 
