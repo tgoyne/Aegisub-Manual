@@ -389,47 +389,57 @@ The alpha values are given in ''decimal'' and are between 0 and 255, with 0 bein
 Starts invisible, fades to almost totally opaque, then fades to almost totally invisible. First fade starts when the line starts and lasts 500 milliseconds. Second fade starts 1500 milliseconds later, and lasts 200 milliseconds.}}
 }}
 
-===\t([<t1>,<t2>,][<accel>,]<style modifiers>) - Transform===
-This is perhaps the most powerful override tag available. It does nothing by itself; instead, it animates (transforms) other tags. The animation will start at t1 milliseconds and end at t2 milliseconds, in much the same way as [[#\move(<x1>,<y1>,<x2>,<y2>%5b,<t1>,<t2>%5d) - Move|\move]]. If either of those parameters are omitted or zero, then start and end of the line respectively are assumed, as with \move.
+{{TagDefBox|name=Animated transform
+|usage=\t(<i><style modifiers></i>)<br>\t(<i><accel></i>,<i><style modifiers></i>)<br>\t(<i><t1></i>,<i><t2></i>,<i><style modifiers></i>)<br>\t(<i><t1></i>,<i><t2></i>,<i><accel></i>,<i><style modifiers></i>)|desc=
+Perform a gradual, animated transformation from one style to another. The ''style modifiers'' are other override tags as specified in this reference. Only a limited set of the override tags are animateable with <code>\t</code>:
+<table><tr>
+<th width="33%">Font</th>
+<th width="33%">Geometry</th>
+<th width="34%">Other effects</th>
+</tr><tr>
+<td valign="top">\fs<br>
+\fsp<br>
+\c<br>
+\1c<br>
+\2c<br>
+\3c<br>
+\4c<br>
+\alpha<br>
+\1a<br>
+\2a<br>
+\3a<br>
+\4a</td>
+<td valign="top">\fscx<br>
+\fscy<br>
+\frx<br>
+\fry<br>
+\frz<br>
+\fr</td>
+<td valign="top">\bord<br>
+\shad<br>
+\clip</td>
+</tr></table>
 
-The optional acceleration parameter allows the transformation to be non-linear. Think of it as the exponent on a x^n. Acceleration = 1 is linear. Acceleration between 0 and 1 starts fast and ends slow. Acceleration larger than 1 starts slower and ends fast.
+:''In VSFilter 2.39 and later, the following additional tags can also be animated with <code>\t</code>:''
+:''\fax \fay \be \blur \xbord \ybord \xshad \yshad \iclip''
 
-The following tags are supported by \t:
-*\c
-*\1-4c
-*\alpha
-*\1-4a
-*\fs
-*\fr
-*\frx
-*\fry
-*\frz
-*\fscx
-*\fscy
-*\fsp
-*\bord
-*\shad
-*\clip (rectangle version only).
-In VSFilter '''2.39 or later''' the following tags are also supported by \t, in addition to the ones listed above:
-*\be
-*\blur
-*\fax
-*\fay
-*\xbord
-*\ybord
-*\xshad
-*\yshad
-*\iclip (rectangle version only)
+''Note: For \clip and \iclip, only the rectangle versions can be animated. The vector drawing versions cannot be animated.''
 
-e.g.:
- {\c&H0000FF&\t(\c&HFF0000)}Hello!
-(Starts text at a red colour and fades it to blue)
- {\an5\t(0,5000,\frz3600)}Woo!
-(Makes the text rotate 10 times, counterclockwise, lasting for 5 seconds)
- {\an5\t(0,5000,0.5,\frz3600)}Woo!
-(Same as before, but it will start fast and slow down, still doing the 10 rotations in 5 seconds)
- {\an5\fscx0\fscy0\t(0,500,\fscx100\fscy100)}
-(Text starts at zero size, ie. invisible, then grows to 100% size in both X and Y direction.)
+The ''t1'' and ''t2'' parameters specify the time interval to perform the transformation over. In the versions without ''t1'' and ''t2'' the transformation is performed over the entire duration of the line. The times are given in milliseconds and are relative to the start time of the line. (For the rest of the description of <code>\t</code>, ''t1'' and ''t2'' are assumed to be specified, or implicitly be respectively 0 and the duration of the line.)
+
+The ''accel'' parameter can be used to make the animation non-linear and instead follow an exponential curve. An ''accel'' parameter of 1 (one) causes the animation speed to be linear. A value bewteen 0 and 1 causes the animation to start fast and end slow. A value greater than 1 causes the animation to start slow and end fast. (For the mathematically inclined, the function is ''y'' = ''x<sup>accel</sup>'' with ''x'' ∈ [0;1] = (''t''-''t1'')/(''t2''-''t1''), ''t'' being the current time.)
+
+Before ''t1'', the style is as all tags before the <code>\t</code> tag specify. After ''t2'' the style is as all tags before the <code>\t</code> tag, and further overridden by the given ''style overrides''. Between ''t1'' and ''t2'' the style is gradually animated between those two points, following the acceleration function described above.
+
+{{Examplebox|<pre>{\1c&HFF0000&\t(\1c&H0000FF&)}Hello!</pre>
+The text starts out blue, but fades towards red so it is completely red when the line ends.}}
+{{Examplebox|<pre>{\an5\t(0,5000,\frz3600)}Wheee</pre>
+Makes the text rotate 10 times, counterclockwise, lasting for 5 seconds.}}
+{{Examplebox|<pre>{\an5\t(0,5000,0.5,\frz3600)}Wheee</pre>
+Same as above, but it will start fast and slow down, still doing the 10 rotations in 5 seconds.}}
+{{Examplebox|<pre>{\an5\fscx0\fscy0\t(0,500,\fscx100\fscy100)}Boo!</pre>
+Text starts at zero size, ie. invisible, then grows to 100% size in both X and Y direction.}}
+}}
 
 ===\[i]clip(<x1>,<y1>,<x2>,<y2>) - Set clipping rectangle===
 This sets the clipping rectangle of the text, so that it will ''only'' be drawn ''inside'' this rectangle. For example, if you had a resolution of 640x480 and set \clip(0,0,320,240), then text would only be drawn on top-left quadrant - anything outside it would be "clipped" and would be invisible. This tag is useful for when some object moves in front of text: you can use [[#\t(%5b<t1>,<t2>,%5d%5b<accel>,%5d<style modifiers>) - Transform|\t]] to animate the "window" where the text is visible.
