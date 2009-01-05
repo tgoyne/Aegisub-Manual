@@ -347,29 +347,47 @@ When the line appears on screen, the subtitle is at (100,150). While the subtitl
 The line appears at (100,150). After the line has been displayed for half a second (500 milliseconds) it begins moving towards (300,350) such that it will arrive at the point a second and a half (1500 milliseconds) after the line first appeared on screen.}}
 }}
 
-===\org(<x>,<y>) - Origin===
-Sets the screen coordinates of the origin (or pivot point) for rotation and scaling tags. This can be useful for some relatively advanced effects. Suppose that you have a spinning roulette in the video, and you want some text to follow it. You can set the origin to the center position of roulette, and then animate a [[#\fr%5b<x/y/z>%5d<degrees> - Font rotation|\frz]] with \t, so the text spins around that position. Origin can also be set outside video, which means that you can set it very far away, and make minor adjustments to rotation to give text a "jumping" effect.
+{{TagDefBox|name=Rotation origin
+|usage=\org(<i><X></i>,<i><Y></i>)|desc=
+Set the origin point used for [[#Text rotation|rotation]]. This affects all rotations of the line. The ''X'' and ''Y'' coordinates are given in integer script resolution pixels.
 
-You may only have one \org command in each line. If you have more, only the first one has any effect.
-e.g.:
- \org(320,240)
-(Sets origin at 320,240)
- \org(10000,0)
-(Sets origin at 10000,0, which might be useful for jumping effects)
+When there is no <code>\org</code> tag in a line, the rotation origin is implicitly the same as the [[#Set position|position anchor point]]. This means that the rotation origin will move if the line moves and there is no origin set with <code>\org</code>. Note that you can ''not'' animate the <code>\org</code> tag, you are limited to a fixed origin if you use it.
 
-===\fade(<a1>,<a2>,<a3>,<t1>,<t2>,<t3>,<t4>) - Fade===
-Fades text. This is done in two steps. The text starts with alpha a1 (as if set by \alpha), and at time t1, it will start fading to a2. It ends fading to a2 at time t2. At time t3, it starts fading to value a3, and finally ends on time t4. Times are given in milliseconds relative to start of line, in the same way as \move. Note that the transparency values are given as decimal numbers (0-255), '''not''' hexadecimal (&00&-&FF&) as with \alpha! 0 is opaque, 255 is transparent. Note that this tag affects all four alphas.
-e.g.:
- \fade(255,32,224,0,500,2000,2200)
-(Starts invisible, fades to almost totally opaque, then fades to almost totally invisible. First fade starts when the line starts and lasts 500 milliseconds. Second fade starts 1500 milliseconds later, and lasts 200 milliseconds)
+If the rotation origin is placed on the vanishing point in a 3D scene, 3D rotations of subtitle line will produce the correct perspective to match the scene.
 
-===\fad(<t1>,<t2>) - Fade (simplified)===
-A less powerful, but more practical version of [[#\fade(<a1>,<a2>,<a3>,<t1>,<t2>,<t3>,<t4>) - Fade|\fade]]. It makes line start invisible, then immediately start fading to full visibility for t1 milliseconds. It will start fading to invisible t2 milliseconds before the END of line, and become invisible just as the line vanishes. It's important to notice that this is the only ASS override tag that has a time reference relative to end of line. It is also equivalent to \fade(255,0,255,0,t1,LEN-t2,LEN), where LEN is the length of current line in milliseconds. 
-e.g.:
- \fad(500,500)
-(Fades text in for 500 milliseconds, then fades out for 500 milliseconds at the end)
- \fad(500,0)
-(Fades text in for 500 milliseconds [does not fade out])
+There can be at most one <code>\org</code> tag in a single line, if you put more than one in a single line, only the first is used.
+
+{{Examplebox|<pre>\org(320,240)</pre>
+Fix the rotation origin at point (320,240).}}
+{{Examplebox|<pre>\org(10000,0)</pre>
+Placing the rotation origin at a far away point allows you to use slight <code>\frz</code> rotations to produce "jumping" effects; the text will move up or down without seeming to rotate.}}
+}}
+
+{{TagDefBox|name=Fade
+|usage=\fad(<i><fadein></i>,<i><fadeout></i>)|desc=
+Produce a fade-in and fade-out effect. The ''fadein'' and ''fadeout'' times are given in milliseconds, ie. 1000 means one second. You can specify ''fadein'' or ''fadeout'' as 0 (zero) to not have any fade effect on that end.
+
+Adding a fade effect does not extend the duration of the line, rather the start or end of the line's display time is used for the fade effect. For this reason, you should be careful that ''fadein''+''fadeout'' is not greater than the duration of the line. For example, for a line displayed for 4 seconds, the sum of ''fadein''+''fadeout'' should not be greater than 4000.
+
+{{Examplebox|<pre>\fad(1200,250)</pre>
+Fade in the line in the first 1.2 seconds it is to be displayed, and fade it out for the last one quarter second it is displayed.}}
+}}
+
+{{TagDefBox|name=Fade (complex)
+|usage=\fade(<i><a1></i>,<i><a2></i>,<i><a3></i>,<i><t1></i>,<i><t2></i>,<i><t3></i>,<i><t4></i>)|desc=
+Perform a five-part fade using three alpha values ''a1'', ''a2'' and ''a3'' and four times ''t1'', ''t2'', ''t3'' and ''t4''.
+
+The alpha values are given in ''decimal'' and are between 0 and 255, with 0 being fully visible and 255 being invisible. The time values are given in milliseconds after the start of the line. All seven parameters are required. (For most common fade effects the <code>[[#Fade|\fad]]</code> tag works fine.)
+
+* Before ''t1'', the line has alpha ''a1''.
+* Between ''t1'' and ''t2'' the line fades from alpha ''a1'' to alpha ''a2''.
+* Between ''t2'' and ''t3'' the line has alpha ''a2'' constantly.
+* Between ''t3'' and ''t4'' the line fades from alpha ''a2'' to alpha ''a3''.
+* After ''t4'' the line has alpha ''a3''.
+
+{{Examplebox|<pre>\fade(255,32,224,0,500,2000,2200)</pre>
+Starts invisible, fades to almost totally opaque, then fades to almost totally invisible. First fade starts when the line starts and lasts 500 milliseconds. Second fade starts 1500 milliseconds later, and lasts 200 milliseconds.}}
+}}
 
 ===\t([<t1>,<t2>,][<accel>,]<style modifiers>) - Transform===
 This is perhaps the most powerful override tag available. It does nothing by itself; instead, it animates (transforms) other tags. The animation will start at t1 milliseconds and end at t2 milliseconds, in much the same way as [[#\move(<x1>,<y1>,<x2>,<y2>%5b,<t1>,<t2>%5d) - Move|\move]]. If either of those parameters are omitted or zero, then start and end of the line respectively are assumed, as with \move.
