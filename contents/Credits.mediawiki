@@ -59,8 +59,9 @@
 *2.00 translations:
 **[[Image:Flag_of_Brazil.gif|24px]] ArchMage ZeratuL: Brazilian Portuguese
 **[[Image:Flag_of_Catalonia.png|24px]] Ereza: Catalan
-**[[Image:Flag_of_Czech-Republic.gif|24px]] Petrkr: Czech '''(WIP)'''
-**[[Image:Flag_of_Hungary.gif|24px]] Yuri: Hungarian '''(WIP)'''
+**[[Image:Flag_of_Hungary.gif|24px]] Yuri: Hungarian
+**[[Image:Flag_of_Japan.gif|24px]] Hiroshi: Japanese
+**[[Image:Flag_of_Finland.gif|24px]] Jeroi: Finnish
 *1.11 translations:
 **[[Image:Flag_of_Taiwan.gif|24px]] Karasu: Traditional Chinese
 *1.10 translations:
