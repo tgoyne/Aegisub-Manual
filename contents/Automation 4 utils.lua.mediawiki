@@ -101,7 +101,7 @@ Functions to handle various operations on numbers.
 === clamp ===
 Synopsis: <code>outval = clamp(inval, min, max)</code>
 
-Clamps <code>inval</code> to be in range <code>min</code..<code>max</code>.
+Clamps <code>inval</code> to be in range <code>min</code>..<code>max</code>.
 
 === interpolate ===
 Synopsis: <code>outval = interpolate(t, a, b)</code>
