@@ -114,7 +114,7 @@ Synopsis: <code>outcolor = interpolate_color(t, color1, color2)</code>
 Interpolate between <code>color1</code> and <code>color2</code> with <code>t</code> as time variable in range 0..1. <code>color1</code>, <code>color2</code> and <code>outcolor</code> are colour strings, <code>outcolour</code> will be in colour override format.
 
 === interpolate_alpha ===
-Synopsis: <code>outalpha = interpolate_color(t, alpha1, alpha2)</code>
+Synopsis: <code>outalpha = interpolate_alpha(t, alpha1, alpha2)</code>
 
 Similar to <code>interpolate_color</code>, but interpolates alpha values instead. Also works on colour strings, and will return an alpha override string.
 
