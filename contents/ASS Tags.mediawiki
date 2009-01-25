@@ -524,7 +524,7 @@ Moves the cursor to x,y, without closing the current shape.
 Draws a line from the current cursor position to x,y, and moves the cursor there afterwards.
 
 ===b <x1> <y1> <x2> <y2> <x3> <y3> - Cubic Bézier curve===
-Draws a cubic (3rd degree) Bézier curve to point 3, using 1 and 2 as the control points. Check the [http://en.wikipedia.org/wiki/B%C3%A9zier_curve article on Wikipedia] for more information about Bézier curves. In this picture taken from that article, P0 is the cursor position, P1 is x1,y1, P2 is x2,y2 and P3 is x3,y3:<br>
+Draws a cubic (3rd degree) Bézier curve from the cursor position to (x3,y3), using (x1,y1) and (x2,y2) as the control points. Check the [http://en.wikipedia.org/wiki/B%C3%A9zier_curve article on Wikipedia] for more information about Bézier curves. In this picture taken from that article, P0 is the cursor position, P1 is x1,y1, P2 is x2,y2 and P3 is x3,y3:<br>
 [[Image:Bezier.png]]<br>
 Note that the curve begins at P0, heads towards P1, then arrives at P3 coming from P2's direction.
 
