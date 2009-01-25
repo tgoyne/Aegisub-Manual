@@ -201,7 +201,7 @@ Some common font encoding ID's are:
 
 A more complete list can be seen the [[Styles#The style editor|style editor]] dialog box.
 
-In ASS files stored in non-Unicode encodings, this tag also affects what codepage the text following it should be interpreted in. Aegisub doesn't support this use and some renderers might not support it either, it is recommended you do not rely on this and instead always store your files in a Unicode encoding. (Aegisub stores files in Unicode UTF-8 by default.}}
+In ASS files stored in non-Unicode encodings, this tag also affects what codepage the text following it should be interpreted in. Aegisub doesn't support this use and some renderers might not support it either, it is recommended you do not rely on this and instead always store your files in a Unicode encoding. (Aegisub stores files in Unicode UTF-8 by default.)}}
 
 {{TagDefBox|name=Set color
 |usage=\c&H<i><bb><gg><rr></i>&<br>\1c&H<i><bb><gg><rr></i>&<br>\2c&H<i><bb><gg><rr></i>&<br>\3c&H<i><bb><gg><rr></i>&<br>\4c&H<i><bb><gg><rr></i>&|desc=
