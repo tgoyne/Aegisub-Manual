@@ -107,7 +107,7 @@ The text following this tag will be in Times New Roman font.}}
 
 {{TagDefBox|name=Font size
 |usage=\fs<i><size></i>|desc=
-Set the size of the font. The size specified is the height in script pixels, so at font size 40 one line of text is 40 pixels tall.
+Set the size of the font. The size specified is the height in script pixels, so at font size 40 one line of text is 40 pixels tall. (Technical note: it's really typographic (desktop publishing) points, not script pixels, but since the rendering is always done at 72 DPI (as per the de facto standard), one point ends up being exactly equal to one script resolution pixel.)
 
 You can only specify integer font sizes.
 
