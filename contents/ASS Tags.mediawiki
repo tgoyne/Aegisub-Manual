@@ -254,7 +254,7 @@ The <code>\an</code> tag uses "numpad" values for the ''pos'', ie. the alignment
 
 {{TagDefBox|name=Line alignment (legacy)
 |usage=\a<i><pos></i>|desc=
-Specify the alignment of the line using legacy alignment codes from SubStation Alpha.
+Specify the alignment of the line using legacy alignment codes from SubStation Alpha. This tag is supported but considered deprecated; you should usually use <code>\an</code> in new scripts instead, as it is more intuitive.
 
 Calculate ''pos'' as follows: Use 1 for left-alignment, 2 for center alignment and 3 for right-alignment. If you want sub-titles you're done. To get top-titles, add 4 to the number, to get mid-titles add 8 to the number:
 
