@@ -355,6 +355,8 @@ When there is no <code>\org</code> tag in a line, the rotation origin is implici
 
 If the rotation origin is placed on the vanishing point in a 3D scene, 3D rotations of subtitle line will produce the correct perspective to match the scene.
 
+It's perfectly possible (and occasionally useful) to place the origin point far outside the actual image; if it is sufficiently far away, doing appropriately calculated small rotations will seem to move the text along a straight (or almost straight) line through the image. This is somewhat hard to control, but can be used to work around format limitations with \move, such as the inability to do accelerated moves or several moves per line.
+
 There can be at most one <code>\org</code> tag in a single line, if you put more than one in a single line, only the first is used.
 
 {{Examplebox|<pre>\org(320,240)</pre>
