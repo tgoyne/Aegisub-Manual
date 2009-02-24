@@ -249,8 +249,10 @@ Additions by <code>karaskel.preproc_line_size</code>:
 * <code>syl.prespacewidth</code>, <code>syl.postspacewidth</code> - Width of <code>syl.prespace</code> and <code>syl.postspace</code> respectively. You will usually not need these. Always zero for furigana.
 
 Additions by <code>karaskel.preproc_line_pos</code>:
-* <code>syl.left</code>, <code>syl.center</code>, <code>syl.right</code> - Respectively left, center and right aligned positions of the syllable/furigana, for use with different alignments. These are not guaranteed to be continuous in any way from syllable to syllable.
+* <code>syl.left</code>, <code>syl.center</code>, <code>syl.right</code> - Respectively left, center and right aligned positions of the syllable/furigana, for use with different alignments. The positions are ''relative to the left edge of the line'', meaning you will need to add a value for line positioning to use these values to position syllables on screen. There is no guarantee that <code>syl.right</code> for one syllable is equal to <code>syl.left</code> for the next syllable.
 
+{{Examplebox|<pre>line.left + syl.center</pre>
+Calculates the default X position of a syllable, suitable for use with <code>\an2</code>, <code>\an5</code> or <code>\an8</code> alignment.}}
 ==== Highlight table ====
 A highlight table defines one highlight of a multi-highlight timed syllable.
 
