@@ -21,6 +21,8 @@
 **[[Image:Flag_of_United-States.gif|24px]] '''p-static''' - Linux patches
 **'''David Conrad''' (Yuvi) - Mac patches
 **[[Image:Flag_of_Netherlands.gif|24px]] '''Daniel Moscoviter''' (Mosc) - General patches
+**[[Image:Flag_of_United-States.gif|24px]] '''Plorkyeran''' - Various patches
+**[[Image:Flag_of_United-States.gif|24px]] '''Harukalover''' - Usability, various patches
 
 ===Installer===
 *2.x:
