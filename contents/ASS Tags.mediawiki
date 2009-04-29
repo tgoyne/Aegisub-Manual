@@ -29,7 +29,13 @@ Switch ''italics'' text on or off. Use <code>\i1</code> to enable italics for th
 |usage=\b1<br>\b0<br>\b<i><weight></i>|desc=
 Switch '''boldface''' text on or off. Use <code>\b1</code> to enable boldface for the following text and <code>\b0</code> to disable boldface again.
 
-The <code>\b<i><weight></i></code> form allows you to specify an explicit weight to use. Note that most fonts only support one or two weights so you rarely need to use this. Font weights are multiples of 100, such that 100 is the lowest, 400 is "normal", 700 is "bold" and 900 is the heaviest.}}
+The <code>\b<i><weight></i></code> form allows you to specify an explicit weight to use. Note that most fonts only support one or two weights so you rarely need to use this. Font weights are multiples of 100, such that 100 is the lowest, 400 is "normal", 700 is "bold" and 900 is the heaviest.
+
+{{Examplebox|<pre>I am {\b1}not[\b0} amused.</pre>
+The word "not" is written in boldface.}}
+{{Examplebox|<pre>{\b100}How {\b300}bold {\b500}can {\b700}you {\b900}get?</pre>
+The words are written with increasingly greater weight. Note that most fonts do not have more than one or two different weights and you will only be able to see "not bold" and "bold" in that case.}}
+}}
 
 {{TagDefBox|name=Underline
 |usage=\u1<br>\u0|desc=
