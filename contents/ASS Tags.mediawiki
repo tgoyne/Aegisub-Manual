@@ -1,6 +1,13 @@
 __NOTOC__
 The following is a list of every tag supported by the Advanced Substation Alpha format. This is basically a detailed version of ass-quickref.txt. See the [[Typesetting Tutorial|tutorial]] for an introduction to typesetting, using some basic tags.
 
+Override tags always follow the same form: They start with a backslash \ character, then a name, and after the name a parameter to the tag.
+
+Some tags are "complex" and take more than one parameter, in that case the parameters are put inside parentheses with commas between the parameters.
+
+'''Note on typography:'''<br>
+On this page, everything written in ''italics'' with <code>&lt;</code> angle brackets <code>&gt;</code> around, means it is a parameter and you must enter a value instead of it. The angle brackets are not part of the value you should enter. Use the examples as a guide to how the tags should be entered. In general, the same rules apply to all tags, in how they look.
+
 ==Special characters==
 The following tags are written in the middle of the text, and not inside override blocks (i.e. not between { and }).
 
