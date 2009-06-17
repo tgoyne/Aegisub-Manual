@@ -146,6 +146,8 @@ When a template with the ''loop'' or ''repeat'' modifier is running, two new var
 * '''maxj''' is the number of loops, ie. simply the parameter given to the ''loop'' modifier.
 * '''j''' is the loop iteration counter, it starts at 1 in the first iteration and ''maxj'' in the last.
 
+If you change <code>j</code> or <code>maxj</code> while a template is executing, you can affect the number of iterations the loop makes. The <code>[[#maxloop|maxloop]]</code> function is convenient for making dynamic loops.
+
 {{Examplebox|
  template syl loop 5: {\an5\pos($scenter,$smiddle)\1a&HFF&\3a&Hcc&\t($start,$end,\fscx!100+<u>j</u>*10!\fscy!100+<u>j</u>*10!\3a&HFF&)}
 
@@ -158,7 +160,6 @@ This example assumes that the style definition has shadow disabled but it does h
 
 Here looping is used to [http://en.wikipedia.org/wiki/Unit_circle#Trigonometric_functions_on_the_unit_circle calculate several points on a circle] with radius 15 and make the syllables move out to those. Just by changing the number of loops in the Effect field you can make a more detailed circle because <code>j/maxj</code> is used to calculate how large a portion of the total number of loops have been completed.
 }}
-
 === Conditional templates with fxgroup ===
 
 The ''fxgroup'' modifier uses a special table <code>'''fxgroup'''</code> in the code execution environment to control whether a template will be executed or not.
