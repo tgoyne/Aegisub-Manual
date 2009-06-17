@@ -82,6 +82,58 @@ Makes the syllable spin around itself during its highlight. Unless you also have
 
 These two templates together makes the syllable move 10 pixels upwards during the first half of its highlight and back down during the last half. Using <code>retime</code> is an easy way to get multiple <code>\move</code> tags to affect the same syllable; there can only be one <code>\move</code> tag on one line, but if you split the line into many "chained" times you can create an effect of the same syllable moving in several directions.
 }}
+== relayer ==
+
+Synopsis: <code>relayer(newlayer)</code>
+
+Change the Layer field of the generated line to ''newlayer''.
+
+'''Note:''' If you want a template to always generate lines with a static layer number, you do not need to use this function. You can just set the Layer field on the template line, it will transfer to the generated lines.
+
+{{Examplebox|
+ template syl: !relayer(syl.i*5+20)!
+
+Each syllable generated from the line gets a progressively higher layer number. The first syllable gets in layer 25, the second in layer 30 and so on, each syllable getting a layer 5 larger than the previous.
+}}
+== restyle ==
+
+Synopsis: <code>restyle(newstyle)</code>
+
+Change the Style field on the generated line to ''newstyle''. 
+
+'''''Be careful''' that this does not update the sizing and positioning information.'' If you want to use sizing or positioning information such as <code>$x</code>, <code>$lwidth</code>, <code>line.middle</code> and <code>syl.right</code> you must change to a style that uses the same font name, font size, boldness, italics, font encoding, X and Y scaling, character spacing, alignment and margins. If you change to a style where any of those properties are different, the positioning and sizing information will be invalid.
+
+No example because the function has limited use.
+
+== maxloop ==
+
+Synopsis: <code>maxloop(newmax)</code>
+
+Dynamically control the number of times a template will be looped.
+
+'''''Be careful''' that using this function incorrectly might result in a template that loops forever, until Aegisub runs out of memory or you cancel the template application.''
+
+You do not need to use the loop modifier on templates to use this function.
+
+{{Examplebox|
+ template syl: !maxloop(syl.width + 2*line.styleref.outline)!{\clip(!line.left+syl.left-line.styleref.outline+j-1!,0,!line.left+syl.left-line.styleref.outline+j!,!meta.res_y!)\an5\move(!line.left+syl.center!,!line.middle!,!line.left+syl.center!,!line.middle+math.random(-20,20)!,$start,$end)\shad0}
+
+Cut each syllable into a number of slivers, the actual number depends on the size of the syllable. Each sliver moves randomly on highlight.
+}}
+{{Examplebox|
+ template syl: !maxloop(j+1)!
+
+Makes an infinite loop. It continually sets <code>j</code> one higher, making the loop never complete.
+}}
+== loopctl ==
+
+Synopsis: <code>loopctl(newj, newmaxj)</code>
+
+Control both loop variables. This function has questionable utility.
+
+''newj'' sets the new value of <code>tenv.j</code> and ''newmaxj'' sets the new value of <code>tenv.maxj</code>.
+
+No example because the function has limited use.
 
 == Template execution data ==
 
