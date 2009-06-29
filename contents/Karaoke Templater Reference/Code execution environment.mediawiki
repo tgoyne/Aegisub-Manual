@@ -82,7 +82,7 @@ Makes the syllable spin around itself during its highlight. Unless you also have
 
 These two templates together makes the syllable move 10 pixels upwards during the first half of its highlight and back down during the last half. Using <code>retime</code> is an easy way to get multiple <code>\move</code> tags to affect the same syllable; there can only be one <code>\move</code> tag on one line, but if you split the line into many "chained" times you can create an effect of the same syllable moving in several directions.
 }}
-== relayer ==
+=== relayer ===
 
 Synopsis: <code>relayer(newlayer)</code>
 
@@ -95,7 +95,7 @@ Change the Layer field of the generated line to ''newlayer''.
 
 Each syllable generated from the line gets a progressively higher layer number. The first syllable gets in layer 25, the second in layer 30 and so on, each syllable getting a layer 5 larger than the previous.
 }}
-== restyle ==
+=== restyle ===
 
 Synopsis: <code>restyle(newstyle)</code>
 
@@ -105,7 +105,7 @@ Change the Style field on the generated line to ''newstyle''.
 
 No example because the function has limited use.
 
-== maxloop ==
+=== maxloop ===
 
 Synopsis: <code>maxloop(newmax)</code>
 
@@ -125,7 +125,7 @@ Cut each syllable into a number of slivers, the actual number depends on the siz
 
 Makes an infinite loop. It continually sets <code>j</code> one higher, making the loop never complete.
 }}
-== loopctl ==
+=== loopctl ===
 
 Synopsis: <code>loopctl(newj, newmaxj)</code>
 
