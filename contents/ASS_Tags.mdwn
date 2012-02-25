@@ -212,7 +212,7 @@ Usually _factor_ will be a small number, not larger than 2 as that creates a ver
 
 Shearing is performed after rotation, on the rotated coordinates. The coordinate system used for shearing is not affected by the [[rotation origin|#Rotation_origin]].
 
-{{todo|We need a screenshot illustrating the effect.}}
+[[!template id=Todo text="We need a screenshot illustrating the effect."]]
 }}
 
 {{TagDefBox|name=Font encoding
@@ -226,7 +226,7 @@ Some common font encoding ID's are:
 * 1 - Default, depends on the configuration of the user's system, but also allows the font sub-system to dynamically pick a different mapping table in some circumstances.
 
 <div></div>
-{{todo|Is that really correct?}}
+[[!template id=Todo text="Is that really correct?"]]
 
 * 2 - Symbol, codepoints in the 0-255 range are translated to per-font defined symbol glyphs, this is used for fonts such as Wingdings.
 * 128 - Shift-JIS, used for Japanese.

@@ -7,7 +7,7 @@ The following tutorials are available for Aegisub:
 
 ### Dialogue Timing  ###
 
-{{Todo|actually do this}}
+[[!template id=Todo text="actually do this"]]
 
 * By: Karl Blomster
 
@@ -27,7 +27,7 @@ The following tutorials are available for Aegisub:
 
 ### Karaoke Timing  ###
 
-{{todo|Actually do this}}
+[[!template id=Todo text="Actually do this"]]
 
 * By: Niels Martin Hansen
 

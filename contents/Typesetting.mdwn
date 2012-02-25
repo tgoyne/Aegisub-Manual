@@ -21,7 +21,7 @@ The main goal of dialogue typesetting is **legibility**; everything else is just
 
 <div></div>
 
-{{Todo|examples}}
+[[!template id=Todo text="examples"]]
 
 
 ## "Sign" typesetting ##
@@ -34,7 +34,7 @@ Sign typesetting (translating various background text) can usually be accomplish
 
 <div></div>
 
-{{Todo|images}}
+[[!template id=Todo text="images"]]
 
 
 ## Further reading ##

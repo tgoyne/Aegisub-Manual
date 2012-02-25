@@ -1,4 +1,4 @@
-{{todo|Make sure that nobody is missing from the list - if you are or can think of someone, please let us know.}}
+[[!template id=Todo text="Make sure that nobody is missing from the list - if you are or can think of someone, please let us know."]]
 
 
 ### Programming ###
@@ -106,7 +106,7 @@
 
 ### Localization files ###
 
-{{todo|This is outdated}}
+[[!template id=Todo text="This is outdated"]]
 
 * 2.00 translations:
 

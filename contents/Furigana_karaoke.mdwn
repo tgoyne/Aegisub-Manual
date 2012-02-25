@@ -121,7 +121,7 @@ Furigana: [[The _furi_ template class|Karaoke_Templater_Reference:_Template_modi
 
 Multi-highlight:  [[The _multi_ modifier|Karaoke_Templater_Reference:_Template_modifiers#multi]]
 
-{{todo|elaborate}}
+[[!template id=Todo text="elaborate"]]
 {{Examplebox|
 The examples used earlier on this page are all generated using this kara-templater snippet:
 <pre>Comment: 0,0:00:00.00,0:00:00.00,Default,,0000,0000,0000,template syl,{\pos(!line.left+syl.center!,!line.middle!)\an5\k!syl.start_time/10!\k$kdur}
@@ -149,7 +149,7 @@ Furigana syllables are stored in `line.furi` and follows the same format as regu
 
 Multi-highlights are always processed even when furigana layout isn't done. Multi-highlight data are stored in `syl.highlights`.
 
-{{Todo|more details}}
+[[!template id=Todo text="more details"]]
 
 [[!template id=Automation_navbox]]
 

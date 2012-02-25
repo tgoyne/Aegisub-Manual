@@ -11,7 +11,7 @@
 
 <div></div>
 
-{{Todo|Plan more tutorials. Also actually write those above.}}
+[[!template id=Todo text="Plan more tutorials. Also actually write those above."]]
 
 
 ## Reference  ##

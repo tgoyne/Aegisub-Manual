@@ -151,12 +151,12 @@ Templates are always matched against a line, not against a syllable or otherwise
 
 ## Applying _line_ class templates  ##
 
-{{Todo| write this}}
+[[!template id=Todo text=" write this"]]
 
 
 ## Applying _syl_ and _furi_ class templates  ##
 
-{{Todo| write this}}
+[[!template id=Todo text=" write this"]]
 
 
 ## Old mid-level description  ##
@@ -304,7 +304,7 @@ Running a single template:
          1. Replace match with result of running the function</pre>
 
 
-{{todo|Turn this into something more reasonable?}}
+[[!template id=Todo text="Turn this into something more reasonable?"]]
 
 [[!template id=Automation_navbox]]
 
