@@ -390,3 +390,10 @@ table p { margin: 0; }
     background-color: #FDFEE7;
     padding-left: 1em;
 }
+
+.tagusage {
+    whitespace: pre;
+    font-family: "Courier New", monospace;
+    margin: 0;
+    margin-left: 4em;
+}

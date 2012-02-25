@@ -1,8 +1,5 @@
+### <TMPL_VAR name> ###
 
-### {{{name}}} ###
+<div class="tagusage"><TMPL_VAR usage></div>
 
-
-{{{usage}}}
-
-{{{desc}}}
-
+<TMPL_VAR desc>
