@@ -151,5 +151,5 @@ Multi-highlights are always processed even when furigana layout isn't done. Mult
 
 {{Todo|more details}}
 
-{{Automation navbox}}
+[[!template id=Automation_navbox]]
 

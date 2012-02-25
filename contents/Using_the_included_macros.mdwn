@@ -114,5 +114,5 @@ Now karaskel creates these syllable structures:
 The cleaned up version is generally what you'd want since it places the override tags inside the syllables they affect.
 }}
 
-{{Automation navbox}}
+[[!template id=Automation_navbox]]
 

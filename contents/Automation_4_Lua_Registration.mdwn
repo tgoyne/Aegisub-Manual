@@ -153,7 +153,7 @@ Export filter configuration panel providers passed to `[[aegisub.register_filter
 
 **Return value:** A configuaration dialogue table, see the page on [[configuration dialogues|Automation_4_Lua_Configuration_dialogues]] for more information on the format of this table.
 
-{{Automation navbox}}
+[[!template id=Automation_navbox]]
 
 [[!tag Lua_Reference]]
 

@@ -343,7 +343,7 @@ Highlight tables are entirely defined by `karaskel.preproc_line_text`, and conta
 
 <div></div>
 
-{{Automation navbox}}
+[[!template id=Automation_navbox]]
 
 [[!tag Lua_Reference]]
 

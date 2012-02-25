@@ -46,7 +46,7 @@ A number of standard include files are provided. These aren't part of the core A
 
 <div></div>
 
-{{Automation navbox}}
+[[!template id=Automation_navbox]]
 
 [[!tag Lua_Reference]]
 

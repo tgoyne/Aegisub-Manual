@@ -306,5 +306,5 @@ Running a single template:
 
 {{todo|Turn this into something more reasonable?}}
 
-{{Automation navbox}}
+[[!template id=Automation_navbox]]
 

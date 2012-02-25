@@ -162,7 +162,7 @@ Synopsis: `outalpha = interpolate_alpha(t, alpha1, alpha2)`
 
 Similar to `interpolate_color`, but interpolates alpha values instead. Also works on colour strings, and will return an alpha override string.
 
-{{Automation navbox}}
+[[!template id=Automation_navbox]]
 
 [[!tag Lua_Reference]]
 

@@ -187,7 +187,7 @@ Returns: Two values.
      dialog.</pre>
 
 
-{{Automation navbox}}
+[[!template id=Automation_navbox]]
 
 [[!tag Lua_Reference]]
 

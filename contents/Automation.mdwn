@@ -39,4 +39,4 @@ If you have previous experience with writing Automation 3 scripts, there is also
 
 Apart from the addition of more languages as mentioned above, one major future goal of Automation is to allow _custom file format handlers_ enabling you to make Aegisub read and write almost every imaginable file format so they can be edited with Aegisub.
 
-{{Automation navbox}}
+[[!template id=Automation_navbox]]

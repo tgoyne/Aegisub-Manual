@@ -106,7 +106,7 @@ The following severity levels are suggested:
 
 <div></div>
 
-{{Automation navbox}}
+[[!template id=Automation_navbox]]
 
 [[!tag Lua_Reference]]
 

@@ -92,7 +92,7 @@ There are 5 values that _artype_ can take:
 
 You cannot count on _ar_ always having the correct value when _artype_ is different from 4.
 
-{{Automation navbox}}
+[[!template id=Automation_navbox]]
 
 [[!tag Lua_Reference]]
 

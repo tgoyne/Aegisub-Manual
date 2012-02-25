@@ -44,5 +44,5 @@ If you have used the _multi-template_ script from Aegisub 1.10 you should recogn
 
 <div></div>
 
-{{Automation navbox}}
+[[!template id=Automation_navbox]]
 

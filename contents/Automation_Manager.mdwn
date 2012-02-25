@@ -61,5 +61,5 @@ You may wonder where several of the functions that were previously in the Automa
 
 
 
-{{Automation navbox}}
+[[!template id=Automation_navbox]]
 

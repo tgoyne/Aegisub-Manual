@@ -267,5 +267,5 @@ The starting alpha for each copy, `&Hc0` is chosen as 256 - (256 / 4), 4 being t
 }}
 > _Also see the examples on the [[Code execution environment|Karaoke_Templater_Reference:_Code_execution_environment#Looping_templates]] page for more advanced usage._
 
-{{Automation navbox}}
+[[!template id=Automation_navbox]]
 

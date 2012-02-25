@@ -45,5 +45,5 @@ A new _[[unicode.lua|Automation_4_unicode.lua]]_ include file has been introduce
 
 Last but not least, the text layout algorithms used in karaskel have been improved a lot and now, among other things, support sub-pixel positioned text, proper handling of inter-syllable spaces and an advanced furigana layout algorithm. The furigana layout algorithm also produces data structures so similar to syllable structures you can in effect use exactly the same code to produce effects for both main syllables and furigana.
 
-{{Automation navbox}}
+[[!template id=Automation_navbox]]
 
