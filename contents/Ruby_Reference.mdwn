@@ -1,0 +1,4 @@
+No documentation has ever been written for Automation 4/Ruby... only a few sample scripts and then the sauce.
+
+Also Ruby support isn't going into 2.00 release unless someone wants to make the commitment to maintain and support it.
+

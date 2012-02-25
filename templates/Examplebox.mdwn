@@ -1,0 +1,20 @@
+<div style="padding: 0.3em;border-left: 1px solid #aaa;margin: 0.3em 2em;background: #f0f0e9;padding-left: 0.8em;">Example
+<div style="margin-left: 1em;">{{{1}}}</div></div>
+<noinclude>Use this to show examples of something.
+
+{{Examplebox|
+<pre>
+{{Examplebox|
+The example goes here, using regular MediaWiki markup.
+Remember to explain the example.
+}}
+</pre>
+
+The example goes here, using regular MediaWiki markup.
+Remember to explain the example.
+}}
+If you need to put equals signs in the example text, you must replace them with the HTML entity `&#x3D;`, otherwise MediaWiki's parser misunderstands it and produces garbage.
+
+Also see <Template:Example>.
+</noinclude>
+

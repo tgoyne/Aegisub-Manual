@@ -1,0 +1,5 @@
+<div style="margin-left: 4em;padding-right: 6em;margin-right: 4em;border: 1px solid #AEC2D7;background-color: #D9EEEE;padding-left: 1em;">**_Example:_**<br>
+    {{{1}}}
+<br>**Results in:** {{{2}}}</div>
+<noinclude>Also see <Template:Examplebox>.</noinclude>
+

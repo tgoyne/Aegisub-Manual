@@ -1,0 +1,48 @@
+**Karaoke Templater** is an [[Automation]] script that ships with Aegisub. Its primary purpose is to help creating [[karaoke effects|Glossary:Karaoke_effect]] with a specially designed template language. Karaoke Templater is already installed and ready to use along with Aegisub.
+
+
+## Tutorials: Introducing Karaoke Templater  ##
+
+
+* [[A simple example|Karaoke_Templater_Tutorial_1]]
+* [[Using math expressions|Karaoke_Templater_Tutorial_2]]
+* [[Using multiple template lines|Karaoke_Templater_Tutorial_3]]
+* [[More advanced effects with positioned syllables|Karaoke_Templater_Tutorial_4]]
+
+<div></div>
+
+{{Todo|Plan more tutorials. Also actually write those above.}}
+
+
+## Reference  ##
+
+
+* [[Declaring template and code lines|Karaoke_Templater_Reference:_Declaring_template_and_code_lines]]
+* [[Rules for when and in what order templates are run|Karaoke_Templater_Reference:_Template_execution_rules_and_order]]
+* [[Template modifiers|Karaoke_Templater_Reference:_Template_modifiers]]
+* [[Inline variables (dollar-variables)|Karaoke_Templater_Reference:_Inline_variables]]
+* [[Rules for code blocks and code lines|Karaoke_Templater_Reference:_Code_lines_and_blocks]]
+* [[Contents of the code block/line execution environment|Karaoke_Templater_Reference:_Code_execution_environment]]
+
+<div></div>
+
+Also see the [[Automation_4_karaskel.lua]] section for more information on what's in the _line_ and _syl_ variables, and more.
+
+
+## For users of _multi-template_  ##
+
+If you have used the _multi-template_ script from Aegisub 1.10 you should recognise several similar concepts in the karaoke templater, but there are also several pitfalls. Some of them are:
+
+
+* You no longer declare template lines in the Actor field but in the Effect field instead. You can also put much more than just _template_ in there. Read the tutorials above for an introduction, or the reference below if you feel adventurous.
+* Instead of using percent-signs to write Lua code blocks you use exclamation marks. So write _!$start+$i*30!_ instead of _%$start+$i*30%_.
+* The _A_ global is gone, but _line_ and _syl_ are directly accesible. The escaped Lua code is no longer run in the true global environment but instead in its own environment, so clashes between your templates and Karaoke Templater itself is much less probable.
+* The _return false_ hack to cancel execution of a template no longer works. Neither does having multi-statement Lua blocks and returning from them in general. For the first purpose the _fxgroup_ functionality has been introduced, and for your multi-statement needs code lines have been introduced.
+* Instead of working with _newline_ and _line_ (for being-generated and original line) you now work with _line_ and _orgline_ for being-generated and original lines.
+* The _retime_ function has been introduced to make it much easier to control the start and end times of your generated lines.
+* Lots of more fancy features. Check the tutorials or read the reference to learn about it all.
+
+<div></div>
+
+{{Automation navbox}}
+
