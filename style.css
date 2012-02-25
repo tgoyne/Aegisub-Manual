@@ -379,3 +379,14 @@ table p { margin: 0; }
 .navbox td {
     text-align: center;
 }
+
+/* todo template */
+.todo {
+    margin-left: 2em;
+    margin-top: 0.5em;
+    padding-right: 4em;
+    margin-right: 3em;
+    border: 1px solid #F9FD96;
+    background-color: #FDFEE7;
+    padding-left: 1em;
+}

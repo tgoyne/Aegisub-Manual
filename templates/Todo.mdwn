@@ -1,18 +1,2 @@
-<div style="margin-left: 2em;margin-top: 0.5em;padding-right: 4em;margin-right: 3em;border: 1px solid #F9FD96;background-color: #FDFEE7;padding-left: 1em;">**Todo:** {{{1}}}</div><includeonly>
-[[!tag Pages_with_Todo_items]]
-</includeonly><noinclude>
-Pages with this template go into the _Pages with Todo items_ category. Put this template on a page when you can't finish it right away and put a note about what more needs to be done.
-
-Remember to check the pages with todo items and fix any missing stuff :)
-
-
-## Usage  ##
-
-
-    {Todo|Text of todo-item}
-
-Shows up as:
-
-<div style="margin-left: 2em;margin-top: 0.5em;padding-right: 4em;margin-right: 3em;border: 1px solid #F9FD96;background-color: #FDFEE7;padding-left: 1em;">**Todo:** Text of todo-item</div>
-</noinclude>
-
+<div class="todo">**Todo:** <TMPL_VAR text></div>
+[[!tag TODO]]
