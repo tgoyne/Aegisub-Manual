@@ -397,3 +397,22 @@ table p { margin: 0; }
     margin: 0;
     margin-left: 4em;
 }
+
+.examplebox {
+    padding: 0.3em;
+    border-left: 1px solid #aaa;
+    margin: 0.3em 2em;
+    background: #f0f0e9;
+    padding-left: 0.8em;
+}
+
+.exampleheader {
+    margin: 0;
+    padding-bottom: 0.3em;
+    font-size: 115%;
+    font-weight: bold;
+}
+
+.examplecontents {
+    margin-left: 1em;
+}

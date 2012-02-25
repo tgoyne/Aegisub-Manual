@@ -2,4 +2,3 @@
 
 <div class="tagusage"><TMPL_VAR usage></div>
 
-<TMPL_VAR desc>
