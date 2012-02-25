@@ -1,6 +1,6 @@
 Code lines and blocks in Karaoke Templater allows you to create advanced effects by incorporating small snippets of Lua code. This can range from simple mathematical expressions adding two numbers to complex functions that for example could generate various shapes in cycling colours.
 
-Both code lines and code blocks are run in a separate semi-closed execution environment, meaning they are mostly undisturbed by the primary Lua environment the Karaoke Templater script itself runs in. For an overview of what variables are available in the code line/block execution environment see: [[Code execution environment|Karaoke_Templater_Reference:_Code_execution_environment]].
+Both code lines and code blocks are run in a separate semi-closed execution environment, meaning they are mostly undisturbed by the primary Lua environment the Karaoke Templater script itself runs in. For an overview of what variables are available in the code line/block execution environment see: [[Code execution environment|Karaoke_Templater_Reference/Code_execution_environment]].
 
 
 ## Code lines  ##
@@ -46,7 +46,7 @@ You _cannot_ have templates with `char` or `multi` modifiers run per-character/p
 ## Code blocks  ##
 
 
-A code block is a block of Lua code within a template line. Code blocks are used to insert more complex things than can be expressed with [[inline variables|Karaoke_Templater_Reference:_Inline_variables]].
+A code block is a block of Lua code within a template line. Code blocks are used to insert more complex things than can be expressed with [[inline variables|Karaoke_Templater_Reference/Inline_variables]].
 
 Code blocks are required to be single Lua expressions, since a `return` statement is automatically prepended to the code. This means you (among other things) can't do assignments or use `if` statements within code blocks, you must use a code line if you want to do any of those things. (There is a way to do basic conditionals in code blocks though, see below.)
 

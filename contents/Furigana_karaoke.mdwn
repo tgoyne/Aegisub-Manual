@@ -117,9 +117,9 @@ Note that every special character can in fact be represented by two different Un
 ## Usage in Karaoke Templater  ##
 
 
-Furigana: [[The _furi_ template class|Karaoke_Templater_Reference:_Template_modifiers#furi]]
+Furigana: [[The _furi_ template class|Karaoke_Templater_Reference/Template_modifiers#furi]]
 
-Multi-highlight:  [[The _multi_ modifier|Karaoke_Templater_Reference:_Template_modifiers#multi]]
+Multi-highlight:  [[The _multi_ modifier|Karaoke_Templater_Reference/Template_modifiers#multi]]
 
 [[!template id=Todo text="elaborate"]]
 {{Examplebox|

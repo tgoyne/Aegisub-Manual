@@ -17,12 +17,12 @@
 ## Reference  ##
 
 
-* [[Declaring template and code lines|Karaoke_Templater_Reference:_Declaring_template_and_code_lines]]
-* [[Rules for when and in what order templates are run|Karaoke_Templater_Reference:_Template_execution_rules_and_order]]
-* [[Template modifiers|Karaoke_Templater_Reference:_Template_modifiers]]
-* [[Inline variables (dollar-variables)|Karaoke_Templater_Reference:_Inline_variables]]
-* [[Rules for code blocks and code lines|Karaoke_Templater_Reference:_Code_lines_and_blocks]]
-* [[Contents of the code block/line execution environment|Karaoke_Templater_Reference:_Code_execution_environment]]
+* [[Declaring template and code lines|Karaoke_Templater_Reference/Declaring_template_and_code_lines]]
+* [[Rules for when and in what order templates are run|Karaoke_Templater_Reference/Template_execution_rules_and_order]]
+* [[Template modifiers|Karaoke_Templater_Reference/Template_modifiers]]
+* [[Inline variables (dollar-variables)|Karaoke_Templater_Reference/Inline_variables]]
+* [[Rules for code blocks and code lines|Karaoke_Templater_Reference/Code_lines_and_blocks]]
+* [[Contents of the code block/line execution environment|Karaoke_Templater_Reference/Code_execution_environment]]
 
 <div></div>
 

@@ -2,7 +2,7 @@ The Lua code in code blocks and on code lines is run in a separate global enviro
 
 You can store your own data in this environment for use later, for example pre-compute some values on code-lines and later insert them using code blocks, but it also contains several pre-defined variables and functions designed to make it easier writing effect templates.
 
-It's important to understand that the contents of code execution environment and the [[inline-variables|Karaoke_Templater_Reference:_Inline_variables]] ($-variables) are not related. You cannot change an inline-variable by changing something in the code execution environment nor can you add new ones. However, you can create and re-define the contents of the code execution environment.
+It's important to understand that the contents of code execution environment and the [[inline-variables|Karaoke_Templater_Reference/Inline_variables]] ($-variables) are not related. You cannot change an inline-variable by changing something in the code execution environment nor can you add new ones. However, you can create and re-define the contents of the code execution environment.
 
 
 ## Line and syllable information  ##
