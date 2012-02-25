@@ -357,3 +357,25 @@ tt {
 
 table p { margin: 0; }
 
+/* navbox stuff */
+.navbox {
+    border-top: 2px solid #448;
+    border-bottom: 1px solid #448;
+    background: #f0f0ff;
+    margin: 1em;
+    padding: 0.5em;
+}
+
+.navbox div {
+    text-align: center;
+    font-weight: bold;
+    background:#ddf;
+}
+
+.navbox table {
+    font-size: smaller;
+}
+
+.navbox td {
+    text-align: center;
+}
