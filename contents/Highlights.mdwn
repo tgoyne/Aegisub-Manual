@@ -33,7 +33,7 @@ Some highlights of Aegisub:
   <div></div>
 * **Fully scriptable through the Automation module**
 
-  * Is all the above not enough? Extend the program with your own macros or export filters using scripting in Lua or Perl.
+  * Is all the above not enough? Extend the program with your own macros or export filters using scripting in Lua.
   * Comes with several ready-made scripts for quick and easy generation of your very own karaoke effects.
   <div></div>
 
