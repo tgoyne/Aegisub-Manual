@@ -111,9 +111,6 @@ Set the border width to 3.7 pixels"""]]
 \xbord<i>&lt;size&gt;</i>  
 \ybord<i>&lt;size&gt;</i>
 """]]
-> _These tags are only available in VSFilter 2.39 and later, and might not be
-> safe for softsubbing._
-
 Use the `\xbord` `\ybord` tags to set the border size in X and Y direction
 separately. This can be useful for correcting the border size for anamorphic
 rendering of subtitles.
@@ -134,9 +131,6 @@ The shadow distance can not be negative with this tag.
 \xshad<i>&lt;depth&gt;</i>  
 \yshad<i>&lt;depth&gt;</i>
 """]]
-> _These tags are only available in VSFilter 2.39 and later, and might not be
-> safe for softsubbing._
-
 Set the distance from the text to position the shadow at, with X and Y
 position set separately. Shadow is only disabled if both X and Y distance is
 0.
@@ -149,9 +143,6 @@ position the shadow to the top or left of the text.
 \be1  
 \be<i>&lt;strength&gt;</i>
 """]]
-> _The `\be<i>&lt;strength&gt;</i>` version is only available in VSFilter 2.39
-> and later and might not be safe for softsubbing._
-
 Enable or disable a subtle softening-effect for the edges of the text. The
 effect isn't always very visible, but it can in some cases make the text look
 better. It is usually more visible at smaller text sizes.
@@ -168,9 +159,6 @@ generally more useful as a result. The _strength_ must be an integer number.
 
 [[!template id=TagDefBox name="Blur edges (Gaussian kernel)"
     usage="\blur<i>&lt;strength&gt;</i>"]]
-> _This tag is only available in VSFilter 2.39 and later, and might not be
-> safe for softsubbing._
-
 In general, this has the same function as the [[`\be`|ASS_Tags#Blur_edges]] tag, but
 uses a more advanced algorithm that looks better at high strengths. Unlike
 `\be`, the _strength_ can be non-integer here. Set _strength_ to 0 (zero) to
@@ -298,9 +286,6 @@ Perform an animation where the text performs 10 full revolutions on the Z axis. 
 \fax<i>&lt;factor&gt;</i>  
 \fay<i>&lt;factor&gt;</i>
 """]]
-> _These tags are only available in VSFilter 2.39 and later, and might not be
-> safe for softsubbing._
-
 Perform a shearing (perspective distortion) transformation of the text. A
 _factor_ of 0 (zero) means no distortion.
 
@@ -685,11 +670,8 @@ a limited set of the override tags are animateable with `\t`:
 
 [[!table data="""
 Font | Geometry | Other effects
-\fs<br>\fsp<br>\c<br>\1c<br>\2c<br>\3c<br>\4c<br>\alpha<br>\1a<br>\2a<br>\3a<br>\4a | \fscx<br>\fscy<br>\frx<br>\fry<br>\frz<br>\fr | \bord<br>\shad<br>\clip 
+\fs<br>\fsp<br>\c<br>\1c<br>\2c<br>\3c<br>\4c<br>\alpha<br>\1a<br>\2a<br>\3a<br>\4a | \fscx<br>\fscy<br>\frx<br>\fry<br>\frz<br>\fr<br>\fax<br>\fay | \bord<br>\xbord<br>\ybord<br>\shad<br>\xshad<br>\yshad<br>\clip<br>\iclip<br>\be<br>\blur
 """]]
-
-> _In VSFilter 2.39 and later, the following additional tags can also be animated with `\t`:_
-> _\fax \fay \be \blur \xbord \ybord \xshad \yshad \iclip_
 
 _Note: For \clip and \iclip, only the rectangle versions can be animated. The
 vector drawing versions cannot be animated._
@@ -730,9 +712,6 @@ Text starts at zero size, i.e. invisible, then grows to 100% size in both X and 
 \clip(<i>&lt;x1</i>&gt;,<i>&lt;y1</i>&gt;,<i>&lt;x2</i>&gt;,<i>&lt;y2</i>&gt;)  
 \iclip(<i>&lt;x1</i>&gt;,<i>&lt;y1</i>&gt;,<i>&lt;x2</i>&gt;,<i>&lt;y2</i>&gt;)
 """]]
-> _The `\iclip` tag is only available in VSFilter 2.39 and later, and might
-> not be safe for softsubbing._
-
 Define a rectangle to clip the line, only the part of the line that is inside
 the rectangle is visible. The `\iclip` tag has the opposite effect, it defines
 a rectangle where the line is not shown.
@@ -766,9 +745,6 @@ Example of `\clip(0,0,704,245)` on a 704x480 video:
 \iclip(<i>&lt;drawing commands&gt;</i>)  
 \iclip(<i>&lt;scale&gt;</i>,<i>&lt;drawing commands&gt;</i>)
 """]]
- _The `\iclip` tags are only available in VSFilter 2.39 and later, and may not
-be safe for softsubbing._
-
 Use the shape defined by a vector drawing to selectively display (`\clip`) or
 hide (`\iclip`) parts of the line.
 
@@ -789,9 +765,6 @@ animation.
 <pre>\clip(1,m 50 0 b 100 0 100 100 50 100 b 0 100 0 0 50 0)</pre>
 
 Only show the portion of the line within the defined pseudo-circle."""]]
-_Beware: VSFilter 2.37 has a bug that causes vector drawing clips to be
-rendered incorrectly. The solution is to use a newer or older version._
-
 _Note: If you use the `\iclip` tag anywhere on a line, all clips on that line
 will be treated as "inverse" regardless of whether a regular `\clip` occurs
 later or the `\iclip` has taken effect yet through `\t` or similar._
