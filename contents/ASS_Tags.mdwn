@@ -879,3 +879,7 @@ pair of coordinates at the end of s.
 ### c - Close b-spline ###
 
 Closes the b-spline.
+
+_Note: The [[vector clip visual typesetting
+tool|Visual_Typesetting#Vectorial_clip]] only supports the m, l and b
+commands, and may corrupt drawings which use the other commands._
