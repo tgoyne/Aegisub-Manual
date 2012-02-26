@@ -636,7 +636,7 @@ out for the last one quarter second it is displayed.
 """]]
 
 [[!template id=TagDefBox name="Fade (complex)"
-    usage="\fade(_<a1>_,_<a2>_,_<a3>_,_<t1>_,_<t2>_,_<t3>_,_<t4>_)"]]
+    usage="\fade(<i>&lt;a1</i>&gt;,<i>&lt;a2</i>&gt;,<i>&lt;a3</i>&gt;,<i>&lt;t1</i>&gt;,<i>&lt;t2</i>&gt;,<i>&lt;t3</i>&gt;,<i>&lt;t4</i>&gt;)"]]
 Perform a five-part fade using three alpha values _a1_, _a2_ and _a3_ and four
 times _t1_, _t2_, _t3_ and _t4_.
 
@@ -661,8 +661,8 @@ Second fade starts 1500 milliseconds later, and lasts 200 milliseconds.
 [[!template id=TagDefBox name="Animated transform" usage="""
 \t(<i>&lt;style modifiers&gt;</i>)  
 \t(<i>&lt;accel&gt;</i>,<i>&lt;style modifiers&gt;</i>)  
-\t(_<t1>_,_<t2>_,<i>&lt;style modifiers&gt;</i>)  
-\t(_<t1>_,_<t2>_,<i>&lt;accel&gt;</i>,<i>&lt;style modifiers&gt;</i>)
+\t(<i>&lt;t1</i>&gt;,<i>&lt;t2</i>&gt;,<i>&lt;style modifiers&gt;</i>)  
+\t(<i>&lt;t1</i>&gt;,<i>&lt;t2</i>&gt;,<i>&lt;accel&gt;</i>,<i>&lt;style modifiers&gt;</i>)
 """]]
 Perform a gradual, animated transformation from one style to another. The
 _style modifiers_ are other override tags as specified in this reference. Only
