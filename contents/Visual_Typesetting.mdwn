@@ -1,37 +1,54 @@
 [[!template id=Todo text="Screenshots need to be updated"]]
-[[!template id=Todo text="Document the entire video box here?"]]
-
-One of the most significant changes from Aegisub 1.10 to Aegisub 2 is the
-inclusion of Visual Typesetting tools, which allow you to visually drag, rotate
-and otherwise transform subtitles on the video screen, using your mouse.
 
 **A video tutorial for this feature is available at [[the tutorials
 section|Tutorials]].**
 
 ## Overview  ##
+<center>[[img/video_display.png]]</center>
+### Play ###
+Play the video and, starting at the currently displayed frame. See
+[[Video#Playing_video]] for comments on playing video in Aegisub.
 
-There are currently seven different visual typesetting tools: crosshair,
-drag, rotate on z axis, rotate on xy axes, scale, rectangular clip and
-vectorial clip.
+### Play line ###
+Play the video starting at the first frame of the currently active line,
+stopping at the end of the line.
 
-<center>[[img/Visual_overview.png]]</center>
+### Video autoseek ###
+Toggles automatic seeking of the video to the first frame of a line whenever
+a new line is selected.
 
-## Tool Descriptions  ##
+### Frame time and number ###
+Displays the current frame number and the start time of the frame. If the
+currently displayed frame is a keyframe, this box has a green background.
 
-### Crosshair  ###
+Note that it is normal for the "Set start of selected subtitles to
+current video frame" (Ctrl-3) and "Set end of selected subtitles to current
+video frame" (Ctrl-4) to set the time to something different than what is
+displayed here, as setting times to exactly the frame's time tends to result
+in rounding errors.
 
-This is the standard mode. Hovering the mouse over the video will show the
-script coordinates under the cursor, as well as a crosshair indicating the
-exact point that you are looking at. Holding down shift will make it instead
-show the distance from the bottom-right corner. Double clicking a point will
-position the current line (using the [[\pos tag|ASS_Tags#Set_position]]) on
-that position.  If alt is held down while double-clicking, all other selected
-lines will be shifted by the same distance as the active line, including lines
-not visible on the current frame.
+[[!template id=Todo text="Is the main toolbar actually documented
+anywhere?"]]
 
-<center>[[img/Visual_crosshair.png]]</center>
+### Subs relative time ###
+Displays the time to the start and end time of the active subtitle line.
+This is mostly useful for override tags which take relative times, such as
+[[\t|ASS_Tags#Animated_transform]] and [[\fad|ASS_Tags#Fade]].
 
-Also, while on this mode, you can right click to bring a context menu with other options:
+### Zoom ###
+Displays and allows changing the current video zoom.
+
+### Video position slider ###
+Used to seek the video. Holding shift while dragging the thumb snaps to
+keyframes. By default, left/right seek forward/backward one frame;
+alt-left/right seek forward/backward 10 frames; shift-left/right seek
+forward/backwards one keyframe. The slider can be focused without
+accidentally seeking by right-clicking it or pressing Ctrl-Space. If the
+slider already has focus, Ctrl-Space will return keyboard focus to the
+control that last had it.
+
+## Video context menu ##
+You can right click to bring a context menu with other options:
 
 <center>[[img/Visual_menu.png]]</center>
 
@@ -47,6 +64,24 @@ Also, while on this mode, you can right click to bring a context menu with other
   clipboard.
 * Copy coordinates to clipboard: Copies the current mouse coordinates to
   clipboard, e.g. "230,152"
+
+## Tool Descriptions  ##
+There are currently seven different visual typesetting tools: crosshair,
+drag, rotate on z axis, rotate on xy axes, scale, rectangular clip and
+vector clip.
+
+### Crosshair  ###
+
+This is the standard mode. Hovering the mouse over the video will show the
+script coordinates under the cursor, as well as a crosshair indicating the
+exact point that you are looking at. Holding down shift will make it instead
+show the distance from the bottom-right corner. Double clicking a point will
+position the current line (using the [[\pos tag|ASS_Tags#Set_position]]) on
+that position.  If alt is held down while double-clicking, all other selected
+lines will be shifted by the same distance as the active line, including lines
+not visible on the current frame.
+
+<center>[[img/Visual_crosshair.png]]</center>
 
 ### Drag  ###
 
