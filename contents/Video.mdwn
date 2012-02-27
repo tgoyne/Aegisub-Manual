@@ -107,6 +107,10 @@ from inside Aegisub. The mantra is: Aegisub isn't a media player; if you want a
 media player use a media player. Nonetheless, Aegisub does make a reasonable
 effort to support reliable video playback.
 
+Note that audio has to be explicitly loaded for Aegisub to play it while
+playing video. If you find this bothersome, there is an option to automatically
+open audio whenever a video file is opened.
+
 ## Keyframes ##
 
 A brief, highly simplified explanation of what a keyframe is, for the people
