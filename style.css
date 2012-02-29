@@ -112,32 +112,32 @@ p a:visited {color: #5A3696;} /* purple */
  * ** this is css3, the validator doesn't like it when validating as css2
  * */
 #bodyContent a[href ^="http://"] {
-    background: url(external.png) center right no-repeat;
+    background: url("img/external.png") center right no-repeat;
     padding-right: 13px;
 }
 
 #bodyContent a[href ^="https://"], .link-https {
-    background: url("lock_icon.gif") center right no-repeat;
+    background: url("img/lock_icon.gif") center right no-repeat;
     padding-right: 16px;
 }
 
 #bodyContent a[href ^="mailto:"], .link-mailto {
-    background: url("mail_icon.gif") center right no-repeat;
+    background: url("img/mail_icon.gif") center right no-repeat;
     padding-right: 18px;
 }
 
 #bodyContent a[href ^="news://"] {
-    background: url("news_icon.png") center right no-repeat;
+    background: url("img/news_icon.png") center right no-repeat;
     padding-right: 18px;
 }
 
 #bodyContent a[href ^="ftp://"], .link-ftp {
-    background: url("file_icon.gif") center right no-repeat;
+    background: url("img/file_icon.gif") center right no-repeat;
     padding-right: 18px;
 }
 
 #bodyContent a[href ^="irc://"], .link-irc {
-    background: url("discussionitem_icon.gif")  center right no-repeat;
+    background: url("img/discussionitem_icon.gif")  center right no-repeat;
     padding-right: 18px;
 }
 
