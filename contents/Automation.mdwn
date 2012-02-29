@@ -30,7 +30,7 @@ Automation supports scripts in [Lua 5.1](http://www.lua.org). Other languages us
 
 There is several example scripts included with Aegisub to give you a head start on writing your own ones. A word of warning: Unless you are an experienced programmer the _kara-templater.lua_ script is a very bad place to start!
 
-The Automation 3 scripting interface used in Aegisub 1.10 and earlier is no longer supported. For information on porting scripts to Automation 4, see **[[Moving_from_Automation_3]]**.
+The Automation 3 scripting interface used in Aegisub 1.10 and earlier is no longer supported.
 
 If you have previous experience with writing Automation 3 scripts, there is also an **[[overview_of_changes_from_Automation_3]]**.
 
