@@ -1,4 +1,0 @@
-<div style="margin-left: 4em; margin-right: 4em; padding-left: 1em; padding-right: 6em; background-color: #D9EEEE; border: 1px solid #AEC2D7;">'''''Example:'''''<br />
- {{{1}}}
-<br />'''Results in:''' {{{2}}}</div>
-<noinclude>Also see [[Template:Examplebox]].</noinclude>
