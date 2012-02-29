@@ -152,13 +152,6 @@ body {
     text-align: center;
 }
 
-#topbar {
-    z-index: 5;
-    height: 27px;
-    text-align: left;
-    width: 100%;
-}
-
 #globalWrapper {
     margin: 10px 10px 0 10px;
     text-align: left;
@@ -189,24 +182,6 @@ h1#title {
     font-size: 1.8em;
     color: #1860AC
 }
-
-h2 .editsection {
-    font-size:67%;
-}
-
-.editsection {
-    float:right;
-    margin-left:5px;
-}
-
-/* Images ------------------------------------------------------------*/
-#p-poweredby img {
-    border: 0;
-    clear: both;
-    float: right;
-    margin: 2px 0;
-}
-
 
 /* Lists -------------------------------------------------------------*/
 ul, ol {
@@ -257,86 +232,6 @@ dd {
 #toc h2, .toc h2 {display: inline; border: 0;}
 .toctoggle {padding-left: 5px;}
 /* END Table of Contents */
-
-/* Footer ------------------------------------------------------------*/
-#footer ul {
-    list-style: none;
-    margin: 0;
-}
-
-#footer ul li {
-    margin: 0.1em;
-    margin-right: 1em;
-}
-
-#f-lastmod {}
-#f-viewcount {display: none;}
-#f-copyright {}
-#f-about {float: left;}
-#f-disclaimer {float: left;}
-#f-developedby {float: left;}
-/* images */
-div.floatright, table.floatright {
-    clear: right;
-    float: right;
-    position: relative;
-    margin: 0 0 0.5em 0.5em;
-    border: 0
-}
-div.floatright p { font-style: italic; }
-div.floatleft, table.floatleft {
-    float: left;
-    position: relative;
-    margin: 0 0.5em 0.5em 0;
-    border: 0
-}
-div.floatleft p { font-style: italic; }
-/* thumbnails */
-div.thumb {
-    margin-bottom: 0.5em;
-    border-style: solid; border-color: White;
-    width: auto;
-}
-div.thumb div {
-    border:1px solid #cccccc;
-    padding: 3px !important;
-    background-color:#f9f9f9;
-    font-size: 94%;
-    text-align: center;
-    overflow: hidden;
-}
-div.thumb div a img {
-    /*border:1px solid #cccccc;*/
-}
-div.thumb div div.thumbcaption {
-    border: none;
-    text-align: left;
-    line-height: 1.4em;
-    padding: 0.3em 0 0.1em 0;
-}
-div.magnify {
-    float: right;
-    border: none !important;
-    background: none !important;
-}
-div.magnify a, div.magnify img {
-    display: block;
-    border: none !important;
-    background: none !important;
-}
-div.tright {
-    clear: right;
-    float: right;
-    border-width: 0.5em 0 0.8em 1.4em;
-}
-div.tleft {
-    float: left;
-    margin-right:0.5em;
-    border-width: 0.5em 1.4em 0.8em 0;
-}
-.urlexpansion, .hiddenStructure { display: none; }
-img.tex { vertical-align: middle; }
-span.texhtml { font-family: serif; }
 
 img { border: 0px solid #333; }
 
