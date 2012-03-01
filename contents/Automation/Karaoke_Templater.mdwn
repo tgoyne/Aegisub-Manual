@@ -1,13 +1,13 @@
-**Karaoke Templater** is an [[Automation]] script that ships with Aegisub. Its primary purpose is to help creating [[karaoke effects|Glossary:Karaoke_effect]] with a specially designed template language. Karaoke Templater is already installed and ready to use along with Aegisub.
+**Karaoke Templater** is an [[Automation]] script that ships with Aegisub. Its primary purpose is to help creating [[karaoke effects|Glossary/Karaoke_effect]] with a specially designed template language. Karaoke Templater is already installed and ready to use along with Aegisub.
 
 
 ## Tutorials: Introducing Karaoke Templater  ##
 
 
-* [[A simple example|Karaoke_Templater_Tutorial_1]]
-* [[Using math expressions|Karaoke_Templater_Tutorial_2]]
-* [[Using multiple template lines|Karaoke_Templater_Tutorial_3]]
-* [[More advanced effects with positioned syllables|Karaoke_Templater_Tutorial_4]]
+* [[A simple example|Automation/Karaoke_Templater/Tutorial_1]]
+* [[Using math expressions|Automation/Karaoke_Templater/Tutorial_2]]
+* [[Using multiple template lines|Automation/Karaoke_Templater/Tutorial_3]]
+* [[More advanced effects with positioned syllables|Automation/Karaoke_Templater/Tutorial_4]]
 
 <div></div>
 
@@ -17,16 +17,16 @@
 ## Reference  ##
 
 
-* [[Declaring template and code lines|Karaoke_Templater_Reference/Declaring_template_and_code_lines]]
-* [[Rules for when and in what order templates are run|Karaoke_Templater_Reference/Template_execution_rules_and_order]]
-* [[Template modifiers|Karaoke_Templater_Reference/Template_modifiers]]
-* [[Inline variables (dollar-variables)|Karaoke_Templater_Reference/Inline_variables]]
-* [[Rules for code blocks and code lines|Karaoke_Templater_Reference/Code_lines_and_blocks]]
-* [[Contents of the code block/line execution environment|Karaoke_Templater_Reference/Code_execution_environment]]
+* [[Declaring template and code lines|Automation/Karaoke_Templater/Declaring_template_and_code_lines]]
+* [[Rules for when and in what order templates are run|Automation/Karaoke_Templater/Template_execution_rules_and_order]]
+* [[Template modifiers|Automation/Karaoke_Templater/Template_modifiers]]
+* [[Inline variables (dollar-variables)|Automation/Karaoke_Templater/Inline_variables]]
+* [[Rules for code blocks and code lines|Automation/Karaoke_Templater/Code_lines_and_blocks]]
+* [[Contents of the code block/line execution environment|Automation/Karaoke_Templater/Code_execution_environment]]
 
 <div></div>
 
-Also see the [[Automation_4_karaskel.lua]] section for more information on what's in the _line_ and _syl_ variables, and more.
+Also see the [[Automation/Lua/Modules/]] section for more information on what's in the _line_ and _syl_ variables, and more.
 
 
 ## For users of _multi-template_  ##

@@ -102,7 +102,7 @@ Transforms a colour given in Hue, Saturation, Value space into Red, Green, Blue 
 
 ## String functions  ##
 
-The Lua standard `string` library is sometimes not powerful enough. A few additional helper functions are provided. See also [[Automation_4_unicode.lua]].
+The Lua standard `string` library is sometimes not powerful enough. A few additional helper functions are provided. See also [[Automation/Lua/Modules/]].
 
 
 ### string.trim  ###
@@ -164,5 +164,5 @@ Similar to `interpolate_color`, but interpolates alpha values instead. Also work
 
 [[!template id=Automation_navbox]]
 
-[[!tag Lua_Reference]]
+
 

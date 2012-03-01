@@ -1,6 +1,6 @@
 The Automation 4 <tt>karaskel.lua</tt> include file contains several functions intended to help the development of karaoke effects with Automation 4 Lua. It also defines several new data structures, and extensions to those defined by Automation 4 Lua itself.
 
-<tt>karaskel.lua</tt> itself includes [[<tt>utils.lua</tt>|Automation_4_utils.lua]] and [[<tt>unicode.lua</tt>|Automation_4_unicode.lua]] so you do not need to include those yourself when using <tt>karaskel.lua</tt>.
+<tt>karaskel.lua</tt> itself includes [[<tt>utils.lua</tt>|Automation/Lua/Modules/]] and [[<tt>unicode.lua</tt>|Automation/Lua/Modules/]] so you do not need to include those yourself when using <tt>karaskel.lua</tt>.
 
 Using <tt>karaskel.lua</tt> is strongly recommended when creating karaoke effects, and it can also be useful for other tasks as it contains several text layouting functions.
 
@@ -68,7 +68,7 @@ This function does not return a value, but rather modifies the `line` table. The
 
 * `line.styleref` - A reference to the Style table representing this line's selected style.
 * `line.furistyle` - A reference to the Style table representing this line's furigana layout style. If there is no style with the right name, this field is `false` instead.
-* `line.width`, `line.height`, `line.descent` and `line.extlead` - Sizing information for the stripped line text, as returned by [[`aegisub.text_extents`|Automation_4_Lua_Miscellaneous_APIs#aegisub.text_extents]].
+* `line.width`, `line.height`, `line.descent` and `line.extlead` - Sizing information for the stripped line text, as returned by [[`aegisub.text_extents`|Automation/Lua/Miscellaneous_APIs#aegisub.text_extents]].
 
 <div></div>
 
@@ -207,7 +207,7 @@ Full list of fields:
 * `style.name` - Name of the style.
 * `style.fontname` - Name of the font face used by the style.
 * `style.fontsize` - Font size for the style.
-* `style.color1`, `style.color2`, `style.color3` and `style.color4` - The four colours used by the style, in regular order. Use `[[extract_color|Automation_4_utils.lua#extract_color]]` and family to manipulate these.
+* `style.color1`, `style.color2`, `style.color3` and `style.color4` - The four colours used by the style, in regular order. Use `[[extract_color|Automation/Lua/Modules/#extract_color]]` and family to manipulate these.
 * `style.bold` - `true`/`false` to specify bold/non-bold font face. Can also be a number to specify font weight, but this is not well supported and should be avoided.
 * `style.italic` - Boolean, whether an italic/oblique version of the font face is used or not.
 * `style.underline` and `style.strikeout` - Boolean, whether to apply these two decorations to the text.
@@ -345,5 +345,5 @@ Highlight tables are entirely defined by `karaskel.preproc_line_text`, and conta
 
 [[!template id=Automation_navbox]]
 
-[[!tag Lua_Reference]]
+
 

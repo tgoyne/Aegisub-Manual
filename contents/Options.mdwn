@@ -483,7 +483,7 @@ It is not possible to change the color scheme of the spectrum display mode.
 * **Autoreload on Export**
 
 <div></div>
->  Automatically reloads the specified sets of scripts when the [[Exporting]] dialogue is opened. Note that if a script fails to reload, no errors are displayed, it just won't show up in the Export window then. In that case you will have to enter the [[Automation_Manager]] window and determine the cause of the error.
+>  Automatically reloads the specified sets of scripts when the [[Exporting]] dialogue is opened. Note that if a script fails to reload, no errors are displayed, it just won't show up in the Export window then. In that case you will have to enter the [[Automation/Manager]] window and determine the cause of the error.
 
 
 ## Hotkeys ##

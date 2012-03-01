@@ -1,10 +1,10 @@
-[[Automation]] [[macros|Glossary:Macro]] appear as options in the Automation
+[[Automation]] [[macros|Glossary/Macro]] appear as options in the Automation
 menu.
 
 [[img/automation_menu.png]]
 
 The first option in the Automation menu, before the separator, always opens
-the [[Automation_Manager]] window.
+the [[Automation/Manager]] window.
 
 Below the separator is a list of all macros loaded. In the example above
 seven macros are loaded. The third, [[Karaoke_Templater]] is unavailable

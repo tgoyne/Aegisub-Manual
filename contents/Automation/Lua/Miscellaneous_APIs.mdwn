@@ -13,7 +13,7 @@ Obtain system font metrics and determine the rendered size in pixels of the give
 * **height** (number) - Height in pixels of the text. This may be non-integer.
 * **descent** (number) - Length of descenders in the font. This may be non-integer.
 * **ext_lead** (number) - External leading for the font. This may be non-integer.
-* **style** (table) - A [[style table|Automation_4_Lua_Subtitle_file_interface#Style_table]] as defined by the subtitle interface. The font name, size, weight, style, spacing and encoding is used to determine the size of the text.
+* **style** (table) - A [[style table|Automation/Lua/Subtitle_file_interface#Style_table]] as defined by the subtitle interface. The font name, size, weight, style, spacing and encoding is used to determine the size of the text.
 * **text** (string) - The text the extents should be determined for. This should not contain linebreaks (<tt>\n</tt> or <tt>\r\n</tt>) nor should it contain formatting codes of any kind. Formatting codes are not attempted interpreted and will be taken as verbatim text.
 
 <div></div>
@@ -94,5 +94,5 @@ You cannot count on _ar_ always having the correct value when _artype_ is differ
 
 [[!template id=Automation_navbox]]
 
-[[!tag Lua_Reference]]
+
 

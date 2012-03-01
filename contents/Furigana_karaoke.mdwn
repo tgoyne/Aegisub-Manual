@@ -4,7 +4,7 @@
 
 _Furigana_ (in Aegisub often shortened to _furi_) refers to little phonetic guide characters written along the main text in Japanese, specifically using the hiragana phonetic alphabet to describe how the ideographic kanji characters should be pronounced. Putting smaller text next to a main line of text is in general referred to as [_ruby text_](http://en.wikipedia.org/wiki/Ruby_character), but since the implementation discussed here is designed specifically with Japanese furigana in mind, the ruby text is also referred to as furigana everywhere.
 
-None of the subtitle formats Aegisub supports, natively support ruby text or furigana, however the [[Automation_4_karaskel.lua]] standard include implements an algorithm that can create basic furigana layouts by calculating the position of every individual character.
+None of the subtitle formats Aegisub supports, natively support ruby text or furigana, however the [[Automation/Lua/Modules/]] standard include implements an algorithm that can create basic furigana layouts by calculating the position of every individual character.
 
 This page describes the syntax the Automation 4 karaskel.lua script understands for furigana text, and how to use the layout information it calculates to actually create positioned characters.
 
@@ -20,7 +20,7 @@ A prerequisite for an integral part of the furigana syntax is the multi-highligh
 
 If you make the text of a syllable a number sign (#, ASCII 35, Unicode U+0023) that syllable will "join" with the previous one: The number sign is removed and the timing of the two syllables are added together, producing just one syllable. You can have multiple number sign syllables in a row, adding up multiple timings in that way.
 
-The timings of the individual number sign syllables are still stored in the [[highlight table|Automation_4_karaskel.lua#Highlight_table]] of the generated syllable structure, but the main timing (`start_time` and `end_time`) of the syllable structure reflects only the added-together timings of the number sign syllables.
+The timings of the individual number sign syllables are still stored in the [[highlight table|Automation/Lua/Modules/#Highlight_table]] of the generated syllable structure, but the main timing (`start_time` and `end_time`) of the syllable structure reflects only the added-together timings of the number sign syllables.
 
 {{Examplebox|1=
 This line shows how multi-highlight syntax is used to mark up kanji and groups of kanji that cover multiple syllables:
@@ -117,9 +117,9 @@ Note that every special character can in fact be represented by two different Un
 ## Usage in Karaoke Templater  ##
 
 
-Furigana: [[The _furi_ template class|Karaoke_Templater_Reference/Template_modifiers#furi]]
+Furigana: [[The _furi_ template class|Automation/Karaoke_Templater/Template_modifiers#furi]]
 
-Multi-highlight:  [[The _multi_ modifier|Karaoke_Templater_Reference/Template_modifiers#multi]]
+Multi-highlight:  [[The _multi_ modifier|Automation/Karaoke_Templater/Template_modifiers#multi]]
 
 [[!template id=Todo text="elaborate"]]
 {{Examplebox|
@@ -139,7 +139,7 @@ The font used in MS PMincho 30 pt with the furigana being 15 pt.
 ## Usage in Lua scripts  ##
 
 
-It's all in [[karaskel|Automation_4_karaskel.lua]].
+It's all in [[karaskel|Automation/Lua/Modules/]].
 
 Furigana layout is automatically invoked by `karaskel.preproc_line_pos` if a furigana style exists for a line main style. The furigana style for a main style is a style with the same name, except <tt>-furigana</tt> appended to the name. Eg. the furigana style of <tt>Default</tt> is <tt>Default-furigana</tt>.
 

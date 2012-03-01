@@ -34,5 +34,5 @@ Calculate the Unicode codepoint for the first character in `instring`.
 
 [[!template id=Automation_navbox]]
 
-[[!tag Lua_Reference]]
+
 

@@ -2,20 +2,20 @@ The Lua code in code blocks and on code lines is run in a separate global enviro
 
 You can store your own data in this environment for use later, for example pre-compute some values on code-lines and later insert them using code blocks, but it also contains several pre-defined variables and functions designed to make it easier writing effect templates.
 
-It's important to understand that the contents of code execution environment and the [[inline-variables|Karaoke_Templater_Reference/Inline_variables]] ($-variables) are not related. You cannot change an inline-variable by changing something in the code execution environment nor can you add new ones. However, you can create and re-define the contents of the code execution environment.
+It's important to understand that the contents of code execution environment and the [[inline-variables|Automation/Karaoke_Templater/Inline_variables]] ($-variables) are not related. You cannot change an inline-variable by changing something in the code execution environment nor can you add new ones. However, you can create and re-define the contents of the code execution environment.
 
 
 ## Line and syllable information  ##
 
 
-The code execution environment contains a few variables pointing to the current line and syllable structure being processed, as well as some more supporting tables. These are just references to the structures produced by [[karaskel|Automation_4_karaskel.lua#Data_structures]] and are not modified in any way.
+The code execution environment contains a few variables pointing to the current line and syllable structure being processed, as well as some more supporting tables. These are just references to the structures produced by [[karaskel|Automation/Lua/Modules/#Data_structures]] and are not modified in any way.
 
 You should treat these as read-only, except `line`. If you change the other ones, the kara-templater script might start misbehaving.
 
 
-* **line** - The line currently being produced, changing this will affect the resulting line in the file. See the **[[reference for dialogue line tables|Automation_4_karaskel.lua#Dialogue_line_table]]**.
+* **line** - The line currently being produced, changing this will affect the resulting line in the file. See the **[[reference for dialogue line tables|Automation/Lua/Modules/#Dialogue_line_table]]**.
 * **orgline** - The original line, this is the source line the current syllable is located on.
-* **syl** - The current syllable structure. If the current template is a _furi_ template, it's the current furigana syllable. If the current template has one or both of the _char_ or _multi_ modifiers, this is a pseudo-syllable structure, a copy of the original syllable structure with several values changed to look like the current part of the syllable being processed. Also see the **[[reference for syllable tables|Automation_4_karaskel.lua#Karaoke_and_furigana_syllable_tables]]**.
+* **syl** - The current syllable structure. If the current template is a _furi_ template, it's the current furigana syllable. If the current template has one or both of the _char_ or _multi_ modifiers, this is a pseudo-syllable structure, a copy of the original syllable structure with several values changed to look like the current part of the syllable being processed. Also see the **[[reference for syllable tables|Automation/Lua/Modules/#Karaoke_and_furigana_syllable_tables]]**.
 * **basesyl** - Usually the same as `syl`, except when the template has the _char_ or _multi_ modifier, then this is the original syllable. (If `syl == basesyl` is true, then the current template is neither _char_ nor _multi_.)
 * **meta** - Contains various metadata about the script, namely the contents of the _Script Info_ section. Most importantly, it has the `res_x` and `res_y` fields describing the script resolution.
 
@@ -31,7 +31,7 @@ Both the [**string**](http://www.lua.org/manual/5.1/manual.html#5.4) and [**math
 
 You can also access the main execution environment of the kara-templater script itself using the `**_G**` (underscore capital-G) variable and through that access the rest of the Lua standard library. For example, `_G.table.sort` refers to the regular `table.sort` function. See the [Lua 5.1 manual](http://www.lua.org/manual/5.1/manual.html#5) for details on the available libraries.
 
-You can also access the Automation 4 Lua standard libraries through the `_G` variable: [[karaskel.lua|Automation_4_karaskel.lua]], [[unicode.lua|Automation_4_unicode.lua]] and [[utils.lua|Automation_4_utils.lua]].
+You can also access the Automation 4 Lua standard libraries through the `_G` variable: [[karaskel.lua|Automation/Lua/Modules/]], [[unicode.lua|Automation/Lua/Modules/]] and [[utils.lua|Automation/Lua/Modules/]].
 
 There is also the self-reference `**tenv**` variable, this refers to the code execution environment itself. This means that `tenv.tenv == tenv` is true.
 

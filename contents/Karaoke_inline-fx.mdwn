@@ -61,7 +61,7 @@ The important thing is that the code line runs per syllable and runs before any 
 
 ## Usage in Lua scripts  ##
 
-The inline-fx tags are parsed by [[`karaskel.preproc_line_text`|Automation_4_karaskel.lua#karaskel.preproc_line_text]] so they will only work if you have applied at least that much karaskel pre-processing on your subtitle lines.
+The inline-fx tags are parsed by [[`karaskel.preproc_line_text`|Automation/Lua/Modules/#karaskel.preproc_line_text]] so they will only work if you have applied at least that much karaskel pre-processing on your subtitle lines.
 
 The inline-fx for a syllable is then available as `syl.inline_fx`, you can compare that to a string to conditionally apply effects.
 

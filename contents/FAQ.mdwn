@@ -2,7 +2,7 @@ A small collection of Frequently Asked Questions about Aegisub - mostly stuff th
 
 ### Karaoke effects? ###
 
-See the [[Karaoke Templater tutorials|Karaoke_Templater_Tutorial_1]].
+See the [[Karaoke Templater tutorials|Automation/Karaoke_Templater/Tutorial_1]].
 
 ### Can I create DVD subtitles with Aegisub? ###
 

@@ -20,4 +20,4 @@ Documentation related to delopment of Aegisub and building Aegisub is located at
 <div></div>
 
 * [[Timing karaoke to a song|Tutorials#Karaoke_Timing]]
-* [[Creating fancy karaoke effects|Karaoke_Templater_Tutorial_1]]
+* [[Creating fancy karaoke effects|Automation/Karaoke_Templater/Tutorial_1]]

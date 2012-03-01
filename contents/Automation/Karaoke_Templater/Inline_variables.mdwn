@@ -20,7 +20,7 @@ Case does not matter for inline variables, `$start`, `$START` and `$StArT` all w
 ### Limitations  ###
 
 
-Inline variables are not "intelligent", they do the same no matter where you place them or use them, it doesn't "know" what tag it's being used with. Not every variable can be used with success in all places, and the meaning of some are affected by usage of eg. the [[retime|Karaoke_Templater_Reference/Code_execution_environment#retime]] function. In these cases, inline variables may not be appropriate and you need to use code blocks.
+Inline variables are not "intelligent", they do the same no matter where you place them or use them, it doesn't "know" what tag it's being used with. Not every variable can be used with success in all places, and the meaning of some are affected by usage of eg. the [[retime|Automation/Karaoke_Templater/Code_execution_environment#retime]] function. In these cases, inline variables may not be appropriate and you need to use code blocks.
 
 Because inline variables have their values determined as the very first thing when a template is applied you can't affect their values in any way.
 

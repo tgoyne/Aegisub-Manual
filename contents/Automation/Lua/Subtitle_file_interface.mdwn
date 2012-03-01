@@ -11,8 +11,8 @@ Most (currently all) Automation 4 Lua feature functions are passed a **subtitles
 A subtitles object can have two special properties depending on the context it is created for:
 
 
-* **Read-only** - Some feature functions must not be allowed to modify the subtitle file at all. This includes for example [[macro validation functions|Automation_4_Lua_Registration#Macro_validation_function]] and [[export filter configuration panel providers|Automation_4_Lua_Registration#_Export_filter_configuration_panel_provider]], because this would be outside user expectations.
-* **Allow undo points** - Only some feature functions allow undo points to be set. Currently this is only [[macro processing functions|Automation_4_Lua_Registration#Macro_processing_function]]. Due to the current (2.1/2.2) implementation of the Undo system in Aegisub, attempting to set undo points in any other context can cause data corruption, and thus is disallowed.
+* **Read-only** - Some feature functions must not be allowed to modify the subtitle file at all. This includes for example [[macro validation functions|Automation/Lua/Registration#Macro_validation_function]] and [[export filter configuration panel providers|Automation/Lua/Registration#_Export_filter_configuration_panel_provider]], because this would be outside user expectations.
+* **Allow undo points** - Only some feature functions allow undo points to be set. Currently this is only [[macro processing functions|Automation/Lua/Registration#Macro_processing_function]]. Due to the current (2.1/2.2) implementation of the Undo system in Aegisub, attempting to set undo points in any other context can cause data corruption, and thus is disallowed.
 
 <div></div>
 
@@ -262,13 +262,13 @@ This class defines one additional field:
 ### <tt>style</tt> class  ###
 
 
-This class defines a large number of additional fields. It's usually processed by the _karaskel_ and modified a bit by that. See the _karaskel.lua_ section on [[style tables|Automation_4_karaskel.lua#Style_table]] for more information about this class.
+This class defines a large number of additional fields. It's usually processed by the _karaskel_ and modified a bit by that. See the _karaskel.lua_ section on [[style tables|Automation/Lua/Modules/#Style_table]] for more information about this class.
 
 
 ### <tt>dialogue</tt> class  ###
 
 
-This class defines a large number of additional fields. It's usually processed by the _karaskel_ and has many calculated fields added by that. See the _karaskel.lua_ section on [[dialogue line tables|Automation_4_karaskel.lua#Dialogue_line_table]] for more information on this class.
+This class defines a large number of additional fields. It's usually processed by the _karaskel_ and has many calculated fields added by that. See the _karaskel.lua_ section on [[dialogue line tables|Automation/Lua/Modules/#Dialogue_line_table]] for more information on this class.
 
 
 ### <tt>unknown</tt> class  ###
@@ -278,5 +278,5 @@ No additional fields are defined by this class, due to its nature. This might be
 
 [[!template id=Automation_navbox]]
 
-[[!tag Lua_Reference]]
+
 

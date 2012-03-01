@@ -189,5 +189,5 @@ Returns: Two values.
 
 [[!template id=Automation_navbox]]
 
-[[!tag Lua_Reference]]
+
 

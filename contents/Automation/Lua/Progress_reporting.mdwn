@@ -55,7 +55,7 @@ Synopsis: `cancelled = aegisub.progress.is_cancelled()`
 
 Tells whether the user has clicked on the Cancel button.
 
-You should call this function regularly during long operations, and stop the execution of your script as quickly as possible. If you're a macro you should either roll back all changes you have made if possible, or [[set an undo point|Automation_4_Lua_Subtitle_file_interface#Creating_an_undo_point]] so the user can undo the changes made by the script.
+You should call this function regularly during long operations, and stop the execution of your script as quickly as possible. If you're a macro you should either roll back all changes you have made if possible, or [[set an undo point|Automation/Lua/Subtitle_file_interface#Creating_an_undo_point]] so the user can undo the changes made by the script.
 
 
 * **cancelled** (bool) - `false` if the user has not clicked the Cancel button, `true` if the user has clicked Cancel. If `is_cancelled` returns `true` all subsequent calls to it in the current execution will also return `true`.
@@ -108,5 +108,5 @@ The following severity levels are suggested:
 
 [[!template id=Automation_navbox]]
 
-[[!tag Lua_Reference]]
+
 
