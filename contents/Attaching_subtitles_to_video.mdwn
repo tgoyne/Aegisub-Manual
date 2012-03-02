@@ -1,3 +1,5 @@
+[[!template id=toc depth=2]]
+
 In digital encoding, there are two main ways of including subtitles in a video. There is softsubbing, and hardsubbing. Both methods has unique advantages and disadvantages, along with various arguments both for and against each method.
 
 

@@ -1,3 +1,5 @@
+[[!template id=toc]]
+
 [[img/Furigana-demo-1.png]]
 
 _Furigana_ (in Aegisub often shortened to _furi_) refers to little phonetic

@@ -1,3 +1,5 @@
+[[!template id=toc depth=2]]
+
 The attachment manager allows you to attach fonts and/or pictures to your script (by encoding them as text). This is especially useful for sharing fonts between everyone who is working on a script without having to send the fonts as separate files, for example.
 
 

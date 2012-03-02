@@ -72,12 +72,15 @@ html>body #sidebar ul li:before {
 }
 
 
-#toc { /* table of contents */
+#toc {
     background-color: #f8f8f8; 
     border: 1px solid #1860AC; 
 }
 
 #toctitle {
+    font-size: 150%;
+    font-weight: bold;
+    margin: .5em;
     color: #1860AC;
 }
 
@@ -316,6 +319,10 @@ table p { margin: 0; }
     text-align: left;
     border: gray solid 1px;
     border-collapse: collapse;
+}
+
+.karatable th, .karatable td {
+    padding: 3px;
 }
 
 .karatable th, .karatable td {

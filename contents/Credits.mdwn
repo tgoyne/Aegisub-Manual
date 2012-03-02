@@ -1,7 +1,8 @@
+[[!template id=toc]]
+
 [[!template id=Todo text="Make sure that nobody is missing from the list - if you are or can think of someone, please let us know."]]
 
-
-### Programming ###
+## Programming ##
 
 
 * Main Programmers:
@@ -39,7 +40,7 @@
 <div></div>
 
 
-### Installer ###
+## Installer ##
 
 
 * 2.x:
@@ -58,7 +59,7 @@
 <div></div>
 
 
-### Manual ###
+## Manual ##
 
 
 * 2.x:
@@ -80,7 +81,7 @@
 <div></div>
 
 
-### Hosting ###
+## Hosting ##
 
 
 * Current:
@@ -104,7 +105,7 @@
 <div></div>
 
 
-### Localization files ###
+## Localization files ##
 
 [[!template id=Todo text="This is outdated"]]
 
@@ -139,7 +140,7 @@
 <div></div>
 
 
-### Additional thanks ###
+## Additional thanks ##
 
 
 * [[img/Soviet_flag.gif]] [Combined Community Codec Pack](http://www.cccp-project.net) staff
@@ -153,6 +154,6 @@
 <div></div>
 
 
-### About ###
+## About ##
 
 Aegisub 2 was developed using Microsoft Visual Studio 2005 and wxWidgets 2.8. The Automation module also uses the Lua, Perl and Ruby programming languages. The Regular Expressions code used in this program was written by Henry Spencer and included in wxWidgets. Some builds of Aegisub also uses the PortAudio, OpenAL, PulseAudio, libpng, zlib, Hunspell, universalchardet, CSRI, asa, libass, Freetype 2 and ffmpeg libraries.

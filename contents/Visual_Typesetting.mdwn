@@ -1,3 +1,5 @@
+[[!template id=toc depth=2]]
+
 [[!template id=Todo text="Screenshots need to be updated"]]
 
 **A video tutorial for this feature is available at [[the tutorials

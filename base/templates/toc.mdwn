@@ -1,0 +1,7 @@
+<div id="toc">
+    <div id="toctitle">Contents</div>
+    [[!toc
+        startlevel=<TMPL_IF start><TMPL_VAR start><TMPL_ELSE>2</TMPL_IF>
+        <TMPL_IF depth>levels=<TMPL_VAR depth></TMPL_IF>
+    ]]
+</div>

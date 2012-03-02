@@ -1,3 +1,5 @@
+[[!template id=toc start=3]]
+
 A small collection of Frequently Asked Questions about Aegisub - mostly stuff that didn't fit anywhere else.
 
 ### Karaoke effects? ###

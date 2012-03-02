@@ -1,3 +1,5 @@
+[[!template id=toc start=3]]
+
 Do you want to support Aegisub? Well, it's easy! 
 
 ### Feedback ###

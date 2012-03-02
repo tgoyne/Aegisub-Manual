@@ -1,3 +1,5 @@
+[[!template id=toc start=3]]
+
 The **select lines** tool is useful for finding and selecting all lines in the script that matches certain criteria. This can be useful from a number of things ranging from deleting all comment lines to finding all lines said by a certain actor. The tool can be found in the _Subtitles_ menu -> _Select lines_.
 
 <center>[[img/Select_lines.png]]</center>
