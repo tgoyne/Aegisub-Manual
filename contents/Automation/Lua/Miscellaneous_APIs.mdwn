@@ -1,98 +1,104 @@
-This page documents **miscellaneous API's useful for working with subtitles**, these can't be clearly placed into any of the other main categories and there's too few of each kind to warrant a separate category.
-
+This page documents **miscellaneous APIs useful for working with
+subtitles**. These can't be clearly placed into any of the other main
+categories and there's too few of each kind to warrant a separate category.
 
 ## aegisub.text_extents  ##
-
-
 Synopsis: `width, height, descent, ext_lead = aegisub.text_extents(style, text)`
 
-Obtain system font metrics and determine the rendered size in pixels of the given **text** when using the **style**.
-
+Obtain system font metrics and determine the rendered size in pixels of the
+given **text** when using the **style**.
 
 * **width** (number) - Width in pixels of text. This may be non-integer.
 * **height** (number) - Height in pixels of the text. This may be non-integer.
-* **descent** (number) - Length of descenders in the font. This may be non-integer.
-* **ext_lead** (number) - External leading for the font. This may be non-integer.
-* **style** (table) - A [[style table|Automation/Lua/Subtitle_file_interface#Style_table]] as defined by the subtitle interface. The font name, size, weight, style, spacing and encoding is used to determine the size of the text.
-* **text** (string) - The text the extents should be determined for. This should not contain linebreaks (<tt>\n</tt> or <tt>\r\n</tt>) nor should it contain formatting codes of any kind. Formatting codes are not attempted interpreted and will be taken as verbatim text.
+* **descent** (number) - Length of descenders in the font. This may be
+  non-integer.
+* **ext_lead** (number) - External leading for the font. This may be
+  non-integer.
+* **style** (table) - A [[style
+  table|Automation/Lua/Subtitle_file_interface#Style_table]] as defined by
+  the subtitle interface. The font name, size, weight, style, spacing and
+  encoding is used to determine the size of the text.
+* **text** (string) - The text the extents should be determined for. This
+  should not contain line breaks (`\n` or `\r\n`) nor should it contain
+  formatting codes of any kind. Formatting codes are not interpreted and
+  will be taken as verbatim text.
 
-<div></div>
-
-You should only feed plain text strings without line breaks into this function, it cannot handle any kind of formatting codes or text layout. Rather, it is intended as a helper to create text layouts by determining rendered sizes of bits and pieces of a longer text, which can then be layouted by the script.
-
+You should only feed plain text strings without line breaks into this
+function. It cannot handle any kind of formatting codes or text layout.
+Rather, it is intended as a helper to create text layouts by determining
+rendered sizes of bits and pieces of a longer text, which can then be
+laid out by the script.
 
 ## Getting information on the video  ##
+Automation 4 Lua offers two functions designed to be able to work with
+frame-based timing without having to consider whether the video source is
+VFR or CFR.
 
+The primary purpose of these functions is to be able to generate per-frame
+effects, i.e. get the timestamps of a number of sequential frames and
+calculate coordinates, sizes etc. for an object for each of those frames.
 
-Automation 4 Lua offers two functions designed to be able to work with frame-based timing without having to consider whether the video source is VFR or CFR.
-
-The primary purpose of these functions is to be able to generate per-frame effects, ie. get the timestamps of a number of sequential frames and calculate coordinates, sizes etc. for an object for each of those frames.
-
-One thing to remember when using these functions is that, considering a one-dimensional time line, a time stamp is a point on the time line, while a video frame spans a range of the time line, from its beginning time to its ending time. The ending time of a frame is the beginning time of the next. The beginning time of a frame is included in the range while the ending time is excluded from the range.
-
+One thing to remember when using these functions is that, considering a
+one-dimensional time line, a time stamp is a point on the time line, while
+a video frame spans a range of the time line, from its beginning time to
+its ending time. The ending time of a frame is the beginning time of the
+next. The beginning time of a frame is included in the range while the
+ending time is excluded from the range.
 
 ### aegisub.frame_from_ms  ###
-
-
 Synopsis: `frame = aegisub.frame_from_ms(ms)`
 
-Use loaded frame rate data to convert an absolute time given in **milliseconds** into a **frame** number.
+Use loaded frame rate data to convert an absolute time given in
+**milliseconds** into a **frame** number.
 
+Returns `nil` if there is no frame rate data loaded.
 
 * **frame** (number) - Frame number corresponding to the time in ms.
-* **ms** (number) - Absolute time from the beginning of the video, for which to determine the frame number.
+* **ms** (number) - Absolute time from the beginning of the video, for
+  which to determine the frame number.
 
-<div></div>
-
-If the time is in the middle of the frame it is "rounded down" to the frame number that contains the given time.
-
+If the time is in the middle of the frame it is "rounded down" to the frame
+number that contains the given time.
 
 ### aegisub.ms_from_frame  ###
-
-
 Synopsis: `ms = aegisub.ms_from_frame(frame)`
 
-Use loaded frame rate data to convert a **frame** number of the video into an absolute time in **milliseconds**.
+Use loaded frame rate data to convert a **frame** number of the video into
+an absolute time in **milliseconds**.
 
+Returns `nil` if there is no frame rate data loaded.
 
-* **ms** (number) - First integer millisecond time stamp to lie within the frame.
+* **ms** (number) - First integer millisecond time stamp to lie within the
+  frame.
 * **frame** (number) - Frame to obtain the beginning time of.
 
-<div></div>
-
-Because beginning times of frames can have better precision than one millisecond this function rounds up and returns the first whole millisecond that is guaranteed to be within the frame.
-
+Because beginning times of frames can have better precision than one
+millisecond this function rounds up and returns the first whole millisecond
+that is guaranteed to be within the frame.
 
 ### aegisub.video_size  ###
-
-
 Synopsis: `xres, yres, ar, artype = aegisub.video_size()`
 
-Get information about the resolution and aspect-ratio of the loaded video, if any.
+Get information about the resolution and aspect-ratio of the loaded video,
+if any.
 
 Returns `nil` if there is no video loaded.
 
-
-* **xres** and **yres** (numbers) - Coded width and height of the video in pixels.
+* **xres** and **yres** (numbers) - Coded width and height of the video in
+  pixels.
 * **ar** (number) - Custom display aspect ratio override.
 * **artype** (number) - See below.
 
-<div></div>
-
 There are 5 values that _artype_ can take:
 
-
-* If _artype_ is 0, the video has square pixels, ie. PAR is 1.00 or DAR is _xres_/_yres_.
+* If _artype_ is 0, the video has square pixels, ie. PAR is 1.00 or DAR is
+  _xres_/_yres_.
 * If _artype_ is 1, the video is 4:3, ie. DAR is 1.33.
 * If _artype_ is 2, the video is 16:9, ie. DAR is 1.78
 * If _artype_ is 3, the video is 2.35 format, ie. DAR is 2.35.
 * If _artype_ is 4, the DAR is whatever the _ar_ return value contains.
 
-<div></div>
-
-You cannot count on _ar_ always having the correct value when _artype_ is different from 4.
+You cannot count on _ar_ always having the correct value when _artype_ is
+different from 4.
 
 [[!template id=Automation_navbox]]
-
-
-
