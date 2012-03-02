@@ -14,6 +14,10 @@ code {
     font: 1.1em 'Courier New', Courier, Fixed;
 }
 
+strong code {
+    font-weight: bold;
+}
+
 acronym, abbr, span.caps {
     font-size: 0.9em;
     letter-spacing: .07em;
