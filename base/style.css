@@ -311,3 +311,13 @@ table p { margin: 0; }
 .examplecontents {
     margin-left: 1em;
 }
+
+.karatable, .karatable th, .karatable td {
+    text-align: left;
+    border: gray solid 1px;
+    border-collapse: collapse;
+}
+
+.karatable th, .karatable td {
+    padding: 3px;
+}
