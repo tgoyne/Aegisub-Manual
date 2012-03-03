@@ -191,7 +191,7 @@ work on a copy of the subtitle file.
 * **settings** (table) - Configuration settings entered into the
   configuration panel or an empty table if there is no configuration panel.
   See the page on [[configuration
-  dialogues|Automation/Lua/Configuration_dialogues]] for more information
+  dialogues|Automation/Lua/Dialogs]] for more information
   on the format of this table.
 
 **Return value:**
@@ -227,7 +227,7 @@ open. Don't block the UI.
 
 **Return value:**
 A configuration dialogue table. See the page on
-[[configuration dialogues|Automation/Lua/Configuration_dialogues]] for
+[[configuration dialogues|Automation/Lua/Dialogs]] for
 more information on the format of this table.
 
 [[!template id=Automation_navbox]]

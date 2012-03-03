@@ -28,7 +28,7 @@ Automation 4 Lua provides various APIs that can be grouped in these general cate
 * [[Script and feature registration|Automation/Lua/Registration]] - deals with advertising what features a script provides and a few other script meta data.
 * [[Subtitle file interface|Automation/Lua/Subtitle_file_interface]] - deals with use of the _subtitles_ object, the principal way of accessing and modifying the subtitle data.
 * [[Progress reporting and debug output|Automation/Lua/Progress_reporting]] - providing feedback to the user while a script is running, outputting hints and warnings to the user and printing debug information.
-* [[Displaying dialogue boxes and getting user input|Automation/Lua/Configuration_dialogues]] - requesting user input during macro execution by dialogue boxes and providing a configuration interface for export filters.
+* [[Displaying dialogue boxes and getting user input|Automation/Lua/Dialogs]] - requesting user input during macro execution by dialogue boxes and providing a configuration interface for export filters.
 * [[Miscellaneous APIs|Automation/Lua/Miscellaneous_APIs]] - for eg. getting the rendered size of text and getting video frame rate information.
 
 <div></div>

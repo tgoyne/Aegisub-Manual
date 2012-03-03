@@ -13,7 +13,7 @@ what values were input.
 
 **`@dialog`** (`table`)
 : A [[Dialog Definition
-  table|Configuration_dialogues#Dialog_Definition_table_format]] containing
+  table|Dialogs#Dialog_Definition_table_format]] containing
   the controls to be in the dialog.
 
 **`@buttons`** (`table`)
@@ -32,7 +32,7 @@ what values were input.
 
 **`result_table`** (`table`)
 :   The [[Dialog Result
-    table|Configuration_dialogues#Dialog_Result_table_format]] corresponding to
+    table|Dialogs#Dialog_Result_table_format]] corresponding to
     the values the user input in the dialog.
 
 ### aegisub.dialog.open ###
