@@ -47,7 +47,7 @@ the path to the selected file(s), or nil if the user canceled.
 **`@default_file`** (`string`)
 :   Default filename to preselect. May be empty.
 
-**`@default_dir`** (`string)
+**`@default_dir`** (`string`)
 :   Initial directory to show in the open dialog. If empty, the
     last used directory is shown.
 
@@ -80,7 +80,7 @@ the path to the selected file, or nil if the user canceled.
 **`@default_file`** (`string`)
 :   Default filename to preselect. May be empty.
 
-**`@default_dir`** (`string)
+**`@default_dir`** (`string`)
 :   Initial directory to show in the open dialog. If empty, the
     last used directory is shown.
 
@@ -100,7 +100,7 @@ the path to the selected file, or nil if the user canceled.
 
 This section describes the tables passed to and received from
 `aegisub.dialog.display` and the [[export filter configuration
-panel|Registration#Export_filter configuration_panel_provider]].
+panel|Registration#Export_filter_configuration_panel_provider]].
 
 This file describes the functions and data structures used for the
 Configuration Dialog functionality in Automation 4.
@@ -117,11 +117,12 @@ Common keys for all control classes:
 
 **`class`** (`string`)
 : Defines which class this control has. Must be one of:
-  * "label",
-  * "edit", "intedit", "floatedit", "textbox",
-  * "dropdown",
-  * "checkbox",
-  * "color", "coloralpha", "alpha"
+
+    * "label",
+    * "edit", "intedit", "floatedit", "textbox",
+    * "dropdown",
+    * "checkbox",
+    * "color", "coloralpha", "alpha"
 
 **`x`** (`number`)
 **`y`** (`number`)
