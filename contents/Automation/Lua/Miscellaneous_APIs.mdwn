@@ -113,4 +113,29 @@ if any.
     * 3: The video is 2.35 format, i.e. DAR is 2.35.
     * 4: The DAR is whatever the `ar` return value contains.
 
+### aegisub.keyframes ###
+Synopsis `keyframes = aegisub.keyframes()`
+
+Get a list of what video frames are keyframes.
+
+**`keyframes`** (`table`)
+:   A sorted table where each entry is the frame number of a keyframe. If
+    no keyframe data is loaded, the table will be empty.
+
+## aegisub.decode_path ##
+Synopsis `path = aegisub.decode_path(encoded_path)`
+
+Convert a path beginning with a [[path specifier|Aegisub_path_specifiers]]
+to an absolute path.
+
+**`@encoded_path`** (`string`)
+:   A string which may optionally begin with an Aegisub [[path specifier|Aegisub_path_specifiers]].
+
+**`@path`** (`string`)
+:   If `encoded_path` began with a valid [[path
+    specifier|Aegisub_path_specifiers]], an absolute path. If it began with an
+    invalid path specifier (such as if ?video was used when no video is open),
+    a string that is unlikely to be useful in any way. Any other strings are
+    passed through untouched.
+
 [[!template id=Automation_navbox]]
