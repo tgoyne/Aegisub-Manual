@@ -1,3 +1,5 @@
+[[!template id=toc depth=2]]
+
 This page documents **miscellaneous APIs useful for working with
 subtitles**. These can't be clearly placed into any of the other main
 categories and there's too few of each kind to warrant a separate category.
