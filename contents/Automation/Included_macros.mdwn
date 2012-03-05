@@ -3,7 +3,6 @@
 Aegisub includes several macros. Here's a line-up of them.
 
 ## Apply karaoke template  ##
-
 This is the macro incantation of Karaoke Templater. See the page on
 [[Karaoke_Templater]] for how to use this.
 
@@ -11,7 +10,6 @@ This macro is only available when there is at least one template line in the
 subtitle file.
 
 ## Make full-width  ##
-
 Converts all ASCII characters to Japanese "full-width" variations of them.
 
 This can be useful if you need to typeset a sign translation vertically,
@@ -41,7 +39,6 @@ This is what it looks before and after running the macro:
 """]]
 
 ## Automatic karaoke lead-in  ##
-
 Automatically join several karaoke-timed lines up timing-wise and add
 appropriate `\k` tags in front of them.
 
@@ -87,7 +84,6 @@ syllable-highlight to be fully visible.
 """]]
 
 ## Clean tags  ##
-
 This macro does various cleaning up on the override tags in all selected
 lines.
 
@@ -127,8 +123,6 @@ Karaskel creates these syllable structures:
 * 1 = Test {\r\fry180}
 * 2 = me
 
-<div></div>
-
 After running _Clean Tags_ on the line:
 
     {\k80\r\frz90}Test {\k60\r\fry180}me
@@ -144,5 +138,19 @@ The cleaned up version is generally what you'd want since it places the
 override tags inside the syllables they affect.
 """]]
 
-[[!template id=Automation_navbox]]
+## Add Edgeblur ##
+Add [[`\be1`|ASS_Tags#Blur_edges]] to all selected lines. Lightly blurring the
+edges of all dialogue lines can noticeably improve compressibility when
+[[hardsubbing|Attaching_subtitles_to_video]] (especially when using older
+codecs such as XviD), but edgeblur cannot be set in the style due to format
+limitations.
 
+## Strip tags ##
+Remove all ASS override blocks and the tags within from the selected lines.
+
+## Select Overlaps ##
+Select all lines which begin while another line is still active. This can be
+useful for catching timing errors, or for setting an alternate style for these
+lines, which improves readability.
+
+[[!template id=Automation_navbox]]
