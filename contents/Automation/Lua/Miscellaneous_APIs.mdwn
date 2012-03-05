@@ -4,7 +4,15 @@ This page documents **miscellaneous APIs useful for working with
 subtitles**. These can't be clearly placed into any of the other main
 categories and there's too few of each kind to warrant a separate category.
 
-## aegisub.text_extents  ##
+## aegisub.cancel ##
+Synopsis: `aegisub.cancel()`
+
+Immediately end execution of the current script, rolling back any changes
+that have been made in it.
+
+This function never returns.
+
+## aegisub.text_extents ##
 Synopsis: `width, height, descent, ext_lead = aegisub.text_extents(style, text)`
 
 Obtain system font metrics and determine the rendered size in pixels of the
