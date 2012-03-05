@@ -374,7 +374,7 @@ Add one to each \k duration:
     function add_one(str)
         return tostring(tonumber(str) + 1)
     end
-    >>> re.sub("{\\k10}a{\\k15}b{\\k30}c", "\\\\k([[:digit:]]+)", add_one)
+    >>> re.sub("{\\k10}a{\\k15}b{\\k30}c", "\\\\k(\[[:digit:]]+)", add_one)
     {\k11}a{\k16}b{\k31}c
 """]]
 
