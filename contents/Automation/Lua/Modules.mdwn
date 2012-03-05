@@ -34,7 +34,7 @@ as a number of other helper functions.
 interface are encoded in UTF-8, but Lua doesn't natively provide support
 for this. A number of helper functions are provided here.
 
-[[cleantags.lua/]]
+[[cleantags.lua]]
 : A function to clean up ASS tags in a line.
 
 [[clipboard]]
