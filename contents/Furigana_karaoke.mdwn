@@ -12,9 +12,9 @@ implementation discussed here is designed specifically with Japanese furigana
 in mind, the ruby text is also referred to as furigana everywhere.
 
 None of the subtitle formats Aegisub supports natively support ruby text or
-furigana, however the [[Automation/Lua/Modules/]] standard include implements
-an algorithm that can create basic furigana layouts by calculating the position
-of every individual character.
+furigana, however the [[Automation/Lua/Modules/karaskel.lua]] standard include
+implements an algorithm that can create basic furigana layouts by calculating
+the position of every individual character.
 
 This page describes the syntax the Automation 4 karaskel.lua script understands
 for furigana text, and how to use the layout information it calculates to
