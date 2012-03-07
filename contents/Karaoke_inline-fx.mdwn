@@ -19,7 +19,7 @@ At the start of each line the inline-fx is reset to nothing.
 [[!template id=Examplebox data="""
 Here is a timed karaoke line with inline-fx markup:
 
-    {\k40}zu{\k20}t{\k42}to {\k32<u>\-paint</u>}e{\k17}ga{\k45}i{\k32}te{\k26}ta {\k24<u>\-cloud</u>}yu{\k55}me
+<pre><code>{\k40}zu{\k20}t{\k42}to {\k32<u>\-paint</u>}e{\k17}ga{\k45}i{\k32}te{\k26}ta {\k24<u>\-cloud</u>}yu{\k55}me</code></pre>
 
 These syllables get inline-fx assigned like this:
 
