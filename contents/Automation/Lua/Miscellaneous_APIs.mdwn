@@ -49,6 +49,17 @@ Rather, it is intended as a helper to create text layouts by determining
 rendered sizes of bits and pieces of a longer text, which can then be
 laid out by the script.
 
+## aegisub.gettext ##
+Synopsis: `translation = aegisub.gettext(untranslated)`
+
+Get the translation for a string. This is mostly only intended for scripts
+bundled with Aegisub (as there's no way for you to add your own
+translations), but if you happen to be using strings that are present in
+Aegisub it may be useful.
+
+Note that in the bundled macros this is always aliased to `tr` for the sake
+of the string extractor.
+
 ## Getting information on the video  ##
 Automation 4 Lua offers two functions designed to be able to work with
 frame-based timing without having to consider whether the video source is
