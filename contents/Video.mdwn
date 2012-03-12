@@ -101,13 +101,14 @@ Think it through. Do you really **want** to play the video? (Hint: the answer
 is "no", you don't want to do that, at least not in Aegisub.) If you're trying
 to check if a subtitle matches up to something in the video, wouldn't it be
 easier to just step through the video frame-by-frame with the arrow keys? If
-you're proofwatching, wouldn't it be a good idea to watch it in in a player
-that the eventual viewers might be using?
+you're proofwatching, it would be a better idea to watch it in a player your
+viewers might actually use.
 
 To conclude: in real world situations, you will never need to play the video
 from inside Aegisub. The mantra is: Aegisub isn't a media player; if you want a
 media player use a media player. Nonetheless, Aegisub does make a reasonable
-effort to support reliable video playback.
+effort to support reliable video playback and in practice it will usually work
+fine.
 
 Note that audio has to be explicitly loaded for Aegisub to play it while
 playing video. If you find this bothersome, there is an option to automatically
