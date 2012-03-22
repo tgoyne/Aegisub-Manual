@@ -89,7 +89,7 @@ and flags arguments.
 
 [[!template id=Examplebox data="""
     >>> expr = re.compile("a")
-    >>> expr.split("banana")
+    >>> expr:split("banana")
     {
         "b",
         "n",
