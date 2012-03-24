@@ -4,7 +4,7 @@
 
 When your audio file has loaded, Aegisub will transform into something like
 the screenshot below:
-[[img/Audio-box-waveform.png]]
+[[img/audio_display.png]]
 
 You can click and drag just below the audio timeline to change the height of
 the audio waveform/spectrum display.
@@ -41,42 +41,30 @@ turned off. The buttons and controls are as follows (many of these have
   line automatically when enabled)
 1. Toggle spectrum analyzer mode (see below)
 1. Toggle Medusa-style timing shortcuts
+1. Toggle karaoke mode
 1. Audio display zoom (horizontal)
 1. Audio display zoom (vertical)
 1. Audio volume
 1. Toggle linking of vertical audio zoom slider with volume slider
-1. Toggle karaoke mode
-1. Join selected syllables (karaoke mode only)
-1. Split selected syllables (karaoke mode only)
-
 
 ## Basic audio timing ##
-
 When you click on a line in the subtitles grid, Aegisub will highlight it in
 the audio display and, if you have auto-scrolling enabled, scroll the audio
-display so it's centered on the line (during normal timing, it's usually a
-good idea to disable auto-scrolling). You'll notice various vertical lines
-in the audio display; the dark blue ones indicate second boundaries, the
-pink ones indicate keyframes in the video if you have it loaded (see the
-[[Working with video|Video]] section), the white broken line indicates the
-currently visible video frame, and the thick red and orange ones are the
-line start and end markers (respectively) for the current line. To
-(re-)define the start and end times of the line, you can either left-click
-to set the start time and right-click to set the end time, or just
-drag-and-drop the line boundaries. The selection background will turn red
-and display the word "Modified" in the top left corner of the audio display
-when you've changed the timing but haven't saved the changes yet. It will
-remain red until you either press the commit button (_enter_ or _g_ by
-default) or go to another line (discards changes). If you have auto-commit
-on, the background will never turn red since all changes will be saved
-immediately. Press the _play_ button (keyboard shortcut _s_ by default) to
-listen to the selection, or the various other playing buttons to listen to
-parts of the selection or the audio surrounding it. When you are satisfied
-with the timing, press commit. Then repeat once for every line; it's as
-simple as that.
+display so it's centered on the line (during normal timing, it's usually a good
+idea to disable auto-scrolling). You'll notice various vertical lines in the
+audio display; the pink ones indicate keyframes in the video if you have it
+loaded (see the [[Working with video|Video]] section), the white broken line
+indicates the currently visible video frame, and the thick red and orange ones
+are the line start and end markers (respectively) for the current line. To
+(re-)define the start and end times of the line, you can either left-click to
+set the start time and right-click to set the end time, or just drag-and-drop
+the line boundaries.  Press the _play_ button (keyboard shortcut _s_ by
+default) to listen to the selection, or the various other playing buttons to
+listen to parts of the selection or the audio surrounding it. When you are
+satisfied with the timing, press commit to save the line and move onto the next
+one. Then repeat once for every line; it's as simple as that.
 
 ### Timing protips ###
-
 If you want to finish timing your movie or episode within any reasonable
 amount of time, there's some things you should note:
 
@@ -96,24 +84,30 @@ amount of time, there's some things you should note:
 * The spectrum analyzer mode looks weird at first, but usually makes it lot
   easier to "see" where lines start and end, especially when there is
   background noise.
+* With practice, it's often faster and easier to time something from scratch
+  than fix bad timing, due to that fixing bad timing requires spending a small
+  amount of time thinking about each line.
+* If you want to delete all timing data and start over, a simple way is to use
+  the [[shift times dialog|Shift times]] to shift all lines backwards by
+  9:59:59.99.
 
-One common timing style (preferred by the author of this page) goes something like the following:
-Turn on "go to next line on commit" but disable auto-committing,
-auto-scrolling and Medusa timing shortcuts. Keep the four main fingers of
-your left hand on s/d/f/g. You won't be using the thumb so do whatever you
-want with it. Keep your right hand on the mouse. Now select (by left- and
-right-clicking) an area in the waveform that seems likely to contain a line
-of speech matching the current subtitle line, and hit _s_ to play it back.
-While it's playing, adjust the start time if necessary. When the playback
-marker has passed the end time mark, adjust the end time as well. If greater
-accuracy is needed, play the last 500ms of the selection by pressing _d_,
-500ms before the selection start by pressing _q_, 500ms after the selection
-end by pressing _w_, or the first 500ms of the selection by pressing _e_. As
-you grow more experienced, you won't be using anything else than _s_ very
-much, except maybe _d_ and _q_. When you're satisfied with the timing, hit
+One common timing style (preferred by the author of this page) goes something
+like the following: Turn on "go to next line on commit" but disable
+auto-committing, auto-scrolling and Medusa timing shortcuts. Keep the four main
+fingers of your left hand on s/d/f/g. You won't be using the thumb so do
+whatever you want with it. Keep your right hand on the mouse. Now select (by
+left- and right-clicking) an area in the waveform that seems likely to contain
+a line of speech matching the current subtitle line, and hit _s_ to play it
+back.  While it's playing, adjust the start time if necessary. When the
+playback marker has passed the end time mark, adjust the end time as well. If
+greater accuracy is needed, play the last 500ms of the selection by pressing
+_d_, 500ms before the selection start by pressing _q_, 500ms after the
+selection end by pressing _w_, or the first 500ms of the selection by pressing
+_e_. As you grow more experienced, you won't be using anything else than _s_
+very much, except maybe _d_ and _q_. When you're satisfied with the timing, hit
 _g_ to commit changes and go on to the next line. Scroll the audio display
-forward by pressing _f_. If you need to scroll it backwards, use _a_. To go
-to next or previous line without committing changes, use _z_ and _x_.
+forward by pressing _f_. If you need to scroll it backwards, use _a_. To go to
+next or previous line without committing changes, use _z_ and _x_.
 
 This style has the advantage that you never need to move your hands at all.
 With some training, it can also be very fast; audio timing 350-400 lines of
@@ -125,8 +119,7 @@ experiment with other timing styles before deciding which one is best for
 you.
 
 ### The spectrum analyzer mode ###
-
-[[img/Audio-box-spectrum.png]]
+[[img/spectrum.png]]
 
 When you press the spectrum analyzer button, the waveform does no longer
 show amplitude (signal strength) on the vertical axis - instead it shows
@@ -145,9 +138,9 @@ strength.
 
 Because calculating the spectrum data is very CPU intensive, it in initially
 set to be in a medium quality. You can increase the quality of the spectrum
-in the [[audio options|Audio#Options]]. This is mostly important when you
-built Aegisub yourself and did not use FFTW3.
+in the [[audio options|Audio#Options]]. This is mostly important when you built
+Aegisub yourself and did not use FFTW3; FFTW3 is fast enough that the default
+quality is bumped up a bit.
 
 ## Karaoke timing ##
-
 [[!template id=Todo text="here be dragons"]]
