@@ -174,20 +174,40 @@ mean.
 
 By default, the following columns are visible:
 
-* **#** - The line number.
-* **Start** - The start time of the line.
-* **End** - The end time of the line.
-* **Style** - The style used for this line.
-* **Text** - The text of the line (this is what will be displayed on the
-  video).
+**#**
+: The line number.
+
+**Start**
+: The start time of the line.
+
+**End**
+: The end time of the line.
+
+**Style**
+: The style used for this line.
+
+**Text**
+: The text of the line (this is what will be displayed on the video).
 
 The following columns will be displayed if any line in the script uses them:
-* **L** - The layer of the line (see above).
-* **Actor** - The actor speaking the line.
-* **Effect** - The effect for this line.
-* **Left** - The left margin.
-* **Right** - The right margin.
-* **Vert** - The vertical margin.
+
+**L**
+: The layer of the line (see above).
+
+**Actor**
+: The actor speaking the line.
+
+**Effect**
+: The effect for this line.
+
+**Left**
+: The left margin.
+
+**Right**
+: The right margin.
+
+**Vert**
+: The vertical margin.
 
 You can also right-click the top line of the grid (the one with the column
 names) to manually select which columns you want to be visible.
@@ -195,55 +215,77 @@ names) to manually select which columns you want to be visible.
 Right-clicking any other line in the grid gives you the following menu
 (many of the options are also available in other menus):
 
-<center>[[img/Subs_grid_menu.png]]</center>
+<center>[[img/grid_context_menu.png]]</center>
 
-* **Insert (before/after)** - Inserts a new empty line before or after the
-  selected line. The new line will be timed start at 0:00:00.00 and go to
-  0:00:05.00.
-* **Insert at video time (before/after)** - Same as the above, but the new
-  line will be timed to start at the current video frame. Not enabled
-  unless you have video loaded.
-* **Duplicate** - Duplicates the selected line(s).
-* **Duplicate and shift by 1 frame** - Duplicates the selected line(s) and
-  shifts the start and end times one frame forward. Useful for
-  frame-by-frame typesetting. Not enabled unless you have video loaded.
-* **Split (by karaoke)** - Splits the line into one new line per syllable,
-  as delimited by karaoke override tags (`\k` and its relatives). The
-  timing of the first line will start at the original line's start time and
-  end at that time plus the length of the first syllable; the following
-  lines will start at the end of the previous and last for the duration of
-  the syllable.
-* **Swap** - Swaps the places (in the grid) of two selected lines.
-* **Join (keep first)** - Joins two or more lines, discarding the text of
-  all but the first. The new line will be timed to start at the first
-  line's start time and end at the last line's end time. Only enabled if
-  you have more than one line selected.
-* **Join (concatenate)** - Same as above, but concatenates the text of all
-  selected lines instead. A newline override (`\N`) is inserted between the
-  texts of each source line.
-* **Join (as karaoke)** - Does the inverse of _Split (by karaoke)_, i.e.
-  the same as _Join (concatenate)_ but inserts `\k` tags with the timing of
-  each source line in the joined line.
-* **Make times continuous (change start/change end)** - Modifies the timing
-  of the selected lines so that the end time of each line is the same as
-  the start time of the next line. Change start/change end determines
-  whether the function changes the end time or the start time of each line.
-  Not enabled unless you have more than one line selected.
-* **Recombine lines** - Given two or more lines with the same text being
-  partially present in all of them, creates one line per text fragment
-  instead. This is mostly useful for correcting subs ripped from DVDs,
-  which frequently look something like this:
+**Insert (before/after)**
+: Inserts a new empty line before or after the selected line. The new line
+will be timed start at 0:00:00.00 and go to 0:00:05.00.
 
-<center>[[img/Recombine_01.png]]</center>
->  After recombine lines, the result is:
+**Insert at video time (before/after)**
+: Same as the above, but the new line will be timed to start at the current
+video frame. Not enabled unless you have video loaded.
 
-<center>[[img/Recombine_02.png]]</center>
+**Duplicate**
+: Duplicates the selected line(s).
 
-* **Create audio clip** - Saves a segment of the loaded audio corresponding
-  to the timing of the selected lines (starting at the earliest start time
-  and ending at the latest end time) as an uncompressed WAV file. Only
-  enabled if you have audio loaded.
-* **Cut/Copy/Paste** - Cuts/copies/pastes entire lines. Note that the lines
-  are copied as plain text and can be copied and pasted freely between text
-  editors, chat programs, web browsers, other instances of Aegisub etc.
-* **Delete** - Deletes the selected lines.
+**Duplicate and shift by 1 frame**
+: Duplicates the selected line(s) and shifts the start and end times one
+frame forward. Useful for frame-by-frame typesetting. Only enabled if you
+have video or timecodes loaded.
+
+**Split (by karaoke)**
+: Splits the line into one new line per syllable, as delimited by karaoke
+override tags (`\k` and its relatives). The timing of the first line will
+start at the original line's start time and end at that time plus the
+length of the first syllable; the following lines will start at the end of
+the previous and last for the duration of the syllable.
+
+**Swap**
+: Swaps the places (in the grid) of two selected lines.
+
+**Join (keep first)**
+: Joins two or more lines, discarding the text of all but the first. The
+new line will be timed to start at the first line's start time and end at
+the last line's end time. Only enabled if you have more than one line
+selected.
+
+**Join (concatenate)**
+: Same as above, but concatenates the text of all selected lines instead. A
+newline override (`\N`) is inserted between the texts of each source line.
+
+**Join (as karaoke)**
+: Does the inverse of _Split (by karaoke)_, i.e.  the same as _Join
+(concatenate)_ but inserts `\k` tags with the timing of each source line in
+the joined line.
+
+**Make times continuous (change start/change end)**
+: Modifies the timing of the selected lines so that the end time of each
+line is the same as the start time of the next line. Change start/change
+end determines whether the function changes the end time or the start time
+of each line. Only  enabled when you have more than one line selected.
+
+**Recombine lines**
+: Given two or more lines with the same text being partially present in all
+of them, creates one line per text fragment instead. This is mostly useful
+for correcting subs ripped from DVDs, which frequently look something like
+this:
+
+    [[img/Recombine_01.png]]
+
+    After recombine lines, the result is:
+
+    [[img/Recombine_02.png]]
+
+**Create audio clip**
+: Saves a segment of the loaded audio corresponding to the timing of the
+selected lines (starting at the earliest start time and ending at the
+latest end time) as an uncompressed WAV file. Only enabled if you have
+audio loaded.
+
+**Cut/Copy/Paste**
+: Cuts/copies/pastes entire lines. Note that the lines are copied as plain
+text and can be copied and pasted freely between text editors, chat
+programs, web browsers, other instances of Aegisub etc.
+
+**Delete**
+: Deletes the selected lines.
