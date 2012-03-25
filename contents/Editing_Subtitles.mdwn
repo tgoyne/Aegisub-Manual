@@ -69,11 +69,12 @@ respectively. In the example above, the actor separator is a colon
 
 ## Editing subtitles ##
 Editing subtitles in Aegisub is done in two areas: the subtitle edit box (where
-you type in or edit text) and the subtitles grid, where you do things to one or
-more lines at the same time.
+you type in or edit text) and the subtitles grid. Changes made in both the
+edit box and the grid normally modify all selected lines, and not just the
+line displayed in the edit box.
 
 ### The subtitles edit box ###
-<center>[[img/Subs_Edit_Controls.png]]</center>
+<center>[[img/subs_edit_box.png]]</center>
 
 The edit box is just a plain editing area with a number of associated controls.
 They are:
