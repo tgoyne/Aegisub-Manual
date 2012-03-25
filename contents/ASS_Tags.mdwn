@@ -285,8 +285,15 @@ This is because 330 degrees is 30 degrees less than a full rotation of 360 degre
 [[!template id=Examplebox data="""<pre>\t(\frz3600)</pre>
 
 Perform an animation where the text performs 10 full revolutions on the Z axis. Also see the [[\t|ASS_Tags#Animated_transform]] tag."""]]
-[[!template id=Examplebox data="""The following screenshots illustrate the effect of rotating on the different axes:<br>
-[[img/fr_sample01.jpg]]<br>[[img/fr_sample02.jpg]]<br>[[img/fr_sample03.jpg]]"""]]
+[[!template id=Examplebox data="""
+The following screenshots illustrate the effect of rotating on the different axes:
+
+[[img/fr_sample01.jpg]]
+
+[[img/fr_sample02.jpg]]
+
+[[img/fr_sample03.jpg]]
+"""]]
 
 [[!template id=TagDefBox name="Text shearing" usage="""
 \fax<i>&lt;factor&gt;</i>  
@@ -295,14 +302,14 @@ Perform an animation where the text performs 10 full revolutions on the Z axis. 
 Perform a shearing (perspective distortion) transformation of the text. A
 _factor_ of 0 (zero) means no distortion.
 
-Usually _factor_ will be a small number, not larger than 2 as that creates a
-very strong distortion.
+Usually _factor_ will be a small number; values outside the range -2 to 2 are
+unlikely to have desireable results.
 
 Shearing is performed after rotation, on the rotated coordinates. The
 coordinate system used for shearing is not affected by the [[rotation
 origin|ASS_Tags#Rotation_origin]].
 
-[[!template id=Todo text="We need a screenshot illustrating the effect."]]
+[[!template id=Examplebox data="[[img/shearing.png]]"]]
 
 [[!template id=TagDefBox name="Font encoding" usage="\fe<i>&lt;id&gt;</i>"]]
 Set the Windows font encoding used to select the font mapping table used to
