@@ -6,7 +6,6 @@ Several different timing modes are available for both normal dialog timing
 and karaoke timing.
 
 ## Opening audio ##
-
 To load an audio file into Aegisub, just go to the _Audio_ menu and press
 _Open audio file_. If you have a video file (with an included audio track)
 already loaded, you can use _Open audio from video_ instead, which obviously
@@ -16,6 +15,10 @@ provider|Options#Audio_provider]] can decode, more on this below. In
 addition, if you simply wish to use the audio display without loading any
 real audio, you can choose _Open 2h30 Blank Audio_ or _Open 2h30 Noise
 Audio_.
+
+If opening audio fails with an error that mentions the audio player, or if
+playing audio results in no sound, switching to a [[different audio
+player|Options#advancedaudio]] may help.
 
 ### Supported formats ###
 Aegisub normally uses FFMS2 to open audio, which can reliably open audio is
@@ -30,7 +33,6 @@ downmixed, but the results may be of poor quality for sources of more than
 two channels.
 
 ### Audio caching ###
-
 If you're loading any audio format that isn't an uncompressed (PCM)
 Microsoft WAV file, Aegisub needs to decode and cache it first. When loaded,
 the audio is downmixed to mono (see the [[audio downmixer
