@@ -447,7 +447,7 @@ dialogue is opened. In that case you will have to enter the
     _DirectSound-old_ (Windows only)
     : Aegisub's original implementation of the DirectSound player. If
         you have audio playback problems when using the DirectSound player this
-        one may work better.
+        one may work better (but probably won't).
 
     _alsa_ (Linux only)
     : Uses the [Advanced Linux Sound
@@ -457,7 +457,9 @@ dialogue is opened. In that case you will have to enter the
 
     _pulse_ (Linux and other *NIX-like systems)
     : Plays sound back through a [PulseAudio](http://pulseaudio.org/)
-        sound server.
+        sound server. This is the least-tested and least likely to work of the
+        audio players, and is only recommended if your audio setup makes
+        non-pulse players undesirable.
 
     _portaudio_
     : Use the [PortAudio](http://www.portaudio.com/) API to play back
@@ -465,7 +467,10 @@ dialogue is opened. In that case you will have to enter the
         platforms. On most Unices it uses Open Sound System (OSS) for output.
 
     _openal_
-    : Uses the [OpenAL](http://www.openal.com/) API to play back audio. 
+    : Uses the [OpenAL](http://www.openal.com/) API to play back audio.
+        This is the recommended player on OS X. It is normally not included in
+        windows builds due to that it adds an extra dependency for little
+        benefit.
 
 ### Cache ###
 
