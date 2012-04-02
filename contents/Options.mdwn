@@ -586,3 +586,25 @@ possible to open some files which FFMS2 cannot seek frame-accurately in.
 
 **Force BT.601**
 : Pretend all YUV videos are BT.601, for VSFilter compatibility.
+
+    When VSFilter is used as a DirectShow filter, it always uses the BT.601
+    color matrix for converting the subtitles from RGB to YUV. This means that
+    if the video uses BT.709 (as most HD video and the occasional DVD does),
+    colors which match the video in Aegisub will not match the video in the
+    player. This option makes Aegisub always convert videos to RGB using
+    BT.601, making the colors shown in Aegisub incorrect, but making it so that
+    if the colors match in Aegisub, they will match in the player.
+
+    To make things more exciting, VSFilter will use the *correct* color space
+    when used as the internal subtitle renderer in MPC-HC, so enabling this
+    option will result in *mismatched* colors in that case. As the ISR is
+    currently broken in many ways (e.g. it is impossible to accurately position
+    subtitles with it), we recommend not worrying about it for now.
+
+    The screenshots below may make this clearer:
+
+    [[!template id=Todo text="make these"]]
+
+    Aegisub now writes what colorspace should be used for RGB -> YUV
+    conversions to the subtitle file, so hopefully this mess will be resolved
+    by renderer improvements sometime in the future.
