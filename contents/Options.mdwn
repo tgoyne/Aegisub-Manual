@@ -606,9 +606,9 @@ possible to open some files which FFMS2 cannot seek frame-accurately in.
     currently broken in many ways (e.g. it is impossible to accurately position
     subtitles with it), we recommend not worrying about it for now.
 
-    The screenshots below may make this clearer:
+    This comparison may make this clearer:
 
-    [[!template id=Todo text="make these"]]
+    [[img/bt601.png]]
 
     Aegisub now writes what colorspace should be used for RGB -> YUV
     conversions to the subtitle file, so hopefully this mess will be resolved
