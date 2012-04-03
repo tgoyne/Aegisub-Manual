@@ -334,7 +334,7 @@ respectively.
 This page lists all hotkeys currently set in Aegisub, and allows you to add,
 remove or change them.
 
-### Hotkey Contextx ###
+### Hotkey Contexts ###
 Aegisub supports setting different hotkeys depending on what part of the
 program has focus.
 
@@ -349,6 +349,17 @@ typing in edit boxes.
 All other hotkey contexts should be self-explanatory.
 
 ### Setting hotkeys ###
+To modify a hotkey, first click on the row to select it, then click on the
+hotkey field in the row, then press the key(s) that should trigger the command.
+Accept the new hotkey by clicking on another row.
+
+To add a new hotkey, select the context you want to add the hotkey to, then
+click the New button. There is currently no list of commands available, but
+between the existing hotkeys and the auto-complete you can probably guess the
+command name for the thing you want to do. Everything on any of the menus or
+any of the toolbars *except* the subtitles edit box toolbar has a command.
+
+[[!template id=Todo text="Add a list of commands available"]]
 
 ## Backup ##
 
