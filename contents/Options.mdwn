@@ -104,11 +104,11 @@ uncommented line before this line", and so on).
 
 **keyframes**
 : If enabled, lines marking the positions of keyframes in the video will be
-drawn on the audio waveform when in dialogue mode.
+drawn on the audio waveform when in dialogue timing mode (the default).
 
 **Karaoke keyframes**
 : If enabled, lines marking the positions of keyframes in the video will be
-drawn on the audio waveform when in karaoke mode.
+drawn on the audio waveform when in karaoke timing mode.
 
 **Draw cursor time**
 : If enabled, a timestamp showing the time since the start of the file will be
@@ -139,10 +139,6 @@ karaoke syllables.
 
 **Font Size**
 :   The font size to use for audio labels.
-
-### Color Schemes ###
-Aegisub currently has two color schemes that can be used for the audio waveform
-and spectrum.
 
 ## Video ##
 
@@ -205,7 +201,7 @@ tag|ASS_Tags]] and display a small box with a brief reference of the syntax of
 the tag in question until you close the tag. This is called a "call tip" and
 the feature may be familiar to users of various programming IDEs.
 
-**Overwrite-Insertion in time boxes**
+**Overwrite in time boxes**
 : Controls the behavior of all time edit boxes in the program. By default, all
 time edit boxes in Aegisub behave like as if you had pressed the Insert button,
 so every digit you type overwrites what is already there, and you cannot erase
@@ -267,6 +263,12 @@ so desire.
 
 **Syllable boundary**
 : The color of a syllable boundary line in karaoke mode.
+
+### Color Schemes ###
+Controls the color scheme used for the waveform/spectrum and some of the UI
+elements. Aegisub currently does not have a UI for editing the color schemes or
+creating new ones, but if you're feeling adventurous they can be found in
+config.json.
 
 #### Syntax Highlighting ####
 
