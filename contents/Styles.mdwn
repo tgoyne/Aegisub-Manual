@@ -62,7 +62,7 @@ To return to the style editor:
 
   * _Primary_ - used as the "fill" (main) color of the text.
   * _Secondary_ - secondary fill color, only used for karaoke effects (see
-    `\k` and its relatives on the [[override tags page|ASS_Tags]]).
+    `\k` and its relatives on the [[override tags page|ASS_Tags#karaokeeffect]]).
   * _Outline_ - used as outline (border) color.
   * _Shadow_ - used as shadow color.
 
