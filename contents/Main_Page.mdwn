@@ -9,7 +9,7 @@ Documentation related to delopment of Aegisub and building Aegisub is located at
 **Common tasks:**
 
 * [[Timing a translated script to audio|Audio_Timing_Tutorial]]
-* [[Basic typesetting of on-screen signs|Tutorials#Visual_Typesetting]]
+* [[Basic typesetting of on-screen signs|Tutorials#visualtypesetting]]
 * [[Putting your finished subtitles onto the video|Attaching_subtitles_to_video]] (for viewing or distribution)
 
 <div></div>
@@ -19,5 +19,5 @@ Documentation related to delopment of Aegisub and building Aegisub is located at
 
 <div></div>
 
-* [[Timing karaoke to a song|Tutorials#Karaoke_Timing]]
+* [[Timing karaoke to a song|Tutorials#karaoketiming]]
 * [[Creating fancy karaoke effects|Automation/Karaoke_Templater/Tutorial_1]]

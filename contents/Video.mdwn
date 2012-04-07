@@ -9,7 +9,7 @@ get things to display properly you may want to read the
 ## Opening video ##
 
 To load a video file, go to the _Video_ menu and press _Open video file_. What
-video files you can open depends on your [[video provider|Options#Video]]. To
+video files you can open depends on your [[video provider|Options#video]]. To
 use a dummy (mockup, blank) video, press _Use dummy video_.
 
 ### Supported formats ###
@@ -53,8 +53,8 @@ functions to find the best choice:
   and it doesn't convert VFR to CFR. **Warning:** DSS is known to have problems
   with frame-accurate seeking. Do not use it if you can avoid it.
 
-Note that [[VFR|Video#Variable_framerate_video]] is not supported by the
-Avisynth provider. In some cases loading [[external timecodes|Video#Timecodes]]
+Note that [[VFR|Video#variableframeratevideo]] is not supported by the
+Avisynth provider. In some cases loading [[external timecodes|Video#timecodes]]
 may work, but in practice it will often result in a broken mess.
 
 Aegisub will look for Avisynth plugins in its

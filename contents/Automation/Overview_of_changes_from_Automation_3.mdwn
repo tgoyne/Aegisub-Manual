@@ -55,7 +55,7 @@ You no longer need to name your functions anything specific. Instead, you tell
 Aegisub what your entry point functions are called. What you do is register
 each feature you want, using the `aegisub.register_macro` and
 `aegisub.register_filter` functions. (Exception: If you use the [[karaoke
-skeleton functions|Automation/Lua/Modules/karaskel.lua#Karaoke_skeletons]] you
+skeleton functions|Automation/Lua/Modules/karaskel.lua#karaokeskeletons]] you
 do need to follow some specific naming schemes and should not register any
 features.)
 

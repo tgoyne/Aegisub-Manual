@@ -1,2 +1,2 @@
 
-1. REDIRECT [[Audio#Basic_audio_timing]]
+1. REDIRECT [[Audio#basicaudiotiming]]

@@ -65,12 +65,12 @@ Register a macro feature.
   characters.
 * **processing_function** (function) - The function that is called when the
   user selects the menu item. This must be a function with the [[macro
-  processing function API|Automation/Lua/Registration#Macro_processing_function]].
+  processing function API|Automation/Lua/Registration#macroprocessingfunction]].
 * **validation_function** (function, optional) - This function is called to
   determine whether the menu item should be available to the user or not.
   (Grayed out or not.) If no validation function is provided the macro is
   always available. This function must follow the [[macro validation
-  function API|Automation/Lua/Registration#Macro_validation_function]].
+  function API|Automation/Lua/Registration#macrovalidationfunction]].
 
 ### aegisub.register_filter  ###
 
@@ -96,12 +96,12 @@ Register an export filter feature.
 * **processing_function** (function) - The function that is called when the
   user initiates the export operation. This must be a function with the
   [[export filter processing function
-  API|Automation/Lua/Registration#Export_filter_processing_function]].
+  API|Automation/Lua/Registration#exportfilterprocessingfunction]].
 * **configuration_panel_provider** (function, optional) - A function that
   provides a configuration panel for the export filter. If this function is
   not provided the export filter will not have a configuration panel. This
   function must follow the [[export filter configuration panel provider
-  API|Automation/Lua/Registration#Export_filter_configuration_panel_provider]].
+  API|Automation/Lua/Registration#exportfilterconfigurationpanelprovider]].
 
 ## Feature callback functions  ##
 

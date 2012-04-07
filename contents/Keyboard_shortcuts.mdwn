@@ -1,2 +1,2 @@
 
-1. REDIRECT [[Options#Hotkeys]]
+1. REDIRECT [[Options#hotkeys]]

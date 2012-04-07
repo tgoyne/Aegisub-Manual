@@ -20,7 +20,7 @@ given **text** when using the **style**.
 
 **`@style`** (`table`)
 :   A [[style
-    table|Automation/Lua/Subtitle_file_interface#Style_table]] as defined by
+    table|Automation/Lua/Subtitle_file_interface#styletable]] as defined by
     the subtitle interface. The font name, size, weight, style, spacing and
     encoding is used to determine the size of the text.
 

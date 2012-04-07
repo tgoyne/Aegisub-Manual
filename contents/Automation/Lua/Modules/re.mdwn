@@ -205,7 +205,7 @@ Find all non-overlapping substrings of `str` which match `pattern`.
 : String to search for the pattern in.
 
 **`matches`** (`table` or `nil`)
-: A table of [[Match Tables|re#Match_Tables]] for all matches, or `nil` if
+: A table of [[Match Tables|re#matchtables]] for all matches, or `nil` if
 there were none.
 
 [[!template id=Examplebox data="""
@@ -276,8 +276,8 @@ single match along with the captured subgroups.
 
 **`matches`** (`table` or `nil`)
 : `nil` if the pattern did not match the string. Otherwise, a table containing
-a [[Match Table|re#Match_Tables]] for the full match, followed by a [[Match
-Table|re#Match_Tables]] for each capturing subexpression in the pattern (if
+a [[Match Table|re#matchtables]] for the full match, followed by a [[Match
+Table|re#matchtables]] for each capturing subexpression in the pattern (if
 any).
 
 [[!template id=Examplebox data="""
@@ -319,8 +319,8 @@ Iterator version of [[`re.match`|re#re.match]].
 
 **`matches`** (`iterator over table`)
 : An iterator which returns a table containing a [[Match
-Table|re#Match_Tables]] for the full match (if it matched), followed by a
-[[Match Table|re#Match_Tables]] for each capturing subexpression in the pattern
+Table|re#matchtables]] for the full match (if it matched), followed by a
+[[Match Table|re#matchtables]] for each capturing subexpression in the pattern
 (if any).
 
 ### re.sub ###

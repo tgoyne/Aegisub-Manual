@@ -15,7 +15,7 @@ turned off. The buttons and controls are as follows (many of these have
 [[keyboard shortcuts|Keyboard_shortcuts]] associated with them by default):
 
 1. Go to previous line, discarding any unsaved changes (previous syllable
-  when in [[karaoke mode|Audio#Karaoke_mode]])
+  when in [[karaoke mode|Audio#karaokemode]])
 1. Go to next line, discarding any unsaved changes (next syllable when in
   karaoke mode)
 1. Play selected area of the audio waveform
@@ -27,9 +27,9 @@ turned off. The buttons and controls are as follows (many of these have
 1. Play last 500ms of selection
 1. Play from selection start to end of file (or until pause is pressed)
 1. Add lead-in (how much is determined by the [[audio lead in
-  setting|Options#Audio]])
+  setting|Options#audio]])
 1. Add lead-out (exactly like the above, but the setting is called [[audio
-  lead out|Options#Audio]], logically enough)
+  lead out|Options#audio]], logically enough)
 1. Commit (save) changes
 1. Scroll view to selection/go to selection
 1. Toggle auto-commit (if enabled, all timing changes are committed
@@ -138,7 +138,7 @@ strength.
 
 Because calculating the spectrum data is very CPU intensive, it in initially
 set to be in a medium quality. You can increase the quality of the spectrum
-in the [[audio options|Audio#Options]]. This is mostly important when you built
+in the [[audio options|Audio#options]]. This is mostly important when you built
 Aegisub yourself and did not use FFTW3; FFTW3 is fast enough that the default
 quality is bumped up a bit.
 

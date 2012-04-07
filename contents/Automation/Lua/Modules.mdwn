@@ -13,7 +13,7 @@ deprecated as it suffers from several limitations.
 
 To use modules in [[Karaoke Templater|Automation/Karaoke_Templater]],
 place the require statement in a [[code
-once|Automation/Karaoke_Templater/Code_lines_and_blocks#Classes_of_code_lines]]
+once|Automation/Karaoke_Templater/Code_lines_and_blocks#classesofcodelines]]
 line. Note that `karaskel.lua`, `utils.lua` and `unicode.lua` do not have
 to be `require`d in [[Karaoke Templater|Automation/Karaoke_Templater]], as
 they are automatically imported.

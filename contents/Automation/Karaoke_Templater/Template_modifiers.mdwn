@@ -185,7 +185,7 @@ All other template lines that don't have _fx_ specified will still be applied as
 
 Declare template to be in the named effect group. Specifying an effect group name is required; the name may also overlap with template modifier names and Lua reserved words, though this is not recommended.
 
-{{Examplebox|There is an example of _fxgroup_ on the [[Code execution environment|Automation/Karaoke_Templater/Code_execution_environment#Conditional_templates_with_fxgroup]] page.}}
+{{Examplebox|There is an example of _fxgroup_ on the [[Code execution environment|Automation/Karaoke_Templater/Code_execution_environment#conditionaltemplateswithfxgroup]] page.}}
 
 
 ### keeptags  ###
@@ -265,7 +265,7 @@ The _loop_ modifier is used to created 4 copies of the syllable for each time th
 
 The starting alpha for each copy, `&Hc0` is chosen as 256 - (256 / 4), 4 being the number of loops made. This way, the opacity for each copy adds up to exactly 256. (Technically it should be 255, but that can't be achieved with an even number of loops.)
 }}
-> _Also see the examples on the [[Code execution environment|Automation/Karaoke_Templater/Code_execution_environment#Looping_templates]] page for more advanced usage._
+> _Also see the examples on the [[Code execution environment|Automation/Karaoke_Templater/Code_execution_environment#loopingtemplates]] page for more advanced usage._
 
 [[!template id=Automation_navbox]]
 
