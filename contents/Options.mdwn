@@ -576,12 +576,45 @@ you to reindex the file to open audio tracks from the same file.
 
 ## Advanced Video ##
 
+<center>[[img/preferences-advanced-video.png]]</center>
+
 **Video provider**
+: Decides what method Aegisub should use to load video. What options you have
+    available here depends on how your copy of Aegisub was compiled and what
+    operating system you are running under. The following alternatives exist:
 
-: Decides what method Aegisub should use to load video. What options you have available here depends on how your copy of Aegisub was compiled and what operating system you are running under. The following alternatives exist:
-: - _avisynth_ (Windows only)
-> : Uses [Avisynth](http://www.avisynth.org) to load video. Versatile, supports loading almost all common formats as well as .d2v files (indexed DVD VOB's) if the correct plugin is supplied. Note that Aegisub can install its own avisynth.dll instead of using your system installation if so desired. Requires Video for Windows decoders for AVI files for best performance. Uses ffmpegsource() to load anything that isn't AVI (and tries that too for AVI's if no suitable VfW decoder is found).
+    _avisynth_ (Windows only)
+    : Uses [Avisynth](http://www.avisynth.org) to load video. Versatile,
+        supports loading almost all common formats as well as .d2v files
+        (indexed DVD VOBs) if the correct plugin is supplied. Note that Aegisub
+        can install its own avisynth.dll instead of using your system
+        installation if so desired. Requires Video for Windows decoders for AVI
+        files for best performance. Uses DirectShow for most formats, so it
+        isn't recommended for anything but AVI, d2v and opening Avisynth
+        scripts.
 
+    _FFmpegSource_
+    : Uses [FFMS2](http://code.google.com/p/ffmpegsource/) to load video.
+        Generally the most reliable option.
+
+**Subtitles provider**
+: Decides what backend Aegisub uses to render subtitles on the video.
+    If you install additional CSRI renderers such as VSFilterMod or
+    xy-VSFilter (by placing the dlls in the CSRI directory within Aegisub's
+    directory), they will be listed here along with the default ones.
+
+    *CSRI/vsfilter_textsub* (Windows only)
+    : Use VSFilter 2.40 to render subtitles. This is the standard subtitle
+        renderer which defines the ASS format used by Aegisub.
+
+    _libass_
+    : Use [libass](http://code.google.com/p/libass/) to render subtitles.
+        libass is far faster than VSFilter and (somewhat) cross-platform, but
+        unfortunately still has some rendering differences from VSFilter and
+        font-related issues on Windows. If you are doing complex typesetting
+        that will be [[softsubbed|Attaching subtitles to video#softsubbing]] it
+        is a good idea to check your work with both VSFilter and libass, as an
+        increasing number of users are using libass.
 
 ### Avisynth ###
 
@@ -603,7 +636,8 @@ debugger attached to Aegisub.
 **Decoding threads**
 : Maximum number of threads to use to decode video, or -1 to choose
 automatically. Setting this to 1 can fix some decoding issues at the cost of
-performance.
+performance. There is rarely any reason to set it to a value other than 1 or
+-1.
 
 **Enable unsafe seeking**
 : Disable some of FFMS2's sanity checks when seeking in video. Makes it
