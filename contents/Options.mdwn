@@ -76,10 +76,17 @@ automatically give it focus (as opposed to requiring a click).
 lead-out" functions. Also used in (and set by) the [[timing
 postprocessor|Timing_Post-Processor]].
 
-**Start-marker drag sensitivity**
+**Marker drag-start sensitivity**
 : The distance in pixels that a marker must be dragged for it to register as a
 drag. Higher values reduce the chance of accidental changes, at the cost of
 worse responsiveness.
+
+**Left-click-drag moves end marker**
+: When enabled, left clicking will set the start time of the line to the
+clicked point, then set the end time of the line to the point dragged to,
+making it possible to time a line with a single click-drag movement. When
+disabled, left-click-drag always updates only the start time of the line, as
+right-click does with the end time.
 
 **Line boundary thickness**
 : The width, in pixels, of the line start and end markers.
@@ -247,7 +254,7 @@ so desire.
 **Font**
 : Decides the font and font size of all text in the grid.
 
-### Colours ###
+### Colors ###
 
 <center>[[img/preferences-colours.png]]</center>
 
@@ -538,7 +545,7 @@ which Avisynth function to use to convert audio to mono.
 the sample rate used by your sound card (rather than having the audio player do
 it) can potentially improve audio performance and fix playback issues.
 
-### FFMS2 ###
+### FFmpegSource ###
 
 **Audio indexing error handling mode**
 : What to do if an error occurs while indexing an audio track.
@@ -587,7 +594,7 @@ upgrade past for various bad reasons.
 improve performance and should be done only if you're opening overcomplicated
 Avisynth scripts directly.
 
-### FFMS2 ###
+### FFmpegSource ###
 
 **Debug log verbosity**
 : Set ffmpeg/libav's verbosity level. Only has an effect when you have a
